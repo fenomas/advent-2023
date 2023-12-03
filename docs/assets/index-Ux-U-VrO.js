@@ -1,0 +1,1117 @@
+var $e=Object.defineProperty;var Ce=(e,n,t)=>n in e?$e(e,n,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[n]=t;var he=(e,n,t)=>(Ce(e,typeof n!="symbol"?n+"":n,t),t);(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))l(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const b of s.addedNodes)b.tagName==="LINK"&&b.rel==="modulepreload"&&l(b)}).observe(document,{childList:!0,subtree:!0});function t(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function l(r){if(r.ep)return;r.ep=!0;const s=t(r);fetch(r.href,s)}})();function Y(){}function Ie(e){return e()}function _e(){return Object.create(null)}function R(e){e.forEach(Ie)}function Ee(e){return typeof e=="function"}function Le(e,n){return e!=e?n==n:e!==n||e&&typeof e=="object"||typeof e=="function"}function Be(e){return Object.keys(e).length===0}function d(e,n){e.appendChild(n)}function me(e,n,t){e.insertBefore(n,t||null)}function ve(e){e.parentNode&&e.parentNode.removeChild(e)}function Ne(e,n){for(let t=0;t<e.length;t+=1)e[t]&&e[t].d(n)}function c(e){return document.createElement(e)}function le(e){return document.createTextNode(e)}function q(){return le(" ")}function T(e,n,t,l){return e.addEventListener(n,t,l),()=>e.removeEventListener(n,t,l)}function f(e,n,t){t==null?e.removeAttribute(n):e.getAttribute(n)!==t&&e.setAttribute(n,t)}function Ke(e){return Array.from(e.childNodes)}function ce(e,n){n=""+n,e.data!==n&&(e.data=n)}function W(e,n){e.value=n??""}function Re(e,n,t,l){t==null?e.style.removeProperty(n):e.style.setProperty(n,t,l?"important":"")}function E(e,n,t){e.classList.toggle(n,!!t)}let je;function se(e){je=e}const Q=[],we=[];let X=[];const ye=[],Fe=Promise.resolve();let xe=!1;function He(){xe||(xe=!0,Fe.then(De))}function pe(e){X.push(e)}const ue=new Set;let J=0;function De(){if(J!==0)return;const e=je;do{try{for(;J<Q.length;){const n=Q[J];J++,se(n),Ue(n.$$)}}catch(n){throw Q.length=0,J=0,n}for(se(null),Q.length=0,J=0;we.length;)we.pop()();for(let n=0;n<X.length;n+=1){const t=X[n];ue.has(t)||(ue.add(t),t())}X.length=0}while(Q.length);for(;ye.length;)ye.pop()();xe=!1,ue.clear(),se(e)}function Ue(e){if(e.fragment!==null){e.update(),R(e.before_update);const n=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,n),e.after_update.forEach(pe)}}function Ve(e){const n=[],t=[];X.forEach(l=>e.indexOf(l)===-1?n.push(l):t.push(l)),t.forEach(l=>l()),X=n}const We=new Set;function Je(e,n){e&&e.i&&(We.delete(e),e.i(n))}function Ge(e){return e?.length!==void 0?e:Array.from(e)}function Qe(e,n,t){const{fragment:l,after_update:r}=e.$$;l&&l.m(n,t),pe(()=>{const s=e.$$.on_mount.map(Ie).filter(Ee);e.$$.on_destroy?e.$$.on_destroy.push(...s):R(s),e.$$.on_mount=[]}),r.forEach(pe)}function Xe(e,n){const t=e.$$;t.fragment!==null&&(Ve(t.after_update),R(t.on_destroy),t.fragment&&t.fragment.d(n),t.on_destroy=t.fragment=null,t.ctx=[])}function Ye(e,n){e.$$.dirty[0]===-1&&(Q.push(e),He(),e.$$.dirty.fill(0)),e.$$.dirty[n/31|0]|=1<<n%31}function Ze(e,n,t,l,r,s,b=null,i=[-1]){const h=je;se(e);const o=e.$$={fragment:null,ctx:[],props:s,update:Y,not_equal:r,bound:_e(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(h?h.$$.context:[])),callbacks:_e(),dirty:i,skip_bound:!1,root:n.target||h.$$.root};b&&b(o.root);let u=!1;if(o.ctx=t?t(e,n.props||{},(x,D,...I)=>{const A=I.length?I[0]:D;return o.ctx&&r(o.ctx[x],o.ctx[x]=A)&&(!o.skip_bound&&o.bound[x]&&o.bound[x](A),u&&Ye(e,x)),D}):[],o.update(),u=!0,R(o.before_update),o.fragment=l?l(o.ctx):!1,n.target){if(n.hydrate){const x=Ke(n.target);o.fragment&&o.fragment.l(x),x.forEach(ve)}else o.fragment&&o.fragment.c();n.intro&&Je(e.$$.fragment),Qe(e,n.target,n.anchor),De()}se(h)}class en{constructor(){he(this,"$$");he(this,"$$set")}$destroy(){Xe(this,1),this.$destroy=Y}$on(n,t){if(!Ee(t))return Y;const l=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return l.push(t),()=>{const r=l.indexOf(t);r!==-1&&l.splice(r,1)}}$set(n){this.$$set&&!Be(n)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}const nn="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(nn);var tn=[142,54304,281,54418];function rn(e=""){return e.split(/\n/).reduce((n,t)=>{var l=t.split("").filter(r=>/\d/.test(r));return n+parseInt(l[0]+l.at(-1))},0)}function ln(e=""){e=sn(e);var n=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return e.split(/\n/).reduce((t,l)=>{var r=-1,s=1/0,b=-1,i=-1;return n.forEach((h,o)=>{var u=l.indexOf(h);u>-1&&u<s&&(s=u,r=o%10);var x=l.lastIndexOf(h);x>-1&&x>i&&(i=x,b=o%10)}),t+parseInt(r+""+b)},0)}function sn(e){return e.startsWith(`1abc2
+`)?`two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen`:e}const gn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:tn,part1:rn,part2:ln},Symbol.toStringTag,{value:"Module"}));var dn=[8,2727,2286,56580];function on(e=""){var n=0,t={red:12,green:13,blue:14};return e.split(`
+`).forEach(l=>{var[r,s]=l.split(":"),b=s.split(";").every(i=>i.split(",").every(h=>{var[,o,u]=/(\d+)\s+(\S+)/.exec(h);return t[u]?parseInt(o)<=t[u]:!0}));b&&(n+=parseInt(/\d+/.exec(r)[0]))}),n}function fn(e=""){var n=0;return e.split(`
+`).forEach(t=>{var l={red:0,green:0,blue:0},[,r]=t.split(":");r.split(";").forEach(s=>{s.split(",").forEach(b=>{var[,i,h]=/(\d+)\s+(\S+)/.exec(b),o=parseInt(i);o>l[h]&&(l[h]=o)})}),n+=l.red*l.green*l.blue}),n}const vn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:dn,part1:on,part2:fn},Symbol.toStringTag,{value:"Module"})),bn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),hn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),un=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),cn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),xn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),pn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),mn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),jn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),kn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),an=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),zn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),qn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),_n=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),wn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),yn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Gn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),On=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Sn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Pn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Mn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Tn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),In=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),En=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Dn=`1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet`,An=`8eight1
+98126
+fourfourthreehnbhkmscqxdfksg64bvpppznkh
+8fivenvvtrlj
+six3zbhvrfhsevennine
+427nine6chnqrssxfour
+threevvxhvx38rktdqm3
+eightzgqzr3eight
+xgjjmnlvznf2nineltmsevennine6
+ninethree15seven
+37cjnsfbfkqpkxpdvgk8
+sgeightwo3
+9sbxg
+1spnthree59ninejjgjdlx
+six9six2gxmn
+twothreefdbl6five3zcqvcqxkcvdfkl4
+46six47seven27one
+four15
+7sixvmsrrzqnngonethree
+3fvsghvkqkbfivenine
+zhthfghk6ppc48bdx6two
+1fouronesixsvhbglmvxx
+7lcsixmzmseven
+two37sixccrpqngpvthree
+86fivelqmlmbnhq
+bvcz4
+6fivendr7seven31nine4
+jmkhtgklhpxxblc2slhlnfkoneonefour
+8smpnsc29threesix
+r795vgnhqhs92one
+eightfive6
+4threeqzslpcvkpfdjh
+8cthp65
+twoonenine87
+dzttdmpfxtnine6onefourone3vnnz
+8tnnfrsdffpthree67xh
+seven5seven27hf
+3sevenone
+seven9foursskfhnchhf481
+vrfbrcsgp81vsztr
+six9dnqqgxtvrngpz7879two
+lkvzzdxmr71lglsixfour
+two6jkpz9
+1sevenpmjfv
+nlvrdmdhxsix7three7frmdlckfjninesix
+gfb89qrhtzsfvbnpbp6two
+f8mbbtzjvrqkrszlgrlzrlrgmbmmrdqv8seven
+sphkkpptpvjzbflkzz2vbndc3foureighttbn
+eightnine5zpbzhltpmsxrggdcmbrzkvczqbfsevendtjsr
+2snpbrhpnine3sevensevenhftpqgk5
+seventjxr91sevenseveneightwojf
+1hfkvhjxrtjfivefive
+3fxgmlxtwo
+stwoeighttwo3
+eight45t
+sixthreecdhbfive3sevensrskjm
+fiveklmj94sixlhpfztlk95
+fivefive6
+fiventjm7tndhd57
+teightwo87nine83
+6jskjmxrttwo93four7
+dftzgsdc19threesevennine3twonevl
+zmpcgkonethree1cspnkkpjr9
+hmsfrjtxpgn9dqkr9dqvrtq4
+3eightmfggjleight
+qfglzvvrrtpfl4
+7eightonefpqq3
+tgtbsmpftwo4hvnvsixfrdqbvqbhspcczfhvqcslvfszvrtzbks
+twofivesix34nine
+dhlhkjcjsbgnxd6sgrdnzchtxtplltbqlk
+oneonegcndlfourdngmbgdeightsix2
+twotj9l8onetwoned
+jpz2fourjgrjzf44
+9fivesixmlqr8rxqpvpfzfive2nine
+6xkfkrfnine196
+four7gppqtzvbftzcbzt8nqq1nineqdlrff
+2threekxgcqjzt4qdbthmjx
+three61eightrnkckq
+9knfvqgmdsmdqlkfzl
+mxsqv6twojgmhpmlfq
+7fouronelngndbsmljbfzmsix
+fjm8fdpnlldlgvkqdcdcdjpxzdt
+7five2
+tsp9seven
+eight2hzpkpqrjgcrnxksix
+jfourcgjbpzbgdn61dzqbgthree
+7threefive
+1ncmzhqghthree3sixllvknhf
+one5six9
+krzkzmbccr1
+74mqnzmqnf6
+four9pfhjktmvxtwo
+6bl21bpx2
+4threefdpfqck
+jjksjbsjlgdonefour5
+2hbthreegfh1
+threegzbn1four4hbqkmtmoneightrhg
+fiveeightnine83
+3five49jvrhvmnjmmzlzmhpbpsfpn4
+3vvhshsixone3
+55three7svtlzzggkqjhjx
+fxdmnjsvpjbg69gcknlzgrqhqdsxvk3p
+eightfcnmbzl2jhlklgmlmsevenkjbgzhstwo
+6sevengdmtlfjmns63
+ktgqthreedfmrpdvnkfvs3jsgcvtdkh
+4seven1
+34onexkninex6pnldxrfs
+threenine3five9eightrvg9
+xqbnmtrlsjninenine57rpcsjpqfdcbd6
+216two
+xhrdmfcvjzt4sixfkjsvkfhtldfqckj
+2six8zeight1
+cmpklgjgf19twoqstfhphbxxtfdgj2
+lvgqnkqhltwo9r
+twosevenfive2rgfsgmzqjbnine
+7ddpjxmfschtqdgnjqc18one
+oneninefiveeight6
+qs4five5
+rpxbcff9vpmlvvrlonefourdnczqzjbvnine3
+7592r3qjtwothree
+sixtwoninegzrfp9hq6six9oneightp
+f8seven1dcrjqchxchfour8
+bnhmfmsbzbhfive1rfqqkzkptjnnxpone2jqhrfnvkfk
+qlhpvzdkcfsq84
+dfour5one
+hcvxnfm32kpzxkhvmvkjsevenllpjpgdhl
+dlhhnk2ctvxqmbmsc9five
+one7sevenninesix
+two4rkb5sixtx17
+28three7
+msixeightnqmtfmtftsix9
+zff8nineflfpz1six1
+vk9
+86ninelzskddf9784
+mrntnhjrvkjgmntone715ktgb7
+sevensixthreegkldpptbmteightsix2nfnljvkfkgc
+nineonenine3ssnjhkhdplvq3six
+jrdgsz8
+5nine6bglkndgfnineq
+nineone8seven5zhdd2eight
+17qjzvtwo
+4rncnvtp5ssznhncdnnzndr9
+6srf
+5two6xxkzdrbfsix
+five314sevenseven
+eightsix7lhfqone
+gdz3one
+6sdplqg
+rsnnm3twoqlxjjvzeightvxszxhmnck
+7onelvrtdktmcmrm55
+1eightzvcgfqgfh
+ssgrzpb6jntxrdhvmrkeight
+5oneninetwo
+gjktwopxxql4gxfourseven9
+four55sevenvglcrqsdt
+nsqrjfhs2eight
+seventhree5g9
+threehvmrmvglvvsix7pqxzfjvv
+cfgfmgg5vmqnnqrxdxone35
+two2fxsmdjmb
+rrlxrkjkxmfrbvxsevenrlllvclhvvfourlp4seven
+djdoneightthree82eight6five6
+two4threecdbgnmzvdd53oneeightkmx
+one5qdtnrpcmrnnsbeighttwotwoninegtpv
+86htqkfrkmone217
+onelqd5jvlbm4
+eightone3rpnkglzfcveight12one
+fourqfxndmpgbqrcpclbnn86hxsxqrrkjcgtgxbdxjdjlzcrhkp
+1one18tjcsjzpmzmpmstzmcn9
+threesevenpgt3
+four9sixthree1
+twoninethreesxxqgqlqmqxkmkl2qdrqpftwo
+seven678
+two29six958kqxq3
+dbpjzgdrhnsixfjvs9eightsjdgtckdtsjmhplkjeightwodd
+7fourninenine
+fourthreedlhf9rf
+mjkvfivekltmfourone2
+7twozrrtg498one
+4eightcxnx
+one62eightdktgeight2five
+bnpxcdxpzp4tklvsm
+d8sixninegrbx
+threefourfivetwo23
+nine3onemqtbrhlp8jqslv66ssjrkh
+1four9fournine2
+xfsl83two4
+65twonine
+1twofivevctxpfvr18
+819gc4six79
+27vtvmsix1phzrone2nine
+boneight1mskkndkgfive
+1xmpkmg3
+one8sixthree9zjtmqjjjtc1nine
+six36gqjctdsevenlnmmbr7dplrsdptwo
+8jjvgmffgxr5
+fivehgkc5
+2qmbvphfivexggrxljhj9qmjrzmrx8eight
+3rndntwoseven
+boneight6tworgxffournine
+htbvm1grtsgdgbl
+1hkndcqv
+32sl9six9
+894
+vrhxnstqqmflm6glgfnpfour
+5ninekrfivesix8
+5six5
+eightpdzjhvbgm5oneonetwothmnkflz
+vnfttnhcs892rmpvjvqvfftmzlkcrzthkbhfour2
+9twoeight
+73553bkzzhq
+fvxmvs47
+3bhmjpqvzs
+pcftqc671
+sixtwo8
+threesdhhzmxtzpsfgs286nmqpvrtkbktcblqqb
+7pmhlfcmdxthree11gxpncfqntjtwoone
+8fivel3sevenxqtpxjntbjbtxhxtqdfnfour
+6seven72zzseven
+seven9kcthreetwo2five7br
+kvkhl1fzvpseven
+5oneoneeighteight6
+lvfx6onefour
+ftjzq4
+slbgthc5xsxvplbskk
+64nkjjvrmsqzdone
+twoonelgcnrmrm52
+gnfmrdkzoneseven7twotxgsjsix1one
+1xlrpbbdbdgftkd
+8jmphpvclbf87two
+724threesixthreetwozsix
+bcxdnrd91cprdfcqfive
+zxjcgbhfr3
+scfklbckxjggbgz9txqnzf6
+1twohctsdfkgsdteight2
+7threethree
+jdj9
+99
+sixfzv24nine2bz
+onefour1frf79tcfjchqeight
+onethreenkgjgtpxfkmncvmsqs2bsqppgg
+fourfourtksqrmnmqfour351lrsnv
+6559hthdpeightkfive3
+sixone7
+eightoneeightjcsggnqthree5qqmp
+sixeightonegltz7
+three4plz3kls
+8sixmssvtthreeseventhreenskzq6
+tbzxjqxkspseven9dtbqvchseven8mbpznrrh1tdmqs
+1b7eight
+thk23eightfivekvzphvmsfour
+7cnlrjzvk66threefxzrtgrbvmbp
+bhvponeonefouronedcstbnl8
+eightninesix4fourbrpfp
+four29eight
+kqh5zkgqphzjvz
+4zvh
+fivesixnzbsvfjhj2
+rkrnbpsqjdthreez78mg
+eight4gzxfdjpnjnskzghlzfdmjhz
+seven8fourxzdmlcq1mnine7qbblrqtrsq
+gd369
+hgtqgfive8
+pcbgddgvvzpmone4onethreeoneonefive
+95nnjhmhrqgkkstwo66
+723sixone9threefiveone
+threekfvqsscfjr8
+3vzltxllq65jvthree
+4977d
+35pgnlsjjpbgseven33
+g25twonineeight
+three8eight3six
+8five8vjnzglnrbsbxmjqzfvrsoneightlpx
+3bksdkncgtmdrlvkgboneffkszhfive8
+five1hfh6
+fourfoursix2nine9t
+6onetkhqqonetwo
+26hdfljh8
+6onethreefvgnoneoneninefour1
+jghct6rzcbjsfivefourtsrbsjkgmtfive
+nine93eightxqknsqhrmjthree2
+fivenine44sixsixlxdkpm
+threeeight16jjhdkbhlninekvdvlpbq
+onethpbzthhlqxnlrmtwo8
+seveneight1eight
+5two8
+4four8vdpmqvf3onenmfg9
+eight9jtxgdzdrtwovznpmnqvnnlffsix
+456four
+9hxkq
+713kthreexfbdrtbx
+1five59
+1mxpmfive63
+sixfour1ffivezjj
+97eightthreecjnxblrnine
+kgqcxfzc4sixnineoneone3eight
+9fbklklqqsfourbfhmfmgnbtls3three
+xxjnbdxzeightjqvvd82kfchrthmgkfive
+zfdeightwokbq3seven
+6four696ninezfhrbg
+zrznfshdvlxcstqtghjnjvxq1dlklzghbh
+steightwoxfbfzlnzvlj7919four
+nine48oneeightseven89five
+ninesxtdnjkmg7rn32qdljqprj3
+five6xkcg1qmpkddfbsnlhzltlqqjr8
+99sgptmns4five
+2ninejdstk
+gvclfcg9
+n9lmv
+jrftwo3
+sxrxlnvdhr47dppck
+jvtwonesixlzdshrfjtzgqddsix7
+7peightoneeightwobsc
+three6txdjgqqmsdeightcxmljmmzxksseven
+fqpx9three96xrvjvjjnrhknsvfour
+9fournjmslzbmx34cnt
+f3twovfc
+shbtwone3kzdsdrxgr
+4five1tfhvd27
+rdccbvkr9gjsmxhfdzgvjcbkdmsdeightlvjkdgtdqmbvscvhpmdz
+pzsqhqthreetwo1qxfbhreight
+threeeightxonenineninepmjfgzsdhd1
+nine7sevenone
+hbsqqtlqcxkjjccmmpv5
+6nineltr5plmbgzfqbxninerxzbzrblmfsmjggvr
+5eightwolxp
+5cscpfqm
+four3nthbmbxfbvtrqqkfmltmtjh
+pvxtx89jp9onesevennbxmjlzmfk
+threetwoeightzcgkbv1
+7rxxfpgvl3eight8dmhkf
+nine6two
+tpnr21five1eight
+ktsx6threeseven
+8four31drvszglmv
+fgkmbcgsrjgs6eightfivefqqdksrndrtdbsxgmfgtggmrc
+sixnineninefzvthdq5tkzrhrgdqblzndmv
+7lfdrntqsm
+seven8dgxgqvgvmtdkhqsfkhtqcjpvqlfnine
+znltfour6twopsdmcthree
+oneeightvvvxxptmk4eight2n
+5six1jmmqtknpveight
+eightsixxxpbvqhpknz27mqxvf
+rbdchcmqhseightnine9
+944five8gxsjf98
+smdhcnbmone9
+one64six
+seven4fivesevenfournine
+fivetjt27qqxncqcone
+five49655onet5
+mlqgmhfgsix3two2
+jxdfkbvdgnjqznineh1rdqsv7
+fqdvcktwoeightsixsevenkkczb3
+3krndk27
+qjpmscfqf2gzgvzgksc
+5zs11fourqqzfour
+5h
+fourtjzxtgrtd2twokrkpfm
+fourgxprrlvmhgpggsmzbone7
+ldbprdzrqkgqkx23pjvgrc6
+ninevfh2seven4four
+23gfmpvvsrjr4vlntkxkeight
+sevensixonefivefour9two
+vmchfrmfntwo3sv1twoonenngblvmjsf9
+sqhzppseven79kzdppfnk8foureighttwo
+1ljltwo8xhszxqmtponethreesevendkx
+4fourfive
+5fpzhcd7pmbcxcrkp
+cdhqgkhfive61seven
+eightqtzrscqhr3
+brrftwothreethree1
+r145pbthqtvxd63
+ninebdnxdvchzf57oneightpp
+7one1three68
+five8nknine341msfflpnz
+sixxmsevennm6
+2n5cdvvtghfg2lmfrbjbvtwothreefour
+39one16
+l3two
+xsmtghfiveonesix6lkzfgq4threethree
+6onettqbfp
+nhxlqqp3vkcgsjgkgmjrpll
+xgbzrtkbthbfour7mptxqnbrkvhninetwo
+7foureight55cvpgsvsr
+3twonine
+gsqhbhfrzfour9twovjjbskdonegseven4
+2fourthreedcxrcmjmkprdsbone5one
+519955six
+two8fjgvtwo7vnttwo5qzlgxcfkz
+rvk4eightthree
+9six6
+clpxqfn3kcn3
+1pzbkzdn9sixxlq89tcnm
+nineninetwogtsjfour2twollrrllvk
+three5ql7hdjkxdbrcqsfouronekqhc
+ltgeightwothree5ccxbhssxrsbj
+42three3
+dkmm8eightnine4five
+vqmvzpb9tmmsfgscfive6mtjjbleightfour
+ms39zmtbptwofive
+4xxxkdxlhjjx
+6p
+threejfqfjhxp9txlrlrbczdxzpmrkz9sevensjlgstbpffhtb
+three2zqtrtpzvsffdkjsevencjmrdqthree6three
+two681
+fourlhcsspzf5fivezgzkclbrdrqdjcksfive8
+ss3
+znrzctdlgjpzszsixzssrfpcvhlbpg8spfxsgbctpttbxxxsc
+mjfsxjtthljlzzjlxspdsgsstltmlxf6
+48zvpktkpk3
+7khsdbtp43rgggnxf
+2ninedkttzmpqddsix
+xjcqvkcnbpbqsmclfnsdbnnine3eightfive
+7eight6
+eight8zqcdbzqfour3
+one8eight27
+ninemmheight3jdkktmthree
+oneeight3lbsrnqrn
+8ninefive71
+hd58sixtmdj
+fivesevenfourtwo4
+fivecdsvgkfgbntwo42
+593jxn
+sevenfxkvdxfjgskjhhphnjrgfhs8sixcnine2
+fourtwo2sixthreefive7rq4
+threesixdhlkvz3fvdslkbs3
+nine3fkrzbjbmjbsr
+nine7seven36
+sevenbnncfhrnzq52eight6lvfdmqhxkdqjl6
+zshsmpsmbzpnfthree1five72fivetwo
+threenine59seventkthreeflgkvtp
+nine9nine6
+8five4foursix4
+jnz1m3fmzzgt9kbtpr
+81btdvrcspvfour
+three1smvpjdnhveight1sevenfour5rqkqvq
+49fiveeightonefive
+2xmdtnineczgbqmhfivef1six
+638nine
+eightsix6twooneseven
+jgtwone6gzchdrkts
+93tsrvf48
+1qkrdfhpseightninelddrnffp2gc
+nqvkkprztqsqfk74threeseven5six
+14two
+dmhnlgxqpjxxvpshqt2sevenplzbgvsz6
+bffour72
+zgkgvone8bxsnnlninegmjtnsqtdp
+19oneninezm88blmdhbcrns
+2fivessqk1fonevghgnz
+ddszqsldhxpsbprdbqkmhs6ztkbzbkm8cddpqm2
+7eight5xhdtpfive6mbf
+qxcnnmdt5vctqqhmvrmqblsixfour72
+6onetworpstxdq3tvrcmssmkfhbr
+7twoeight1
+64two3sixsixckbkshnkjmtwo
+7csixonegdbrvreight
+bfdptjcjdq4five7sevenfdhhqhseveneight
+8one8dzbninethrmdldmpn
+three7xghxhr1threerqfxseven
+two9xrhvzkgcck3vfour
+5lvtrgmpttk3fourfour
+five581cjndb
+3clp81dhzcbzxc
+threesixsixbtst27
+fivesixnines146
+gppzks5cqggtq
+4rgdzsnqlcxone8vninegkgqh5fcbsfl
+jfpdpfcccrjpcfive2threeseven
+ninefoursix6sixtwooneone7
+twothree3njhxgc5rhntgnckg
+3twopvtmvrcrnr238
+k4mgzqbnkrthreeseven9
+bzkoneight2jxllsevennmhxpgbdkfive
+886svgcltdl222
+sevenqjgkjdfrrskhklvrg9fourtwofive
+cdsfdkdsvtcjhzdpqdgtwo454five
+lmksxbv8foureightbxskfblhllsdrxfs4v6
+49sixfour9nine15two
+75mtcmthreelvmsksnine9
+foureight849zgl69
+92eight6ninezjfive
+8onejsfvnjktqksixlfnxqrjmdvt8vhttwo
+48three
+onesixcksvcdeight3tr
+hvxqb1fourseven4
+four755grdsixthree
+seventwokzpljzth6mzkvsdbgldfbdc
+ninexjgzkcxl3sevenfive
+949klmgj3
+53threethree
+lzczjzsftmcmclqqbrgjftfhxz3
+9rpzfnrseven3tsqxxgtrsq
+fcndgzmtsj86psclvsdvggbhfhd8five
+qxkd2lxzhhcjlxonel48ndktqt4
+2five5twovplrbfxfjzvmdvjs96
+4drtzsix5phvgbqjsknnine9fk
+btmdjvnkrqxvjzchkkdpqcnldljs7eight6znfphg
+xtrjonefour8threexksbbvkxmkthree
+sixhtxkz7pnfzsnpnxnine79
+eight5826
+hrxqbqq5sixkrdjszbblnpdhfour
+xlcmcgprrp2
+seven4vfm3
+bztngjjhfivethreenineeight5
+oneonedvgbrpgqrnh77
+jfnphpvcggfour5zoneeighttjxhcqhsml
+796fcone4
+7fivetrmdsb
+2fiveseven
+fmtdrcczngfivefour6fiveqbkn
+eight25lxjdzkrrqj
+fiveninefour373
+fournr2kzbls1tghseven
+3nlmhvbninenine1fourpppthree1
+j4fourtwo8
+one2f1oneightc
+8g2six8
+nineqzlsxdktwokdhsevenpkqqhjb4jz
+cqsnztq6hjvkcnpxhmplfxfv
+6svktmthzeight1nfxldggeightqfmhhzzsdthreesix
+five7six9
+thlhmgvvrmqv9
+fourpvksthrjlxxdddseighteight55
+qsccghmztwosevengcrfqnzzmrhbgrxlrsxqxtmthbv7three1
+onetwoj19eight1
+8xgtltlrbnscvtone5nine4
+ftx5
+knsvnknplxrgtnrlqcl5
+nflmxkm2dznjhp7three8
+five2tttpdfnmdx3fdrtmxzqx38three
+two3onegkj
+47fivekd
+six9one5nine
+l3onegpj8threekkgdkfzscrrx
+four4ninekfndgvhrrbfzpzrnvpzlxss2l
+ltgsxcrgzqrfpkkb3oneeightfive91knzsppbbx
+sevenvplfzkncmzninenine1
+sixhjjsxgrkgstwoeight1knhgsmscrnpcsone4
+1jbm89two63two
+onedmpxhvvcjssixeightkpvdmzjltwo3eight
+fivevjjtfeight6nine6
+thffrjkhsixsix1one7one
+dbpvngh3eighteight86foursix
+pppcpjmbmhsvhjmkfour2onedlnrg
+2onev8
+55gpvxsvsnpfrpmn
+lfsmfbone58
+tv48threetf3
+8threeonefour71
+ghfslsb73dtlgjnj
+565twofive7
+sixljhfccjg5eighthpskg
+5four2four988rd
+xtgtb99
+kkzfxjszrfjvqllzlhzsninehzbfbvnhtzjf2
+165
+3jtklkpsfxpxlrgltwojxcpqjdsfbs
+three7vknxbtthree
+7fourfourfive
+sevengseven71nklkzdeightsevenfive
+eight37one
+onenine2
+8nine9vkxxhnm6threethree
+7one96fivesix
+58bjnfhjxsm146six2mzv
+99jdqbtb5seven
+8mqztm7bdjh4
+6ninevninenvxflxvgg
+k2twonek
+gzmtwokrk9ptrsixfjbktjc9
+8fivesix
+onesqqkvdtrs5vrsbgnvkjseven
+bnbxpqhqxthree79
+nine5l96ninesixqhtxpkzb6
+sevenfive8tklnkqtwo6three
+qb2onenldzvsixdjmjzdfourqgjsssr
+thqmrjnjg3dbnksktvk
+318
+three71blglscfrzql3six
+9nine6nine4
+sfive1seven1m
+five3dj16
+5ninetwotwo8srrvkx3
+spcsttljpl7
+6rslsdkfs4834
+dshfour8knjplkghpfpzcszqsix1
+ninephtlxnnl8hzn
+bmr5
+tm4czfdfbhps
+sevenseven4three9sixtsmg
+sevenprdqm1six47cnbskdfivethree
+7one6gzfdvfvfourtwoninelbndhdkqeight
+jzxczvgjgxdfrzn2nineseven
+zpcspqvhbfxlcgt1onesevenqktvgjhm
+bmzdhnljms4nkjzhkrtfzngbn
+nine6mjfbftpcfh4five9eight
+qrvsldss4nine4
+lffkvnhbpbtnxzncjs4
+76ckghqnbsnlnjftwo72
+7jrqrkdksixsixtwonett
+3xc
+mzveightwofive2onesix7five2
+74five6mrqx464
+qtwoqlrkvlmpqfjvm8onetwo
+41bchstnlzkntwonineseven1pskh
+twoonejtjph15three
+fzmkkgdq6
+21one
+eight59fivenine
+jbfmfbseightmzlknl84
+four4rlzplmmmcplfour4mllmtxx1
+q349j
+6dbpqgttninepx623bpbhsnxcmg
+52hvsvpk
+8fivesevengzz
+3fourfnfldsxngrknxnvts
+18s
+three2561b1onethree
+zlppzxzzsixtwo4hksclkzhtkdsldfgjhtfhxcdsmdbr
+26eight65five9threeeight
+seven178
+fvljxzhdln11eight
+49four6fourqmspqkbphjzvgzgbvrbmjfsm
+onelnmplhjtjtfivesqzn7qmcpchjtxfcc
+hd8
+9pnneight
+five1qgdzkj9eight
+rfhbnhbkzteightfivesixtwo3
+bczljcceight2
+145sevenhmfive
+8lbgkvdxlccgzzvvttcfgmthreehhmqfivexcdhdd
+6bqxzzzgpdk48
+twobcxchbfour5m2two1seven
+twotwotwo6513fg
+48one6tmjxclchtnpltmjkpmmm
+vhkcklgdhk9xmvtbktdvjmhjtwoned
+eightfourfour9one7
+fourqhgjdpr4p3sevennine
+vlctnqfour4724
+9spbtvbsh7scvvx7hvbxlh
+eightone1ccdhppbsninejfktrxst
+448fourhjk3r3mhstwones
+hbgfourtkvg87sixlcvtjz
+fivesphnkzrn5threeninefive27five
+92two95seven5
+twosix84zjqtp
+9bxppvsjgdmbqvkstrqdsixtwofourfour
+fourfive3sixnine9gmrdhfhkjtrnbl8
+gxcdvsjxgll46mrrdfpdkdl
+4foursevenzklvhrdvpj
+seven1rz24rfmnjxjkthreenfvjdsjtgqkd
+2xbfivelpfhvhsttgjqfsqkffctppeight
+6vxfjbssixfkjqsdh83xgzdmtntgm
+5four98two
+xdk6
+ptxtvnlpxbpkxptbhxheightfour7
+6four5sqgfour
+eight8rbngtqpvninelzhffxpmtwoonefourfour
+three1eight2
+1two8nine
+9eight82
+5fourshdfivefpfd3
+two667dsmv3lvhszg4
+kcxpmrv99threeone
+seven7five3ninerhjbmtfbzsevenfive
+4four1threegvxkdsfour
+qdqrgf6fourfour46
+7nlztdphcjdnqm4zddjhfreight
+sixthree62
+vs86four
+sssbdgzsjnlftms8
+3ninethree45twofsfsvtnl3three
+four7zcfjtngsninethreeninethree
+gcjxkcnsevenfivefourhrxzvxftnine4sixzm
+thsdcone23bvrfour71five
+fiveeight5fourrlhjtmrtwo36
+61lxhrpfvbqkd
+55three5seven1
+sixsix9
+gklpxzmcmnnbhsgeight63
+fourninelxm5cpkqvbpbsvjndn4
+hcjghqfssevenxzdljnvqsix1sjvrhxxhxthreesix
+rtfttcqmxszrsixtwo37scglpjfjt5
+eighthvbsldnhfzxr7eightsrmqhsgonebx
+zcvqxjn1vdddlsevenninefourninethree
+qr7three3two4tdrqd
+qbjttlfsrrrhrmkhpvgc7zkone
+6fiveseven7ndfhzxzrrf
+fkxhpzb568eightspdxfngrp82
+seven4sixtwo
+nineddhgjn4
+37chjlxcbbjrjghzjdsix4threeone
+jhngdhntvfmcbjjvlgx979
+9thpnx12835one
+onesixfzjgpfourseven1nine2jrxjp
+5rzvhjqnlvnt1lone
+9dmftktf9
+eight5eight
+grkfgrhnkjm9
+23ksknkqrdthreecvg2rbxkkhlqttfivefive
+3foureightshnff5six72
+19ninethreebcgxkmjqhgpmfx3
+28rdsm5fiveeightthree
+dmgpjdzfl1two819
+pbrvnfpftb3vptbqncmqszbbctnj363
+fzdc29331
+bnkjk9m289rxgqn
+fivenine4seven6plsczmxr4
+fourmxrltjgdleight1three
+nvjxvpgtplgszgbeightcccxxjhbsfqdrj7
+5stjbvxglkdrbp6kllbbnptdfzl
+dmtpxndvvrbksfournine5one6
+vnlhxcssevenjlfgfournine69hmnddrthree
+blchmddjmktwo4fxsqlpfn69xhbpblrlmone
+17qdxzqlpllfourszcpxmtcxhrqzqqhm45
+fchdhsjzt6two9
+srs3vcq7three
+twotwofour4seven
+three4six8lsdg1
+1fdvdhxrxmmvzonehmkzspfdlrdvlnfzfive9
+7threeone
+96ninegjcxpstqhxbdzfsrczm2
+xthree19
+bgptbh73sixfour
+eight82
+sevenb3sixthree9zjflmmdjfour
+kcninefour2ninetzqgrztwojq
+eightfourhfqttttxteight5
+zghnvzdpfivevvgfjzfzvcbvccmtwo5tkzj7
+33qxzctgqsvxnine9
+6onejdndbcjsseven
+294xqcrnine3844
+two6ssqvnvm889
+rzfbhbr15jpnfqmzthreepnine41
+eightjlltprrrtv63twoptg4
+threetwolzdbgcpkm3seven1five
+mcbjrtbtbp7twoseven7vdttjvmxbxkfmgmvhrs
+three5hfivesevenqrc6sbst
+eightdvvtsvmfqeightfz5six
+kklpnghzsfv88two86eightplfgjz
+bcgntz6gqxbxxtnnonegqlz4fivexmjxqf
+mvbgjpsmhntf7mmshslgvv17thlknqfivel
+fourmjflcbtwo7fivetdntjstntv8
+89fctlsxz8eight
+1twosix57sevenfive
+3ninefivencdgmlqxlnine96
+twofoursevensixeightpmpfpfljqtnm9six
+5hqnxvlmnh1bxxhnpkjhgzxlhgffv
+nine9fourtwo8tzseven
+grcfkddgseven55g
+seven8nineeight4one7lnntwonebc
+one1ktgggr
+76eighttwoqzfnllqnkq
+cgjkzlksl1823749
+9twonvhlhrlxnine7eight
+qtzmndkrqqcpmjcxz98kklrtjgbbnzglstnnlnqksrgkzz
+cqxknrmb5cfhfgpk
+9lhrnlqrnninethree
+ftlpbv55nine
+2nine5tfqhqtwo
+mqcfgssixtwofour6cvncgmxnlq
+946eight84kvflb
+h1nineglvgmh9txxg8
+lxqqqdfive5mcgrjkxmlzdqbkldjqkhlxnbg
+jjkvdzzkpxqp1three59dqthvgkfmfjvlvnrtlzlmqvcspjfc
+sixfoursix87oneoneseven
+1ptrtgd6
+5threeeightqqjrmchfoureight
+one42mdmfkrzln5ck8qxbfqf
+seven819ninejzrddsevensix
+vfpeight4pngqpbvsbz
+threesixseven1
+7twoonetwo9eight88slpctv
+fqfsixtwofpm14seven
+6xcdvsftlsrsrgseven5seven
+mhmgzdgrc6lnnzv6pnr4stxnmrreightblzp
+9glsqqcrttdgsdqkfour
+82two
+ftqzqnlddctlxmb3rdlg
+sevencxbpxvznqmjqgglfccqkvjqmjbpthreenineeightnhszbvnff7
+twosixplgdjplfthree9kvhvnzzqzk
+1pfvkfblrmz
+2n
+threeeighteighttwo7qmlnjx
+6sevendhc6
+nineklzvllx3fivesix
+2nrrx5fourfcljkdhpk
+eightone9eight
+gqhsmccbpjc46twooneighttbv
+sixtwo2bxpdqfour5fivexkjxzb8
+six4nineggtqsxjd16mhgpjflprmsix
+tndgkrpmfour1foursevensflkzt
+bpxtdkrcr5nsevendltgfgkzxdtbxsghkkninesixone
+one22threefivetwo
+lzq7fzbqsd49
+cgthgcsix1
+389seven
+cmgctmtwo8eight
+2qvrbrnvp559
+eightjpkjnpgplseven7oneightdv
+cdzoneightsevensixeightmfjsevenk2eightfour
+2sgtftmrrlfhgqxdmhtfqncslmnlvdhnjpdtpg45
+fiveone1
+ps2threeeight9hvmjrc3
+pdsr2xphzmmztnqxpzq
+nineeight7ninevhlksv
+jjbsm55fscpfpklq1sixseven
+fivefive1nkpzcxrxbfour
+fivesixdkxvbtzvtlsevensix3fivekh
+twovrzxlmnxnhonedpdmvn9
+hmqccxh6
+five6nine8vcbzzqrvn29
+5nfmfthree4nthreenine5four
+kpsbqshc21dzrpktfseven
+cdfsszrtpnsfhgsix9bzqjdltbtzjsz
+twofive4eighttxjxoneeightninet
+six4tppbxfiveblktrzgdvks1
+eightzmvmdbbfnft2
+7npgl9vvtdl2
+3twoone
+seventhree6skl
+onepdfjql18nine631
+jpjtvxck3sncsvnsix112
+njrkcgznhvfour1
+gfmtkdr2pvvlnh9one2qgvmxfm
+4jfxzmcdonep
+one9threenine
+544
+one5sevenzhmljdbfb8pncqtdkch
+nine72eightxvjtrbzpzvcqvlone
+sixfive8hpnvvjzld4
+24f8
+6bqtwothreectlcqkkzfiveppvbgbvspncldjhb
+ljmrlhxvsone1qdsfhqqqlljd6seven2one
+mfksxgxhrqxbtg73r1eight
+ztwogdpcgllnpp516ztdkj
+two8fivefourbs5jlzfnleightwoqvk
+seven5qnrvpqtrvlt4
+ninedbnd8mrchlnineqhhqjnznts
+onethreezmhshprm2jb98three
+3sixfivesix
+two6dfgpzqrhzp8z368
+twoonesixfscgflrlkmbtmv5893
+fiveninegkfbgczqjhnine7g
+rbvknineflmkl4btbqbkpsd1eight4
+39324
+sjrgxtxppvxsseveneight4fourkdcdsmfhnnqjpbtxg
+6threevcgjmclnhcfxvvbncnhjkmmsqqhqffivetwo4
+foursix1four
+zbztwoxptgdffourgzgzzhhmhg78ljlchqh
+dcpbt25vcdf3three611
+v58dtgrpl
+rntgtrrc67mdlfxzgkvjjpqtfournineninefour
+lpcts8vjznknlj
+bpmv3
+5z
+zmsevenbnckdjhpbsvglrfsskcsevenfour2nine
+6threesevenprcjlk5644
+nineczcd6922
+2vksfctzbjz
+kz93
+twopfhlqplngsj6z13four
+8nm3sevenxqzj
+cjgoneightthree5kmpndvrmkljeight6sflmeight
+three3b3seven55xgrrkssnzsghd
+5lvxlnpc24fbrbtg5
+7qgmhfnine
+sixpbvfjzkdsqdpsthreekj91nine
+sbmxhcxonefggt4f95oneseven
+onemgkvjpgfdjmhcsxsmlfjgzqqrftgxgx2jdmbvbfdf4
+bvzcskfrlg8jseight
+hzltjqmxjt98eightfseven
+2seven7vbfm44four
+3bvfnine
+4mqprdhhrdqz
+twothree2
+seven3threeeightsllttbrdcthree
+gmpxgkvv4four
+vntmvnd4two
+fqhvkqrxdtwo1threeqrmg5
+5f
+fivenscdbpvlz1
+vzdcg921fivelplfsbdccrsdsq
+sixnine2rnrdqkfpmdfives2
+5seveneight4sr9gffive
+hknjrm5eight34nine
+7965
+2t34two73xlfzpd
+626
+1kdfnbjgtshsonenine1eight1kzp
+two8mxrlgchctdtflkknonezstpfgxsdx28
+sixfdjgvfm1sevengg656vqcql
+threesevenbjcfxlbml8lhxjmzgspfour
+4phlqzbhvk5four
+1lkccpmxmlxlqrxzz8lkmbpmdncgpzsxgqdcb
+klqcnhjvone75
+5two7
+2ninecgrltzpgzpfourfour47seven
+threeoneeight758threegtwo
+54j
+seven9lqbfgrsthreefivefour
+six7kjm2fzcrdeightfour84
+four198766
+six3mfgmcrmlnine6lhddlhgl9
+rkpksqvfiverxvbseven7
+734six
+five5one9qd4bkgfdjgtxzlxfjr
+17eightsmjzbgdbd2nine
+eightqnthjhlnfive7nddfjcxq
+fourxkn6two6three5
+twoseven2
+eightrbhdkpxpbsvmfivethreetwox4f
+4bpgpdngvnineh
+lvpxjhgkz77pthnktwomvonekjvkkbr
+gqpcqlzfive2threejfknlchf
+zgjslb74two
+sixhxmt4
+4bcqxrcf
+onesix59jktnrtlone9one
+9seven1msixkhxbkgbnqkpfjrr
+four1lhslrtdrnxxsmptbjjgj5
+eightcvbzqczt9ninegxlpsevenfour
+threenine2foursixtwo2bldhzmsdvj
+two8dmzmbnkjqfdqtmzxndrsnkrvdnl
+9lqtcrvkvhdkmbfivenine6tkqh
+foureightjdpqhldvzeight17vbkmjvfs
+vkzvsphbltfxjfxxsl9
+shdgdlft27
+87twopsix7eightwoj
+57threeone
+pshspdc9fourone5eight79sxrjkcmcb
+sevenhmzvvbpdktxxjrlvntx1
+ninethreendlnnine9
+nine2tkmkrpccone
+7sixsixvdv
+vpktkldsjcpsxjztmthree3onefdbcxkrvhcm
+9lqmbltfoursnsbrqn22sdnrpxfsjfour
+five8mgctnvstcone24fcfbcqtknjmddknkzeightwod
+8xfbqxtwonmjthm24twofivelckrr
+xhnldpddxcjnm5twoddtqkqd
+sevensixdrcvgfxqpmvrtmgqdjqvclgnqjsfhnbbs3jvxnmjqcbtshp
+mfour1zcpnpfcdeight
+6twofour
+r1seven7tdjgxshntl
+eight5sixh
+xntwonetwofqpxsgshnbhjcsrld75fourfjbllqscg
+three3vbvqklcp7pfkngtnineslmrlq
+7six3onenmttntsfq3
+fivefive1seveneight
+p2rpjkcpcsix75fivednd
+ninekkzpsone167hnqlhvmtbffive
+2qmtbkslqgjkrqhnine3eightonefour
+2nlfivefive6
+xjvbkbtdqhgvsseven719fiveseven
+prbtnineqdvknxkblzgj7
+lkgvhtfreightninegtfrmqhd4njvsgdrhdqfxrjrcvvcz4zs
+25four24dhqqkpbprx
+29two
+7xsbfsfivexrrxhthree
+fivesrnvbdtnqnfourninelctfnxkbtv6eight
+9kkpzgthree1stb
+sevenhzxdbbb81one
+2jszvqhv
+zkvq25sj2
+hxxfg4kqjbjpjczzddrx9spkgdcvcsvmblvfxxcn
+486l2clmtcgfive47
+dfhkfnfour76
+52hnpcc
+kmktwonejdpgch9tthree
+x6bkqrlhhcm96
+tf7kndclhgjsoneoneightxcx
+mdzmsfkl5pnine8
+ghzv2three
+vctrqxfsxhtblghfchthzhninefk3eightqjjjjg
+three2jmvkmfour
+rlkbtjpnlctsxpfp521rxbjdfsixhvp1
+7vxlkff32mdfsqrmbnmtwotwo2nine
+gl6seven35two1
+two2rjtvndrzvthreethree
+tjpxszlthree54hsftvc
+jsthree48
+seven6fourtwotwo
+threetpnh5ninernztgb
+18pvqllhjf5eight9vldjjqcjfmlhnddone
+two9nine6hgbprcpxvmntdjkfivetwonept
+7four8eightktlhdpmptone
+rrzbgtfrrqkspsix3rkpzddzrbcrzvxzstjbqhmqq
+84qxbnxdpqppjfiveeightfive
+n6two1brpjhf
+plmkvpjbqr1
+sixsixqbksfrndvg42hclgpgfggpxmts9
+1htlmmvbnsix
+dleightwolvbvmsggs9njseven5fivethreenine
+eight6kxqqdnqp
+5eightgdvgthfiveshthreesixfive
+6seventntzffjkkvvhtgtwoonethreefivekzvptvxfjg
+three6blrfsgdqsxgkbqj3
+eight1eighteight8
+8four419eighteight1bpv`,$n=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,Cn=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
+Game 2: 9 red, 2 green; 5 red, 1 blue, 6 green; 3 green, 13 red, 1 blue; 3 red, 6 green; 1 blue, 14 red, 6 green
+Game 3: 6 red, 3 blue, 8 green; 6 blue, 12 green, 15 red; 3 blue, 18 green, 4 red
+Game 4: 1 blue, 4 red; 2 blue, 6 red; 13 blue; 11 blue, 1 green, 8 red; 10 blue, 3 green, 2 red; 3 green, 7 blue
+Game 5: 2 red, 1 blue, 8 green; 2 blue, 7 green, 3 red; 1 blue, 7 green, 4 red; 2 blue, 1 green, 1 red; 13 green, 1 blue
+Game 6: 7 green, 1 red, 3 blue; 1 red, 4 blue; 6 green, 6 blue; 8 green, 1 red; 6 green, 1 red, 5 blue
+Game 7: 10 blue, 1 green; 5 red, 8 blue, 3 green; 11 blue, 5 red, 8 green; 2 blue, 8 red, 5 green; 7 blue, 9 green; 6 blue, 2 green, 7 red
+Game 8: 15 green, 8 blue, 3 red; 6 blue, 7 green, 5 red; 2 green, 1 red, 5 blue; 9 blue, 9 green, 5 red
+Game 9: 16 red; 5 blue, 6 red, 9 green; 7 blue, 6 green, 2 red; 15 red, 5 blue, 3 green; 1 red, 6 green, 6 blue; 3 blue, 7 red, 5 green
+Game 10: 17 green, 5 blue, 6 red; 18 green, 9 red; 4 red, 4 blue, 4 green; 10 red, 6 green, 5 blue; 8 red, 4 blue, 12 green
+Game 11: 4 blue, 2 green, 5 red; 1 blue, 1 red; 9 blue, 1 green, 2 red; 4 red, 10 blue; 3 green, 4 blue, 3 red
+Game 12: 4 green, 2 blue, 7 red; 4 blue, 2 green, 1 red; 7 green, 5 blue, 9 red
+Game 13: 1 green, 3 red, 3 blue; 1 blue, 10 green; 2 green, 3 blue
+Game 14: 7 red, 3 green, 12 blue; 5 red, 4 green, 6 blue; 13 blue, 1 red; 4 blue, 6 red, 2 green; 4 red, 3 blue; 9 red, 13 blue
+Game 15: 4 blue, 5 red, 2 green; 7 red, 2 blue, 1 green; 17 red, 3 blue; 2 blue; 4 blue, 8 red
+Game 16: 5 blue; 9 red, 14 green, 5 blue; 5 blue, 9 green
+Game 17: 3 blue, 5 red; 6 blue, 1 green, 4 red; 7 green, 6 blue, 7 red; 1 red, 6 blue, 4 green; 6 green; 1 blue, 6 green
+Game 18: 9 blue, 4 green, 2 red; 1 green, 9 red, 10 blue; 14 red, 10 green, 17 blue; 12 red, 1 green, 15 blue; 3 blue, 8 red, 2 green; 3 green, 11 red, 13 blue
+Game 19: 1 blue, 3 red, 9 green; 14 green, 3 red, 2 blue; 1 blue, 8 red, 11 green; 4 blue, 3 red; 14 red, 4 green; 5 red, 8 green
+Game 20: 2 blue, 3 red, 2 green; 3 blue, 2 green; 1 red, 4 green, 5 blue; 9 blue, 9 green, 3 red; 3 green, 1 blue, 4 red; 1 red, 9 green, 2 blue
+Game 21: 11 blue, 6 red; 8 red; 7 red, 6 green, 11 blue; 7 green, 7 red, 11 blue; 6 red, 12 blue
+Game 22: 7 green, 8 blue, 5 red; 12 green, 4 red, 2 blue; 12 green, 7 red, 11 blue
+Game 23: 5 green, 2 blue, 7 red; 6 blue, 8 green, 3 red; 10 red, 5 blue; 6 green, 3 blue; 1 green, 8 red
+Game 24: 17 blue, 1 green, 2 red; 2 red, 11 green, 9 blue; 6 red, 8 blue
+Game 25: 3 red, 1 blue, 19 green; 1 blue, 1 green, 6 red; 6 green, 5 blue; 4 green, 2 red, 19 blue; 6 red, 19 blue, 18 green; 1 red, 4 blue, 1 green
+Game 26: 3 red, 4 blue, 2 green; 2 red, 1 green, 3 blue; 14 blue, 1 green, 3 red; 5 green, 2 red, 10 blue; 9 blue, 2 red, 7 green; 15 blue, 4 green, 3 red
+Game 27: 3 blue, 5 red, 2 green; 6 red, 7 blue, 9 green; 14 green, 11 red, 6 blue; 3 blue, 20 green, 3 red; 6 red, 15 green, 7 blue; 13 red, 1 blue, 14 green
+Game 28: 4 blue, 7 green, 4 red; 2 red, 4 blue, 7 green; 6 blue, 11 green, 4 red; 6 blue, 6 green, 3 red; 6 green, 12 red
+Game 29: 3 red, 9 blue; 5 red, 5 blue; 2 green, 3 red, 3 blue
+Game 30: 1 green, 1 red, 3 blue; 1 blue, 1 red, 3 green; 1 blue; 1 blue, 3 green, 1 red; 2 blue, 2 green
+Game 31: 2 blue, 1 red; 1 blue, 1 green, 1 red; 4 blue, 3 green; 1 red, 3 green, 2 blue; 2 green
+Game 32: 1 blue, 6 green; 9 red, 6 green; 1 blue, 15 red, 3 green
+Game 33: 18 green, 1 blue, 10 red; 10 red, 1 blue, 7 green; 11 green; 6 red, 13 green
+Game 34: 10 red, 14 blue, 6 green; 2 green, 13 blue, 1 red; 8 green, 7 blue, 1 red; 9 blue, 7 green, 4 red
+Game 35: 5 blue, 9 green, 2 red; 7 green, 9 blue, 5 red; 1 green, 5 red
+Game 36: 10 red; 5 red, 1 green, 1 blue; 2 green, 8 red; 9 red, 2 green; 1 blue, 10 red; 6 red, 1 green, 1 blue
+Game 37: 13 red, 1 blue, 7 green; 1 green, 9 red, 3 blue; 4 red, 1 blue, 11 green; 1 red; 1 red, 1 blue; 6 red, 3 blue, 2 green
+Game 38: 3 blue, 12 red, 7 green; 1 green; 12 red, 1 blue
+Game 39: 7 green, 12 blue, 2 red; 3 red, 10 blue, 7 green; 2 red, 8 green, 3 blue; 3 red, 12 blue, 5 green
+Game 40: 7 green, 5 red; 1 green, 2 blue; 2 red, 1 green, 7 blue
+Game 41: 1 red, 7 green, 2 blue; 2 green, 2 blue; 4 blue, 7 green, 1 red; 1 blue, 1 red, 7 green; 6 blue, 2 red, 3 green
+Game 42: 6 blue; 4 green, 18 blue, 1 red; 10 green, 14 blue, 2 red; 6 blue, 4 green; 2 red, 13 blue, 6 green; 6 green, 1 red, 5 blue
+Game 43: 5 blue, 12 red; 5 blue, 2 green, 7 red; 9 red, 4 blue; 1 green, 11 red, 2 blue; 5 red, 1 green; 2 blue, 3 red, 1 green
+Game 44: 4 blue, 9 red, 4 green; 4 blue, 10 red; 4 green, 5 red; 1 green, 2 red, 3 blue
+Game 45: 7 green, 2 blue, 18 red; 19 red, 7 green; 8 green, 1 blue, 19 red; 2 green, 12 red; 6 red, 5 green; 7 green, 10 red
+Game 46: 1 blue, 15 red, 11 green; 7 red, 1 green, 5 blue; 13 red, 2 blue, 2 green; 7 green, 5 blue, 10 red; 12 green, 3 red, 1 blue
+Game 47: 2 blue, 2 red, 5 green; 7 green, 2 red, 7 blue; 10 blue, 2 red, 8 green
+Game 48: 8 green, 10 red; 6 green, 5 red; 12 green, 2 blue; 17 green, 5 red, 1 blue; 14 green, 3 blue, 16 red; 1 blue, 5 red
+Game 49: 5 blue, 6 red, 12 green; 8 blue, 15 green; 4 blue, 3 green, 3 red; 6 red, 11 green, 10 blue; 9 green, 2 red, 10 blue
+Game 50: 10 red, 11 green, 14 blue; 6 green, 8 blue, 17 red; 2 blue, 4 red; 6 blue, 8 green, 17 red; 17 red, 9 blue, 2 green; 13 blue, 16 red, 12 green
+Game 51: 12 red, 2 green, 7 blue; 5 blue, 10 red; 1 blue, 7 red, 1 green; 14 blue, 2 red, 1 green
+Game 52: 5 blue, 5 red, 8 green; 1 blue, 9 green, 7 red; 4 blue, 5 red, 3 green; 7 green, 2 blue, 2 red; 5 red, 3 blue, 17 green; 19 green, 1 red
+Game 53: 4 red, 1 blue, 2 green; 1 green; 2 red; 1 blue, 2 green; 2 green, 4 red
+Game 54: 7 red; 9 red, 2 blue, 14 green; 1 blue, 5 green; 7 green, 3 blue
+Game 55: 11 blue, 2 green; 11 blue, 9 green, 12 red; 8 green, 6 blue, 12 red
+Game 56: 2 green, 1 red, 2 blue; 4 red, 5 green, 5 blue; 5 red, 5 blue, 10 green; 8 red, 3 green, 3 blue
+Game 57: 7 red, 3 green; 1 blue, 6 red, 1 green; 1 blue; 7 red, 1 green, 1 blue; 2 red, 1 blue, 1 green; 3 green, 1 blue
+Game 58: 9 blue, 2 red; 2 green, 9 blue, 2 red; 5 blue, 4 green
+Game 59: 8 red; 5 green, 1 blue, 3 red; 1 green, 8 red
+Game 60: 9 green, 8 blue, 3 red; 10 green, 4 red; 8 blue, 2 green, 4 red; 1 red, 5 green, 7 blue; 1 green, 4 blue, 1 red; 4 blue
+Game 61: 5 blue, 9 red, 4 green; 5 green, 7 blue, 6 red; 7 green, 8 red; 7 blue, 4 red, 2 green; 8 red, 4 blue, 5 green; 3 green, 9 red, 7 blue
+Game 62: 9 red, 10 blue; 1 green, 7 red, 13 blue; 1 green, 11 blue; 6 red, 16 blue, 5 green; 20 red, 1 green, 3 blue
+Game 63: 9 red, 8 green, 1 blue; 13 green, 12 red, 1 blue; 7 green, 5 red, 3 blue
+Game 64: 3 red, 2 blue, 10 green; 3 green; 1 blue, 8 green, 2 red; 7 red, 1 blue, 4 green; 9 red, 1 blue, 4 green
+Game 65: 7 red, 6 green; 1 blue, 4 green, 7 red; 6 red; 6 red, 4 green, 1 blue
+Game 66: 4 blue, 4 green; 1 red, 7 green, 1 blue; 7 green, 3 red, 3 blue; 1 blue, 1 red, 6 green; 3 red, 7 green
+Game 67: 5 green, 16 blue, 5 red; 4 red, 7 green, 3 blue; 4 red, 4 green, 9 blue; 12 green, 5 red; 15 green, 3 red; 10 blue, 6 red, 1 green
+Game 68: 3 green, 3 blue, 5 red; 2 green, 6 blue; 2 green, 3 blue, 1 red; 1 blue, 11 red
+Game 69: 5 green, 1 blue; 16 green, 9 red; 10 red, 18 green
+Game 70: 1 blue, 1 green; 1 red; 1 red, 2 blue, 1 green; 1 green, 2 red; 2 blue, 2 red; 1 red
+Game 71: 11 red; 2 green, 3 blue, 13 red; 1 green, 3 blue; 15 red, 1 green, 3 blue; 4 red
+Game 72: 2 blue, 6 red, 18 green; 6 red, 8 green, 7 blue; 5 blue, 3 red, 12 green; 3 red, 2 blue, 4 green
+Game 73: 12 blue, 7 green, 4 red; 5 green, 2 red, 4 blue; 3 green, 3 red, 10 blue; 1 green, 12 blue, 6 red; 3 blue, 6 green, 14 red
+Game 74: 3 red; 1 blue, 8 green, 11 red; 3 green, 2 red
+Game 75: 5 green, 2 red, 1 blue; 8 green, 2 red; 11 green, 2 red; 2 red, 17 green; 3 blue, 3 green, 2 red
+Game 76: 1 blue, 5 green, 4 red; 8 green, 11 blue, 5 red; 8 blue, 2 red, 11 green
+Game 77: 1 red, 11 blue, 7 green; 8 green, 4 blue; 1 blue, 8 green
+Game 78: 1 green, 1 red, 1 blue; 3 green, 1 blue, 3 red; 10 green, 1 blue; 12 green
+Game 79: 1 red, 11 blue, 6 green; 3 green, 3 red, 5 blue; 16 blue, 1 red, 5 green; 11 blue, 3 green, 2 red; 8 blue, 6 green, 4 red
+Game 80: 5 green; 6 green, 7 red, 4 blue; 7 green, 5 blue; 6 blue, 6 green; 7 blue, 7 green; 6 green, 7 blue, 5 red
+Game 81: 1 green, 14 blue; 11 blue, 1 red; 1 red, 16 green, 2 blue; 9 green, 1 red, 13 blue; 10 green, 8 blue
+Game 82: 7 green, 7 red, 3 blue; 4 blue, 1 green, 4 red; 2 green, 14 blue, 3 red
+Game 83: 15 blue; 2 blue, 1 green, 4 red; 8 green, 4 red, 6 blue
+Game 84: 12 blue, 17 green; 6 green, 1 red, 16 blue; 1 blue, 1 red; 5 blue, 11 green
+Game 85: 5 blue, 15 green, 3 red; 4 blue, 1 green, 11 red; 8 red, 2 blue, 4 green
+Game 86: 11 blue, 16 green, 16 red; 11 blue, 17 red, 10 green; 8 green, 7 red
+Game 87: 2 red, 4 green, 2 blue; 2 blue, 6 green; 2 red, 3 blue, 3 green; 1 red, 4 green; 1 green, 2 blue, 2 red; 4 blue, 4 green
+Game 88: 10 red, 7 green; 2 blue, 6 red, 1 green; 8 blue, 8 red, 7 green; 2 green, 5 blue, 2 red; 3 blue, 3 red, 6 green
+Game 89: 9 blue, 16 green; 2 red, 5 blue, 6 green; 12 blue, 15 green; 8 green, 2 red, 3 blue
+Game 90: 18 red, 1 blue; 3 red, 5 blue, 4 green; 1 blue, 2 green, 6 red; 2 green, 16 red, 3 blue; 5 blue, 13 red, 5 green
+Game 91: 4 red, 7 green, 1 blue; 3 green, 16 blue, 2 red; 4 green, 8 blue
+Game 92: 4 red, 3 green; 5 red, 11 green, 1 blue; 16 green, 13 red; 15 green, 14 red, 3 blue; 3 red, 5 green, 2 blue
+Game 93: 2 blue, 1 red, 3 green; 10 blue, 1 red, 10 green; 11 blue, 16 green, 4 red; 2 green, 20 blue, 7 red; 11 green, 8 red, 15 blue; 9 green, 10 blue, 1 red
+Game 94: 2 blue, 12 red, 10 green; 16 red, 9 blue, 6 green; 5 green, 9 blue, 11 red; 4 red, 2 blue
+Game 95: 2 green, 9 red, 1 blue; 2 blue, 1 red; 2 green, 5 blue, 3 red
+Game 96: 1 green, 5 red, 13 blue; 1 green, 2 red, 13 blue; 2 green, 2 red, 17 blue; 3 red, 1 green; 6 red, 2 green; 1 green, 7 blue, 4 red
+Game 97: 1 green, 1 red, 1 blue; 2 blue, 11 green; 1 blue, 13 green; 9 blue, 6 green, 1 red; 10 green, 8 blue
+Game 98: 12 green, 9 red; 12 green, 10 blue, 3 red; 3 red, 13 green, 7 blue
+Game 99: 8 green, 10 blue, 1 red; 10 green, 2 red, 6 blue; 3 green, 1 blue, 1 red; 10 blue, 1 red
+Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,Ln="",Bn="",Nn="",Kn="",Rn="",Fn="",Hn="",Un="",Vn="",Wn="",Jn="",Qn="",Xn="",Yn="",Zn="",et="",nt="",tt="",rt="",lt="",st="",gt="",dt="",it="",ot="",ft="",vt="",bt="",ht="",ut="",ct="",xt="",pt="",mt="",jt="",kt="",at="",zt="",qt="",_t="",wt="",yt="",Gt="",Ot="",St="",Pt="";var Oe=Object.assign({"./advent/day01/solution.js":gn,"./advent/day02/solution.js":vn,"./advent/day03/solution.js":bn,"./advent/day04/solution.js":hn,"./advent/day05/solution.js":un,"./advent/day06/solution.js":cn,"./advent/day07/solution.js":xn,"./advent/day08/solution.js":pn,"./advent/day09/solution.js":mn,"./advent/day10/solution.js":jn,"./advent/day11/solution.js":kn,"./advent/day12/solution.js":an,"./advent/day13/solution.js":zn,"./advent/day14/solution.js":qn,"./advent/day15/solution.js":_n,"./advent/day16/solution.js":wn,"./advent/day17/solution.js":yn,"./advent/day18/solution.js":Gn,"./advent/day19/solution.js":On,"./advent/day20/solution.js":Sn,"./advent/day21/solution.js":Pn,"./advent/day22/solution.js":Mn,"./advent/day23/solution.js":Tn,"./advent/day24/solution.js":In,"./advent/day25/solution.js":En}),Se=Object.assign({"./advent/day01/input-test.txt":Dn,"./advent/day01/input.txt":An,"./advent/day02/input-test.txt":$n,"./advent/day02/input.txt":Cn,"./advent/day03/input-test.txt":Ln,"./advent/day03/input.txt":Bn,"./advent/day04/input-test.txt":Nn,"./advent/day04/input.txt":Kn,"./advent/day05/input-test.txt":Rn,"./advent/day05/input.txt":Fn,"./advent/day06/input-test.txt":Hn,"./advent/day06/input.txt":Un,"./advent/day07/input-test.txt":Vn,"./advent/day07/input.txt":Wn,"./advent/day08/input-test.txt":Jn,"./advent/day08/input.txt":Qn,"./advent/day09/input-test.txt":Xn,"./advent/day09/input.txt":Yn,"./advent/day10/input-test.txt":Zn,"./advent/day10/input.txt":et,"./advent/day11/input-test.txt":nt,"./advent/day11/input.txt":tt,"./advent/day12/input-test.txt":rt,"./advent/day12/input.txt":lt,"./advent/day13/input-test.txt":st,"./advent/day13/input.txt":gt,"./advent/day14/input-test.txt":dt,"./advent/day14/input.txt":it,"./advent/day15/input-test.txt":ot,"./advent/day15/input.txt":ft,"./advent/day16/input-test.txt":vt,"./advent/day16/input.txt":bt,"./advent/day17/input-test.txt":ht,"./advent/day17/input.txt":ut,"./advent/day18/input-test.txt":ct,"./advent/day18/input.txt":xt,"./advent/day19/input-test.txt":pt,"./advent/day19/input.txt":mt,"./advent/day20/input-test.txt":jt,"./advent/day20/input.txt":kt,"./advent/day21/input-test.txt":at,"./advent/day21/input.txt":zt,"./advent/day22/input-test.txt":qt,"./advent/day22/input.txt":_t,"./advent/day23/input-test.txt":wt,"./advent/day23/input.txt":yt,"./advent/day24/input-test.txt":Gt,"./advent/day24/input.txt":Ot,"./advent/day25/input-test.txt":St,"./advent/day25/input.txt":Pt});function Ae(e,n,t,l){this.day=e||"01",this.input=t||"",this.testInput=l||"",this.part1=n.part1||null,this.part2=n.part2||null,this.knownAnswers=(n.knownAnswers||[]).map(r=>String(r))}function Mt(){var e={},n={},t={};Object.keys(Oe).forEach(s=>{var b=/day(\d+)/.exec(s)[1];e[b]=Oe[s]||null}),Object.keys(Se).forEach(s=>{var b=/day(\d+)/.exec(s)[1],i=s.includes("-test")?t:n;i[b]=Se[s]||""});var l={},r=Object.keys(e).sort();return r.forEach(s=>{var b=e[s]||{},i=n[s]||"",h=t[s]||"";l[s]=new Ae(s,b,i,h)}),l}const Tt=Object.freeze(Object.defineProperty({__proto__:null,DayData:Ae,getDataByDay:Mt},Symbol.toStringTag,{value:"Module"}));function Pe(e,n,t){const l=e.slice();return l[27]=n[t],l}function Me(e){let n,t=e[27]+"",l,r,s;function b(){return e[11](e[27])}return{c(){n=c("button"),l=le(t),f(n,"class","button svelte-gd9guy"),E(n,"current",e[27]===e[2])},m(i,h){me(i,n,h),d(n,l),r||(s=[T(n,"keydown",null),T(n,"click",b)],r=!0)},p(i,h){e=i,h&2&&t!==(t=e[27]+"")&&ce(l,t),h&6&&E(n,"current",e[27]===e[2])},d(i){i&&ve(n),r=!1,R(s)}}}function Te(e){let n,t,l;return{c(){n=c("button"),n.textContent="run all",f(n,"class","button run-all-button svelte-gd9guy")},m(r,s){me(r,n,s),t||(l=[T(n,"keydown",null),T(n,"click",e[10])],t=!0)},p:Y,d(r){r&&ve(n),t=!1,R(l)}}}function It(e){let n,t,l,r,s,b,i,h,o,u,x,D,I,A=e[6][0]+"",B,$,_,N,Z,C,K,ge,F,H=e[6][1]+"",ee,de,G,U,ie,g,p,j,w,S,m,z,P,oe,M,ne,te,ke,re,ae,L,be,ze,V=Ge(e[1]),y=[];for(let v=0;v<V.length;v+=1)y[v]=Me(Pe(e,V,v));let O=e[1].length>1&&Te(e);return{c(){n=c("div"),t=c("h2"),t.textContent="Advent 2023",l=q(),r=c("div"),s=c("div"),s.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',b=q(),i=c("div");for(let v=0;v<y.length;v+=1)y[v].c();h=q(),O&&O.c(),o=q(),u=c("div"),x=c("h4"),x.textContent="Part 1:",D=q(),I=c("div"),B=le(A),$=q(),_=c("textarea"),Z=q(),C=c("div"),K=c("h4"),K.textContent="Part 2:",ge=q(),F=c("div"),ee=le(H),de=q(),G=c("textarea"),ie=q(),g=c("div"),p=c("h4"),p.textContent="Input:",j=q(),w=c("br"),S=q(),m=c("button"),m.textContent="Real",z=q(),P=c("button"),P.textContent="Test",oe=q(),M=c("textarea"),ne=q(),te=c("div"),ke=q(),re=c("div"),ae=le(`Catch errors
+      `),L=c("button"),L.textContent="x",f(s,"class","label svelte-gd9guy"),f(i,"class","day-list"),f(x,"class","svelte-gd9guy"),f(I,"class","time svelte-gd9guy"),f(u,"class","label svelte-gd9guy"),f(_,"name","output1"),f(_,"id","output1"),f(_,"rows",N=fe(e[5][0])),f(_,"class","svelte-gd9guy"),E(_,"known-good",e[7][0]),f(K,"class","svelte-gd9guy"),f(F,"class","time svelte-gd9guy"),f(C,"class","label svelte-gd9guy"),f(G,"name","output2"),f(G,"id","output2"),f(G,"rows",U=fe(e[5][1])),f(G,"class","svelte-gd9guy"),E(G,"known-good",e[7][1]),f(p,"class","svelte-gd9guy"),f(m,"class","button input-toggle svelte-gd9guy"),E(m,"current",!e[3]),f(P,"class","button input-toggle svelte-gd9guy"),E(P,"current",e[3]),f(g,"class","label svelte-gd9guy"),Re(g,"align-self","flex-start"),f(M,"name","input"),f(M,"id","input"),f(M,"rows","14"),f(M,"class","svelte-gd9guy"),f(L,"class","button input-toggle catch-button svelte-gd9guy"),E(L,"current",e[4]),f(re,"class","catch-area svelte-gd9guy"),f(r,"class","layout svelte-gd9guy"),f(n,"class","outer svelte-gd9guy")},m(v,k){me(v,n,k),d(n,t),d(n,l),d(n,r),d(r,s),d(r,b),d(r,i);for(let a=0;a<y.length;a+=1)y[a]&&y[a].m(i,null);d(i,h),O&&O.m(i,null),d(r,o),d(r,u),d(u,x),d(u,D),d(u,I),d(I,B),d(r,$),d(r,_),W(_,e[5][0]),d(r,Z),d(r,C),d(C,K),d(C,ge),d(C,F),d(F,ee),d(r,de),d(r,G),W(G,e[5][1]),d(r,ie),d(r,g),d(g,p),d(g,j),d(g,w),d(g,S),d(g,m),d(g,z),d(g,P),d(r,oe),d(r,M),W(M,e[0]),d(r,ne),d(r,te),d(r,ke),d(r,re),d(re,ae),d(re,L),be||(ze=[T(_,"input",e[12]),T(G,"input",e[13]),T(m,"keydown",null),T(m,"click",e[14]),T(P,"keydown",null),T(P,"click",e[15]),T(M,"input",e[16]),T(L,"keydown",null),T(L,"click",e[17])],be=!0)},p(v,[k]){if(k&262){V=Ge(v[1]);let a;for(a=0;a<V.length;a+=1){const qe=Pe(v,V,a);y[a]?y[a].p(qe,k):(y[a]=Me(qe),y[a].c(),y[a].m(i,h))}for(;a<y.length;a+=1)y[a].d(1);y.length=V.length}v[1].length>1?O?O.p(v,k):(O=Te(v),O.c(),O.m(i,null)):O&&(O.d(1),O=null),k&64&&A!==(A=v[6][0]+"")&&ce(B,A),k&32&&N!==(N=fe(v[5][0]))&&f(_,"rows",N),k&32&&W(_,v[5][0]),k&128&&E(_,"known-good",v[7][0]),k&64&&H!==(H=v[6][1]+"")&&ce(ee,H),k&32&&U!==(U=fe(v[5][1]))&&f(G,"rows",U),k&32&&W(G,v[5][1]),k&128&&E(G,"known-good",v[7][1]),k&8&&E(m,"current",!v[3]),k&8&&E(P,"current",v[3]),k&1&&W(M,v[0]),k&16&&E(L,"current",v[4])},i:Y,o:Y,d(v){v&&ve(n),Ne(y,v),O&&O.d(),be=!1,R(ze)}}}function fe(e){var n=String(e||"").split(`
+`).length;return Math.min(n,Math.max(n,1,10))}function Et(e,n,t){var l=g=>new Promise(p=>setTimeout(p,g)),r={},s=[],b="xx",i="",h=!1,o=!0,u=["",""],x=["",""],D=[!1,!1];function I(g=""){g&&t(2,b=g);var p=r[b];t(0,i=h?p?.testInput:p?.input),_()}function A(g=""){g&&_()}function B(g){t(3,h=!!g),I()}var $=!1;async function _(){if(!$){$=!0,t(5,u=["",""]),t(6,x=["",""]),await l(10);for(var g=1;g<3;g++){var[p,j]=N(b,g,i);Z(g,p,j,b),await l(1)}$=!1}}function N(g="",p=1,j=""){var w=(r[g]||{})["part"+p];if(!w)return["",-999];var S=performance.now();if(o)try{return[w(j),performance.now()-S]}catch(P){var m=String(P),z=/:(\d+:\d+)\)/.exec(P.stack||"");return z&&(m=`(${z[1]}) ${m}`),[m,performance.now()-S]}else return[w(j),performance.now()-S]}function Z(g=1,p="",j=0,w=""){t(5,u[g-1]=p,u),t(6,x[g-1]=j<0?"":`(${Math.round(j)}ms)`,x),t(5,u),t(6,x),w&&(t(7,D[g-1]=K(w,g,p),D),t(7,D))}async function C(){var te;if(!$){$=!0;var g=["",""],p=[0,0],j=[!0,!0];await l(10);for(var w=0;w<s.length;w++)for(var S=s[w],m=r[S],z=1;z<3;z++){var P=h?m.testInput:m.input,[oe,M]=N(S,z,P||""),ne=M>=0&&K(S,z,oe);j[te=z-1]&&(j[te]=ne),g[z-1]+=ne?"★":"ー",M>=0&&(p[z-1]+=M),Z(z,g[z-1],p[z-1]),await l(1)}t(7,D=j),$=!1}}function K(g="",p=1,j=""){var w=r[g]?.knownAnswers||[],S=p===1?0:2;h||S++;var m=String(w[S]||"");return!!(m&&m===String(j))}var ge=g=>{!g||!g.getDataByDay||(r=g.getDataByDay(),t(1,s=Object.keys(r).filter(p=>!!r[p].part1).sort()),I(s.at(-1)))};ge(Tt);const F=g=>I(g);function H(){u[0]=this.value,t(5,u)}function ee(){u[1]=this.value,t(5,u)}const de=()=>B(!1),G=()=>B(!0);function U(){i=this.value,t(0,i)}const ie=()=>{t(4,o=!o)};return e.$$.update=()=>{e.$$.dirty&1&&A(i)},[i,s,b,h,o,u,x,D,I,B,C,F,H,ee,de,G,U,ie]}class Dt extends en{constructor(n){super(),Ze(this,n,Et,It,Le,{})}}new Dt({target:document.querySelector(".app")});

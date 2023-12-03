@@ -1,0 +1,23 @@
+{
+	"include": [
+		"src/*.js",
+		"tools/*.js",
+	],
+	"exclude": [
+		"node_modules",
+	],
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"types": [
+			"vite/client"
+		],
+		"target": "ES6",
+		"module": "ESNext"
+	}
+}
