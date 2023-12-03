@@ -1,7 +1,7 @@
 {
 	"include": [
-		"src/*.js",
-		"tools/*.js",
+		"src/**/*.js",
+		"tools/**/*.js",
 	],
 	"exclude": [
 		"node_modules",
