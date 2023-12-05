@@ -1,4 +1,4 @@
-var Ae=Object.defineProperty;var De=(e,n,r)=>n in e?Ae(e,n,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[n]=r;var be=(e,n,r)=>(De(e,typeof n!="symbol"?n+"":n,r),r);(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const d of t)if(d.type==="childList")for(const s of d.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&l(s)}).observe(document,{childList:!0,subtree:!0});function r(t){const d={};return t.integrity&&(d.integrity=t.integrity),t.referrerPolicy&&(d.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?d.credentials="include":t.crossOrigin==="anonymous"?d.credentials="omit":d.credentials="same-origin",d}function l(t){if(t.ep)return;t.ep=!0;const d=r(t);fetch(t.href,d)}})();function Y(){}function Me(e){return e()}function _e(){return Object.create(null)}function R(e){e.forEach(Me)}function Te(e){return typeof e=="function"}function Le(e,n){return e!=e?n==n:e!==n||e&&typeof e=="object"||typeof e=="function"}function Be(e){return Object.keys(e).length===0}function v(e,n){e.appendChild(n)}function xe(e,n,r){e.insertBefore(n,r||null)}function ve(e){e.parentNode&&e.parentNode.removeChild(e)}function Ne(e,n){for(let r=0;r<e.length;r+=1)e[r]&&e[r].d(n)}function c(e){return document.createElement(e)}function de(e){return document.createTextNode(e)}function q(){return de(" ")}function P(e,n,r,l){return e.addEventListener(n,r,l),()=>e.removeEventListener(n,r,l)}function b(e,n,r){r==null?e.removeAttribute(n):e.getAttribute(n)!==r&&e.setAttribute(n,r)}function Ke(e){return Array.from(e.childNodes)}function ae(e,n){n=""+n,e.data!==n&&(e.data=n)}function W(e,n){e.value=n??""}function Re(e,n,r,l){r==null?e.style.removeProperty(n):e.style.setProperty(n,r,l?"important":"")}function T(e,n,r){e.classList.toggle(n,!!r)}let me;function le(e){me=e}const Q=[],we=[];let X=[];const Ce=[],Fe=Promise.resolve();let ce=!1;function He(){ce||(ce=!0,Fe.then(Ie))}function pe(e){X.push(e)}const ue=new Set;let J=0;function Ie(){if(J!==0)return;const e=me;do{try{for(;J<Q.length;){const n=Q[J];J++,le(n),Ue(n.$$)}}catch(n){throw Q.length=0,J=0,n}for(le(null),Q.length=0,J=0;we.length;)we.pop()();for(let n=0;n<X.length;n+=1){const r=X[n];ue.has(r)||(ue.add(r),r())}X.length=0}while(Q.length);for(;Ce.length;)Ce.pop()();ce=!1,ue.clear(),le(e)}function Ue(e){if(e.fragment!==null){e.update(),R(e.before_update);const n=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,n),e.after_update.forEach(pe)}}function Ve(e){const n=[],r=[];X.forEach(l=>e.indexOf(l)===-1?n.push(l):r.push(l)),r.forEach(l=>l()),X=n}const We=new Set;function Je(e,n){e&&e.i&&(We.delete(e),e.i(n))}function ye(e){return e?.length!==void 0?e:Array.from(e)}function Qe(e,n,r){const{fragment:l,after_update:t}=e.$$;l&&l.m(n,r),pe(()=>{const d=e.$$.on_mount.map(Me).filter(Te);e.$$.on_destroy?e.$$.on_destroy.push(...d):R(d),e.$$.on_mount=[]}),t.forEach(pe)}function Xe(e,n){const r=e.$$;r.fragment!==null&&(Ve(r.after_update),R(r.on_destroy),r.fragment&&r.fragment.d(n),r.on_destroy=r.fragment=null,r.ctx=[])}function Ye(e,n){e.$$.dirty[0]===-1&&(Q.push(e),He(),e.$$.dirty.fill(0)),e.$$.dirty[n/31|0]|=1<<n%31}function Ze(e,n,r,l,t,d,s=null,g=[-1]){const i=me;le(e);const o=e.$$={fragment:null,ctx:[],props:d,update:Y,not_equal:t,bound:_e(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(i?i.$$.context:[])),callbacks:_e(),dirty:g,skip_bound:!1,root:n.target||i.$$.root};s&&s(o.root);let h=!1;if(o.ctx=r?r(e,n.props||{},(a,I,...M)=>{const E=M.length?M[0]:I;return o.ctx&&t(o.ctx[a],o.ctx[a]=E)&&(!o.skip_bound&&o.bound[a]&&o.bound[a](E),h&&Ye(e,a)),I}):[],o.update(),h=!0,R(o.before_update),o.fragment=l?l(o.ctx):!1,n.target){if(n.hydrate){const a=Ke(n.target);o.fragment&&o.fragment.l(a),a.forEach(ve)}else o.fragment&&o.fragment.c();n.intro&&Je(e.$$.fragment),Qe(e,n.target,n.anchor),Ie()}le(i)}class en{constructor(){be(this,"$$");be(this,"$$set")}$destroy(){Xe(this,1),this.$destroy=Y}$on(n,r){if(!Te(r))return Y;const l=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return l.push(r),()=>{const t=l.indexOf(r);t!==-1&&l.splice(t,1)}}$set(n){this.$$set&&!Be(n)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}const nn="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(nn);var rn=[142,54304,281,54418];function tn(e=""){return e.split(/\n/).reduce((n,r)=>{var l=r.split("").filter(t=>/\d/.test(t));return n+parseInt(l[0]+l.at(-1))},0)}function dn(e=""){e=ln(e);var n=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return e.split(/\n/).reduce((r,l)=>{var t=-1,d=1/0,s=-1,g=-1;return n.forEach((i,o)=>{var h=l.indexOf(i);h>-1&&h<d&&(d=h,t=o%10);var a=l.lastIndexOf(i);a>-1&&a>g&&(g=a,s=o%10)}),r+parseInt(t+""+s)},0)}function ln(e){return e.startsWith(`1abc2
+var Ae=Object.defineProperty;var De=(e,n,r)=>n in e?Ae(e,n,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[n]=r;var ue=(e,n,r)=>(De(e,typeof n!="symbol"?n+"":n,r),r);(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const d of t)if(d.type==="childList")for(const g of d.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&s(g)}).observe(document,{childList:!0,subtree:!0});function r(t){const d={};return t.integrity&&(d.integrity=t.integrity),t.referrerPolicy&&(d.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?d.credentials="include":t.crossOrigin==="anonymous"?d.credentials="omit":d.credentials="same-origin",d}function s(t){if(t.ep)return;t.ep=!0;const d=r(t);fetch(t.href,d)}})();function Y(){}function Pe(e){return e()}function _e(){return Object.create(null)}function K(e){e.forEach(Pe)}function Ee(e){return typeof e=="function"}function Le(e,n){return e!=e?n==n:e!==n||e&&typeof e=="object"||typeof e=="function"}function Be(e){return Object.keys(e).length===0}function h(e,n){e.appendChild(n)}function me(e,n,r){e.insertBefore(n,r||null)}function ve(e){e.parentNode&&e.parentNode.removeChild(e)}function Ne(e,n){for(let r=0;r<e.length;r+=1)e[r]&&e[r].d(n)}function c(e){return document.createElement(e)}function de(e){return document.createTextNode(e)}function w(){return de(" ")}function E(e,n,r,s){return e.addEventListener(n,r,s),()=>e.removeEventListener(n,r,s)}function b(e,n,r){r==null?e.removeAttribute(n):e.getAttribute(n)!==r&&e.setAttribute(n,r)}function Re(e){return Array.from(e.childNodes)}function ae(e,n){n=""+n,e.data!==n&&(e.data=n)}function W(e,n){e.value=n??""}function Ke(e,n,r,s){r==null?e.style.removeProperty(n):e.style.setProperty(n,r,s?"important":"")}function I(e,n,r){e.classList.toggle(n,!!r)}let xe;function le(e){xe=e}const Q=[],we=[];let X=[];const Ce=[],Fe=Promise.resolve();let ce=!1;function He(){ce||(ce=!0,Fe.then(Te))}function pe(e){X.push(e)}const be=new Set;let J=0;function Te(){if(J!==0)return;const e=xe;do{try{for(;J<Q.length;){const n=Q[J];J++,le(n),Ue(n.$$)}}catch(n){throw Q.length=0,J=0,n}for(le(null),Q.length=0,J=0;we.length;)we.pop()();for(let n=0;n<X.length;n+=1){const r=X[n];be.has(r)||(be.add(r),r())}X.length=0}while(Q.length);for(;Ce.length;)Ce.pop()();ce=!1,be.clear(),le(e)}function Ue(e){if(e.fragment!==null){e.update(),K(e.before_update);const n=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,n),e.after_update.forEach(pe)}}function Ve(e){const n=[],r=[];X.forEach(s=>e.indexOf(s)===-1?n.push(s):r.push(s)),r.forEach(s=>s()),X=n}const We=new Set;function Je(e,n){e&&e.i&&(We.delete(e),e.i(n))}function ye(e){return e?.length!==void 0?e:Array.from(e)}function Qe(e,n,r){const{fragment:s,after_update:t}=e.$$;s&&s.m(n,r),pe(()=>{const d=e.$$.on_mount.map(Pe).filter(Ee);e.$$.on_destroy?e.$$.on_destroy.push(...d):K(d),e.$$.on_mount=[]}),t.forEach(pe)}function Xe(e,n){const r=e.$$;r.fragment!==null&&(Ve(r.after_update),K(r.on_destroy),r.fragment&&r.fragment.d(n),r.on_destroy=r.fragment=null,r.ctx=[])}function Ye(e,n){e.$$.dirty[0]===-1&&(Q.push(e),He(),e.$$.dirty.fill(0)),e.$$.dirty[n/31|0]|=1<<n%31}function Ze(e,n,r,s,t,d,g=null,l=[-1]){const i=xe;le(e);const o=e.$$={fragment:null,ctx:[],props:d,update:Y,not_equal:t,bound:_e(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(i?i.$$.context:[])),callbacks:_e(),dirty:l,skip_bound:!1,root:n.target||i.$$.root};g&&g(o.root);let f=!1;if(o.ctx=r?r(e,n.props||{},(u,q,...m)=>{const T=m.length?m[0]:q;return o.ctx&&t(o.ctx[u],o.ctx[u]=T)&&(!o.skip_bound&&o.bound[u]&&o.bound[u](T),f&&Ye(e,u)),q}):[],o.update(),f=!0,K(o.before_update),o.fragment=s?s(o.ctx):!1,n.target){if(n.hydrate){const u=Re(n.target);o.fragment&&o.fragment.l(u),u.forEach(ve)}else o.fragment&&o.fragment.c();n.intro&&Je(e.$$.fragment),Qe(e,n.target,n.anchor),Te()}le(i)}class en{constructor(){ue(this,"$$");ue(this,"$$set")}$destroy(){Xe(this,1),this.$destroy=Y}$on(n,r){if(!Ee(r))return Y;const s=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return s.push(r),()=>{const t=s.indexOf(r);t!==-1&&s.splice(t,1)}}$set(n){this.$$set&&!Be(n)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}const nn="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(nn);var rn=[142,54304,281,54418];function tn(e=""){return e.split(/\n/).reduce((n,r)=>{var s=r.split("").filter(t=>/\d/.test(t));return n+parseInt(s[0]+s.at(-1))},0)}function dn(e=""){e=ln(e);var n=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return e.split(/\n/).reduce((r,s)=>{var t=-1,d=1/0,g=-1,l=-1;return n.forEach((i,o)=>{var f=s.indexOf(i);f>-1&&f<d&&(d=f,t=o%10);var u=s.lastIndexOf(i);u>-1&&u>l&&(l=u,g=o%10)}),r+parseInt(t+""+g)},0)}function ln(e){return e.startsWith(`1abc2
 `)?`two1nine
 eightwothree
 abcone2threexyz
@@ -6,15 +6,17 @@ xtwone3four
 4nineeightseven2
 zoneight234
 7pqrstsixteen`:e}const sn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:rn,part1:tn,part2:dn},Symbol.toStringTag,{value:"Module"}));var gn=[8,2727,2286,56580];function on(e=""){var n=0,r={red:12,green:13,blue:14};return e.split(`
-`).forEach(l=>{var[t,d]=l.split(":"),s=d.split(";").every(g=>g.split(",").every(i=>{var[,o,h]=/(\d+)\s+(\S+)/.exec(i);return r[h]?parseInt(o)<=r[h]:!0}));s&&(n+=parseInt(/\d+/.exec(t)[0]))}),n}function fn(e=""){var n=0;return e.split(`
-`).forEach(r=>{var l={red:0,green:0,blue:0},[,t]=r.split(":");t.split(";").forEach(d=>{d.split(",").forEach(s=>{var[,g,i]=/(\d+)\s+(\S+)/.exec(s),o=parseInt(g);o>l[i]&&(l[i]=o)})}),n+=l.red*l.green*l.blue}),n}const vn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:gn,part1:on,part2:fn},Symbol.toStringTag,{value:"Module"}));var hn=[4361,539637,467835,82818007];function bn(e=""){var n=[],r=[];e.split(`
-`).forEach((t,d)=>{n[d]=[],r[d]=[];for(var s=0;s<t.length;s++){var g=t[s];if(g!==".")if(/\d/.test(g)){var i=parseInt(t.substring(s)),o=String(i).length;n[d].push({y:d,x:s,value:i,len:o}),s+=o-1}else r[d].push({y:d,x:s})}});var l=0;return n.forEach(t=>{t.forEach(d=>{for(var s=d.y-1;s<d.y+2;s++){var g=r[s]||[],i=g.some(o=>{if(!(o.x<d.x-1)&&!(o.x>d.x+d.len))return!0});if(i){l+=d.value;return}}})}),l}function un(e=""){var n=[],r=[];e.split(`
-`).forEach((t,d)=>{n[d]=[],r[d]=[];for(var s=0;s<t.length;s++){var g=t[s];if(g!==".")if(/\d/.test(g)){var i=parseInt(t.substring(s)),o=String(i).length;n[d].push({y:d,x:s,value:i,len:o}),s+=o-1}else g==="*"&&r[d].push({y:d,x:s})}});var l=0;return r.forEach(t=>{t.forEach(d=>{for(var s=0,g=1,i=d.y-1;i<d.y+2;i++){var o=n[i]||[];o.forEach(h=>{d.x<h.x-1||d.x>h.x+h.len||(s++,g*=h.value)})}s===2&&(l+=g)})}),l}const an=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:hn,part1:bn,part2:un},Symbol.toStringTag,{value:"Module"}));var cn=[13,26443,30,6284877];function pn(e=""){var n=0;return e.split(`
-`).forEach((r,l)=>{var t=r.split(":")[1].split("|"),d=t[0].trim().split(/\s+/).map(i=>parseInt(i)),s=t[1].trim().split(/\s+/).map(i=>parseInt(i)),g=s.reduce((i,o)=>i+(d.includes(o)?1:0),0);g>0&&(n+=Math.pow(2,g-1))}),n}function xn(e=""){var n=e.split(`
-`).map((t,d)=>{var s=t.split(":")[1].split("|"),g=s[0].trim().split(/\s+/).map(h=>parseInt(h)),i=s[1].trim().split(/\s+/).map(h=>parseInt(h)),o=i.reduce((h,a)=>h+(g.includes(a)?1:0),0);return o>0&&(r+=Math.pow(2,o-1)),o}),r=0,l=[];return n.forEach((t,d)=>{for(var s=1+(l[d]||0),g=n[d],i=0;i<g;i++){var o=d+1+i;l[o]=(l[o]||0)+s}r+=s}),r}const mn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:cn,part1:pn,part2:xn},Symbol.toStringTag,{value:"Module"})),jn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),kn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),zn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),qn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),_n=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),wn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Cn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),yn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Gn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),On=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Sn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),$n=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Pn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Mn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Tn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),In=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),En=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),An=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Dn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ln=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Bn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Nn=`1abc2
+`).forEach(s=>{var[t,d]=s.split(":"),g=d.split(";").every(l=>l.split(",").every(i=>{var[,o,f]=/(\d+)\s+(\S+)/.exec(i);return r[f]?parseInt(o)<=r[f]:!0}));g&&(n+=parseInt(/\d+/.exec(t)[0]))}),n}function fn(e=""){var n=0;return e.split(`
+`).forEach(r=>{var s={red:0,green:0,blue:0},[,t]=r.split(":");t.split(";").forEach(d=>{d.split(",").forEach(g=>{var[,l,i]=/(\d+)\s+(\S+)/.exec(g),o=parseInt(l);o>s[i]&&(s[i]=o)})}),n+=s.red*s.green*s.blue}),n}const vn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:gn,part1:on,part2:fn},Symbol.toStringTag,{value:"Module"}));var hn=[4361,539637,467835,82818007];function un(e=""){var n=[],r=[];e.split(`
+`).forEach((t,d)=>{n[d]=[],r[d]=[];for(var g=0;g<t.length;g++){var l=t[g];if(l!==".")if(/\d/.test(l)){var i=parseInt(t.substring(g)),o=String(i).length;n[d].push({y:d,x:g,value:i,len:o}),g+=o-1}else r[d].push({y:d,x:g})}});var s=0;return n.forEach(t=>{t.forEach(d=>{for(var g=d.y-1;g<d.y+2;g++){var l=r[g]||[],i=l.some(o=>{if(!(o.x<d.x-1)&&!(o.x>d.x+d.len))return!0});if(i){s+=d.value;return}}})}),s}function bn(e=""){var n=[],r=[];e.split(`
+`).forEach((t,d)=>{n[d]=[],r[d]=[];for(var g=0;g<t.length;g++){var l=t[g];if(l!==".")if(/\d/.test(l)){var i=parseInt(t.substring(g)),o=String(i).length;n[d].push({y:d,x:g,value:i,len:o}),g+=o-1}else l==="*"&&r[d].push({y:d,x:g})}});var s=0;return r.forEach(t=>{t.forEach(d=>{for(var g=0,l=1,i=d.y-1;i<d.y+2;i++){var o=n[i]||[];o.forEach(f=>{d.x<f.x-1||d.x>f.x+f.len||(g++,l*=f.value)})}g===2&&(s+=l)})}),s}const an=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:hn,part1:un,part2:bn},Symbol.toStringTag,{value:"Module"}));var cn=[13,26443,30,6284877];function pn(e=""){var n=0;return e.split(`
+`).forEach((r,s)=>{var t=r.split(":")[1].split("|"),d=t[0].trim().split(/\s+/).map(i=>parseInt(i)),g=t[1].trim().split(/\s+/).map(i=>parseInt(i)),l=g.reduce((i,o)=>i+(d.includes(o)?1:0),0);l>0&&(n+=Math.pow(2,l-1))}),n}function mn(e=""){var n=e.split(`
+`).map((t,d)=>{var g=t.split(":")[1].split("|"),l=g[0].trim().split(/\s+/).map(f=>parseInt(f)),i=g[1].trim().split(/\s+/).map(f=>parseInt(f)),o=i.reduce((f,u)=>f+(l.includes(u)?1:0),0);return o>0&&(r+=Math.pow(2,o-1)),o}),r=0,s=[];return n.forEach((t,d)=>{for(var g=1+(s[d]||0),l=n[d],i=0;i<l;i++){var o=d+1+i;s[o]=(s[o]||0)+g}r+=g}),r}const xn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:cn,part1:pn,part2:mn},Symbol.toStringTag,{value:"Module"}));var jn=[35,525792406,46,79004094];function kn(e=""){var n=[],r=null;e.split(`
+`).forEach((t,d)=>{if(/:/.test(t)){var[,g]=t.split(":");n.push(r=[]),t=g}var l=t.trim().split(/\s+/).filter(i=>i).map(i=>parseInt(i));l.length>0&&r.push(l)});var s=n.shift()[0];return n.forEach(t=>{var d={};t.forEach(([g,l,i])=>{s.forEach((o,f)=>{d[f]||o>=l&&o<l+i&&(s[f]+=g-l,d[f]=!0)})})}),s.reduce((t,d)=>Math.min(t,d),1/0)}function zn(e=""){var n,r=[],s;e.split(`
+`).forEach((l,i)=>{if(/:/.test(l)){var[,o]=l.split(":");if(!n){n=o.trim().split(/\s+/).map(m=>parseInt(m));return}r.push(s=[]),l=o}if(l=l.trim(),!!l){var[f,u,q]=l.split(/\s+/).map(m=>parseInt(m));s.push([u,u+q,f-u])}}),r.forEach(l=>{l.sort((i,o)=>i[0]-o[0])});for(var t=1/0,d=(l,i,o=0)=>{if(o>=r.length){l<t&&(t=l);return}var f=r[o];f.some(([u,q,m])=>{if(!(l>=q)){if(i<=u)return!0;l<u&&(d(l,u,o+1),l=u);var T=Math.min(i,q);d(l+m,T+m,o+1),l=T}}),l<i&&d(l,i,o+1)},g=0;g<n.length;g+=2)d(n[g],n[g]+n[g+1]);return t}const qn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:jn,part1:kn,part2:zn},Symbol.toStringTag,{value:"Module"})),_n=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),wn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Cn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),yn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Gn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),On=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Sn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),$n=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Mn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Pn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),En=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Tn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),In=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),An=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Dn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ln=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Bn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Nn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Rn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Kn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Fn=`1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
-treb7uchet`,Kn=`8eight1
+treb7uchet`,Hn=`8eight1
 98126
 fourfourthreehnbhkmscqxdfksg64bvpppznkh
 8fivenvvtrlj
@@ -1013,11 +1015,11 @@ eight6kxqqdnqp
 6seventntzffjkkvvhtgtwoonethreefivekzvptvxfjg
 three6blrfsgdqsxgkbqj3
 eight1eighteight8
-8four419eighteight1bpv`,Rn=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+8four419eighteight1bpv`,Un=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
-Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,Fn=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,Vn=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
 Game 2: 9 red, 2 green; 5 red, 1 blue, 6 green; 3 green, 13 red, 1 blue; 3 red, 6 green; 1 blue, 14 red, 6 green
 Game 3: 6 red, 3 blue, 8 green; 6 blue, 12 green, 15 red; 3 blue, 18 green, 4 red
 Game 4: 1 blue, 4 red; 2 blue, 6 red; 13 blue; 11 blue, 1 green, 8 red; 10 blue, 3 green, 2 red; 3 green, 7 blue
@@ -1116,7 +1118,7 @@ Game 96: 1 green, 5 red, 13 blue; 1 green, 2 red, 13 blue; 2 green, 2 red, 17 bl
 Game 97: 1 green, 1 red, 1 blue; 2 blue, 11 green; 1 blue, 13 green; 9 blue, 6 green, 1 red; 10 green, 8 blue
 Game 98: 12 green, 9 red; 12 green, 10 blue, 3 red; 3 red, 13 green, 7 blue
 Game 99: 8 green, 10 blue, 1 red; 10 green, 2 red, 6 blue; 3 green, 1 blue, 1 red; 10 blue, 1 red
-Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,Hn=`467..114..
+Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,Wn=`467..114..
 ...*......
 ..35..633.
 ......#...
@@ -1125,7 +1127,7 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ..592.....
 ......755.
 ...$.*....
-.664.598..`,Un=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
+.664.598..`,Jn=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
 .........*.........778....................*....124...................................*...............*........%..26.........................
 ......194..380....@....900..........639....467........478*..............582...........798.............326...........894.........#...........
 904...........*2.......#......259.....*..........801......464................597.569.............794+................$..218....502..........
@@ -1264,12 +1266,12 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ....#.......&..%692........+......#..333............41...............=204..................868............/.164..................316........
 ...346..................+.......$...*......396..315....119..@755...............942..918........................*........631.651.............
 .................=....836......402.755............=.......*.......*....181.62...*.....%........................596......*............#591...
-...............764.....................................488.....880.209........416..................183...156..........917...................`,Vn=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+...............764.....................................488.....880.209........416..................183...156..........917...................`,Qn=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
 Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
 Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
 Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
 Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
-Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,Wn=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
+Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,Xn=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
 Card   2: 83 16 24 23 59 70 14 57 74 53 | 79 82 70 23 61 14 74 57 36 37 59 72 83 16  3  2 28 63 50 60 38 86 97 24 53
 Card   3: 12 77 13 14 48 55 69  4 18 81 | 69  7 94 88 18 73 55 48 49 81 14 21 12 15  5 27 22 84 51 52 13 77  4 57 17
 Card   4: 32 35 57 27 15  5 16 40 36 46 | 84 47 76 35 83  5 22 15 72 48 57 33 46 53 43 16 10 65 32 51 36 44 40 27 97
@@ -1486,6 +1488,287 @@ Card 214: 38  6 78 12 88 14 51 82 29 75 | 70 16 48 74 19 29  5 71 40 93  1 18 83
 Card 215: 67 60 86 35 17 62 55 27 54 70 |  9 26 45 56 43 72  1 32 25 88  5 87 73 81  2 34 57 13 61  3 84  4 33 92 59
 Card 216: 18 71  4 89 17 31 63 28 25 20 | 67 97  6 76  3 95 30 75 99 26 27 32 21 73 86 31 59 98 85  1 54 93 94 69 66
 Card 217: 54 65 75 13 46  8 37 25 95 82 | 57 14 83 33 69 47 68 64  4 21 17 92  2 48 30 70 62 50 36  7 72 66 41 85 97
-Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,Jn="",Qn="",Xn="",Yn="",Zn="",e1="",n1="",r1="",t1="",d1="",l1="",s1="",g1="",i1="",o1="",f1="",v1="",h1="",b1="",u1="",a1="",c1="",p1="",x1="",m1="",j1="",k1="",z1="",q1="",_1="",w1="",C1="",y1="",G1="",O1="",S1="",$1="",P1="",M1="",T1="",I1="",E1="";var Ge=Object.assign({"./advent/day01/solution.js":sn,"./advent/day02/solution.js":vn,"./advent/day03/solution.js":an,"./advent/day04/solution.js":mn,"./advent/day05/solution.js":jn,"./advent/day06/solution.js":kn,"./advent/day07/solution.js":zn,"./advent/day08/solution.js":qn,"./advent/day09/solution.js":_n,"./advent/day10/solution.js":wn,"./advent/day11/solution.js":Cn,"./advent/day12/solution.js":yn,"./advent/day13/solution.js":Gn,"./advent/day14/solution.js":On,"./advent/day15/solution.js":Sn,"./advent/day16/solution.js":$n,"./advent/day17/solution.js":Pn,"./advent/day18/solution.js":Mn,"./advent/day19/solution.js":Tn,"./advent/day20/solution.js":In,"./advent/day21/solution.js":En,"./advent/day22/solution.js":An,"./advent/day23/solution.js":Dn,"./advent/day24/solution.js":Ln,"./advent/day25/solution.js":Bn}),Oe=Object.assign({"./advent/day01/input-test.txt":Nn,"./advent/day01/input.txt":Kn,"./advent/day02/input-test.txt":Rn,"./advent/day02/input.txt":Fn,"./advent/day03/input-test.txt":Hn,"./advent/day03/input.txt":Un,"./advent/day04/input-test.txt":Vn,"./advent/day04/input.txt":Wn,"./advent/day05/input-test.txt":Jn,"./advent/day05/input.txt":Qn,"./advent/day06/input-test.txt":Xn,"./advent/day06/input.txt":Yn,"./advent/day07/input-test.txt":Zn,"./advent/day07/input.txt":e1,"./advent/day08/input-test.txt":n1,"./advent/day08/input.txt":r1,"./advent/day09/input-test.txt":t1,"./advent/day09/input.txt":d1,"./advent/day10/input-test.txt":l1,"./advent/day10/input.txt":s1,"./advent/day11/input-test.txt":g1,"./advent/day11/input.txt":i1,"./advent/day12/input-test.txt":o1,"./advent/day12/input.txt":f1,"./advent/day13/input-test.txt":v1,"./advent/day13/input.txt":h1,"./advent/day14/input-test.txt":b1,"./advent/day14/input.txt":u1,"./advent/day15/input-test.txt":a1,"./advent/day15/input.txt":c1,"./advent/day16/input-test.txt":p1,"./advent/day16/input.txt":x1,"./advent/day17/input-test.txt":m1,"./advent/day17/input.txt":j1,"./advent/day18/input-test.txt":k1,"./advent/day18/input.txt":z1,"./advent/day19/input-test.txt":q1,"./advent/day19/input.txt":_1,"./advent/day20/input-test.txt":w1,"./advent/day20/input.txt":C1,"./advent/day21/input-test.txt":y1,"./advent/day21/input.txt":G1,"./advent/day22/input-test.txt":O1,"./advent/day22/input.txt":S1,"./advent/day23/input-test.txt":$1,"./advent/day23/input.txt":P1,"./advent/day24/input-test.txt":M1,"./advent/day24/input.txt":T1,"./advent/day25/input-test.txt":I1,"./advent/day25/input.txt":E1});function Ee(e,n,r,l){this.day=e||"01",this.input=r||"",this.testInput=l||"",this.part1=n.part1||null,this.part2=n.part2||null,this.knownAnswers=(n.knownAnswers||[]).map(t=>String(t))}function A1(){var e={},n={},r={};Object.keys(Ge).forEach(d=>{var s=/day(\d+)/.exec(d)[1];e[s]=Ge[d]||null}),Object.keys(Oe).forEach(d=>{var s=/day(\d+)/.exec(d)[1],g=d.includes("-test")?r:n;g[s]=Oe[d]||""});var l={},t=Object.keys(e).sort();return t.forEach(d=>{var s=e[d]||{},g=n[d]||"",i=r[d]||"";l[d]=new Ee(d,s,g,i)}),l}const D1=Object.freeze(Object.defineProperty({__proto__:null,DayData:Ee,getDataByDay:A1},Symbol.toStringTag,{value:"Module"}));function Se(e,n,r){const l=e.slice();return l[27]=n[r],l}function $e(e){let n,r=e[27]+"",l,t,d;function s(){return e[11](e[27])}return{c(){n=c("button"),l=de(r),b(n,"class","button svelte-gd9guy"),T(n,"current",e[27]===e[2])},m(g,i){xe(g,n,i),v(n,l),t||(d=[P(n,"keydown",null),P(n,"click",s)],t=!0)},p(g,i){e=g,i&2&&r!==(r=e[27]+"")&&ae(l,r),i&6&&T(n,"current",e[27]===e[2])},d(g){g&&ve(n),t=!1,R(d)}}}function Pe(e){let n,r,l;return{c(){n=c("button"),n.textContent="run all",b(n,"class","button run-all-button svelte-gd9guy")},m(t,d){xe(t,n,d),r||(l=[P(n,"keydown",null),P(n,"click",e[10])],r=!0)},p:Y,d(t){t&&ve(n),r=!1,R(l)}}}function L1(e){let n,r,l,t,d,s,g,i,o,h,a,I,M,E=e[6][0]+"",B,A,_,N,Z,D,K,se,F,H=e[6][1]+"",ee,ge,y,U,ie,f,p,m,w,O,x,z,S,oe,$,ne,re,je,te,ke,L,he,ze,V=ye(e[1]),C=[];for(let u=0;u<V.length;u+=1)C[u]=$e(Se(e,V,u));let G=e[1].length>1&&Pe(e);return{c(){n=c("div"),r=c("h2"),r.textContent="Advent 2023",l=q(),t=c("div"),d=c("div"),d.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',s=q(),g=c("div");for(let u=0;u<C.length;u+=1)C[u].c();i=q(),G&&G.c(),o=q(),h=c("div"),a=c("h4"),a.textContent="Part 1:",I=q(),M=c("div"),B=de(E),A=q(),_=c("textarea"),Z=q(),D=c("div"),K=c("h4"),K.textContent="Part 2:",se=q(),F=c("div"),ee=de(H),ge=q(),y=c("textarea"),ie=q(),f=c("div"),p=c("h4"),p.textContent="Input:",m=q(),w=c("br"),O=q(),x=c("button"),x.textContent="Real",z=q(),S=c("button"),S.textContent="Test",oe=q(),$=c("textarea"),ne=q(),re=c("div"),je=q(),te=c("div"),ke=de(`Catch errors
-      `),L=c("button"),L.textContent="x",b(d,"class","label svelte-gd9guy"),b(g,"class","day-list"),b(a,"class","svelte-gd9guy"),b(M,"class","time svelte-gd9guy"),b(h,"class","label svelte-gd9guy"),b(_,"name","output1"),b(_,"id","output1"),b(_,"rows",N=fe(e[5][0])),b(_,"class","svelte-gd9guy"),T(_,"known-good",e[7][0]),b(K,"class","svelte-gd9guy"),b(F,"class","time svelte-gd9guy"),b(D,"class","label svelte-gd9guy"),b(y,"name","output2"),b(y,"id","output2"),b(y,"rows",U=fe(e[5][1])),b(y,"class","svelte-gd9guy"),T(y,"known-good",e[7][1]),b(p,"class","svelte-gd9guy"),b(x,"class","button input-toggle svelte-gd9guy"),T(x,"current",!e[3]),b(S,"class","button input-toggle svelte-gd9guy"),T(S,"current",e[3]),b(f,"class","label svelte-gd9guy"),Re(f,"align-self","flex-start"),b($,"name","input"),b($,"id","input"),b($,"rows","14"),b($,"class","svelte-gd9guy"),b(L,"class","button input-toggle catch-button svelte-gd9guy"),T(L,"current",e[4]),b(te,"class","catch-area svelte-gd9guy"),b(t,"class","layout svelte-gd9guy"),b(n,"class","outer svelte-gd9guy")},m(u,j){xe(u,n,j),v(n,r),v(n,l),v(n,t),v(t,d),v(t,s),v(t,g);for(let k=0;k<C.length;k+=1)C[k]&&C[k].m(g,null);v(g,i),G&&G.m(g,null),v(t,o),v(t,h),v(h,a),v(h,I),v(h,M),v(M,B),v(t,A),v(t,_),W(_,e[5][0]),v(t,Z),v(t,D),v(D,K),v(D,se),v(D,F),v(F,ee),v(t,ge),v(t,y),W(y,e[5][1]),v(t,ie),v(t,f),v(f,p),v(f,m),v(f,w),v(f,O),v(f,x),v(f,z),v(f,S),v(t,oe),v(t,$),W($,e[0]),v(t,ne),v(t,re),v(t,je),v(t,te),v(te,ke),v(te,L),he||(ze=[P(_,"input",e[12]),P(y,"input",e[13]),P(x,"keydown",null),P(x,"click",e[14]),P(S,"keydown",null),P(S,"click",e[15]),P($,"input",e[16]),P(L,"keydown",null),P(L,"click",e[17])],he=!0)},p(u,[j]){if(j&262){V=ye(u[1]);let k;for(k=0;k<V.length;k+=1){const qe=Se(u,V,k);C[k]?C[k].p(qe,j):(C[k]=$e(qe),C[k].c(),C[k].m(g,i))}for(;k<C.length;k+=1)C[k].d(1);C.length=V.length}u[1].length>1?G?G.p(u,j):(G=Pe(u),G.c(),G.m(g,null)):G&&(G.d(1),G=null),j&64&&E!==(E=u[6][0]+"")&&ae(B,E),j&32&&N!==(N=fe(u[5][0]))&&b(_,"rows",N),j&32&&W(_,u[5][0]),j&128&&T(_,"known-good",u[7][0]),j&64&&H!==(H=u[6][1]+"")&&ae(ee,H),j&32&&U!==(U=fe(u[5][1]))&&b(y,"rows",U),j&32&&W(y,u[5][1]),j&128&&T(y,"known-good",u[7][1]),j&8&&T(x,"current",!u[3]),j&8&&T(S,"current",u[3]),j&1&&W($,u[0]),j&16&&T(L,"current",u[4])},i:Y,o:Y,d(u){u&&ve(n),Ne(C,u),G&&G.d(),he=!1,R(ze)}}}function fe(e){var n=String(e||"").split(`
-`).length;return Math.min(n,Math.max(n,1,10))}function B1(e,n,r){var l=f=>new Promise(p=>setTimeout(p,f)),t={},d=[],s="xx",g="",i=!1,o=!0,h=["",""],a=["",""],I=[!1,!1];function M(f=""){f&&r(2,s=f);var p=t[s];r(0,g=i?p?.testInput:p?.input),_()}function E(f=""){f&&_()}function B(f){r(3,i=!!f),M()}var A=!1;async function _(){if(!A){A=!0,r(5,h=["",""]),r(6,a=["",""]),await l(10);for(var f=1;f<3;f++){var[p,m]=N(s,f,g);Z(f,p,m,s),await l(1)}A=!1}}function N(f="",p=1,m=""){var w=(t[f]||{})["part"+p];if(!w)return["",-999];var O=performance.now();if(o)try{return[w(m),performance.now()-O]}catch(S){var x=String(S),z=/:(\d+:\d+)\)/.exec(S.stack||"");return z&&(x=`(${z[1]}) ${x}`),[x,performance.now()-O]}else return[w(m),performance.now()-O]}function Z(f=1,p="",m=0,w=""){r(5,h[f-1]=p,h),r(6,a[f-1]=m<0?"":`(${Math.round(m)}ms)`,a),r(5,h),r(6,a),w&&(r(7,I[f-1]=K(w,f,p),I),r(7,I))}async function D(){var re;if(!A){A=!0;var f=["",""],p=[0,0],m=[!0,!0];await l(10);for(var w=0;w<d.length;w++)for(var O=d[w],x=t[O],z=1;z<3;z++){var S=i?x.testInput:x.input,[oe,$]=N(O,z,S||""),ne=$>=0&&K(O,z,oe);m[re=z-1]&&(m[re]=ne),f[z-1]+=ne?"★":"ー",$>=0&&(p[z-1]+=$),Z(z,f[z-1],p[z-1]),await l(1)}r(7,I=m),A=!1}}function K(f="",p=1,m=""){var w=t[f]?.knownAnswers||[],O=p===1?0:2;i||O++;var x=String(w[O]||"");return!!(x&&x===String(m))}var se=f=>{!f||!f.getDataByDay||(t=f.getDataByDay(),r(1,d=Object.keys(t).filter(p=>!!t[p].part1).sort()),M(d.at(-1)))};se(D1);const F=f=>M(f);function H(){h[0]=this.value,r(5,h)}function ee(){h[1]=this.value,r(5,h)}const ge=()=>B(!1),y=()=>B(!0);function U(){g=this.value,r(0,g)}const ie=()=>{r(4,o=!o)};return e.$$.update=()=>{e.$$.dirty&1&&E(g)},[g,d,s,i,o,h,a,I,M,B,D,F,H,ee,ge,y,U,ie]}class N1 extends en{constructor(n){super(),Ze(this,n,B1,L1,Le,{})}}new N1({target:document.querySelector(".app")});
+Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,Yn=`seeds: 79 14 55 13
+
+seed-to-soil map:
+50 98 2
+52 50 48
+
+soil-to-fertilizer map:
+0 15 37
+37 52 2
+39 0 15
+
+fertilizer-to-water map:
+49 53 8
+0 11 42
+42 0 7
+57 7 4
+
+water-to-light map:
+88 18 7
+18 25 70
+
+light-to-temperature map:
+45 77 23
+81 45 19
+68 64 13
+
+temperature-to-humidity map:
+0 69 1
+1 0 69
+
+humidity-to-location map:
+60 56 37
+56 93 4`,Zn=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
+
+seed-to-soil map:
+3680121696 1920754815 614845600
+1920754815 3846369604 448597692
+193356576 570761634 505124585
+2369352507 2535600415 31531965
+2400884472 2567132380 1279237224
+0 459278395 111483239
+698481161 97868205 361410190
+1059891351 0 15994868
+111483239 15994868 81873337
+
+soil-to-fertilizer map:
+1633669237 1273301814 72865265
+2398515176 2671190790 99210785
+2397916384 3018946373 598792
+4034325916 3061716397 20017393
+3298612516 3793795301 14249501
+4030007411 3051046904 2833129
+1906984482 224872691 14620134
+864506893 1590633724 149044542
+1029530319 442871336 36727018
+1921604616 770934113 68546178
+3560536321 3114405501 28822192
+1019762634 1263534129 9767685
+3852235341 3579014714 60339892
+2385228698 1577946038 12687686
+2234322470 239492825 150906228
+0 170310676 54562015
+3208946111 3808044802 89666405
+1209615399 839480291 424053838
+4032840540 4041982568 1485376
+2497725961 2174737461 293042810
+2002543511 1346167079 231778959
+3312862017 3475611771 103402943
+318739997 1739678266 354749094
+1013551435 3012735174 6211199
+4014277153 4160859076 15730258
+3589358513 3143227693 230682158
+1990150794 2467780271 12392717
+3051046904 3081733790 32671711
+3820040671 3761600631 32194670
+148429321 0 170310676
+673489091 2480172988 191017802
+1066257337 627576051 143358062
+2790768771 2770401575 242333599
+3091554979 4043467944 117391132
+3416264960 3897711207 144271361
+3912575233 3373909851 101701920
+4072291714 3639354606 104297620
+3083718615 3053880033 7836364
+54562015 3019545165 13557205
+1759006785 479598354 147977697
+68119220 2094427360 80310101
+1706534502 390399053 52472283
+4054343309 3743652226 17948405
+
+fertilizer-to-water map:
+0 1095885172 129797665
+2661548513 1044284418 17872363
+3282164642 3678907615 214830258
+1440687421 2218635146 325889720
+3496994900 4208791298 25912548
+3253828209 4136945159 5561683
+1797056017 864689597 109403664
+3259389892 4186016548 22774750
+2578517508 1225682837 83031005
+3193832718 3618912124 59995491
+3695649169 3214450646 211194594
+820325042 974093261 70191157
+1284591017 1074888739 20996433
+2929761569 3893737873 85668135
+1305587450 2605461705 73959171
+2168339930 1062156781 12731958
+2465234843 2135490203 52666067
+3522907448 4108091872 882860
+3523790308 4255675252 39292044
+2517900910 1308713842 60616598
+3563082352 3176039879 38410767
+3015429704 3979406008 128685864
+1913427402 2131043562 4446641
+2235159285 1419841841 190190495
+3673886186 4108974732 21762983
+891504291 1610032336 393086726
+3927815169 3425645240 193266884
+4121082053 3002154636 173885243
+2084864581 2004107154 83475349
+1917874043 557612753 69524983
+890516199 2003119062 988092
+766355924 2551492587 53969118
+1379546621 0 61140800
+3187625274 4130737715 6207444
+528804063 627137736 237551861
+1987399026 230411125 97465555
+1906459681 2544524866 6967721
+2184647884 1369330440 50511401
+2425349780 2091158499 39885063
+2181071888 2087582503 3575996
+3144115568 4142506842 43509706
+1766577141 2188156270 30478876
+359533738 61140800 169270325
+129797665 327876680 229736073
+3906843763 4234703846 20971406
+3601493119 2929761569 72393067
+
+water-to-light map:
+2375927917 1595026882 126334140
+1307603095 818620477 43777869
+2050676589 1855896418 112224406
+3618302244 2909504698 119958941
+3078570200 3088215627 6211083
+3084781283 3094426710 141266337
+524666822 53020621 149058240
+673725062 862398346 147671362
+2364320682 2577001713 11607235
+1941578413 1584221500 10805382
+2162900995 2536766467 40235246
+162015400 237365123 4480592
+821396424 241845715 141336168
+166495992 1138498800 212882164
+4277433486 4220367555 17533810
+3226047620 2229635217 307131250
+2909428734 1968120824 34606070
+1885573816 3954749082 56004597
+2711875933 2868267590 41237108
+0 726306378 92314099
+2944034804 1721361022 134535396
+1584221500 3392008740 301352316
+962732592 34415039 18605582
+2235705153 2101019688 128615529
+4252936467 4237901365 24497019
+92314099 202078861 35286262
+981338174 400041457 326264921
+379378156 1010069708 128429092
+3591930858 3693361056 26371386
+3785017329 3719732442 235016640
+2502262057 4010753679 209613876
+3533178870 3029463639 58751988
+3738261185 2821511446 46756144
+4020033969 2806534555 14976891
+1952383795 2002726894 98292794
+127600361 0 34415039
+2753113041 3235693047 156315693
+507807248 383181883 16859574
+2203136241 4262398384 32568912
+4035010860 2588608948 217925607
+
+light-to-temperature map:
+2137189745 1335050925 100355790
+639139367 2440321747 987829
+1663612748 1778059435 153830272
+1122754252 1950103191 82536600
+1929621334 1199531530 135519395
+1286703174 2032639791 207137687
+245313533 981575774 217955756
+2597564380 2824691125 293777778
+895004176 331442633 25226735
+1493840861 236388681 616173
+1494457034 764560381 107637728
+1817443020 1435406715 112178314
+1205290852 356669368 33552643
+474799702 0 164339665
+2341054397 2260378974 100255179
+1043066658 2360634153 79687594
+125852143 390222011 119461390
+3924383937 3130691909 13614218
+2467721984 3747288823 76649669
+2065140729 164339665 72049016
+920230911 1673437172 104622263
+640127196 509683401 254876980
+1024853174 1931889707 18213484
+2331983314 2251307891 9071083
+2237545535 237004854 94437779
+3912160931 3118468903 12223006
+1238843495 933716095 47859679
+3326002417 3517222025 230066798
+3556069215 3144306127 241363224
+3797432439 4180238804 114728492
+1602094762 872198109 61517986
+2544371653 4127046077 53192727
+2891342158 3823938492 303107585
+463269289 2239777478 11530413
+3194449743 3385669351 131552674
+3937998155 2467721984 356969141
+0 1547585029 125852143
+
+temperature-to-humidity map:
+2687600833 2313887435 187105587
+3281196981 2291603041 22284394
+1771250828 1899269239 314167725
+784031720 478456148 306959384
+2605226464 1771250828 58348072
+2085418553 3793564740 111907603
+1090991104 785415532 575136195
+3437652344 1829598900 69670339
+2874706420 2500993022 389039942
+3303481375 3905472343 134170969
+305575572 0 478456148
+3263746362 2890032964 17450619
+2527060387 2213436964 78166077
+2428623843 3695128196 98436544
+2663574536 4270940999 24026297
+3507322683 2907483583 787644613
+2197326156 4039643312 231297687
+0 1360551727 305575572
+
+humidity-to-location map:
+1919184105 1156349110 51114849
+4031284281 3411510751 25609498
+0 171183359 79004094
+1253227229 2072782209 122019778
+4056893779 3437120249 136289693
+3402931364 4156827458 101778985
+84557792 1207463959 134801591
+635909965 1371746366 266495395
+4029464617 4127764171 1819664
+4193183472 2857352625 101783824
+1375247007 2200355685 41445634
+1996492203 0 171183359
+3601595563 3699895117 427869054
+2218993186 1133540977 22808133
+3217192942 2959136449 140385316
+2987922009 4258606443 9236491
+2628749093 2543337773 86365212
+2167675562 369831582 51317624
+3504710349 2446452559 96885214
+902405360 421149206 108869392
+3357578258 2811999519 45353106
+1196458443 1638241761 56768786
+1178674352 693035436 17784091
+1970298954 530018598 26193249
+2868723842 3099521765 91954544
+1522874936 895259169 18612073
+2841599480 4267842934 27124362
+1880563756 1695010547 38620349
+1011274752 913871242 137918784
+219359383 556211847 136823589
+1785350971 250187453 95212785
+2960678386 4129583835 27243623
+540622614 1977494858 95287351
+356182972 710819527 184439642
+1498443592 345400238 24431344
+1416692641 1051790026 81750951
+1541487009 1733630896 243863962
+79004094 2194801987 5553698
+1149193536 1342265550 29480816
+2997158500 3191476309 220034442
+2715114305 3573409942 126485175
+2446452559 2629702985 182296534`,e1="",n1="",r1="",t1="",d1="",l1="",s1="",g1="",i1="",o1="",f1="",v1="",h1="",u1="",b1="",a1="",c1="",p1="",m1="",x1="",j1="",k1="",z1="",q1="",_1="",w1="",C1="",y1="",G1="",O1="",S1="",$1="",M1="",P1="",E1="",T1="",I1="",A1="",D1="",L1="";var Ge=Object.assign({"./advent/day01/solution.js":sn,"./advent/day02/solution.js":vn,"./advent/day03/solution.js":an,"./advent/day04/solution.js":xn,"./advent/day05/solution.js":qn,"./advent/day06/solution.js":_n,"./advent/day07/solution.js":wn,"./advent/day08/solution.js":Cn,"./advent/day09/solution.js":yn,"./advent/day10/solution.js":Gn,"./advent/day11/solution.js":On,"./advent/day12/solution.js":Sn,"./advent/day13/solution.js":$n,"./advent/day14/solution.js":Mn,"./advent/day15/solution.js":Pn,"./advent/day16/solution.js":En,"./advent/day17/solution.js":Tn,"./advent/day18/solution.js":In,"./advent/day19/solution.js":An,"./advent/day20/solution.js":Dn,"./advent/day21/solution.js":Ln,"./advent/day22/solution.js":Bn,"./advent/day23/solution.js":Nn,"./advent/day24/solution.js":Rn,"./advent/day25/solution.js":Kn}),Oe=Object.assign({"./advent/day01/input-test.txt":Fn,"./advent/day01/input.txt":Hn,"./advent/day02/input-test.txt":Un,"./advent/day02/input.txt":Vn,"./advent/day03/input-test.txt":Wn,"./advent/day03/input.txt":Jn,"./advent/day04/input-test.txt":Qn,"./advent/day04/input.txt":Xn,"./advent/day05/input-test.txt":Yn,"./advent/day05/input.txt":Zn,"./advent/day06/input-test.txt":e1,"./advent/day06/input.txt":n1,"./advent/day07/input-test.txt":r1,"./advent/day07/input.txt":t1,"./advent/day08/input-test.txt":d1,"./advent/day08/input.txt":l1,"./advent/day09/input-test.txt":s1,"./advent/day09/input.txt":g1,"./advent/day10/input-test.txt":i1,"./advent/day10/input.txt":o1,"./advent/day11/input-test.txt":f1,"./advent/day11/input.txt":v1,"./advent/day12/input-test.txt":h1,"./advent/day12/input.txt":u1,"./advent/day13/input-test.txt":b1,"./advent/day13/input.txt":a1,"./advent/day14/input-test.txt":c1,"./advent/day14/input.txt":p1,"./advent/day15/input-test.txt":m1,"./advent/day15/input.txt":x1,"./advent/day16/input-test.txt":j1,"./advent/day16/input.txt":k1,"./advent/day17/input-test.txt":z1,"./advent/day17/input.txt":q1,"./advent/day18/input-test.txt":_1,"./advent/day18/input.txt":w1,"./advent/day19/input-test.txt":C1,"./advent/day19/input.txt":y1,"./advent/day20/input-test.txt":G1,"./advent/day20/input.txt":O1,"./advent/day21/input-test.txt":S1,"./advent/day21/input.txt":$1,"./advent/day22/input-test.txt":M1,"./advent/day22/input.txt":P1,"./advent/day23/input-test.txt":E1,"./advent/day23/input.txt":T1,"./advent/day24/input-test.txt":I1,"./advent/day24/input.txt":A1,"./advent/day25/input-test.txt":D1,"./advent/day25/input.txt":L1});function Ie(e,n,r,s){this.day=e||"01",this.input=r||"",this.testInput=s||"",this.part1=n.part1||null,this.part2=n.part2||null,this.knownAnswers=(n.knownAnswers||[]).map(t=>String(t))}function B1(){var e={},n={},r={};Object.keys(Ge).forEach(d=>{var g=/day(\d+)/.exec(d)[1];e[g]=Ge[d]||null}),Object.keys(Oe).forEach(d=>{var g=/day(\d+)/.exec(d)[1],l=d.includes("-test")?r:n;l[g]=Oe[d]||""});var s={},t=Object.keys(e).sort();return t.forEach(d=>{var g=e[d]||{},l=n[d]||"",i=r[d]||"";s[d]=new Ie(d,g,l,i)}),s}const N1=Object.freeze(Object.defineProperty({__proto__:null,DayData:Ie,getDataByDay:B1},Symbol.toStringTag,{value:"Module"}));function Se(e,n,r){const s=e.slice();return s[27]=n[r],s}function $e(e){let n,r=e[27]+"",s,t,d;function g(){return e[11](e[27])}return{c(){n=c("button"),s=de(r),b(n,"class","button svelte-gd9guy"),I(n,"current",e[27]===e[2])},m(l,i){me(l,n,i),h(n,s),t||(d=[E(n,"keydown",null),E(n,"click",g)],t=!0)},p(l,i){e=l,i&2&&r!==(r=e[27]+"")&&ae(s,r),i&6&&I(n,"current",e[27]===e[2])},d(l){l&&ve(n),t=!1,K(d)}}}function Me(e){let n,r,s;return{c(){n=c("button"),n.textContent="run all",b(n,"class","button run-all-button svelte-gd9guy")},m(t,d){me(t,n,d),r||(s=[E(n,"keydown",null),E(n,"click",e[10])],r=!0)},p:Y,d(t){t&&ve(n),r=!1,K(s)}}}function R1(e){let n,r,s,t,d,g,l,i,o,f,u,q,m,T=e[6][0]+"",B,A,C,N,Z,D,R,se,F,H=e[6][1]+"",ee,ge,O,U,ie,v,p,j,y,$,x,_,M,oe,P,ne,re,je,te,ke,L,he,ze,V=ye(e[1]),G=[];for(let a=0;a<V.length;a+=1)G[a]=$e(Se(e,V,a));let S=e[1].length>1&&Me(e);return{c(){n=c("div"),r=c("h2"),r.textContent="Advent 2023",s=w(),t=c("div"),d=c("div"),d.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',g=w(),l=c("div");for(let a=0;a<G.length;a+=1)G[a].c();i=w(),S&&S.c(),o=w(),f=c("div"),u=c("h4"),u.textContent="Part 1:",q=w(),m=c("div"),B=de(T),A=w(),C=c("textarea"),Z=w(),D=c("div"),R=c("h4"),R.textContent="Part 2:",se=w(),F=c("div"),ee=de(H),ge=w(),O=c("textarea"),ie=w(),v=c("div"),p=c("h4"),p.textContent="Input:",j=w(),y=c("br"),$=w(),x=c("button"),x.textContent="Real",_=w(),M=c("button"),M.textContent="Test",oe=w(),P=c("textarea"),ne=w(),re=c("div"),je=w(),te=c("div"),ke=de(`Catch errors
+      `),L=c("button"),L.textContent="x",b(d,"class","label svelte-gd9guy"),b(l,"class","day-list"),b(u,"class","svelte-gd9guy"),b(m,"class","time svelte-gd9guy"),b(f,"class","label svelte-gd9guy"),b(C,"name","output1"),b(C,"id","output1"),b(C,"rows",N=fe(e[5][0])),b(C,"class","svelte-gd9guy"),I(C,"known-good",e[7][0]),b(R,"class","svelte-gd9guy"),b(F,"class","time svelte-gd9guy"),b(D,"class","label svelte-gd9guy"),b(O,"name","output2"),b(O,"id","output2"),b(O,"rows",U=fe(e[5][1])),b(O,"class","svelte-gd9guy"),I(O,"known-good",e[7][1]),b(p,"class","svelte-gd9guy"),b(x,"class","button input-toggle svelte-gd9guy"),I(x,"current",!e[3]),b(M,"class","button input-toggle svelte-gd9guy"),I(M,"current",e[3]),b(v,"class","label svelte-gd9guy"),Ke(v,"align-self","flex-start"),b(P,"name","input"),b(P,"id","input"),b(P,"rows","14"),b(P,"class","svelte-gd9guy"),b(L,"class","button input-toggle catch-button svelte-gd9guy"),I(L,"current",e[4]),b(te,"class","catch-area svelte-gd9guy"),b(t,"class","layout svelte-gd9guy"),b(n,"class","outer svelte-gd9guy")},m(a,k){me(a,n,k),h(n,r),h(n,s),h(n,t),h(t,d),h(t,g),h(t,l);for(let z=0;z<G.length;z+=1)G[z]&&G[z].m(l,null);h(l,i),S&&S.m(l,null),h(t,o),h(t,f),h(f,u),h(f,q),h(f,m),h(m,B),h(t,A),h(t,C),W(C,e[5][0]),h(t,Z),h(t,D),h(D,R),h(D,se),h(D,F),h(F,ee),h(t,ge),h(t,O),W(O,e[5][1]),h(t,ie),h(t,v),h(v,p),h(v,j),h(v,y),h(v,$),h(v,x),h(v,_),h(v,M),h(t,oe),h(t,P),W(P,e[0]),h(t,ne),h(t,re),h(t,je),h(t,te),h(te,ke),h(te,L),he||(ze=[E(C,"input",e[12]),E(O,"input",e[13]),E(x,"keydown",null),E(x,"click",e[14]),E(M,"keydown",null),E(M,"click",e[15]),E(P,"input",e[16]),E(L,"keydown",null),E(L,"click",e[17])],he=!0)},p(a,[k]){if(k&262){V=ye(a[1]);let z;for(z=0;z<V.length;z+=1){const qe=Se(a,V,z);G[z]?G[z].p(qe,k):(G[z]=$e(qe),G[z].c(),G[z].m(l,i))}for(;z<G.length;z+=1)G[z].d(1);G.length=V.length}a[1].length>1?S?S.p(a,k):(S=Me(a),S.c(),S.m(l,null)):S&&(S.d(1),S=null),k&64&&T!==(T=a[6][0]+"")&&ae(B,T),k&32&&N!==(N=fe(a[5][0]))&&b(C,"rows",N),k&32&&W(C,a[5][0]),k&128&&I(C,"known-good",a[7][0]),k&64&&H!==(H=a[6][1]+"")&&ae(ee,H),k&32&&U!==(U=fe(a[5][1]))&&b(O,"rows",U),k&32&&W(O,a[5][1]),k&128&&I(O,"known-good",a[7][1]),k&8&&I(x,"current",!a[3]),k&8&&I(M,"current",a[3]),k&1&&W(P,a[0]),k&16&&I(L,"current",a[4])},i:Y,o:Y,d(a){a&&ve(n),Ne(G,a),S&&S.d(),he=!1,K(ze)}}}function fe(e){var n=String(e||"").split(`
+`).length;return Math.min(n,Math.max(n,1,10))}function K1(e,n,r){var s=v=>new Promise(p=>setTimeout(p,v)),t={},d=[],g="xx",l="",i=!1,o=!0,f=["",""],u=["",""],q=[!1,!1];function m(v=""){v&&r(2,g=v);var p=t[g];r(0,l=i?p?.testInput:p?.input),C()}function T(v=""){v&&C()}function B(v){r(3,i=!!v),m()}var A=!1;async function C(){if(!A){A=!0,r(5,f=["",""]),r(6,u=["",""]),await s(10);for(var v=1;v<3;v++){var[p,j]=N(g,v,l);Z(v,p,j,g),await s(1)}A=!1}}function N(v="",p=1,j=""){var y=(t[v]||{})["part"+p];if(!y)return["",-999];var $=performance.now();if(o)try{return[y(j),performance.now()-$]}catch(M){var x=String(M),_=/:(\d+:\d+)\)/.exec(M.stack||"");return _&&(x=`(${_[1]}) ${x}`),[x,performance.now()-$]}else return[y(j),performance.now()-$]}function Z(v=1,p="",j=0,y=""){r(5,f[v-1]=p,f),r(6,u[v-1]=j<0?"":`(${Math.round(j)}ms)`,u),r(5,f),r(6,u),y&&(r(7,q[v-1]=R(y,v,p),q),r(7,q))}async function D(){var re;if(!A){A=!0;var v=["",""],p=[0,0],j=[!0,!0];await s(10);for(var y=0;y<d.length;y++)for(var $=d[y],x=t[$],_=1;_<3;_++){var M=i?x.testInput:x.input,[oe,P]=N($,_,M||""),ne=P>=0&&R($,_,oe);j[re=_-1]&&(j[re]=ne),v[_-1]+=ne?"★":"ー",P>=0&&(p[_-1]+=P),Z(_,v[_-1],p[_-1]),await s(1)}r(7,q=j),A=!1}}function R(v="",p=1,j=""){var y=t[v]?.knownAnswers||[],$=p===1?0:2;i||$++;var x=String(y[$]||"");return!!(x&&x===String(j))}var se=v=>{!v||!v.getDataByDay||(t=v.getDataByDay(),r(1,d=Object.keys(t).filter(p=>!!t[p].part1).sort()),m(d.at(-1)))};se(N1);const F=v=>m(v);function H(){f[0]=this.value,r(5,f)}function ee(){f[1]=this.value,r(5,f)}const ge=()=>B(!1),O=()=>B(!0);function U(){l=this.value,r(0,l)}const ie=()=>{r(4,o=!o)};return e.$$.update=()=>{e.$$.dirty&1&&T(l)},[l,d,g,i,o,f,u,q,m,B,D,F,H,ee,ge,O,U,ie]}class F1 extends en{constructor(n){super(),Ze(this,n,K1,R1,Le,{})}}new F1({target:document.querySelector(".app")});
