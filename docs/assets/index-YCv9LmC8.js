@@ -1,25 +1,28 @@
-var Pn=Object.defineProperty;var In=(n,e,t)=>e in n?Pn(n,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[e]=t;var bn=(n,e,t)=>(In(n,typeof e!="symbol"?e+"":e,t),t);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))g(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const l of s.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&g(l)}).observe(document,{childList:!0,subtree:!0});function t(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function g(r){if(r.ep)return;r.ep=!0;const s=t(r);fetch(r.href,s)}})();function Y(){}function On(n){return n()}function Tn(){return Object.create(null)}function B(n){n.forEach(On)}function Sn(n){return typeof n=="function"}function Ln(n,e){return n!=n?e==e:n!==e||n&&typeof n=="object"||typeof n=="function"}function Dn(n){return Object.keys(n).length===0}function u(n,e){n.appendChild(e)}function xn(n,e,t){n.insertBefore(e,t||null)}function hn(n){n.parentNode&&n.parentNode.removeChild(n)}function Bn(n,e){for(let t=0;t<n.length;t+=1)n[t]&&n[t].d(e)}function p(n){return document.createElement(n)}function sn(n){return document.createTextNode(n)}function T(){return sn(" ")}function O(n,e,t,g){return n.addEventListener(e,t,g),()=>n.removeEventListener(e,t,g)}function b(n,e,t){t==null?n.removeAttribute(e):n.getAttribute(e)!==t&&n.setAttribute(e,t)}function Nn(n){return Array.from(n.childNodes)}function cn(n,e){e=""+e,n.data!==e&&(n.data=e)}function U(n,e){n.value=e??""}function Rn(n,e,t,g){t==null?n.style.removeProperty(e):n.style.setProperty(e,t,g?"important":"")}function $(n,e,t){n.classList.toggle(e,!!t)}let jn;function dn(n){jn=n}const W=[],Jn=[];let X=[];const Kn=[],Fn=Promise.resolve();let pn=!1;function Hn(){pn||(pn=!0,Fn.then($n))}function mn(n){X.push(n)}const an=new Set;let V=0;function $n(){if(V!==0)return;const n=jn;do{try{for(;V<W.length;){const e=W[V];V++,dn(e),Un(e.$$)}}catch(e){throw W.length=0,V=0,e}for(dn(null),W.length=0,V=0;Jn.length;)Jn.pop()();for(let e=0;e<X.length;e+=1){const t=X[e];an.has(t)||(an.add(t),t())}X.length=0}while(W.length);for(;Kn.length;)Kn.pop()();pn=!1,an.clear(),dn(n)}function Un(n){if(n.fragment!==null){n.update(),B(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(mn)}}function Vn(n){const e=[],t=[];X.forEach(g=>n.indexOf(g)===-1?e.push(g):t.push(g)),t.forEach(g=>g()),X=e}const Wn=new Set;function Xn(n,e){n&&n.i&&(Wn.delete(n),n.i(e))}function An(n){return n?.length!==void 0?n:Array.from(n)}function Yn(n,e,t){const{fragment:g,after_update:r}=n.$$;g&&g.m(e,t),mn(()=>{const s=n.$$.on_mount.map(On).filter(Sn);n.$$.on_destroy?n.$$.on_destroy.push(...s):B(s),n.$$.on_mount=[]}),r.forEach(mn)}function Zn(n,e){const t=n.$$;t.fragment!==null&&(Vn(t.after_update),B(t.on_destroy),t.fragment&&t.fragment.d(e),t.on_destroy=t.fragment=null,t.ctx=[])}function ne(n,e){n.$$.dirty[0]===-1&&(W.push(n),Hn(),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function ee(n,e,t,g,r,s,l=null,d=[-1]){const o=jn;dn(n);const i=n.$$={fragment:null,ctx:[],props:s,update:Y,not_equal:r,bound:Tn(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(e.context||(o?o.$$.context:[])),callbacks:Tn(),dirty:d,skip_bound:!1,root:e.target||o.$$.root};l&&l(i.root);let f=!1;if(i.ctx=t?t(n,e.props||{},(v,a,...m)=>{const S=m.length?m[0]:a;return i.ctx&&r(i.ctx[v],i.ctx[v]=S)&&(!i.skip_bound&&i.bound[v]&&i.bound[v](S),f&&ne(n,v)),a}):[],i.update(),f=!0,B(i.before_update),i.fragment=g?g(i.ctx):!1,e.target){if(e.hydrate){const v=Nn(e.target);i.fragment&&i.fragment.l(v),v.forEach(hn)}else i.fragment&&i.fragment.c();e.intro&&Xn(n.$$.fragment),Yn(n,e.target,e.anchor),$n()}dn(o)}class re{constructor(){bn(this,"$$");bn(this,"$$set")}$destroy(){Zn(this,1),this.$destroy=Y}$on(e,t){if(!Sn(t))return Y;const g=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return g.push(t),()=>{const r=g.indexOf(t);r!==-1&&g.splice(r,1)}}$set(e){this.$$set&&!Dn(e)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}const te="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(te);var se=[142,54304,281,54418];function de(n=""){return n.split(/\n/).reduce((e,t)=>{var g=t.split("").filter(r=>/\d/.test(r));return e+parseInt(g[0]+g.at(-1))},0)}function le(n=""){n=ge(n);var e=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return n.split(/\n/).reduce((t,g)=>{var r=-1,s=1/0,l=-1,d=-1;return e.forEach((o,i)=>{var f=g.indexOf(o);f>-1&&f<s&&(s=f,r=i%10);var v=g.lastIndexOf(o);v>-1&&v>d&&(d=v,l=i%10)}),t+parseInt(r+""+l)},0)}function ge(n){return n.startsWith(`1abc2
-`)?`two1nine
+var P1=Object.defineProperty;var N1=(n,e,r)=>e in n?P1(n,e,{enumerable:!0,configurable:!0,writable:!0,value:r}):n[e]=r;var m1=(n,e,r)=>(N1(n,typeof e!="symbol"?e+"":e,r),r);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))g(s);new MutationObserver(s=>{for(const t of s)if(t.type==="childList")for(const d of t.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&g(d)}).observe(document,{childList:!0,subtree:!0});function r(s){const t={};return s.integrity&&(t.integrity=s.integrity),s.referrerPolicy&&(t.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?t.credentials="include":s.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function g(s){if(s.ep)return;s.ep=!0;const t=r(s);fetch(s.href,t)}})();function e1(){}function D1(n){return n()}function _1(){return Object.create(null)}function V(n){n.forEach(D1)}function A1(n){return typeof n=="function"}function w1(n,e){return n!=n?e==e:n!==e||n&&typeof n=="object"||typeof n=="function"}function y1(n){return Object.keys(n).length===0}function h(n,e){n.appendChild(e)}function c1(n,e,r){n.insertBefore(e,r||null)}function f1(n){n.parentNode&&n.parentNode.removeChild(n)}function z1(n,e){for(let r=0;r<n.length;r+=1)n[r]&&n[r].d(e)}function T(n){return document.createElement(n)}function i1(n){return document.createTextNode(n)}function _(){return i1(" ")}function S(n,e,r,g){return n.addEventListener(e,r,g),()=>n.removeEventListener(e,r,g)}function p(n,e,r){r==null?n.removeAttribute(e):n.getAttribute(e)!==r&&n.setAttribute(e,r)}function O1(n){return Array.from(n.childNodes)}function K1(n,e){e=""+e,n.data!==e&&(n.data=e)}function U(n,e){n.value=e??""}function $1(n,e,r,g){r==null?n.style.removeProperty(e):n.style.setProperty(e,r,g?"important":"")}function M(n,e,r){n.classList.toggle(e,!!r)}let k1;function o1(n){k1=n}const Y=[],L1=[];let n1=[];const q1=[],E1=Promise.resolve();let J1=!1;function Z1(){J1||(J1=!0,E1.then(H1))}function Q1(n){n1.push(n)}const T1=new Set;let W=0;function H1(){if(W!==0)return;const n=k1;do{try{for(;W<Y.length;){const e=Y[W];W++,o1(e),I1(e.$$)}}catch(e){throw Y.length=0,W=0,e}for(o1(null),Y.length=0,W=0;L1.length;)L1.pop()();for(let e=0;e<n1.length;e+=1){const r=n1[e];T1.has(r)||(T1.add(r),r())}n1.length=0}while(Y.length);for(;q1.length;)q1.pop()();J1=!1,T1.clear(),o1(n)}function I1(n){if(n.fragment!==null){n.update(),V(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(Q1)}}function U1(n){const e=[],r=[];n1.forEach(g=>n.indexOf(g)===-1?e.push(g):r.push(g)),r.forEach(g=>g()),n1=e}const W1=new Set;function Y1(n,e){n&&n.i&&(W1.delete(n),n.i(e))}function b1(n){return n?.length!==void 0?n:Array.from(n)}function nn(n,e,r){const{fragment:g,after_update:s}=n.$$;g&&g.m(e,r),Q1(()=>{const t=n.$$.on_mount.map(D1).filter(A1);n.$$.on_destroy?n.$$.on_destroy.push(...t):V(t),n.$$.on_mount=[]}),s.forEach(Q1)}function en(n,e){const r=n.$$;r.fragment!==null&&(U1(r.after_update),V(r.on_destroy),r.fragment&&r.fragment.d(e),r.on_destroy=r.fragment=null,r.ctx=[])}function rn(n,e){n.$$.dirty[0]===-1&&(Y.push(n),Z1(),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function tn(n,e,r,g,s,t,d=null,l=[-1]){const o=k1;o1(n);const i=n.$$={fragment:null,ctx:[],props:t,update:e1,not_equal:s,bound:_1(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(e.context||(o?o.$$.context:[])),callbacks:_1(),dirty:l,skip_bound:!1,root:e.target||o.$$.root};d&&d(i.root);let v=!1;if(i.ctx=r?r(n,e.props||{},(f,b,...m)=>{const z=m.length?m[0]:b;return i.ctx&&s(i.ctx[f],i.ctx[f]=z)&&(!i.skip_bound&&i.bound[f]&&i.bound[f](z),v&&rn(n,f)),b}):[],i.update(),v=!0,V(i.before_update),i.fragment=g?g(i.ctx):!1,e.target){if(e.hydrate){const f=O1(e.target);i.fragment&&i.fragment.l(f),f.forEach(f1)}else i.fragment&&i.fragment.c();e.intro&&Y1(n.$$.fragment),nn(n,e.target,e.anchor),H1()}o1(o)}class sn{constructor(){m1(this,"$$");m1(this,"$$set")}$destroy(){en(this,1),this.$destroy=e1}$on(e,r){if(!A1(r))return e1;const g=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return g.push(r),()=>{const s=g.indexOf(r);s!==-1&&g.splice(s,1)}}$set(e){this.$$set&&!y1(e)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}const dn="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(dn);var ln=[54304,54418,142,,,281];function gn(n=""){return n.split(/\n/).reduce((e,r)=>{var g=r.split("").filter(s=>/\d/.test(s));return e+parseInt(g[0]+g.at(-1))||0},0)}function on(n=""){var e=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return n.split(/\n/).reduce((r,g)=>{var s=-1,t=1/0,d=-1,l=-1;return e.forEach((o,i)=>{var v=g.indexOf(o);v>-1&&v<t&&(t=v,s=i%10);var f=g.lastIndexOf(o);f>-1&&f>l&&(l=f,d=i%10)}),r+parseInt(s+""+d)},0)}const fn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:ln,part1:gn,part2:on},Symbol.toStringTag,{value:"Module"}));var vn=[2727,56580,8,2286];function un(n=""){var e=0,r={red:12,green:13,blue:14};return n.split(`
+`).forEach(g=>{var[s,t]=g.split(":"),d=t.split(";").every(l=>l.split(",").every(o=>{var[,i,v]=/(\d+)\s+(\S+)/.exec(o);return r[v]?parseInt(i)<=r[v]:!0}));d&&(e+=parseInt(/\d+/.exec(s)[0]))}),e}function hn(n=""){var e=0;return n.split(`
+`).forEach(r=>{var g={red:0,green:0,blue:0},[,s]=r.split(":");s.split(";").forEach(t=>{t.split(",").forEach(d=>{var[,l,o]=/(\d+)\s+(\S+)/.exec(d),i=parseInt(l);i>g[o]&&(g[o]=i)})}),e+=g.red*g.green*g.blue}),e}const bn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:vn,part1:un,part2:hn},Symbol.toStringTag,{value:"Module"}));var an=[539637,82818007,4361,467835];function cn(n=""){var e=[],r=[];n.split(`
+`).forEach((s,t)=>{e[t]=[],r[t]=[];for(var d=0;d<s.length;d++){var l=s[d];if(l!==".")if(/\d/.test(l)){var o=parseInt(s.substring(d)),i=String(o).length;e[t].push({y:t,x:d,value:o,len:i}),d+=i-1}else r[t].push({y:t,x:d})}});var g=0;return e.forEach(s=>{s.forEach(t=>{for(var d=t.y-1;d<t.y+2;d++){var l=r[d]||[],o=l.some(i=>{if(!(i.x<t.x-1)&&!(i.x>t.x+t.len))return!0});if(o){g+=t.value;return}}})}),g}function pn(n=""){var e=[],r=[];n.split(`
+`).forEach((s,t)=>{e[t]=[],r[t]=[];for(var d=0;d<s.length;d++){var l=s[d];if(l!==".")if(/\d/.test(l)){var o=parseInt(s.substring(d)),i=String(o).length;e[t].push({y:t,x:d,value:o,len:i}),d+=i-1}else l==="*"&&r[t].push({y:t,x:d})}});var g=0;return r.forEach(s=>{s.forEach(t=>{for(var d=0,l=1,o=t.y-1;o<t.y+2;o++){var i=e[o]||[];i.forEach(v=>{t.x<v.x-1||t.x>v.x+v.len||(d++,l*=v.value)})}d===2&&(g+=l)})}),g}const mn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:an,part1:cn,part2:pn},Symbol.toStringTag,{value:"Module"}));var Tn=[26443,6284877,13,30];function xn(n=""){var e=0;return n.split(`
+`).forEach((r,g)=>{var s=r.split(":")[1].split("|"),t=s[0].trim().split(/\s+/).map(o=>parseInt(o)),d=s[1].trim().split(/\s+/).map(o=>parseInt(o)),l=d.reduce((o,i)=>o+(t.includes(i)?1:0),0);l>0&&(e+=Math.pow(2,l-1))}),e}function Kn(n=""){var e=n.split(`
+`).map((s,t)=>{var d=s.split(":")[1].split("|"),l=d[0].trim().split(/\s+/).map(v=>parseInt(v)),o=d[1].trim().split(/\s+/).map(v=>parseInt(v)),i=o.reduce((v,f)=>v+(l.includes(f)?1:0),0);return i>0&&(r+=Math.pow(2,i-1)),i}),r=0,g=[];return e.forEach((s,t)=>{for(var d=1+(g[t]||0),l=e[t],o=0;o<l;o++){var i=t+1+o;g[i]=(g[i]||0)+d}r+=d}),r}const Jn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Tn,part1:xn,part2:Kn},Symbol.toStringTag,{value:"Module"}));var Qn=[525792406,79004094,35,46];function kn(n=""){var e=[],r=null;n.split(`
+`).forEach((s,t)=>{if(/:/.test(s)){var[,d]=s.split(":");e.push(r=[]),s=d}var l=s.trim().split(/\s+/).filter(o=>o).map(o=>parseInt(o));l.length>0&&r.push(l)});var g=e.shift()[0];return e.forEach(s=>{var t={};s.forEach(([d,l,o])=>{g.forEach((i,v)=>{t[v]||i>=l&&i<l+o&&(g[v]+=d-l,t[v]=!0)})})}),g.reduce((s,t)=>Math.min(s,t),1/0)}function jn(n=""){var e,r=[],g;n.split(`
+`).forEach((l,o)=>{if(/:/.test(l)){var[,i]=l.split(":");if(!e){e=i.trim().split(/\s+/).map(m=>parseInt(m));return}r.push(g=[]),l=i}if(l=l.trim(),!!l){var[v,f,b]=l.split(/\s+/).map(m=>parseInt(m));g.push([f,f+b,v-f])}}),r.forEach(l=>{l.sort((o,i)=>o[0]-i[0])});for(var s=1/0,t=(l,o,i=0)=>{if(i>=r.length){l<s&&(s=l);return}var v=r[i];v.some(([f,b,m])=>{if(!(l>=b)){if(o<=f)return!0;l<f&&(t(l,f,i+1),l=f);var z=Math.min(o,b);t(l+m,z+m,i+1),l=z}}),l<o&&t(l,o,i+1)},d=0;d<e.length;d+=2)t(e[d],e[d]+e[d+1]);return s}const Cn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Qn,part1:kn,part2:jn},Symbol.toStringTag,{value:"Module"}));var _n=[1195150,42550411,288,71503];function X1(n=""){var e=n.split(`
+`).map(t=>{var d=t.split(":")[1];return d.trim().split(/\s+/).map(l=>parseInt(l))}),[r,g]=e,s=1;return r.forEach((t,d)=>{var l=-t,o=g[d],i=Math.sqrt(l*l-4*o),v=(-l-i)/2,f=(-l+i)/2,b=1e-5,m=Math.floor(f-b)-Math.ceil(v+b)+1;s*=m}),s}function zn(n=""){return X1(n.replace(/ /g,""))}const Ln=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:_n,part1:X1,part2:zn},Symbol.toStringTag,{value:"Module"}));var qn=[249726565,251135960,6440,5905];function Rn(n=""){var e="23456789TJQKA".split(""),r={};e.forEach((s,t)=>{r[s]=String.fromCharCode(65+t)});var g=n.split(`
+`).map(s=>{var[t,d]=s.trim().split(/\s+/),l=parseInt(d),o=t.split("").map(f=>r[f]),i={};o.forEach(f=>{i[f]=(i[f]||0)+1});var v=Object.keys(i).map(f=>i[f]).sort((f,b)=>b-f);return v.push(0,0),{chars:o,bid:l,ctList:v}});return g.sort((s,t)=>{for(var d=0;d<2;d++)if(s.ctList[d]!==t.ctList[d])return s.ctList[d]-t.ctList[d];for(var l=0;l<5;l++){var o=s.chars[l],i=t.chars[l];if(o!==i)return o>i?1:-1}return 0}),g.reduce((s,{bid:t},d)=>s+t*(d+1),0)}function Gn(n=""){var e="J23456789TQKA".split(""),r={};e.forEach((s,t)=>{r[s]=String.fromCharCode(65+t)});var g=n.split(`
+`).map(s=>{var[t,d]=s.trim().split(/\s+/),l=parseInt(d),o=t.split("").map(b=>r[b]),i={},v=0;o.forEach(b=>{if(b==="A"){v++;return}i[b]=(i[b]||0)+1});var f=Object.keys(i).map(b=>i[b]).sort((b,m)=>m-b);return f.push(0,0),f[0]+=v,{chars:o,bid:l,ctList:f,hand:t}});return g.sort((s,t)=>{for(var d=0;d<2;d++)if(s.ctList[d]!==t.ctList[d])return s.ctList[d]-t.ctList[d];for(var l=0;l<5;l++){var o=s.chars[l],i=t.chars[l];if(o!==i)return o>i?1:-1}return 0}),g.reduce((s,{bid:t},d)=>s+t*(d+1),0)}const Bn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:qn,part1:Rn,part2:Gn},Symbol.toStringTag,{value:"Module"}));var Fn=[18673,17972669116327,2,,6,,,6];function Sn(n=""){var e={},r=n.split(`
+`).map(l=>{if(l=l.trim(),!!l){if(!l.includes("="))return l.split("");var[,o,i,v]=/(\S+) = \((\S+), (\S+)\)/.exec(l);e[o]={L:i,R:v}}}),g=r.shift(),s="AAA";if(!e[s])return-1;for(var t=0,d=0;t<1e7;t++){if(s==="ZZZ")return t;s=e[s][g[d]],d=(d+1)%g.length}return-1}function Mn(n=""){var e={},r=[],g={},s=n.split(`
+`).map(v=>{if(v=v.trim(),!!v){if(!v.includes("="))return v.split("");var[,f,b,m]=/(\S+) = \((\S+), (\S+)\)/.exec(v);/..A/.test(f)&&r.push(f),/..Z/.test(f)&&(g[f]=!0),e[f]={L:b,R:m}}}),t=s.shift(),d=r.map(v=>{for(var f=0,b=0;f<1e7;f++){if(v in g)return f;v=e[v][t[b]],b=(b+1)%t.length}});d.sort((v,f)=>v-f);for(var l=d.pop();d.length>0;)for(var o=l,i=d.pop();l%i!==0;)l+=o;return l}const Dn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Fn,part1:Sn,part2:Mn},Symbol.toStringTag,{value:"Module"}));var An=[1772145754,867,114,2];function Hn(n=""){var e=(r=[1,1])=>{if(r.length<2)return NaN;for(var g=!0,s=[],t=1;t<r.length;t++){var d=r[t]-r[t-1];g&&(g=d===0),s.push(d)}var l=g?0:e(s);return l+r.at(-1)};return n.split(`
+`).reduce((r,g)=>{var s=g.trim().split(/\s+/).map(t=>parseInt(t));return r+=e(s)},0)}function Xn(n=""){var e=(r=[1,1])=>{if(r.length<2)return NaN;for(var g=!0,s=[],t=1;t<r.length;t++){var d=r[t]-r[t-1];g&&(g=d===0),s.push(d)}var l=g?0:e(s);return r[0]-l};return n.split(`
+`).reduce((r,g)=>{var s=g.trim().split(/\s+/).map(t=>parseInt(t));return r+=e(s)},0)}const Vn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:An,part1:Hn,part2:Xn},Symbol.toStringTag,{value:"Module"})),Pn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Nn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),wn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),yn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),On=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),$n=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),En=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Zn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),In=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Un=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Wn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Yn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),n2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),e2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),r2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),t2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),s2=`1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet`,d2=`two1nine
 eightwothree
 abcone2threexyz
 xtwone3four
 4nineeightseven2
 zoneight234
-7pqrstsixteen`:n}const ie=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:se,part1:de,part2:le},Symbol.toStringTag,{value:"Module"}));var oe=[8,2727,2286,56580];function fe(n=""){var e=0,t={red:12,green:13,blue:14};return n.split(`
-`).forEach(g=>{var[r,s]=g.split(":"),l=s.split(";").every(d=>d.split(",").every(o=>{var[,i,f]=/(\d+)\s+(\S+)/.exec(o);return t[f]?parseInt(i)<=t[f]:!0}));l&&(e+=parseInt(/\d+/.exec(r)[0]))}),e}function ve(n=""){var e=0;return n.split(`
-`).forEach(t=>{var g={red:0,green:0,blue:0},[,r]=t.split(":");r.split(";").forEach(s=>{s.split(",").forEach(l=>{var[,d,o]=/(\d+)\s+(\S+)/.exec(l),i=parseInt(d);i>g[o]&&(g[o]=i)})}),e+=g.red*g.green*g.blue}),e}const he=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:oe,part1:fe,part2:ve},Symbol.toStringTag,{value:"Module"}));var ue=[4361,539637,467835,82818007];function be(n=""){var e=[],t=[];n.split(`
-`).forEach((r,s)=>{e[s]=[],t[s]=[];for(var l=0;l<r.length;l++){var d=r[l];if(d!==".")if(/\d/.test(d)){var o=parseInt(r.substring(l)),i=String(o).length;e[s].push({y:s,x:l,value:o,len:i}),l+=i-1}else t[s].push({y:s,x:l})}});var g=0;return e.forEach(r=>{r.forEach(s=>{for(var l=s.y-1;l<s.y+2;l++){var d=t[l]||[],o=d.some(i=>{if(!(i.x<s.x-1)&&!(i.x>s.x+s.len))return!0});if(o){g+=s.value;return}}})}),g}function ae(n=""){var e=[],t=[];n.split(`
-`).forEach((r,s)=>{e[s]=[],t[s]=[];for(var l=0;l<r.length;l++){var d=r[l];if(d!==".")if(/\d/.test(d)){var o=parseInt(r.substring(l)),i=String(o).length;e[s].push({y:s,x:l,value:o,len:i}),l+=i-1}else d==="*"&&t[s].push({y:s,x:l})}});var g=0;return t.forEach(r=>{r.forEach(s=>{for(var l=0,d=1,o=s.y-1;o<s.y+2;o++){var i=e[o]||[];i.forEach(f=>{s.x<f.x-1||s.x>f.x+f.len||(l++,d*=f.value)})}l===2&&(g+=d)})}),g}const ce=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:ue,part1:be,part2:ae},Symbol.toStringTag,{value:"Module"}));var pe=[13,26443,30,6284877];function me(n=""){var e=0;return n.split(`
-`).forEach((t,g)=>{var r=t.split(":")[1].split("|"),s=r[0].trim().split(/\s+/).map(o=>parseInt(o)),l=r[1].trim().split(/\s+/).map(o=>parseInt(o)),d=l.reduce((o,i)=>o+(s.includes(i)?1:0),0);d>0&&(e+=Math.pow(2,d-1))}),e}function xe(n=""){var e=n.split(`
-`).map((r,s)=>{var l=r.split(":")[1].split("|"),d=l[0].trim().split(/\s+/).map(f=>parseInt(f)),o=l[1].trim().split(/\s+/).map(f=>parseInt(f)),i=o.reduce((f,v)=>f+(d.includes(v)?1:0),0);return i>0&&(t+=Math.pow(2,i-1)),i}),t=0,g=[];return e.forEach((r,s)=>{for(var l=1+(g[s]||0),d=e[s],o=0;o<d;o++){var i=s+1+o;g[i]=(g[i]||0)+l}t+=l}),t}const je=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:pe,part1:me,part2:xe},Symbol.toStringTag,{value:"Module"}));var ke=[35,525792406,46,79004094];function ze(n=""){var e=[],t=null;n.split(`
-`).forEach((r,s)=>{if(/:/.test(r)){var[,l]=r.split(":");e.push(t=[]),r=l}var d=r.trim().split(/\s+/).filter(o=>o).map(o=>parseInt(o));d.length>0&&t.push(d)});var g=e.shift()[0];return e.forEach(r=>{var s={};r.forEach(([l,d,o])=>{g.forEach((i,f)=>{s[f]||i>=d&&i<d+o&&(g[f]+=l-d,s[f]=!0)})})}),g.reduce((r,s)=>Math.min(r,s),1/0)}function qe(n=""){var e,t=[],g;n.split(`
-`).forEach((d,o)=>{if(/:/.test(d)){var[,i]=d.split(":");if(!e){e=i.trim().split(/\s+/).map(m=>parseInt(m));return}t.push(g=[]),d=i}if(d=d.trim(),!!d){var[f,v,a]=d.split(/\s+/).map(m=>parseInt(m));g.push([v,v+a,f-v])}}),t.forEach(d=>{d.sort((o,i)=>o[0]-i[0])});for(var r=1/0,s=(d,o,i=0)=>{if(i>=t.length){d<r&&(r=d);return}var f=t[i];f.some(([v,a,m])=>{if(!(d>=a)){if(o<=v)return!0;d<v&&(s(d,v,i+1),d=v);var S=Math.min(o,a);s(d+m,S+m,i+1),d=S}}),d<o&&s(d,o,i+1)},l=0;l<e.length;l+=2)s(e[l],e[l]+e[l+1]);return r}const _e=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:ke,part1:ze,part2:qe},Symbol.toStringTag,{value:"Module"}));var Te=[288,1195150,71503,42550411];function Mn(n=""){var e=n.split(`
-`).map(s=>{var l=s.split(":")[1];return l.trim().split(/\s+/).map(d=>parseInt(d))}),[t,g]=e,r=1;return t.forEach((s,l)=>{var d=-s,o=g[l],i=Math.sqrt(d*d-4*o),f=(-d-i)/2,v=(-d+i)/2,a=1e-5,m=Math.floor(v-a)-Math.ceil(f+a)+1;r*=m}),r}function Je(n=""){return Mn(n.replace(/ /g,""))}const Ke=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Te,part1:Mn,part2:Je},Symbol.toStringTag,{value:"Module"}));var Ae=[6440,249726565,5905,251135960];function Qe(n=""){var e="23456789TJQKA".split(""),t={};e.forEach((r,s)=>{t[r]=String.fromCharCode(65+s)});var g=n.split(`
-`).map(r=>{var[s,l]=r.trim().split(/\s+/),d=parseInt(l),o=s.split("").map(v=>t[v]),i={};o.forEach(v=>{i[v]=(i[v]||0)+1});var f=Object.keys(i).map(v=>i[v]).sort((v,a)=>a-v);return f.push(0,0),{chars:o,bid:d,ctList:f}});return g.sort((r,s)=>{for(var l=0;l<2;l++)if(r.ctList[l]!==s.ctList[l])return r.ctList[l]-s.ctList[l];for(var d=0;d<5;d++){var o=r.chars[d],i=s.chars[d];if(o!==i)return o>i?1:-1}return 0}),g.reduce((r,{bid:s},l)=>r+s*(l+1),0)}function we(n=""){var e="J23456789TQKA".split(""),t={};e.forEach((r,s)=>{t[r]=String.fromCharCode(65+s)});var g=n.split(`
-`).map(r=>{var[s,l]=r.trim().split(/\s+/),d=parseInt(l),o=s.split("").map(a=>t[a]),i={},f=0;o.forEach(a=>{if(a==="A"){f++;return}i[a]=(i[a]||0)+1});var v=Object.keys(i).map(a=>i[a]).sort((a,m)=>m-a);return v.push(0,0),v[0]+=f,{chars:o,bid:d,ctList:v,hand:s}});return g.sort((r,s)=>{for(var l=0;l<2;l++)if(r.ctList[l]!==s.ctList[l])return r.ctList[l]-s.ctList[l];for(var d=0;d<5;d++){var o=r.chars[d],i=s.chars[d];if(o!==i)return o>i?1:-1}return 0}),g.reduce((r,{bid:s},l)=>r+s*(l+1),0)}const Ce=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Ae,part1:Qe,part2:we},Symbol.toStringTag,{value:"Module"})),ye=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ge=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Oe=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Se=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),$e=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Me=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ee=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Pe=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ie=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Le=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),De=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Be=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ne=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Re=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Fe=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),He=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ue=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ve=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),We=`1abc2
-pqr3stu8vwx
-a1b2c3d4e5f
-treb7uchet`,Xe=`8eight1
+7pqrstsixteen`,l2=`8eight1
 98126
 fourfourthreehnbhkmscqxdfksg64bvpppznkh
 8fivenvvtrlj
@@ -1018,11 +1021,11 @@ eight6kxqqdnqp
 6seventntzffjkkvvhtgtwoonethreefivekzvptvxfjg
 three6blrfsgdqsxgkbqj3
 eight1eighteight8
-8four419eighteight1bpv`,Ye=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+8four419eighteight1bpv`,g2=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
-Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,Ze=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,i2=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
 Game 2: 9 red, 2 green; 5 red, 1 blue, 6 green; 3 green, 13 red, 1 blue; 3 red, 6 green; 1 blue, 14 red, 6 green
 Game 3: 6 red, 3 blue, 8 green; 6 blue, 12 green, 15 red; 3 blue, 18 green, 4 red
 Game 4: 1 blue, 4 red; 2 blue, 6 red; 13 blue; 11 blue, 1 green, 8 red; 10 blue, 3 green, 2 red; 3 green, 7 blue
@@ -1121,7 +1124,7 @@ Game 96: 1 green, 5 red, 13 blue; 1 green, 2 red, 13 blue; 2 green, 2 red, 17 bl
 Game 97: 1 green, 1 red, 1 blue; 2 blue, 11 green; 1 blue, 13 green; 9 blue, 6 green, 1 red; 10 green, 8 blue
 Game 98: 12 green, 9 red; 12 green, 10 blue, 3 red; 3 red, 13 green, 7 blue
 Game 99: 8 green, 10 blue, 1 red; 10 green, 2 red, 6 blue; 3 green, 1 blue, 1 red; 10 blue, 1 red
-Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,n1=`467..114..
+Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,o2=`467..114..
 ...*......
 ..35..633.
 ......#...
@@ -1130,7 +1133,7 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ..592.....
 ......755.
 ...$.*....
-.664.598..`,e1=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
+.664.598..`,f2=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
 .........*.........778....................*....124...................................*...............*........%..26.........................
 ......194..380....@....900..........639....467........478*..............582...........798.............326...........894.........#...........
 904...........*2.......#......259.....*..........801......464................597.569.............794+................$..218....502..........
@@ -1269,12 +1272,12 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ....#.......&..%692........+......#..333............41...............=204..................868............/.164..................316........
 ...346..................+.......$...*......396..315....119..@755...............942..918........................*........631.651.............
 .................=....836......402.755............=.......*.......*....181.62...*.....%........................596......*............#591...
-...............764.....................................488.....880.209........416..................183...156..........917...................`,r1=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+...............764.....................................488.....880.209........416..................183...156..........917...................`,v2=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
 Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
 Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
 Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
 Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
-Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,t1=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
+Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,u2=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
 Card   2: 83 16 24 23 59 70 14 57 74 53 | 79 82 70 23 61 14 74 57 36 37 59 72 83 16  3  2 28 63 50 60 38 86 97 24 53
 Card   3: 12 77 13 14 48 55 69  4 18 81 | 69  7 94 88 18 73 55 48 49 81 14 21 12 15  5 27 22 84 51 52 13 77  4 57 17
 Card   4: 32 35 57 27 15  5 16 40 36 46 | 84 47 76 35 83  5 22 15 72 48 57 33 46 53 43 16 10 65 32 51 36 44 40 27 97
@@ -1491,7 +1494,7 @@ Card 214: 38  6 78 12 88 14 51 82 29 75 | 70 16 48 74 19 29  5 71 40 93  1 18 83
 Card 215: 67 60 86 35 17 62 55 27 54 70 |  9 26 45 56 43 72  1 32 25 88  5 87 73 81  2 34 57 13 61  3 84  4 33 92 59
 Card 216: 18 71  4 89 17 31 63 28 25 20 | 67 97  6 76  3 95 30 75 99 26 27 32 21 73 86 31 59 98 85  1 54 93 94 69 66
 Card 217: 54 65 75 13 46  8 37 25 95 82 | 57 14 83 33 69 47 68 64  4 21 17 92  2 48 30 70 62 50 36  7 72 66 41 85 97
-Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,s1=`seeds: 79 14 55 13
+Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,h2=`seeds: 79 14 55 13
 
 seed-to-soil map:
 50 98 2
@@ -1523,7 +1526,7 @@ temperature-to-humidity map:
 
 humidity-to-location map:
 60 56 37
-56 93 4`,d1=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
+56 93 4`,b2=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
 
 seed-to-soil map:
 3680121696 1920754815 614845600
@@ -1772,13 +1775,13 @@ humidity-to-location map:
 1149193536 1342265550 29480816
 2997158500 3191476309 220034442
 2715114305 3573409942 126485175
-2446452559 2629702985 182296534`,l1=`Time:      7  15   30
-Distance:  9  40  200`,g1=`Time:        54     94     65     92
-Distance:   302   1476   1029   1404`,i1=`32T3K 765
+2446452559 2629702985 182296534`,a2=`Time:      7  15   30
+Distance:  9  40  200`,c2=`Time:        54     94     65     92
+Distance:   302   1476   1029   1404`,p2=`32T3K 765
 T55J5 684
 KK677 28
 KTJJT 220
-QQQJA 483`,o1=`88223 818
+QQQJA 483`,m2=`88223 818
 66JQ9 398
 6T9AT 311
 53TT3 43
@@ -2777,6 +2780,1015 @@ AAJAA 744
 7777K 350
 T6363 826
 J333J 41
-55AA6 787`,f1="",v1="",h1="",u1="",b1="",a1="",c1="",p1="",m1="",x1="",j1="",k1="",z1="",q1="",_1="",T1="",J1="",K1="",A1="",Q1="",w1="",C1="",y1="",G1="",O1="",S1="",$1="",M1="",E1="",P1="",I1="",L1="",D1="",B1="",N1="",R1="";var Qn=Object.assign({"./advent/day01/solution.js":ie,"./advent/day02/solution.js":he,"./advent/day03/solution.js":ce,"./advent/day04/solution.js":je,"./advent/day05/solution.js":_e,"./advent/day06/solution.js":Ke,"./advent/day07/solution.js":Ce,"./advent/day08/solution.js":ye,"./advent/day09/solution.js":Ge,"./advent/day10/solution.js":Oe,"./advent/day11/solution.js":Se,"./advent/day12/solution.js":$e,"./advent/day13/solution.js":Me,"./advent/day14/solution.js":Ee,"./advent/day15/solution.js":Pe,"./advent/day16/solution.js":Ie,"./advent/day17/solution.js":Le,"./advent/day18/solution.js":De,"./advent/day19/solution.js":Be,"./advent/day20/solution.js":Ne,"./advent/day21/solution.js":Re,"./advent/day22/solution.js":Fe,"./advent/day23/solution.js":He,"./advent/day24/solution.js":Ue,"./advent/day25/solution.js":Ve}),wn=Object.assign({"./advent/day01/input-test.txt":We,"./advent/day01/input.txt":Xe,"./advent/day02/input-test.txt":Ye,"./advent/day02/input.txt":Ze,"./advent/day03/input-test.txt":n1,"./advent/day03/input.txt":e1,"./advent/day04/input-test.txt":r1,"./advent/day04/input.txt":t1,"./advent/day05/input-test.txt":s1,"./advent/day05/input.txt":d1,"./advent/day06/input-test.txt":l1,"./advent/day06/input.txt":g1,"./advent/day07/input-test.txt":i1,"./advent/day07/input.txt":o1,"./advent/day08/input-test.txt":f1,"./advent/day08/input.txt":v1,"./advent/day09/input-test.txt":h1,"./advent/day09/input.txt":u1,"./advent/day10/input-test.txt":b1,"./advent/day10/input.txt":a1,"./advent/day11/input-test.txt":c1,"./advent/day11/input.txt":p1,"./advent/day12/input-test.txt":m1,"./advent/day12/input.txt":x1,"./advent/day13/input-test.txt":j1,"./advent/day13/input.txt":k1,"./advent/day14/input-test.txt":z1,"./advent/day14/input.txt":q1,"./advent/day15/input-test.txt":_1,"./advent/day15/input.txt":T1,"./advent/day16/input-test.txt":J1,"./advent/day16/input.txt":K1,"./advent/day17/input-test.txt":A1,"./advent/day17/input.txt":Q1,"./advent/day18/input-test.txt":w1,"./advent/day18/input.txt":C1,"./advent/day19/input-test.txt":y1,"./advent/day19/input.txt":G1,"./advent/day20/input-test.txt":O1,"./advent/day20/input.txt":S1,"./advent/day21/input-test.txt":$1,"./advent/day21/input.txt":M1,"./advent/day22/input-test.txt":E1,"./advent/day22/input.txt":P1,"./advent/day23/input-test.txt":I1,"./advent/day23/input.txt":L1,"./advent/day24/input-test.txt":D1,"./advent/day24/input.txt":B1,"./advent/day25/input-test.txt":N1,"./advent/day25/input.txt":R1});function En(n,e,t,g){this.day=n||"01",this.input=t||"",this.testInput=g||"",this.part1=e.part1||null,this.part2=e.part2||null,this.knownAnswers=(e.knownAnswers||[]).map(r=>String(r))}function F1(){var n={},e={},t={};Object.keys(Qn).forEach(s=>{var l=/day(\d+)/.exec(s)[1];n[l]=Qn[s]||null}),Object.keys(wn).forEach(s=>{var l=/day(\d+)/.exec(s)[1],d=s.includes("-test")?t:e;d[l]=wn[s]||""});var g={},r=Object.keys(n).sort();return r.forEach(s=>{var l=n[s]||{},d=e[s]||"",o=t[s]||"";g[s]=new En(s,l,d,o)}),g}const H1=Object.freeze(Object.defineProperty({__proto__:null,DayData:En,getDataByDay:F1},Symbol.toStringTag,{value:"Module"}));function Cn(n,e,t){const g=n.slice();return g[27]=e[t],g}function yn(n){let e,t=n[27]+"",g,r,s;function l(){return n[11](n[27])}return{c(){e=p("button"),g=sn(t),b(e,"class","button svelte-gd9guy"),$(e,"current",n[27]===n[2])},m(d,o){xn(d,e,o),u(e,g),r||(s=[O(e,"keydown",null),O(e,"click",l)],r=!0)},p(d,o){n=d,o&2&&t!==(t=n[27]+"")&&cn(g,t),o&6&&$(e,"current",n[27]===n[2])},d(d){d&&hn(e),r=!1,B(s)}}}function Gn(n){let e,t,g;return{c(){e=p("button"),e.textContent="run all",b(e,"class","button run-all-button svelte-gd9guy")},m(r,s){xn(r,e,s),t||(g=[O(e,"keydown",null),O(e,"click",n[10])],t=!0)},p:Y,d(r){r&&hn(e),t=!1,B(g)}}}function U1(n){let e,t,g,r,s,l,d,o,i,f,v,a,m,S=n[6][0]+"",I,M,J,L,Z,E,D,ln,N,R=n[6][1]+"",nn,gn,Q,F,on,h,x,k,K,C,j,_,y,fn,G,en,rn,kn,tn,zn,P,un,qn,H=An(n[1]),A=[];for(let c=0;c<H.length;c+=1)A[c]=yn(Cn(n,H,c));let w=n[1].length>1&&Gn(n);return{c(){e=p("div"),t=p("h2"),t.textContent="Advent 2023",g=T(),r=p("div"),s=p("div"),s.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',l=T(),d=p("div");for(let c=0;c<A.length;c+=1)A[c].c();o=T(),w&&w.c(),i=T(),f=p("div"),v=p("h4"),v.textContent="Part 1:",a=T(),m=p("div"),I=sn(S),M=T(),J=p("textarea"),Z=T(),E=p("div"),D=p("h4"),D.textContent="Part 2:",ln=T(),N=p("div"),nn=sn(R),gn=T(),Q=p("textarea"),on=T(),h=p("div"),x=p("h4"),x.textContent="Input:",k=T(),K=p("br"),C=T(),j=p("button"),j.textContent="Real",_=T(),y=p("button"),y.textContent="Test",fn=T(),G=p("textarea"),en=T(),rn=p("div"),kn=T(),tn=p("div"),zn=sn(`Catch errors
-      `),P=p("button"),P.textContent="x",b(s,"class","label svelte-gd9guy"),b(d,"class","day-list"),b(v,"class","svelte-gd9guy"),b(m,"class","time svelte-gd9guy"),b(f,"class","label svelte-gd9guy"),b(J,"name","output1"),b(J,"id","output1"),b(J,"rows",L=vn(n[5][0])),b(J,"class","svelte-gd9guy"),$(J,"known-good",n[7][0]),b(D,"class","svelte-gd9guy"),b(N,"class","time svelte-gd9guy"),b(E,"class","label svelte-gd9guy"),b(Q,"name","output2"),b(Q,"id","output2"),b(Q,"rows",F=vn(n[5][1])),b(Q,"class","svelte-gd9guy"),$(Q,"known-good",n[7][1]),b(x,"class","svelte-gd9guy"),b(j,"class","button input-toggle svelte-gd9guy"),$(j,"current",!n[3]),b(y,"class","button input-toggle svelte-gd9guy"),$(y,"current",n[3]),b(h,"class","label svelte-gd9guy"),Rn(h,"align-self","flex-start"),b(G,"name","input"),b(G,"id","input"),b(G,"rows","14"),b(G,"class","svelte-gd9guy"),b(P,"class","button input-toggle catch-button svelte-gd9guy"),$(P,"current",n[4]),b(tn,"class","catch-area svelte-gd9guy"),b(r,"class","layout svelte-gd9guy"),b(e,"class","outer svelte-gd9guy")},m(c,z){xn(c,e,z),u(e,t),u(e,g),u(e,r),u(r,s),u(r,l),u(r,d);for(let q=0;q<A.length;q+=1)A[q]&&A[q].m(d,null);u(d,o),w&&w.m(d,null),u(r,i),u(r,f),u(f,v),u(f,a),u(f,m),u(m,I),u(r,M),u(r,J),U(J,n[5][0]),u(r,Z),u(r,E),u(E,D),u(E,ln),u(E,N),u(N,nn),u(r,gn),u(r,Q),U(Q,n[5][1]),u(r,on),u(r,h),u(h,x),u(h,k),u(h,K),u(h,C),u(h,j),u(h,_),u(h,y),u(r,fn),u(r,G),U(G,n[0]),u(r,en),u(r,rn),u(r,kn),u(r,tn),u(tn,zn),u(tn,P),un||(qn=[O(J,"input",n[12]),O(Q,"input",n[13]),O(j,"keydown",null),O(j,"click",n[14]),O(y,"keydown",null),O(y,"click",n[15]),O(G,"input",n[16]),O(P,"keydown",null),O(P,"click",n[17])],un=!0)},p(c,[z]){if(z&262){H=An(c[1]);let q;for(q=0;q<H.length;q+=1){const _n=Cn(c,H,q);A[q]?A[q].p(_n,z):(A[q]=yn(_n),A[q].c(),A[q].m(d,o))}for(;q<A.length;q+=1)A[q].d(1);A.length=H.length}c[1].length>1?w?w.p(c,z):(w=Gn(c),w.c(),w.m(d,null)):w&&(w.d(1),w=null),z&64&&S!==(S=c[6][0]+"")&&cn(I,S),z&32&&L!==(L=vn(c[5][0]))&&b(J,"rows",L),z&32&&U(J,c[5][0]),z&128&&$(J,"known-good",c[7][0]),z&64&&R!==(R=c[6][1]+"")&&cn(nn,R),z&32&&F!==(F=vn(c[5][1]))&&b(Q,"rows",F),z&32&&U(Q,c[5][1]),z&128&&$(Q,"known-good",c[7][1]),z&8&&$(j,"current",!c[3]),z&8&&$(y,"current",c[3]),z&1&&U(G,c[0]),z&16&&$(P,"current",c[4])},i:Y,o:Y,d(c){c&&hn(e),Bn(A,c),w&&w.d(),un=!1,B(qn)}}}function vn(n){var e=String(n||"").split(`
-`).length;return Math.min(e,Math.max(e,1,10))}function V1(n,e,t){var g=h=>new Promise(x=>setTimeout(x,h)),r={},s=[],l="xx",d="",o=!1,i=!0,f=["",""],v=["",""],a=[!1,!1];function m(h=""){h&&t(2,l=h);var x=r[l];t(0,d=o?x?.testInput:x?.input),J()}function S(h=""){h&&J()}function I(h){t(3,o=!!h),m()}var M=!1;async function J(){if(!M){M=!0,t(5,f=["",""]),t(6,v=["",""]),await g(10);for(var h=1;h<3;h++){var[x,k]=L(l,h,d);Z(h,x,k,l),await g(1)}M=!1}}function L(h="",x=1,k=""){var K=(r[h]||{})["part"+x];if(!K)return["",-999];var C=performance.now();if(i)try{return[K(k),performance.now()-C]}catch(y){var j=String(y),_=/:(\d+:\d+)\)/.exec(y.stack||"");return _&&(j=`(${_[1]}) ${j}`),[j,performance.now()-C]}else return[K(k),performance.now()-C]}function Z(h=1,x="",k=0,K=""){t(5,f[h-1]=x,f),t(6,v[h-1]=k<0?"":`(${Math.round(k)}ms)`,v),t(5,f),t(6,v),K&&(t(7,a[h-1]=D(K,h,x),a),t(7,a))}async function E(){var rn;if(!M){M=!0;var h=["",""],x=[0,0],k=[!0,!0];await g(10);for(var K=0;K<s.length;K++)for(var C=s[K],j=r[C],_=1;_<3;_++){var y=o?j.testInput:j.input,[fn,G]=L(C,_,y||""),en=G>=0&&D(C,_,fn);k[rn=_-1]&&(k[rn]=en),h[_-1]+=en?"★":"ー",G>=0&&(x[_-1]+=G),Z(_,h[_-1],x[_-1]),await g(1)}t(7,a=k),M=!1}}function D(h="",x=1,k=""){var K=r[h]?.knownAnswers||[],C=x===1?0:2;o||C++;var j=String(K[C]||"");return!!(j&&j===String(k))}var ln=h=>{!h||!h.getDataByDay||(r=h.getDataByDay(),t(1,s=Object.keys(r).filter(x=>!!r[x].part1).sort()),m(s.at(-1)))};ln(H1);const N=h=>m(h);function R(){f[0]=this.value,t(5,f)}function nn(){f[1]=this.value,t(5,f)}const gn=()=>I(!1),Q=()=>I(!0);function F(){d=this.value,t(0,d)}const on=()=>{t(4,i=!i)};return n.$$.update=()=>{n.$$.dirty&1&&S(d)},[d,s,l,o,i,f,v,a,m,I,E,N,R,nn,gn,Q,F,on]}class W1 extends re{constructor(e){super(),ee(this,e,V1,U1,Ln,{})}}new W1({target:document.querySelector(".app")});
+55AA6 787`,T2=`RL
+
+AAA = (BBB, CCC)
+BBB = (DDD, EEE)
+CCC = (ZZZ, GGG)
+DDD = (DDD, DDD)
+EEE = (EEE, EEE)
+GGG = (GGG, GGG)
+ZZZ = (ZZZ, ZZZ)`,x2=`LLR
+
+AAA = (BBB, BBB)
+BBB = (AAA, ZZZ)
+ZZZ = (ZZZ, ZZZ)`,K2=`LR
+
+11A = (11B, XXX)
+11B = (XXX, 11Z)
+11Z = (11B, XXX)
+22A = (22B, XXX)
+22B = (22C, 22C)
+22C = (22Z, 22Z)
+22Z = (22B, 22B)
+XXX = (XXX, XXX)`,J2=`LRRLLRRLLRRRLRLRRLRLRLRRLRLRLRLLLRRRLRLRRLLRLRRRLRRRLRLRLRRRLLRRLLRLRLRRRLRLLRRRLRLLRLRRRLRLRRRLRRRLLRRRLLRRRLRRLRRRLLRRRLRRLRRLRRLLRLRRLRRLRRRLRLRLRLRLRLRRRLLRLRRLRLRRLLRRLLRLRRLRRRLRLRLRLRRRLRRLRRLRRLRRLRRLRLRRRLRRRLRRRLRLRLLRRLRRRLRRLRLRRRLRRLRRRLRRLLRRLLLRRRR
+
+GSC = (CLG, RPF)
+NTQ = (RMN, HLB)
+LTX = (XFB, CGP)
+RHK = (KRS, TPX)
+KPK = (PRP, MKG)
+NKV = (BHD, DQJ)
+JNK = (RXN, BQX)
+JXJ = (JFK, CCS)
+LDC = (JBF, PHQ)
+QRS = (VPM, FDD)
+XRL = (SQT, VGH)
+VQN = (BRP, VCF)
+NBP = (GKC, HKC)
+FCH = (KLN, RQV)
+BQT = (KKX, RNZ)
+SVN = (JGN, FSL)
+FPL = (SDB, VQV)
+RMQ = (CCV, JST)
+DRB = (MSM, VHX)
+DDF = (GHC, PSX)
+GLR = (LFR, THG)
+DGL = (JGQ, DHD)
+RFQ = (BXJ, SRQ)
+XTG = (XBB, TQJ)
+PCL = (DDK, GNC)
+FVG = (JKL, CRC)
+GXQ = (CBS, RJS)
+SDR = (LFR, THG)
+KBM = (PCV, DBP)
+XPJ = (GCS, GJD)
+XRG = (LNK, KQL)
+FPQ = (TPG, MQQ)
+MSM = (LQG, KRF)
+LFR = (THX, GFC)
+KQK = (FQH, FCH)
+HPH = (HHJ, VKM)
+DHC = (QGV, FNH)
+PQQ = (KKX, KKX)
+TNQ = (LXD, KNG)
+QNB = (TLX, VLF)
+VKX = (BJL, GQB)
+DTM = (KRQ, CLV)
+BHS = (LFH, TVV)
+MCJ = (BFJ, FCS)
+CGQ = (MRH, SBD)
+FBM = (RXQ, CFR)
+NLQ = (QSD, LFZ)
+VSK = (DGR, DFT)
+HJG = (TFV, XJL)
+XFB = (NKP, FBF)
+JGL = (RGS, KTD)
+MHS = (BNM, KSK)
+RMG = (QNB, MHL)
+XSX = (XBG, GVD)
+FMV = (LVV, CQR)
+CRK = (TRN, KKG)
+VQV = (BPB, RFL)
+THN = (QVH, DVT)
+GNT = (RGS, KTD)
+DCH = (GJD, GCS)
+KTD = (LSF, MJC)
+BDC = (FDH, MSK)
+PRQ = (JGL, GNT)
+PSR = (DHF, FPL)
+XBB = (FRR, GSC)
+SFB = (HGX, DFS)
+VTJ = (HFH, KXN)
+KJV = (TKP, THL)
+BFF = (PLM, DGC)
+VBV = (XDK, LLS)
+KMV = (XDS, VQT)
+JPD = (BHL, QJF)
+DGR = (MTT, JCG)
+PGK = (VCX, NLQ)
+BFJ = (FHX, QFR)
+VSF = (VKX, CTP)
+PFJ = (BRP, VCF)
+XVN = (VCX, VCX)
+JQG = (SKM, THM)
+CXS = (CRC, JKL)
+RFL = (NNT, DMH)
+RBH = (KHM, PLR)
+PNT = (JCQ, XSR)
+XHK = (GJK, BLQ)
+CFR = (FHC, CTD)
+JPP = (JFD, FPB)
+RRT = (VVM, NFB)
+RPF = (TKG, KVK)
+JTF = (FBT, DLL)
+PSX = (PDS, JPD)
+TCH = (TDN, FRB)
+RHT = (VNR, NHB)
+TQJ = (GSC, FRR)
+MCK = (NJD, XDX)
+NPH = (XQF, NSL)
+LQQ = (LCM, PHH)
+VSV = (SFT, MVL)
+KRS = (TGR, TGR)
+DRR = (JXT, TSF)
+QRQ = (NTG, MTL)
+PJB = (RMN, HLB)
+VFC = (KPH, PKM)
+FHC = (CJM, FTQ)
+DRC = (RBC, THN)
+TRB = (JHX, LSC)
+GCS = (TRB, MDB)
+RCG = (MFT, FXM)
+HCB = (LHB, JGH)
+BFN = (RMG, KJH)
+TPG = (NGM, XHQ)
+JCS = (VGS, NSN)
+SGT = (LHX, MPF)
+NXM = (VPH, KGV)
+XNC = (LTX, PHJ)
+DNT = (KLS, RNC)
+JGN = (TNN, BXD)
+QJX = (XPJ, DCH)
+LQP = (FRK, NFS)
+HCL = (GBS, PGB)
+FDD = (XQJ, XTS)
+XTS = (TJL, LGJ)
+HLR = (TBR, FPG)
+DLL = (VJV, MJN)
+LFH = (VBM, MHT)
+LMD = (VGG, RHK)
+JKL = (CMQ, QCN)
+DDP = (GTH, HKM)
+VNL = (VVL, CFP)
+SGB = (MKL, DVQ)
+KBJ = (BDF, SXQ)
+DVT = (NMB, LCB)
+XQJ = (TJL, LGJ)
+HLB = (XHH, XNC)
+VPT = (BRF, JPP)
+PDS = (QJF, BHL)
+CGG = (PLS, SNM)
+SDB = (RFL, BPB)
+DVQ = (XSX, KXQ)
+XQS = (BPF, XLV)
+CDG = (XKV, HMT)
+JCG = (CFK, RPR)
+RBC = (DVT, QVH)
+BJB = (MVC, KXL)
+LFZ = (HTT, QTF)
+FTQ = (RLM, LMQ)
+TCT = (FPH, FCC)
+QXL = (BPF, XLV)
+MXX = (BHX, QNX)
+LSR = (FFJ, DMT)
+RTD = (KBS, GDV)
+TXH = (QBQ, NSF)
+CSB = (CBP, QDQ)
+GBS = (BRN, GXP)
+GMX = (LHX, MPF)
+JQV = (GMX, SGT)
+GML = (GLR, SDR)
+GCG = (RHT, KTF)
+RPR = (XTG, JGT)
+NDG = (QFD, HTD)
+KBK = (VFP, BSC)
+FVB = (RFQ, LLH)
+CGP = (NKP, FBF)
+RXQ = (FHC, CTD)
+KQD = (CJN, DRR)
+QTF = (FVH, TRV)
+QDQ = (FBM, SLV)
+NMT = (JST, CCV)
+BHC = (RJM, SVN)
+GMR = (LNT, XFP)
+MSK = (VQN, PFJ)
+CBV = (CGB, PGV)
+MHT = (GMC, RSH)
+BRN = (KQK, FXV)
+XXM = (JGL, GNT)
+VLF = (VNN, RRV)
+FDH = (VQN, PFJ)
+NFD = (MGN, GLL)
+THM = (PLL, VTJ)
+MPF = (JVN, DFC)
+BNG = (RNC, KLS)
+LGJ = (QHV, XBR)
+QTJ = (TVT, NBP)
+KRQ = (MDF, RLN)
+PCK = (CCS, JFK)
+DQV = (FLD, CSB)
+HDD = (FGX, XRG)
+TFL = (DQV, CJQ)
+BNM = (KMV, CVX)
+MLC = (CFP, VVL)
+SBD = (MKD, DKP)
+PSK = (DBV, BSF)
+FRB = (BBD, TPB)
+RKL = (HVK, DRN)
+HMZ = (DRR, CJN)
+LJK = (LBN, DDG)
+LSC = (MXX, VFX)
+TDN = (TPB, BBD)
+RNX = (FBT, DLL)
+QGJ = (KTS, RBF)
+RFB = (BCF, MHS)
+VGN = (TJP, VSF)
+HFH = (FPQ, PGF)
+HXX = (QFD, HTD)
+RJS = (PCK, JXJ)
+TRQ = (GCG, GQF)
+KXN = (FPQ, PGF)
+FMS = (XJL, TFV)
+NMB = (QRQ, DGD)
+BPF = (VMX, GXQ)
+HCX = (XSR, JCQ)
+RJR = (BNG, DNT)
+BQX = (GQC, VLX)
+DHD = (RLC, GVS)
+DQJ = (HJG, FMS)
+QFD = (TNQ, HSF)
+HMT = (HSG, MHM)
+BHD = (FMS, HJG)
+NDF = (PLK, RTX)
+GMC = (PNT, HCX)
+GQX = (CPB, VNP)
+BXD = (VNL, MLC)
+DTD = (XLK, BVR)
+KQT = (MRH, SBD)
+QJH = (QMD, KBJ)
+NFJ = (MVL, SFT)
+JMH = (FVB, BMP)
+BVF = (SFB, KSS)
+RBF = (JCD, NDT)
+QBX = (KJV, LBX)
+NTG = (DPX, CBV)
+DRL = (XXM, PRQ)
+QNX = (SHD, LXG)
+PNN = (KQD, HMZ)
+CCS = (TQQ, DDP)
+QSD = (QTF, HTT)
+BVN = (JNK, TRT)
+HSF = (KNG, LXD)
+BHL = (DSB, SGB)
+VFX = (BHX, QNX)
+JFH = (TCH, DCB)
+DBV = (SDL, CDG)
+TRT = (RXN, BQX)
+VLC = (MHS, BCF)
+BBM = (HCB, FMB)
+THG = (THX, GFC)
+XKV = (HSG, MHM)
+DSB = (MKL, DVQ)
+XSC = (HVK, DRN)
+SKM = (VTJ, PLL)
+QFR = (KXP, QNS)
+BMP = (RFQ, LLH)
+MLM = (KRQ, CLV)
+XNH = (JJJ, DHC)
+KPM = (RBC, THN)
+FGX = (LNK, KQL)
+TSF = (BDD, KFL)
+LXG = (XCG, TRP)
+TBR = (HFK, LMB)
+JFK = (TQQ, DDP)
+TQH = (KJG, MQD)
+RKT = (FGX, XRG)
+DJF = (DJJ, LNQ)
+FPM = (LRR, HJP)
+PCJ = (XDX, NJD)
+HFK = (NQN, LQQ)
+SHB = (RMG, KJH)
+KPJ = (XVN, PGK)
+XSH = (LNH, VPT)
+SQX = (BVR, XLK)
+KTB = (QRS, KPF)
+RKK = (GLM, JQG)
+HTT = (TRV, FVH)
+SDL = (XKV, HMT)
+HCK = (FCK, QBJ)
+SJF = (JQV, JLB)
+QMT = (FPG, TBR)
+HGX = (QLS, XLB)
+VKM = (QFF, NLD)
+FNH = (KQV, RFD)
+HPM = (TRQ, QJS)
+PMS = (LHM, CJL)
+JTK = (XPG, XPG)
+VMN = (SJB, JCS)
+LNT = (SHM, NKV)
+KFL = (RCB, BVF)
+ZZZ = (NBP, TVT)
+QPX = (BFF, KNR)
+HSG = (LBC, RCN)
+SLV = (CFR, RXQ)
+KJH = (MHL, QNB)
+FCK = (DSS, DSS)
+RLL = (GBS, PGB)
+VKJ = (RFB, VLC)
+VSJ = (CGQ, KQT)
+XDX = (HPH, VFJ)
+LCB = (DGD, QRQ)
+PLL = (HFH, KXN)
+DMH = (BSR, FQV)
+PPQ = (XFP, LNT)
+PGB = (BRN, GXP)
+JMN = (DFT, DGR)
+RVT = (KTL, SFV)
+JCH = (SJB, JCS)
+KKG = (QPX, MLL)
+KNB = (CPB, VNP)
+HKM = (VFC, BXC)
+QBT = (CJL, LHM)
+GJM = (PQQ, BQT)
+RLN = (LDG, JJH)
+RJM = (JGN, FSL)
+LHL = (HSC, LBV)
+CVX = (VQT, XDS)
+LVV = (MGX, DGL)
+NSN = (JBX, GKM)
+MTL = (DPX, CBV)
+LBN = (NDG, HXX)
+KLG = (DBP, PCV)
+DGD = (MTL, NTG)
+LDG = (JTK, JTK)
+HCR = (GMR, PPQ)
+DMB = (SQT, VGH)
+LGK = (DBV, BSF)
+FLG = (FCK, FCK)
+KXL = (TXH, LQB)
+MQD = (JNF, LSR)
+RNC = (SMQ, FPM)
+QFF = (NTD, VCM)
+QLS = (DTK, CSG)
+JGH = (LJQ, NSJ)
+FSL = (BXD, TNN)
+KLC = (TBT, CVN)
+BDF = (KBK, NDR)
+QMD = (SXQ, BDF)
+VQT = (VBL, XHK)
+CSC = (NLG, FQP)
+SJB = (VGS, NSN)
+NFS = (DDR, LTK)
+DRA = (CJN, DRR)
+LBX = (THL, TKP)
+DJJ = (PLF, PLF)
+MJN = (TBX, DRB)
+TJP = (VKX, CTP)
+DDR = (RLL, HCL)
+LQB = (QBQ, NSF)
+BKV = (PSR, NKS)
+NKP = (XCH, XNH)
+VCX = (QSD, QSD)
+FQV = (HKH, VRD)
+VPH = (DDF, PLQ)
+HVS = (VPH, KGV)
+BHX = (LXG, SHD)
+RQV = (PHB, FDQ)
+NSL = (MCJ, DBM)
+GVD = (JBT, HKN)
+TRN = (QPX, MLL)
+XCG = (CXS, FVG)
+KBF = (XVR, TFT)
+CTD = (CJM, FTQ)
+PRH = (FVB, BMP)
+TLR = (NSL, XQF)
+BLS = (VVM, NFB)
+VVL = (MRB, NTX)
+QGV = (RFD, KQV)
+SRK = (GLM, JQG)
+VHX = (LQG, KRF)
+NHB = (PNG, NQL)
+LLK = (XDK, LLS)
+GQD = (TSX, KBF)
+LHV = (QRS, KPF)
+VNR = (PNG, NQL)
+LBP = (PCJ, MCK)
+TNN = (MLC, VNL)
+KNR = (PLM, DGC)
+BMD = (SJF, GTJ)
+FPG = (HFK, LMB)
+XFP = (SHM, NKV)
+RSN = (LFH, TVV)
+FGN = (DVR, GLV)
+JHX = (VFX, MXX)
+DDG = (NDG, HXX)
+NQS = (NFJ, VSV)
+MKD = (DTM, MLM)
+CQQ = (KTL, SFV)
+DGK = (FMB, HCB)
+NSJ = (NKK, DRL)
+JTS = (GTF, KBP)
+VDG = (MCK, PCJ)
+MGN = (PVK, KLC)
+LBC = (SRK, RKK)
+CJQ = (FLD, CSB)
+MKG = (MHB, QPK)
+XVR = (PCL, QDH)
+QBQ = (LRB, VSJ)
+FXM = (LGK, PSK)
+LMQ = (TLR, NPH)
+PKM = (VBC, XXR)
+VJV = (TBX, DRB)
+CCV = (JFH, QNK)
+DMT = (RHS, JNG)
+XHQ = (PGD, TCT)
+DFC = (VMN, JCH)
+JJJ = (FNH, QGV)
+JNG = (KBM, KLG)
+THX = (RSN, BHS)
+TKG = (CQQ, RVT)
+HPN = (PDH, KPJ)
+BGS = (PSP, CMD)
+BLH = (QJX, SGJ)
+PRP = (QPK, MHB)
+PMV = (HDD, RKT)
+TRV = (TFL, MDD)
+CJL = (FMV, FJQ)
+JCQ = (KXF, HGT)
+GRS = (RBR, QNR)
+SGJ = (DCH, XPJ)
+RTX = (RJR, JJF)
+AAA = (TVT, NBP)
+XDK = (SPG, BMD)
+FBF = (XCH, XNH)
+LHM = (FMV, FJQ)
+SQT = (FVT, MDT)
+XPG = (JTF, RNX)
+MGX = (JGQ, DHD)
+PHH = (QBT, PMS)
+VJL = (MKG, PRP)
+DCB = (FRB, TDN)
+PRM = (BHC, QJV)
+FRR = (RPF, CLG)
+PGF = (MQQ, TPG)
+NQL = (MGL, SCP)
+CSG = (RRT, BLS)
+NMK = (PSR, NKS)
+MRH = (MKD, DKP)
+SFV = (HCH, FGN)
+BDD = (BVF, RCB)
+MDD = (CJQ, DQV)
+TGR = (PQQ, PQQ)
+MDT = (VBV, LLK)
+XXR = (MLF, TCX)
+DVR = (CQD, NQS)
+SXQ = (NDR, KBK)
+KBP = (QTJ, ZZZ)
+VRD = (TJN, FGM)
+VNP = (GQD, MBH)
+KHM = (TMM, QGJ)
+JCD = (KPK, VJL)
+BXJ = (FVP, PMV)
+DFT = (MTT, JCG)
+JRL = (VPT, LNH)
+HCH = (DVR, GLV)
+FPB = (JXF, DNF)
+NDR = (VFP, BSC)
+MQQ = (NGM, XHQ)
+XBM = (GLR, SDR)
+KQL = (RVJ, VGN)
+FPH = (CRK, FSD)
+GDV = (TQH, VRC)
+LCM = (PMS, QBT)
+NTX = (HPM, PNJ)
+FDQ = (NXM, HVS)
+KTF = (VNR, NHB)
+GTJ = (JQV, JLB)
+XHH = (LTX, PHJ)
+QVX = (KBS, GDV)
+VGG = (KRS, TPX)
+PFM = (GTF, GTF)
+KSK = (KMV, CVX)
+RVL = (QMD, KBJ)
+KXF = (NFD, HBL)
+VCM = (QVX, RTD)
+MBH = (KBF, TSX)
+LNK = (VGN, RVJ)
+TVV = (MHT, VBM)
+FXF = (MSK, FDH)
+VKB = (NMK, BKV)
+VGH = (MDT, FVT)
+NLG = (LJK, MFN)
+DSS = (KQD, KQD)
+VRG = (PFM, PFM)
+TQQ = (GTH, HKM)
+RSH = (HCX, PNT)
+TKP = (KJP, GGM)
+VRC = (MQD, KJG)
+HJP = (KGF, SRS)
+PSP = (QRF, HFJ)
+NKK = (XXM, PRQ)
+JJF = (DNT, BNG)
+PLF = (RBR, RBR)
+NJD = (HPH, VFJ)
+RRV = (KNB, GQX)
+GLV = (CQD, NQS)
+XBR = (DMB, XRL)
+SPG = (SJF, GTJ)
+DKX = (FXF, BDC)
+FQH = (RQV, KLN)
+QBJ = (DSS, PNN)
+VVM = (MNG, CSC)
+KXQ = (XBG, GVD)
+CFK = (JGT, XTG)
+CMA = (LQP, XBV)
+FCS = (QFR, FHX)
+FFJ = (JNG, RHS)
+LMB = (NQN, LQQ)
+TMM = (RBF, KTS)
+JXH = (VRG, BRX)
+FBT = (VJV, MJN)
+QCN = (HPN, MKH)
+XDS = (XHK, VBL)
+QNK = (TCH, DCB)
+MKL = (KXQ, XSX)
+MLF = (SJL, JTQ)
+MGL = (TMX, DKX)
+MTT = (CFK, RPR)
+KRF = (QMT, HLR)
+BSR = (VRD, HKH)
+TJL = (QHV, XBR)
+PCV = (NMT, RMQ)
+FVP = (RKT, HDD)
+SHM = (DQJ, BHD)
+PNG = (SCP, MGL)
+PGD = (FCC, FPH)
+QJS = (GCG, GQF)
+CFP = (MRB, NTX)
+QGS = (RTX, PLK)
+SJL = (XSC, RKL)
+JST = (JFH, QNK)
+TBX = (VHX, MSM)
+DDZ = (PHQ, JBF)
+KXP = (XBM, GML)
+HKC = (NDF, QGS)
+DHF = (VQV, SDB)
+JXT = (BDD, KFL)
+LQG = (QMT, HLR)
+LXD = (RBH, CKT)
+LXM = (XPG, XKZ)
+XLV = (GXQ, VMX)
+GLL = (PVK, KLC)
+TSX = (XVR, TFT)
+QRF = (DJF, KJM)
+KJG = (JNF, LSR)
+GQB = (XSH, JRL)
+GKR = (LMD, KVB)
+GVS = (QJH, RVL)
+VPM = (XQJ, XTS)
+QNR = (LDC, DDZ)
+PVK = (TBT, CVN)
+JCX = (SNM, PLS)
+HHJ = (QFF, NLD)
+TLX = (VNN, RRV)
+GTF = (QTJ, QTJ)
+LNQ = (PLF, GRS)
+VBL = (GJK, BLQ)
+DGC = (DGK, BBM)
+NDT = (VJL, KPK)
+KBS = (VRC, TQH)
+RVJ = (TJP, VSF)
+RBR = (LDC, LDC)
+PDH = (XVN, XVN)
+JBF = (VSK, JMN)
+BBD = (MQR, JXH)
+FVT = (VBV, LLK)
+VBC = (MLF, TCX)
+XKZ = (RNX, JTF)
+MNA = (JTF, RNX)
+VFJ = (HHJ, VKM)
+GLM = (SKM, THM)
+JNF = (FFJ, DMT)
+MNG = (FQP, NLG)
+MVL = (PRM, KLH)
+RHS = (KBM, KLG)
+CRC = (CMQ, QCN)
+BPB = (DMH, NNT)
+NLD = (VCM, NTD)
+XCH = (JJJ, DHC)
+CKT = (PLR, KHM)
+NNT = (BSR, FQV)
+GQC = (XQS, QXL)
+GKM = (QTH, KHG)
+GJD = (TRB, MDB)
+CGB = (VXJ, VCG)
+SMQ = (HJP, LRR)
+RNP = (BLH, KHP)
+MMP = (NCM, XPK)
+VLX = (XQS, QXL)
+XJL = (BVN, KGN)
+LRB = (CGQ, KQT)
+NGM = (TCT, PGD)
+TBT = (KTB, LHV)
+JLB = (SGT, GMX)
+HFJ = (DJF, KJM)
+RCN = (RKK, SRK)
+KJM = (DJJ, LNQ)
+CVN = (KTB, LHV)
+PHB = (NXM, HVS)
+KJP = (HCR, QPM)
+SHD = (XCG, TRP)
+KKX = (LQP, XBV)
+FHX = (KXP, QNS)
+CLV = (MDF, RLN)
+FXV = (FQH, FCH)
+HTD = (TNQ, HSF)
+CJM = (LMQ, RLM)
+BSF = (CDG, SDL)
+JVN = (VMN, JCH)
+KDK = (XSG, LHL)
+FGM = (PJB, NTQ)
+MRB = (PNJ, HPM)
+JTQ = (XSC, RKL)
+CJN = (TSF, JXT)
+RLC = (QJH, RVL)
+XLK = (CBK, JBG)
+KLN = (FDQ, PHB)
+JJH = (JTK, LXM)
+TVT = (GKC, HKC)
+QHV = (DMB, XRL)
+TCX = (SJL, JTQ)
+JBX = (KHG, QTH)
+CQD = (NFJ, VSV)
+KPF = (VPM, FDD)
+KHG = (HCF, RNP)
+BSC = (QBX, JVB)
+KVK = (CQQ, RVT)
+CPB = (GQD, MBH)
+LTK = (RLL, HCL)
+HVK = (XMR, BJB)
+TFT = (QDH, PCL)
+MHB = (TDF, RCG)
+SRQ = (PMV, FVP)
+NJA = (QTF, HTT)
+RMN = (XHH, XNC)
+VCG = (VDG, LBP)
+LSF = (JMH, PRH)
+THL = (GGM, KJP)
+PLK = (RJR, JJF)
+DKP = (DTM, MLM)
+NQN = (LCM, PHH)
+KNG = (RBH, CKT)
+GKC = (NDF, QGS)
+BRF = (FPB, JFD)
+HKH = (FGM, TJN)
+KTL = (HCH, FGN)
+HKN = (MMP, BFV)
+JVB = (KJV, LBX)
+QVH = (LCB, NMB)
+HHF = (XQC, GSF)
+VGS = (JBX, GKM)
+BXC = (KPH, PKM)
+DBM = (FCS, BFJ)
+QPK = (TDF, RCG)
+VXJ = (LBP, VDG)
+GGM = (HCR, QPM)
+LHB = (LJQ, NSJ)
+LJQ = (NKK, DRL)
+JXF = (FLG, HCK)
+PHJ = (XFB, CGP)
+MKH = (PDH, KPJ)
+MFT = (PSK, LGK)
+CBS = (PCK, JXJ)
+FRK = (LTK, DDR)
+CMQ = (HPN, MKH)
+QJV = (RJM, SVN)
+KHP = (SGJ, QJX)
+CQR = (MGX, DGL)
+FJQ = (CQR, LVV)
+HCF = (KHP, BLH)
+LFC = (LMD, KVB)
+DPX = (CGB, PGV)
+DFS = (XLB, QLS)
+DDK = (GKR, LFC)
+KLS = (FPM, SMQ)
+JGQ = (RLC, GVS)
+LBV = (HHF, STJ)
+JGT = (TQJ, XBB)
+QRN = (LHL, XSG)
+RFD = (QRN, KDK)
+HSC = (STJ, HHF)
+LNH = (BRF, JPP)
+FSD = (TRN, KKG)
+NSF = (VSJ, LRB)
+QJF = (DSB, SGB)
+MQR = (VRG, BRX)
+XMR = (MVC, KXL)
+VNN = (KNB, GQX)
+NCM = (XLP, VKJ)
+KTS = (JCD, NDT)
+MDF = (LDG, LDG)
+PLS = (BGS, VVD)
+TPX = (TGR, GJM)
+GJK = (SQX, DTD)
+CTP = (BJL, GQB)
+GXP = (FXV, KQK)
+DRN = (BJB, XMR)
+QDH = (GNC, DDK)
+FMB = (JGH, LHB)
+STJ = (GSF, XQC)
+DNF = (FLG, HCK)
+XSR = (KXF, HGT)
+RNZ = (XBV, LQP)
+RGS = (MJC, LSF)
+GFC = (BHS, RSN)
+GTH = (BXC, VFC)
+PLM = (DGK, BBM)
+KSS = (HGX, DFS)
+SCP = (TMX, DKX)
+RXN = (GQC, VLX)
+PLR = (TMM, QGJ)
+QTH = (HCF, RNP)
+BRP = (CGG, JCX)
+BVR = (JBG, CBK)
+DTK = (BLS, RRT)
+TPB = (MQR, JXH)
+MJC = (PRH, JMH)
+GSF = (KPM, DRC)
+RVA = (JBF, PHQ)
+BLQ = (DTD, SQX)
+CBK = (BFN, SHB)
+VBM = (GMC, RSH)
+NFB = (CSC, MNG)
+NKS = (FPL, DHF)
+CLG = (KVK, TKG)
+KLH = (QJV, BHC)
+XQF = (DBM, MCJ)
+BCF = (KSK, BNM)
+XLP = (RFB, VLC)
+MVC = (TXH, LQB)
+LLS = (BMD, SPG)
+TJN = (PJB, NTQ)
+FQP = (LJK, MFN)
+PHQ = (VSK, JMN)
+XLB = (DTK, CSG)
+MHM = (RCN, LBC)
+LLH = (SRQ, BXJ)
+FVH = (MDD, TFL)
+RLM = (TLR, NPH)
+MLL = (BFF, KNR)
+CBP = (FBM, SLV)
+MHL = (TLX, VLF)
+MDB = (LSC, JHX)
+KQV = (QRN, KDK)
+SNM = (BGS, VVD)
+KGV = (PLQ, DDF)
+FCC = (FSD, CRK)
+JFD = (JXF, DNF)
+NTD = (RTD, QVX)
+TDF = (FXM, MFT)
+TMX = (BDC, FXF)
+MFN = (LBN, DDG)
+KGN = (TRT, JNK)
+XPK = (VKJ, XLP)
+JBT = (MMP, BFV)
+PLQ = (PSX, GHC)
+TRP = (CXS, FVG)
+QPM = (GMR, PPQ)
+VMX = (CBS, RJS)
+BFV = (XPK, NCM)
+LRR = (KGF, SRS)
+KGF = (MRL, VKB)
+PGV = (VCG, VXJ)
+LHX = (JVN, DFC)
+KPH = (VBC, XXR)
+GQF = (RHT, KTF)
+XQC = (KPM, DRC)
+TFV = (BVN, KGN)
+VVD = (CMD, PSP)
+HGT = (NFD, HBL)
+HBL = (MGN, GLL)
+XBG = (JBT, HKN)
+XSG = (LBV, HSC)
+SRS = (MRL, VKB)
+XBV = (NFS, FRK)
+PNJ = (TRQ, QJS)
+BRX = (PFM, JTS)
+GHC = (JPD, PDS)
+RCB = (KSS, SFB)
+QNS = (GML, XBM)
+GNC = (LFC, GKR)
+MRL = (BKV, NMK)
+KVB = (VGG, RHK)
+VCF = (JCX, CGG)
+VFP = (QBX, JVB)
+FLD = (QDQ, CBP)
+JBG = (SHB, BFN)
+BJL = (JRL, XSH)
+DBP = (RMQ, NMT)
+SFT = (PRM, KLH)
+CMD = (HFJ, QRF)`,Q2=`0 3 6 9 12 15
+1 3 6 10 15 21
+10 13 16 21 30 45`,k2=`12 12 11 5 -5 -5 40 194 558 1278 2553 4643 7877 12661 19486 28936 41696 58560 80439 108369 143519
+6 12 33 79 163 320 638 1301 2644 5220 9879 17859 30889 51304 82172 127433 192050 282172 405309 570519 788607
+3 5 5 3 9 60 262 872 2445 6091 13915 29744 60271 116756 217404 390473 678031 1140057 1858241 2938353 4509389
+15 21 23 31 67 161 350 681 1224 2114 3674 6758 13659 30354 71646 172084 407585 935627 2065861 4378033 8910071
+13 32 75 155 286 477 724 1011 1347 1894 3301 7501 19549 51737 132449 324337 759840 1707391 3689542 7685418 15464987
+9 23 59 129 245 419 663 989 1409 1935 2579 3353 4269 5339 6575 7989 9593 11399 13419 15665 18149
+29 57 93 134 193 323 653 1442 3171 6715 13675 27029 52429 100813 193667 373531 724690 1413358 2764818 5410241 10564342
+26 44 74 139 286 598 1217 2393 4581 8615 15995 29330 52987 94003 163324 277442 460508 747006 1185080 1840613 2802164
+26 53 105 196 345 578 945 1572 2782 5357 11103 24058 52986 116265 250950 528745 1082962 2152411 4150601 7771330 14143463
+11 17 32 59 96 149 260 550 1277 2909 6212 12353 23018 40545 68072 109700 170671 257561 378488 543335 763988
+4 14 38 95 219 477 996 2010 3944 7562 14241 26533 49411 93078 179146 353714 714029 1461171 3001653 6139588 12434184
+15 22 23 11 -12 -12 108 544 1629 3870 7981 14909 25850 42252 65802 98394 142075 198966 271155 360559 468752
+5 2 16 76 220 504 1038 2072 4176 8596 17934 37408 77123 156092 309358 600875 1147609 2166120 4064281 7621931 14341202
+-1 1 8 24 59 128 245 412 603 743 682 164 -1209 -4018 -9073 -17464 -30617 -50355 -78964 -119264 -174685
+15 28 45 59 59 30 -39 -128 -117 372 2311 7951 22198 55382 128880 286664 619266 1313842 2758770 5760511 11986520
+26 45 68 95 126 161 200 243 290 341 396 455 518 585 656 731 810 893 980 1071 1166
+21 28 35 42 49 56 63 70 77 84 91 98 105 112 119 126 133 140 147 154 161
+-10 -3 18 55 110 183 282 470 990 2532 6735 17050 40138 88089 182041 358469 680869 1262429 2310889 4218237 7742573
+9 25 62 140 283 520 893 1476 2410 3967 6676 11577 20712 38013 70824 132495 247148 459774 860531 1646359 3275530
+2 7 33 101 237 478 891 1605 2851 4997 8554 14127 22322 33756 49668 74416 122776 238151 533733 1279139 3072535
+-2 0 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38
+5 14 23 32 41 50 59 68 77 86 95 104 113 122 131 140 149 158 167 176 185
+16 17 26 66 184 474 1111 2406 4904 9559 18032 33170 59736 105472 182589 309790 514944 838541 1338070 2093474 3213848
+22 42 80 153 295 584 1179 2360 4562 8392 14616 24101 37695 56026 79199 106368 135158 160910 175720 167241 117215
+6 21 52 109 211 410 842 1824 4018 8687 18079 35998 68666 126066 224107 388190 659121 1103000 1828405 3018878 5001220
+13 19 29 60 142 321 671 1317 2472 4493 7959 13770 23275 38492 62639 101532 167031 284763 509985 957860 1857820
+4 16 44 100 215 458 963 1970 3893 7448 13914 25677 47362 88170 166637 320117 623138 1221760 2395656 4666442 8980537
+2 2 8 33 108 302 764 1796 3969 8301 16530 31548 58139 104333 184043 322376 566444 1007252 1823320 3365719 6319630
+20 35 50 65 80 95 110 125 140 155 170 185 200 215 230 245 260 275 290 305 320
+11 6 9 40 133 345 767 1544 2928 5410 10005 18810 36050 70029 136805 267146 519585 1004422 1926633 3660228 6873123
+6 19 38 76 156 311 587 1050 1807 3079 5427 10362 21840 49715 117435 278786 653581 1502158 3377441 7427999 15987265
+14 14 16 17 17 38 166 642 2053 5705 14305 33159 72242 149761 298273 575110 1079888 1983336 3573686 6329541 11031623
+12 26 57 122 266 578 1222 2499 4965 9644 18400 34594 64321 118960 220828 416129 804537 1605237 3299590 6928305 14688071
+0 -5 -12 -6 50 226 638 1467 3007 5803 10999 21106 41550 83628 169980 344509 690014 1358827 2624642 4967626 9209846
+20 45 79 127 202 336 599 1133 2233 4548 9533 20373 43778 93462 197102 410802 849837 1753978 3623782 7496926 15490289
+21 33 41 35 8 -22 24 336 1279 3471 7875 15905 29546 51488 85274 135462 207801 309421 449037 637167 886364
+4 -1 3 28 96 246 549 1142 2299 4579 9136 18348 37021 74554 148642 291444 559886 1053375 1945513 3542820 6395190
+17 31 59 128 287 617 1241 2334 4133 6947 11167 17276 25859 37613 53357 74042 100761 134759 177443 230392 295367
+-2 0 10 35 92 221 504 1106 2380 5121 11131 24392 53376 115420 244780 507138 1025234 2023270 3902180 7364189 13613652
+7 28 59 110 201 362 642 1135 2039 3782 7291 14576 30002 63005 133680 283769 597275 1237420 2510163 4969210 9583571
+17 45 102 216 429 794 1377 2284 3749 6346 11433 22006 44243 90159 181980 359084 688657 1281579 2315496 4067556 6959897
+19 30 47 77 136 268 584 1323 2947 6316 13053 26303 52207 102537 199047 380154 710527 1293974 2289607 3930549 6543326
+23 42 77 151 312 652 1344 2723 5462 10940 21981 44288 89155 178518 354335 696191 1355093 2620278 5055188 9780558 19071368
+22 43 85 169 330 623 1125 1940 3233 5344 9072 16297 31274 63266 131795 276824 577804 1187897 2392963 4709153 9038134
+6 25 52 81 110 156 289 699 1812 4473 10216 21643 42936 80528 143961 246961 408762 655713 1023204 1557949 2320666
+15 35 85 188 376 704 1279 2318 4262 8001 15322 29792 58445 114870 224610 434194 825649 1538991 2805987 4999428 8703270
+12 26 63 145 318 666 1325 2497 4464 7602 12395 19449 29506 43458 62361 87449 120148 162090 215127 281345 363078
+12 24 51 112 233 444 787 1349 2331 4164 7692 14478 27402 52029 99979 197196 403379 855143 1856587 4059742 8808766
+5 -3 -17 -26 -9 68 265 696 1577 3299 6531 12358 22459 39330 66557 109144 173901 269897 408983 606390 881407
+-7 -14 -27 -34 -3 121 426 1072 2394 5113 10699 21916 43546 83232 152294 266252 444631 709420 1081305 1572490 2174555
+15 43 93 185 353 658 1220 2275 4266 7980 14746 26712 47228 81404 137068 226834 373339 623167 1083249 2012077 4037277
+0 10 35 75 130 200 285 385 500 630 775 935 1110 1300 1505 1725 1960 2210 2475 2755 3050
+10 7 13 38 104 258 580 1190 2267 4102 7216 12583 22007 38711 68205 119509 206816 351689 585895 954988 1522762
+14 33 72 154 329 681 1337 2481 4373 7371 11953 18736 28490 42147 60808 85755 118480 160749 214726 283190 369887
+10 22 37 58 102 222 555 1408 3394 7630 16009 31558 58894 104790 178863 294396 469306 727270 1099021 1623826 2351158
+9 19 35 74 171 395 876 1842 3670 6967 12723 22632 39777 70040 124845 226183 415307 767015 1412039 2570690 4601515
+21 44 71 100 145 246 471 903 1598 2501 3333 3537 2528 775 2709 23172 100187 318346 849211 2017954 4409203
+12 24 44 89 199 459 1027 2166 4295 8108 14865 27040 49624 92533 174770 331245 623478 1155808 2099218 3725475 6454989
+2 -7 -16 -13 19 102 260 509 851 1308 2063 3808 8430 20191 47573 105960 221312 434947 809482 1435889 2441493
+9 15 25 31 30 29 45 106 274 746 2170 6491 19008 53026 139755 348272 823883 1858721 4016707 8347127 16738350
+8 18 37 63 96 148 259 525 1160 2632 5936 13115 28260 59496 123024 251327 509416 1025822 2049351 4048927 7882776
+20 39 77 146 258 425 659 972 1376 1883 2505 3254 4142 5181 6383 7760 9324 11087 13061 15258 17690
+6 14 22 30 38 46 54 62 70 78 86 94 102 110 118 126 134 142 150 158 166
+3 4 17 55 134 278 530 986 1876 3717 7556 15300 30079 56470 100149 165993 252585 339102 357123 134181 -713180
+9 28 61 108 169 244 333 436 553 684 829 988 1161 1348 1549 1764 1993 2236 2493 2764 3049
+3 18 54 136 316 696 1460 2922 5603 10356 18564 32442 55480 93070 153366 248432 395739 620078 955962 1450596 2167500
+-1 -6 -16 -31 -51 -76 -106 -141 -181 -226 -276 -331 -391 -456 -526 -601 -681 -766 -856 -951 -1051
+24 38 72 156 345 744 1544 3065 5802 10470 18044 29790 47283 72408 107340 154499 216476 295926 395424 517280 663309
+17 15 6 -4 -4 18 71 157 267 377 444 402 158 -412 -1467 -3205 -5867 -9741 -15166 -22536 -32304
+-1 -7 -6 24 123 355 814 1630 2975 5069 8186 12660 18891 27351 38590 53242 72031 95777 125402 161936 206523
+-1 -2 9 54 179 484 1175 2641 5555 11000 20650 37140 65020 113239 201182 372347 723723 1466606 3049271 6399370 13393725
+10 27 50 80 122 206 429 1035 2562 6112 13856 29985 62474 126253 248691 478710 901370 1660417 2992078 5274334 9097018
+-1 11 30 52 73 89 96 90 67 23 -46 -144 -275 -443 -652 -906 -1209 -1565 -1978 -2452 -2991
+9 14 14 9 -1 -16 -36 -61 -91 -126 -166 -211 -261 -316 -376 -441 -511 -586 -666 -751 -841
+20 41 85 176 348 645 1121 1840 2876 4313 6245 8776 12020 16101 21153 27320 34756 43625 54101 66368 80620
+13 32 69 135 242 401 624 948 1523 2853 6354 15511 38128 90599 206059 450263 953223 1973288 4027961 8160817 16481924
+10 31 61 97 128 138 112 40 -86 -287 -629 -1277 -2576 -5164 -10122 -19166 -34886 -61037 -102887 -167627 -264848
+14 17 31 78 193 442 963 2041 4230 8539 16713 31679 58311 104817 185272 324077 563270 973281 1666119 2805592 4599309
+10 29 60 114 216 405 734 1270 2094 3301 5000 7314 10380 14349 19386 25670 33394 42765 54004 67346 83040
+10 20 42 84 148 237 375 654 1344 3147 7758 19034 45307 103804 228952 487908 1009562 2038446 4033814 7848568 15045322
+-1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+14 28 47 75 117 189 352 786 1925 4693 10936 24277 51898 108293 223074 456955 934168 1907958 3892569 7927555 16100571
+11 26 61 121 206 311 426 536 621 656 611 451 136 -379 -1144 -2214 -3649 -5514 -7879 -10819 -14414
+-5 -12 -19 -8 64 280 780 1778 3577 6580 11295 18332 28390 42232 60646 84390 114119 150292 193057 242112 296540
+10 22 55 123 235 396 610 896 1343 2257 4502 10223 24304 57260 130991 290283 625656 1317884 2722249 5522607 11003169
+15 34 74 157 328 675 1362 2685 5158 9634 17470 30761 52712 88343 146085 241799 409125 725354 1372886 2777245 5900636
+8 13 26 48 75 110 201 519 1486 3952 9411 20259 40163 74771 133302 232076 401852 702023 1246368 2247290 4088395
+19 29 54 103 184 305 479 736 1145 1849 3116 5409 9478 16477 28109 46802 75919 120005 185074 278939 411588
+7 14 46 113 220 360 512 663 885 1527 3638 9822 25844 63497 145661 315582 655247 1324668 2649638 5319095 10821008
+14 38 75 134 234 404 683 1120 1774 2714 4019 5778 8090 11064 14819 19484 25198 32110 40379 50174 61674
+6 17 30 45 62 81 102 125 150 177 206 237 270 305 342 381 422 465 510 557 606
+17 30 43 56 69 82 95 108 121 134 147 160 173 186 199 212 225 238 251 264 277
+20 45 86 162 321 650 1279 2392 4284 7556 13634 25944 52286 109253 229996 477362 965640 1896183 3615554 6710326 12161299
+22 43 74 127 231 436 817 1478 2556 4225 6700 10241 15157 21810 30619 42064 56690 75111 98014 126163 160403
+-5 -11 -6 33 134 321 597 920 1183 1225 922 435 726 4493 17721 52098 128603 282637 571138 1082197 1947774
+-1 13 46 114 256 554 1158 2324 4482 8360 15199 27103 47577 82315 140309 235359 388073 628455 999188 1559728 2391334
+3 6 27 78 172 331 603 1091 1998 3696 6836 12532 22677 40485 71402 124593 215293 368410 623889 1044490 1726802
+-2 8 39 115 276 592 1198 2367 4640 9025 17262 32133 57783 100020 166590 267488 415478 627162 925165 1342291 1928850
+0 2 13 50 146 365 834 1815 3848 7994 16195 31751 59902 108511 188892 316940 514928 814674 1263289 1933440 2941050
+19 30 47 87 184 411 913 1963 4074 8241 16458 32768 65278 129837 256481 500365 959825 1805572 3326981 6004209 10618712
+13 22 51 111 213 368 587 881 1261 1738 2323 3027 3861 4836 5963 7253 8717 10366 12211 14263 16533
+14 36 82 179 369 716 1320 2347 4102 7202 12948 24049 45917 88830 171350 325485 604198 1091992 1919438 3282663 5468977
+12 23 54 129 280 556 1040 1871 3280 5671 9810 17227 30988 57056 106532 199149 368484 669455 1188782 2059213 3478448
+14 30 65 140 301 628 1246 2345 4234 7488 13297 24192 45422 87455 170546 333427 650686 1268826 2482285 4893464 9745339
+9 5 2 0 -1 -1 0 2 5 9 14 20 27 35 44 54 65 77 90 104 119
+9 9 22 66 170 378 760 1437 2627 4719 8382 14716 25452 43208 71808 116671 185277 287717 437334 651462 952270
+1 10 22 43 86 165 280 402 492 634 1454 5170 17912 54406 146767 360018 818055 1745102 3529210 6815985 12642382
+2 1 15 57 140 277 481 765 1142 1625 2227 2961 3840 4877 6085 7477 9066 10865 12887 15145 17652
+7 23 42 62 80 106 191 465 1176 2725 5728 11236 21446 41581 84146 177518 381833 816415 1704562 3443358 6708296
+-5 -10 -15 -2 67 250 630 1350 2723 5496 11405 24252 51884 109706 226850 457196 899887 1739416 3326840 6346565 12156399
+23 48 87 144 239 428 831 1679 3403 6805 13383 25947 49787 94871 179903 339608 637391 1186606 2185143 3969978 7100823
+15 29 50 73 93 105 104 85 43 -27 -130 -271 -455 -687 -972 -1315 -1721 -2195 -2742 -3367 -4075
+2 3 17 68 194 445 878 1557 2582 4212 7229 13841 29704 68185 159030 365549 817922 1776213 3746497 7688998 15380750
+3 11 38 90 174 306 530 949 1763 3309 6119 11083 19977 36985 72588 152664 338527 769219 1747968 3914288 8578188
+-6 -6 -9 -24 -64 -146 -291 -524 -874 -1374 -2061 -2976 -4164 -5674 -7559 -9876 -12686 -16054 -20049 -24744 -30216
+21 31 41 51 61 71 81 91 101 111 121 131 141 151 161 171 181 191 201 211 221
+-1 16 46 89 145 214 296 391 499 620 754 901 1061 1234 1420 1619 1831 2056 2294 2545 2809
+18 44 85 152 270 495 943 1831 3530 6630 12017 20962 35222 57153 89835 137209 204226 297008 423021 591260 812446
+-5 5 21 44 87 181 381 772 1475 2653 4517 7332 11423 17181 25069 35628 49483 67349 90037 118460 153639
+4 18 36 60 104 201 423 941 2174 5103 11855 26687 57522 118241 232128 437464 797808 1422972 2513774 4457062 8021476
+8 14 20 26 32 38 44 50 56 62 68 74 80 86 92 98 104 110 116 122 128
+11 19 50 132 303 612 1136 2036 3701 7075 14335 30195 64259 135042 276529 548455 1051871 1952019 3511080 6133990 10431247
+7 16 37 80 156 284 501 875 1521 2620 4441 7366 11918 18792 28889 43353 63611 91416 128893 178588 243520
+0 -3 -9 -20 -27 17 236 880 2381 5424 11075 21076 38530 69368 125226 228674 422142 782391 1442991 2628004 4700939
+-1 -3 -11 -20 -2 107 417 1090 2343 4465 7910 13625 23959 44846 90603 193922 426035 936665 2032143 4326166 9026232
+25 43 70 108 159 225 308 410 533 679 850 1048 1275 1533 1824 2150 2513 2915 3358 3844 4375
+29 56 102 171 260 355 442 553 888 2105 5976 16803 44319 109320 254050 560467 1181039 2388750 4655642 8772595 16027278
+14 29 61 114 190 288 416 632 1131 2402 5508 12622 28134 61022 129927 273787 573436 1193922 2464328 5022892 10072708
+24 48 89 149 229 341 531 920 1786 3741 8114 17753 38629 82880 174267 357373 712124 1375086 2568051 4631977 8059373
+28 53 89 149 256 445 773 1353 2440 4614 9134 18600 38212 78278 159444 323857 658916 1346683 2763335 5672003 11582776
+22 36 55 93 188 424 974 2176 4654 9496 18501 34507 61812 106700 178084 288278 453910 696988 1046131 1537977 2218780
+9 16 35 66 109 164 231 310 401 504 619 746 885 1036 1199 1374 1561 1760 1971 2194 2429
+7 34 79 141 215 300 418 662 1312 3089 7663 18598 43007 94291 196407 390061 740889 1348804 2355843 3946459 6328459
+16 43 79 128 206 343 590 1040 1884 3550 7030 14611 31426 68595 149379 321041 677640 1403961 2860225 5744362 11398390
+14 29 44 63 101 189 385 796 1618 3205 6184 11641 21413 38533 67889 117174 198222 328845 535308 855603 1343709
+22 33 38 38 43 89 268 777 2008 4730 10464 22238 46055 93648 187480 369537 716338 1363847 2547738 4666878 8381123
+3 1 -6 -17 -20 16 153 502 1264 2839 6097 12996 27912 60419 131050 283274 608588 1299433 2760990 5846246 12344605
+7 4 0 -3 9 73 260 686 1523 3010 5464 9291 14997 23199 34636 50180 70847 97808 132400 176137 230721
+15 24 33 42 51 60 69 78 87 96 105 114 123 132 141 150 159 168 177 186 195
+10 23 42 67 98 135 178 227 282 343 410 483 562 647 738 835 938 1047 1162 1283 1410
+-7 0 30 101 246 534 1118 2324 4794 9689 18941 35521 63683 109189 179666 285540 442457 676712 1035878 1607431 2548622
+22 40 60 81 102 122 140 155 166 172 172 165 150 126 92 47 -10 -80 -164 -263 -378
+7 10 25 63 148 346 822 1948 4503 10033 21475 44195 87661 168129 313132 569616 1020054 1816286 3251854 5914783 11001561
+12 37 73 126 216 388 741 1481 2995 5944 11395 21063 37819 66741 117141 206188 364958 647967 1147469 2014012 3484922
+7 18 56 148 348 749 1503 2863 5264 9471 16847 29839 52865 93979 168180 304433 561213 1061164 2066810 4140202 8466114
+22 33 40 43 42 37 28 15 -2 -23 -48 -77 -110 -147 -188 -233 -282 -335 -392 -453 -518
+-3 6 27 55 83 104 121 170 369 1026 2871 7521 18343 41948 90629 186148 365381 688446 1250067 2195067 3739035
+7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47
+-3 0 5 11 30 112 376 1047 2505 5370 10685 20337 38026 71475 137425 272771 558853 1172912 2493441 5308255 11210950
+22 34 55 105 214 430 852 1707 3503 7308 15223 31132 61827 118634 219734 393526 683684 1157110 1916903 3123907 5032564
+18 41 79 139 243 454 922 1962 4181 8676 17330 33238 61300 109023 187579 313171 508764 806243 1249065 1895477 2822377
+4 5 2 4 33 132 396 1039 2509 5669 12077 24427 47279 88371 161196 290359 522838 951137 1759080 3308474 6296073
+0 5 10 13 12 5 -10 -35 -72 -123 -190 -275 -380 -507 -658 -835 -1040 -1275 -1542 -1843 -2180
+6 10 24 65 167 388 832 1698 3368 6546 12460 23139 41777 73196 124420 205372 329706 515786 787824 1177189 1723899
+2 4 13 37 81 147 234 338 452 566 667 739 763 717 576 312 -106 -712 -1543 -2639 -4043
+22 42 80 143 236 364 532 752 1092 1855 4074 10682 29028 75996 188102 441042 986962 2124308 4426060 8969637 17738708
+1 21 68 165 348 663 1158 1870 2807 3925 5100 6095 6522 5799 3102 -2688 -13043 -29851 -55484 -92871 -145576
+-4 8 30 57 88 138 255 552 1273 2921 6498 13965 29157 59627 120297 240426 476338 933670 1804694 3428641 6386022
+14 31 67 132 237 398 644 1030 1659 2722 4572 7857 13748 24311 43087 75961 132420 227321 383313 634082 1028615
+6 26 68 145 270 456 716 1063 1510 2070 2756 3581 4558 5700 7020 8531 10246 12178 14340 16745 19406
+2 7 34 95 210 412 754 1319 2231 3677 5992 9956 17655 34667 75128 172707 403128 928287 2079158 4505833 9439872
+0 9 36 99 226 460 861 1497 2419 3637 5174 7410 12211 25899 66166 176887 457954 1122624 2604098 5749210 12165804
+6 6 19 57 139 301 608 1173 2205 4143 7993 16078 33541 71108 149839 308981 618988 1204385 2287965 4284050 8004079
+25 39 57 77 99 137 242 542 1306 3037 6586 13243 24686 42535 67041 94112 109407 77579 -76121 -495799 -1441795
+-4 -3 -1 2 6 11 17 24 32 41 51 62 74 87 101 116 132 149 167 186 206
+9 32 68 125 216 359 577 898 1355 1986 2834 3947 5378 7185 9431 12184 15517 19508 24240 29801 36284
+-1 0 15 72 226 570 1250 2490 4644 8329 14783 26775 50723 101217 209976 442483 927245 1904934 3807711 7382962 13880640
+16 29 59 109 177 268 417 737 1517 3403 7699 16823 34943 68799 128690 229574 392202 644197 1021015 1566813 2335433
+17 37 70 121 195 297 432 605 821 1085 1402 1777 2215 2721 3300 3957 4697 5525 6446 7465 8587
+4 19 44 84 148 249 404 634 964 1423 2044 2864 3924 5269 6948 9014 11524 14539 18124 22348 27284
+15 25 41 84 188 414 876 1776 3442 6369 11288 19346 32603 55313 97001 179437 351665 720917 1513467 3189564 6652286
+13 28 69 145 266 449 729 1176 1913 3133 5136 8461 14284 25402 48336 97374 201749 417618 847087 1667225 3172838
+12 26 40 54 68 82 96 110 124 138 152 166 180 194 208 222 236 250 264 278 292
+-2 -2 11 44 104 211 418 838 1695 3457 7185 15354 33581 73942 160886 341170 699756 1384240 2641135 4868216 8688166
+13 21 44 98 214 454 945 1935 3865 7433 13608 23556 38505 59761 89474 133450 208449 358169 684696 1405842 2953780
+2 1 -2 5 50 176 435 874 1521 2408 3715 6180 11993 26488 61106 138414 300596 624055 1244996 2404699 4529468
+5 6 4 -2 3 78 363 1128 2842 6273 12631 23765 42422 72571 119788 191689 298387 452936 671710 974648 1385277
+-3 13 57 143 285 497 793 1187 1693 2325 3097 4023 5117 6393 7865 9547 11453 13597 15993 18655 21597
+21 30 39 51 71 116 236 543 1248 2720 5617 11216 22231 44753 92670 197402 428736 938386 2049431 4437414 9492734
+10 17 26 46 90 192 443 1057 2489 5642 12219 25299 50243 96067 177454 317616 552260 934959 1544280 2493076 3940408
+17 29 41 53 65 77 89 101 113 125 137 149 161 173 185 197 209 221 233 245 257
+4 7 17 34 58 89 127 172 224 283 349 422 502 589 683 784 892 1007 1129 1258 1394
+16 32 53 77 97 112 151 310 802 2020 4613 9575 18347 32932 56023 91144 142804 216664 319717 460481 649205
+23 31 39 47 55 63 71 79 87 95 103 111 119 127 135 143 151 159 167 175 183
+6 13 41 96 177 284 431 667 1117 2065 4123 8590 18260 39300 85591 188476 417909 927056 2044694 4465063 9636756
+3 23 61 127 241 443 819 1550 2989 5769 10943 20155 35839 61441 101657 162678 252431 380803 559833 803855 1129573
+20 39 77 152 285 492 786 1214 1975 3703 8068 18969 44794 102538 225043 473303 956718 1865447 3520671 6450710 11503627
+11 33 69 125 207 321 473 669 915 1217 1581 2013 2519 3105 3777 4541 5403 6369 7445 8637 9951
+13 26 51 107 227 475 984 2024 4111 8170 15767 29427 53057 92495 156208 256164 408905 636850 969859 1447091 2119191
+10 18 45 115 265 550 1050 1871 3140 5026 7887 12759 22579 44782 96244 211971 459470 961394 1929841 3716619 6884877
+9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49
+-8 -12 -16 -20 -24 -28 -32 -36 -40 -44 -48 -52 -56 -60 -64 -68 -72 -76 -80 -84 -88
+8 4 -3 0 52 227 648 1513 3146 6104 11404 20985 38592 71365 132539 245814 452140 819884 1459607 2544982 4341732
+11 21 31 40 57 112 265 626 1411 3070 6534 13641 27820 55153 106059 198248 362834 658985 1211477 2306915 4631860
+-3 13 43 87 145 217 303 403 517 645 787 943 1113 1297 1495 1707 1933 2173 2427 2695 2977
+7 6 22 76 202 464 997 2093 4366 9061 18642 37934 76343 152077 299879 584606 1124137 2126792 3951214 7201596 12880296
+-5 -12 -16 -9 23 117 374 1049 2736 6717 15564 34095 70784 139706 263056 474211 821201 1370314 2209376 3450015 5227933
+17 21 25 29 33 37 41 45 49 53 57 61 65 69 73 77 81 85 89 93 97
+6 13 32 80 180 368 717 1406 2880 6172 13500 29335 62308 128664 258590 507776 978143 1853856 3461417 6365291 11511885
+5 23 49 86 154 303 625 1278 2553 5048 10072 20498 42428 88236 181828 367312 722717 1380949 2560835 4611894 8077398`,j2="",C2="",_2="",z2="",L2="",q2="",R2="",G2="",B2="",F2="",S2="",M2="",D2="",A2="",H2="",X2="",V2="",P2="",N2="",w2="",y2="",O2="",$2="",E2="",Z2="",I2="",U2="",W2="",Y2="",n4="",e4="",r4="";var R1=Object.assign({"./advent/day01/solution.js":fn,"./advent/day02/solution.js":bn,"./advent/day03/solution.js":mn,"./advent/day04/solution.js":Jn,"./advent/day05/solution.js":Cn,"./advent/day06/solution.js":Ln,"./advent/day07/solution.js":Bn,"./advent/day08/solution.js":Dn,"./advent/day09/solution.js":Vn,"./advent/day10/solution.js":Pn,"./advent/day11/solution.js":Nn,"./advent/day12/solution.js":wn,"./advent/day13/solution.js":yn,"./advent/day14/solution.js":On,"./advent/day15/solution.js":$n,"./advent/day16/solution.js":En,"./advent/day17/solution.js":Zn,"./advent/day18/solution.js":In,"./advent/day19/solution.js":Un,"./advent/day20/solution.js":Wn,"./advent/day21/solution.js":Yn,"./advent/day22/solution.js":n2,"./advent/day23/solution.js":e2,"./advent/day24/solution.js":r2,"./advent/day25/solution.js":t2}),x1=Object.assign({"./advent/day01/input-test.txt":s2,"./advent/day01/input-test2.txt":d2,"./advent/day01/input.txt":l2,"./advent/day02/input-test.txt":g2,"./advent/day02/input.txt":i2,"./advent/day03/input-test.txt":o2,"./advent/day03/input.txt":f2,"./advent/day04/input-test.txt":v2,"./advent/day04/input.txt":u2,"./advent/day05/input-test.txt":h2,"./advent/day05/input.txt":b2,"./advent/day06/input-test.txt":a2,"./advent/day06/input.txt":c2,"./advent/day07/input-test.txt":p2,"./advent/day07/input.txt":m2,"./advent/day08/input-test.txt":T2,"./advent/day08/input-test2.txt":x2,"./advent/day08/input-test3.txt":K2,"./advent/day08/input.txt":J2,"./advent/day09/input-test.txt":Q2,"./advent/day09/input.txt":k2,"./advent/day10/input-test.txt":j2,"./advent/day10/input.txt":C2,"./advent/day11/input-test.txt":_2,"./advent/day11/input.txt":z2,"./advent/day12/input-test.txt":L2,"./advent/day12/input.txt":q2,"./advent/day13/input-test.txt":R2,"./advent/day13/input.txt":G2,"./advent/day14/input-test.txt":B2,"./advent/day14/input.txt":F2,"./advent/day15/input-test.txt":S2,"./advent/day15/input.txt":M2,"./advent/day16/input-test.txt":D2,"./advent/day16/input.txt":A2,"./advent/day17/input-test.txt":H2,"./advent/day17/input.txt":X2,"./advent/day18/input-test.txt":V2,"./advent/day18/input.txt":P2,"./advent/day19/input-test.txt":N2,"./advent/day19/input.txt":w2,"./advent/day20/input-test.txt":y2,"./advent/day20/input.txt":O2,"./advent/day21/input-test.txt":$2,"./advent/day21/input.txt":E2,"./advent/day22/input-test.txt":Z2,"./advent/day22/input.txt":I2,"./advent/day23/input-test.txt":U2,"./advent/day23/input.txt":W2,"./advent/day24/input-test.txt":Y2,"./advent/day24/input.txt":n4,"./advent/day25/input-test.txt":e4,"./advent/day25/input.txt":r4});function V1(n,e,r,g){this.day=n||"01",this.input=r||"",this.testInputs=g||[""],this.part1=e.part1||null,this.part2=e.part2||null,this.knownAnswers=(e.knownAnswers||[]).map(s=>String(s))}function t4(){var n={},e={},r={};Object.keys(R1).forEach(t=>{var d=/day(\d+)/.exec(t)[1];n[d]=R1[t]||null}),Object.keys(x1).forEach(t=>{var d=/day(\d+)/.exec(t)[1];t.includes("test")?(r[d]=r[d]||[],r[d].push(x1[t]||"")):e[d]=x1[t]||""});var g={},s=Object.keys(n).sort();return s.forEach(t=>{var d=n[t]||{},l=e[t]||"",o=r[t]||[];g[t]=new V1(t,d,l,o)}),g}const s4=Object.freeze(Object.defineProperty({__proto__:null,DayData:V1,getDataByDay:t4},Symbol.toStringTag,{value:"Module"}));function G1(n,e,r){const g=n.slice();return g[28]=e[r],g[30]=r,g}function B1(n,e,r){const g=n.slice();return g[31]=e[r],g}function F1(n){let e,r=n[31]+"",g,s,t;function d(){return n[12](n[31])}return{c(){e=T("button"),g=i1(r),p(e,"class","button svelte-gd9guy"),M(e,"current",n[31]===n[2])},m(l,o){c1(l,e,o),h(e,g),s||(t=[S(e,"keydown",null),S(e,"click",d)],s=!0)},p(l,o){n=l,o[0]&2&&r!==(r=n[31]+"")&&K1(g,r),o[0]&6&&M(e,"current",n[31]===n[2])},d(l){l&&f1(e),s=!1,V(t)}}}function S1(n){let e,r,g;return{c(){e=T("button"),e.textContent="run all",p(e,"class","button run-all-button svelte-gd9guy")},m(s,t){c1(s,e,t),r||(g=[S(e,"keydown",null),S(e,"click",n[11])],r=!0)},p:e1,d(s){s&&f1(e),r=!1,V(g)}}}function M1(n){let e,r,g;function s(){return n[16](n[30])}return{c(){e=T("button"),e.textContent=`Test ${n[30]+1}`,p(e,"class","button input-toggle svelte-gd9guy"),M(e,"current",n[4]===n[30])},m(t,d){c1(t,e,d),r||(g=[S(e,"keydown",null),S(e,"click",s)],r=!0)},p(t,d){n=t,d[0]&16&&M(e,"current",n[4]===n[30])},d(t){t&&f1(e),r=!1,V(g)}}}function d4(n){let e,r,g,s,t,d,l,o,i,v,f,b,m,z=n[7][0]+"",r1,N,J,P,t1,A,w,s1,y,O=n[7][1]+"",d1,v1,R,$,u1,G,a,x,Q,C,k,D,K,B,h1,E,l1,H,j1,X,p1,C1,Z=b1(n[1]),L=[];for(let u=0;u<Z.length;u+=1)L[u]=F1(B1(n,Z,u));let F=n[1].length>1&&S1(n),I=b1({length:n[3]}),q=[];for(let u=0;u<I.length;u+=1)q[u]=M1(G1(n,I,u));return{c(){e=T("div"),r=T("h2"),r.textContent="Advent 2023",g=_(),s=T("div"),t=T("div"),t.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',d=_(),l=T("div");for(let u=0;u<L.length;u+=1)L[u].c();o=_(),F&&F.c(),i=_(),v=T("div"),f=T("h4"),f.textContent="Part 1:",b=_(),m=T("div"),r1=i1(z),N=_(),J=T("textarea"),t1=_(),A=T("div"),w=T("h4"),w.textContent="Part 2:",s1=_(),y=T("div"),d1=i1(O),v1=_(),R=T("textarea"),u1=_(),G=T("div"),a=T("h4"),a.textContent="Input:",x=_(),Q=T("br"),C=_(),k=T("button"),k.textContent="Real",D=_();for(let u=0;u<q.length;u+=1)q[u].c();K=_(),B=T("textarea"),h1=_(),E=T("div"),l1=_(),H=T("div"),j1=i1(`Catch errors
+      `),X=T("button"),X.textContent="x",p(t,"class","label svelte-gd9guy"),p(l,"class","day-list"),p(f,"class","svelte-gd9guy"),p(m,"class","time svelte-gd9guy"),p(v,"class","label svelte-gd9guy"),p(J,"name","output1"),p(J,"id","output1"),p(J,"rows",P=a1(n[6][0])),p(J,"class","svelte-gd9guy"),M(J,"known-good",n[8][0]),p(w,"class","svelte-gd9guy"),p(y,"class","time svelte-gd9guy"),p(A,"class","label svelte-gd9guy"),p(R,"name","output2"),p(R,"id","output2"),p(R,"rows",$=a1(n[6][1])),p(R,"class","svelte-gd9guy"),M(R,"known-good",n[8][1]),p(a,"class","svelte-gd9guy"),p(k,"class","button input-toggle svelte-gd9guy"),M(k,"current",n[4]===-1),p(G,"class","label svelte-gd9guy"),$1(G,"align-self","flex-start"),p(B,"name","input"),p(B,"id","input"),p(B,"rows","14"),p(B,"class","svelte-gd9guy"),p(X,"class","button input-toggle catch-button svelte-gd9guy"),M(X,"current",n[5]),p(H,"class","catch-area svelte-gd9guy"),p(s,"class","layout svelte-gd9guy"),p(e,"class","outer svelte-gd9guy")},m(u,j){c1(u,e,j),h(e,r),h(e,g),h(e,s),h(s,t),h(s,d),h(s,l);for(let c=0;c<L.length;c+=1)L[c]&&L[c].m(l,null);h(l,o),F&&F.m(l,null),h(s,i),h(s,v),h(v,f),h(v,b),h(v,m),h(m,r1),h(s,N),h(s,J),U(J,n[6][0]),h(s,t1),h(s,A),h(A,w),h(A,s1),h(A,y),h(y,d1),h(s,v1),h(s,R),U(R,n[6][1]),h(s,u1),h(s,G),h(G,a),h(G,x),h(G,Q),h(G,C),h(G,k),h(G,D);for(let c=0;c<q.length;c+=1)q[c]&&q[c].m(G,null);h(s,K),h(s,B),U(B,n[0]),h(s,h1),h(s,E),h(s,l1),h(s,H),h(H,j1),h(H,X),p1||(C1=[S(J,"input",n[13]),S(R,"input",n[14]),S(k,"keydown",null),S(k,"click",n[15]),S(B,"input",n[17]),S(X,"keydown",null),S(X,"click",n[18])],p1=!0)},p(u,j){if(j[0]&518){Z=b1(u[1]);let c;for(c=0;c<Z.length;c+=1){const g1=B1(u,Z,c);L[c]?L[c].p(g1,j):(L[c]=F1(g1),L[c].c(),L[c].m(l,o))}for(;c<L.length;c+=1)L[c].d(1);L.length=Z.length}if(u[1].length>1?F?F.p(u,j):(F=S1(u),F.c(),F.m(l,null)):F&&(F.d(1),F=null),j[0]&128&&z!==(z=u[7][0]+"")&&K1(r1,z),j[0]&64&&P!==(P=a1(u[6][0]))&&p(J,"rows",P),j[0]&64&&U(J,u[6][0]),j[0]&256&&M(J,"known-good",u[8][0]),j[0]&128&&O!==(O=u[7][1]+"")&&K1(d1,O),j[0]&64&&$!==($=a1(u[6][1]))&&p(R,"rows",$),j[0]&64&&U(R,u[6][1]),j[0]&256&&M(R,"known-good",u[8][1]),j[0]&16&&M(k,"current",u[4]===-1),j[0]&1048){I=b1({length:u[3]});let c;for(c=0;c<I.length;c+=1){const g1=G1(u,I,c);q[c]?q[c].p(g1,j):(q[c]=M1(g1),q[c].c(),q[c].m(G,null))}for(;c<q.length;c+=1)q[c].d(1);q.length=I.length}j[0]&1&&U(B,u[0]),j[0]&32&&M(X,"current",u[5])},i:e1,o:e1,d(u){u&&f1(e),z1(L,u),F&&F.d(),z1(q,u),p1=!1,V(C1)}}}function a1(n){var e=String(n||"").split(`
+`).length;return Math.min(e,Math.max(e,1,10))}function l4(n,e,r){var g=a=>new Promise(x=>setTimeout(x,a)),s={},t=[],d="xx",l="",o=1,i=-1,v=!0,f=["",""],b=["",""],m=[!1,!1];function z(a=""){a&&r(2,d=a);var x=s[d];r(3,o=x.testInputs.length),i>o-1&&r(4,i=o-1),r(0,l=i<0?x?.input:x?.testInputs[i]),P()}function r1(a=""){l&&P()}function N(a=-1){r(4,i=a),z()}var J=!1;async function P(){if(!J){J=!0,r(6,f=["",""]),r(7,b=["",""]),await g(10);for(var a=1;a<=2;a++){var[x,Q]=t1(d,a,l),C=s1(d,a,x,i);A(a,x,Q,C),await g(1)}J=!1}}function t1(a="",x=1,Q=""){var C=(s[a]||{})["part"+x];if(!C)return["",-999];var k=performance.now();if(v)try{return[C(Q),performance.now()-k]}catch(B){var D=String(B),K=/:(\d+:\d+)\)/.exec(B.stack||"");return K&&(D=`(${K[1]}) ${D}`),[D,performance.now()-k]}else return[C(Q),performance.now()-k]}function A(a=1,x="",Q=0,C=!1){r(6,f[a-1]=x,f),r(7,b[a-1]=Q<0?"":`(${Math.round(Q)}ms)`,b),r(6,f),r(7,b),r(8,m[a-1]=C,m),r(8,m)}async function w(){var H;if(!J){J=!0;var a=["",""],x=[0,0],Q=[!0,!0];r(4,i=-1),r(0,l=""),await g(10);for(var C=0;C<t.length;C++)for(var k=t[C],D=s[k],K=1;K<3;K++){var B=D?.input,[h1,E]=t1(k,K,B||""),l1=E>=0&&s1(k,K,h1);Q[H=K-1]&&(Q[H]=l1),a[K-1]+=l1?"★":"ー",E>=0&&(x[K-1]+=E),A(K,a[K-1],x[K-1],Q[K-1]),await g(1)}r(8,m=Q),J=!1}}function s1(a="",x=1,Q="",C=-1){var k=s[a]?.knownAnswers||[],D=2+2*C+(x===1?0:1),K=String(k[D]||"");return!!(K&&K===String(Q))}var y=a=>{!a||!a.getDataByDay||(s=a.getDataByDay(),r(1,t=Object.keys(s).filter(x=>!!s[x].part1).sort()),z(t.at(-1)))};y(s4);const O=a=>z(a);function d1(){f[0]=this.value,r(6,f)}function v1(){f[1]=this.value,r(6,f)}const R=()=>N(-1),$=a=>N(a);function u1(){l=this.value,r(0,l)}const G=()=>{r(5,v=!v)};return n.$$.update=()=>{n.$$.dirty[0]&1&&r1(l)},[l,t,d,o,i,v,f,b,m,z,N,w,O,d1,v1,R,$,u1,G]}class g4 extends sn{constructor(e){super(),tn(this,e,l4,d4,w1,{},null,[-1,-1])}}new g4({target:document.querySelector(".app")});
