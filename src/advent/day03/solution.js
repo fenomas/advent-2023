@@ -1,6 +1,6 @@
 
-// order: test1, real1, test2, real2
-export var knownAnswers = [4361, 539637, 467835, 82818007]
+// order: [real1, real2, test1, test2, ...]
+export var knownAnswers = [539637, 82818007, 4361, 467835]
 
 
 export function part1(input = '') {

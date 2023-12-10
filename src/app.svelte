@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
   var sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
   /**
@@ -10,8 +10,9 @@
   var dataByDay = {}
   var dayNumList = []
   var currDay = 'xx'
-  var input = ''
-  var useTestInput = false
+  var currInput = ''
+  var numTestInputs = 1
+  var useTestNum = -1
   var catchErrors = true
   var outputs = ['', '']
   var times = ['', '']
@@ -29,17 +30,19 @@
   function setDay(day = '') {
     if (day) currDay = day
     var dat = dataByDay[currDay]
-    input = useTestInput ? dat?.testInput : dat?.input
+    numTestInputs = dat.testInputs.length
+    if (useTestNum > numTestInputs - 1) useTestNum = numTestInputs - 1
+    currInput = useTestNum < 0 ? dat?.input : dat?.testInputs[useTestNum]
     runSolutions()
   }
 
   function onInput(input = '') {
-    if (input) runSolutions()
+    if (currInput) runSolutions()
   }
-  $: onInput(input)
+  $: onInput(currInput)
 
-  function setInputType(test) {
-    useTestInput = !!test
+  function setInputType(testNum = -1) {
+    useTestNum = testNum
     setDay()
   }
 
@@ -65,9 +68,10 @@
     outputs = ['', '']
     times = ['', '']
     await sleep(10)
-    for (var part = 1; part < 3; part++) {
-      var [out, dt] = getSolutionOutput(currDay, part, input)
-      renderOutput(part, out, dt, currDay)
+    for (var part = 1; part <= 2; part++) {
+      var [out, dt] = getSolutionOutput(currDay, part, currInput)
+      var good = outputIsKnownGood(currDay, part, out, useTestNum)
+      renderOutput(part, out, dt, good)
       await sleep(1)
     }
     busy = false
@@ -91,15 +95,13 @@
     }
   }
 
-  function renderOutput(part = 1, output = '', time = 0, day = '') {
+  function renderOutput(part = 1, output = '', time = 0, good = false) {
     outputs[part - 1] = output
     times[part - 1] = time < 0 ? '' : `(${Math.round(time)}ms)`
     outputs = outputs
     times = times
-    if (day) {
-      answersKnownGood[part - 1] = outputIsKnownGood(day, part, output)
-      answersKnownGood = answersKnownGood
-    }
+    answersKnownGood[part - 1] = good
+    answersKnownGood = answersKnownGood
   }
 
   async function runAllSolutions() {
@@ -108,19 +110,21 @@
     var strs = ['', '']
     var dts = [0, 0]
     var allGood = [true, true]
+    useTestNum = -1
+    currInput = ''
     await sleep(10)
     // run all cases in sequence
     for (var i = 0; i < dayNumList.length; i++) {
       var dayStr = dayNumList[i]
       var dat = dataByDay[dayStr]
       for (var part = 1; part < 3; part++) {
-        var input = useTestInput ? dat.testInput : dat.input
+        var input = dat?.input
         var [out, dt] = getSolutionOutput(dayStr, part, input || '')
         var isGood = dt >= 0 && outputIsKnownGood(dayStr, part, out)
         allGood[part - 1] &&= isGood
         strs[part - 1] += isGood ? '★' : 'ー'
         if (dt >= 0) dts[part - 1] += dt
-        renderOutput(part, strs[part - 1], dts[part - 1])
+        renderOutput(part, strs[part - 1], dts[part - 1], allGood[part - 1])
         await sleep(1)
       }
     }
@@ -128,10 +132,9 @@
     busy = false
   }
 
-  function outputIsKnownGood(day = '', part = 1, output = '') {
+  function outputIsKnownGood(day = '', part = 1, output = '', testNum = -1) {
     var known = dataByDay[day]?.knownAnswers || []
-    var ix = part === 1 ? 0 : 2
-    if (!useTestInput) ix++
+    var ix = 2 + 2 * testNum + (part === 1 ? 0 : 1)
     var ans = String(known[ix] || '')
     return !!(ans && ans === String(output))
   }
@@ -222,18 +225,20 @@
       <br />
       <button
         class="button input-toggle"
-        class:current={!useTestInput}
+        class:current={useTestNum === -1}
         on:keydown={null}
-        on:click={() => setInputType(false)}>Real</button
+        on:click={() => setInputType(-1)}>Real</button
       >
-      <button
-        class="button input-toggle"
-        class:current={useTestInput}
-        on:keydown={null}
-        on:click={() => setInputType(true)}>Test</button
-      >
+      {#each { length: numTestInputs } as _, i}
+        <button
+          class="button input-toggle"
+          class:current={useTestNum === i}
+          on:keydown={null}
+          on:click={() => setInputType(i)}>Test {i + 1}</button
+        >
+      {/each}
     </div>
-    <textarea name="input" id="input" bind:value={input} rows="14" />
+    <textarea name="input" id="input" bind:value={currInput} rows="14" />
     <div />
     <div class="catch-area">
       Catch errors

@@ -1,21 +1,18 @@
 
-// order: test1, real1, test2, real2
-export var knownAnswers = [142, 54304, 281, 54418]
+// order: [real1, real2, test1, test2, ...]
+export var knownAnswers = [54304, 54418, 142, , , 281,]
 
 
 
 export function part1(input = '') {
     return input.split(/\n/).reduce((acc, line) => {
         var nums = line.split('').filter(char => /\d/.test(char))
-        return acc + parseInt(nums[0] + nums.at(-1))
+        return acc + parseInt(nums[0] + nums.at(-1)) || 0
     }, 0)
 }
 
 
 export function part2(input = '') {
-    // hack! see below
-    input = maybeOverrideTestInput(input)
-
     // solution:
     var digits = [
         ...'0123456789'.split(''),
@@ -41,18 +38,3 @@ export function part2(input = '') {
     }, 0)
 }
 
-
-
-
-// hack - usually part 2 uses the same test input as part 1,
-// but not today so hacking in an override here
-function maybeOverrideTestInput(input) {
-    if (!input.startsWith('1abc2\n')) return input
-    return `two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen`
-}

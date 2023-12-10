@@ -12,10 +12,10 @@ var inputImports = import.meta.glob('./advent/day*/input*.txt', {
 
 
 // return data type
-export function DayData(day, soln, input, testInput) {
+export function DayData(day, soln, input, testInputs) {
     this.day = day || '01'
     this.input = input || ''
-    this.testInput = testInput || ''
+    this.testInputs = testInputs || ['']
     /** @type {(string) => string} */
     this.part1 = soln.part1 || null
     /** @type {(string) => string} */
@@ -37,8 +37,12 @@ export function getDataByDay() {
     })
     Object.keys(inputImports).forEach((path) => {
         var day = /day(\d+)/.exec(path)[1]
-        var obj = path.includes('-test') ? testInputsByDay : inputsByDay
-        obj[day] = inputImports[path] || ''
+        if (path.includes('test')) {
+            testInputsByDay[day] = testInputsByDay[day] || []
+            testInputsByDay[day].push(inputImports[path] || '')
+        } else {
+            inputsByDay[day] = inputImports[path] || ''
+        }
     })
 
     var dataByDay = {}
@@ -46,8 +50,8 @@ export function getDataByDay() {
     days.forEach(day => {
         var sol = solsByDay[day] || {}
         var input = inputsByDay[day] || ''
-        var testInput = testInputsByDay[day] || ''
-        dataByDay[day] = new DayData(day, sol, input, testInput)
+        var testInputs = testInputsByDay[day] || []
+        dataByDay[day] = new DayData(day, sol, input, testInputs)
     })
     return dataByDay
 }
