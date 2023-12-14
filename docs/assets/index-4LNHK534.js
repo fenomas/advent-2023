@@ -1,32 +1,46 @@
-var N1=Object.defineProperty;var y1=(e,n,L)=>n in e?N1(e,n,{enumerable:!0,configurable:!0,writable:!0,value:L}):e[n]=L;var b1=(e,n,L)=>(y1(e,typeof n!="symbol"?n+"":n,L),L);(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const F of document.querySelectorAll('link[rel="modulepreload"]'))l(F);new MutationObserver(F=>{for(const J of F)if(J.type==="childList")for(const t of J.addedNodes)t.tagName==="LINK"&&t.rel==="modulepreload"&&l(t)}).observe(document,{childList:!0,subtree:!0});function L(F){const J={};return F.integrity&&(J.integrity=F.integrity),F.referrerPolicy&&(J.referrerPolicy=F.referrerPolicy),F.crossOrigin==="use-credentials"?J.credentials="include":F.crossOrigin==="anonymous"?J.credentials="omit":J.credentials="same-origin",J}function l(F){if(F.ep)return;F.ep=!0;const J=L(F);fetch(F.href,J)}})();function L1(){}function D1(e){return e()}function j1(){return Object.create(null)}function y(e){e.forEach(D1)}function A1(e){return typeof e=="function"}function O1(e,n){return e!=e?n==n:e!==n||e&&typeof e=="object"||typeof e=="function"}function $1(e){return Object.keys(e).length===0}function u(e,n){e.appendChild(n)}function h1(e,n,L){e.insertBefore(n,L||null)}function i1(e){e.parentNode&&e.parentNode.removeChild(e)}function C1(e,n){for(let L=0;L<e.length;L+=1)e[L]&&e[L].d(n)}function T(e){return document.createElement(e)}function l1(e){return document.createTextNode(e)}function q(){return l1(" ")}function H(e,n,L,l){return e.addEventListener(n,L,l),()=>e.removeEventListener(n,L,l)}function c(e,n,L){L==null?e.removeAttribute(n):e.getAttribute(n)!==L&&e.setAttribute(n,L)}function E1(e){return Array.from(e.childNodes)}function m1(e,n){n=""+n,e.data!==n&&(e.data=n)}function Y(e,n){e.value=n??""}function Z1(e,n,L,l){L==null?e.style.removeProperty(n):e.style.setProperty(n,L,l?"important":"")}function V(e,n,L){e.classList.toggle(n,!!L)}let K1;function d1(e){K1=e}const e1=[],_1=[];let J1=[];const z1=[],I1=Promise.resolve();let T1=!1;function W1(){T1||(T1=!0,I1.then(H1))}function x1(e){J1.push(e)}const c1=new Set;let n1=0;function H1(){if(n1!==0)return;const e=K1;do{try{for(;n1<e1.length;){const n=e1[n1];n1++,d1(n),U1(n.$$)}}catch(n){throw e1.length=0,n1=0,n}for(d1(null),e1.length=0,n1=0;_1.length;)_1.pop()();for(let n=0;n<J1.length;n+=1){const L=J1[n];c1.has(L)||(c1.add(L),L())}J1.length=0}while(e1.length);for(;z1.length;)z1.pop()();T1=!1,c1.clear(),d1(e)}function U1(e){if(e.fragment!==null){e.update(),y(e.before_update);const n=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,n),e.after_update.forEach(x1)}}function Y1(e){const n=[],L=[];J1.forEach(l=>e.indexOf(l)===-1?n.push(l):L.push(l)),L.forEach(l=>l()),J1=n}const n7=new Set;function e7(e,n){e&&e.i&&(n7.delete(e),e.i(n))}function v1(e){return e?.length!==void 0?e:Array.from(e)}function J7(e,n,L){const{fragment:l,after_update:F}=e.$$;l&&l.m(n,L),x1(()=>{const J=e.$$.on_mount.map(D1).filter(A1);e.$$.on_destroy?e.$$.on_destroy.push(...J):y(J),e.$$.on_mount=[]}),F.forEach(x1)}function L7(e,n){const L=e.$$;L.fragment!==null&&(Y1(L.after_update),y(L.on_destroy),L.fragment&&L.fragment.d(n),L.on_destroy=L.fragment=null,L.ctx=[])}function F7(e,n){e.$$.dirty[0]===-1&&(e1.push(e),W1(),e.$$.dirty.fill(0)),e.$$.dirty[n/31|0]|=1<<n%31}function r7(e,n,L,l,F,J,t=null,r=[-1]){const d=K1;d1(e);const s=e.$$={fragment:null,ctx:[],props:J,update:L1,not_equal:F,bound:j1(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(d?d.$$.context:[])),callbacks:j1(),dirty:r,skip_bound:!1,root:n.target||d.$$.root};t&&t(s.root);let i=!1;if(s.ctx=L?L(e,n.props||{},(g,o,...f)=>{const h=f.length?f[0]:o;return s.ctx&&F(s.ctx[g],s.ctx[g]=h)&&(!s.skip_bound&&s.bound[g]&&s.bound[g](h),i&&F7(e,g)),o}):[],s.update(),i=!0,y(s.before_update),s.fragment=l?l(s.ctx):!1,n.target){if(n.hydrate){const g=E1(n.target);s.fragment&&s.fragment.l(g),g.forEach(i1)}else s.fragment&&s.fragment.c();n.intro&&e7(e.$$.fragment),J7(e,n.target,n.anchor),H1()}d1(d)}class t7{constructor(){b1(this,"$$");b1(this,"$$set")}$destroy(){L7(this,1),this.$destroy=L1}$on(n,L){if(!A1(L))return L1;const l=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return l.push(L),()=>{const F=l.indexOf(L);F!==-1&&l.splice(F,1)}}$set(n){this.$$set&&!$1(n)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}const s7="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(s7);var l7=[54304,54418,142,,,281];function d7(e=""){return e.split(/\n/).reduce((n,L)=>{var l=L.split("").filter(F=>/\d/.test(F));return n+parseInt(l[0]+l.at(-1))||0},0)}function i7(e=""){var n=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return e.split(/\n/).reduce((L,l)=>{var F=-1,J=1/0,t=-1,r=-1;return n.forEach((d,s)=>{var i=l.indexOf(d);i>-1&&i<J&&(J=i,F=s%10);var g=l.lastIndexOf(d);g>-1&&g>r&&(r=g,t=s%10)}),L+parseInt(F+""+t)},0)}const g7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:l7,part1:d7,part2:i7},Symbol.toStringTag,{value:"Module"}));var o7=[2727,56580,8,2286];function f7(e=""){var n=0,L={red:12,green:13,blue:14};return e.split(`
-`).forEach(l=>{var[F,J]=l.split(":"),t=J.split(";").every(r=>r.split(",").every(d=>{var[,s,i]=/(\d+)\s+(\S+)/.exec(d);return L[i]?parseInt(s)<=L[i]:!0}));t&&(n+=parseInt(/\d+/.exec(F)[0]))}),n}function v7(e=""){var n=0;return e.split(`
-`).forEach(L=>{var l={red:0,green:0,blue:0},[,F]=L.split(":");F.split(";").forEach(J=>{J.split(",").forEach(t=>{var[,r,d]=/(\d+)\s+(\S+)/.exec(t),s=parseInt(r);s>l[d]&&(l[d]=s)})}),n+=l.red*l.green*l.blue}),n}const u7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:o7,part1:f7,part2:v7},Symbol.toStringTag,{value:"Module"}));var h7=[539637,82818007,4361,467835];function a7(e=""){var n=[],L=[];e.split(`
-`).forEach((F,J)=>{n[J]=[],L[J]=[];for(var t=0;t<F.length;t++){var r=F[t];if(r!==".")if(/\d/.test(r)){var d=parseInt(F.substring(t)),s=String(d).length;n[J].push({y:J,x:t,value:d,len:s}),t+=s-1}else L[J].push({y:J,x:t})}});var l=0;return n.forEach(F=>{F.forEach(J=>{for(var t=J.y-1;t<J.y+2;t++){var r=L[t]||[],d=r.some(s=>{if(!(s.x<J.x-1)&&!(s.x>J.x+J.len))return!0});if(d){l+=J.value;return}}})}),l}function b7(e=""){var n=[],L=[];e.split(`
-`).forEach((F,J)=>{n[J]=[],L[J]=[];for(var t=0;t<F.length;t++){var r=F[t];if(r!==".")if(/\d/.test(r)){var d=parseInt(F.substring(t)),s=String(d).length;n[J].push({y:J,x:t,value:d,len:s}),t+=s-1}else r==="*"&&L[J].push({y:J,x:t})}});var l=0;return L.forEach(F=>{F.forEach(J=>{for(var t=0,r=1,d=J.y-1;d<J.y+2;d++){var s=n[d]||[];s.forEach(i=>{J.x<i.x-1||J.x>i.x+i.len||(t++,r*=i.value)})}t===2&&(l+=r)})}),l}const c7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:h7,part1:a7,part2:b7},Symbol.toStringTag,{value:"Module"}));var p7=[26443,6284877,13,30];function m7(e=""){var n=0;return e.split(`
-`).forEach((L,l)=>{var F=L.split(":")[1].split("|"),J=F[0].trim().split(/\s+/).map(d=>parseInt(d)),t=F[1].trim().split(/\s+/).map(d=>parseInt(d)),r=t.reduce((d,s)=>d+(J.includes(s)?1:0),0);r>0&&(n+=Math.pow(2,r-1))}),n}function T7(e=""){var n=e.split(`
-`).map((F,J)=>{var t=F.split(":")[1].split("|"),r=t[0].trim().split(/\s+/).map(i=>parseInt(i)),d=t[1].trim().split(/\s+/).map(i=>parseInt(i)),s=d.reduce((i,g)=>i+(r.includes(g)?1:0),0);return s>0&&(L+=Math.pow(2,s-1)),s}),L=0,l=[];return n.forEach((F,J)=>{for(var t=1+(l[J]||0),r=n[J],d=0;d<r;d++){var s=J+1+d;l[s]=(l[s]||0)+t}L+=t}),L}const x7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:p7,part1:m7,part2:T7},Symbol.toStringTag,{value:"Module"}));var K7=[525792406,79004094,35,46];function Q7(e=""){var n=[],L=null;e.split(`
-`).forEach((F,J)=>{if(/:/.test(F)){var[,t]=F.split(":");n.push(L=[]),F=t}var r=F.trim().split(/\s+/).filter(d=>d).map(d=>parseInt(d));r.length>0&&L.push(r)});var l=n.shift()[0];return n.forEach(F=>{var J={};F.forEach(([t,r,d])=>{l.forEach((s,i)=>{J[i]||s>=r&&s<r+d&&(l[i]+=t-r,J[i]=!0)})})}),l.reduce((F,J)=>Math.min(F,J),1/0)}function k7(e=""){var n,L=[],l;e.split(`
-`).forEach((r,d)=>{if(/:/.test(r)){var[,s]=r.split(":");if(!n){n=s.trim().split(/\s+/).map(f=>parseInt(f));return}L.push(l=[]),r=s}if(r=r.trim(),!!r){var[i,g,o]=r.split(/\s+/).map(f=>parseInt(f));l.push([g,g+o,i-g])}}),L.forEach(r=>{r.sort((d,s)=>d[0]-s[0])});for(var F=1/0,J=(r,d,s=0)=>{if(s>=L.length){r<F&&(F=r);return}var i=L[s];i.some(([g,o,f])=>{if(!(r>=o)){if(d<=g)return!0;r<g&&(J(r,g,s+1),r=g);var h=Math.min(d,o);J(r+f,h+f,s+1),r=h}}),r<d&&J(r,d,s+1)},t=0;t<n.length;t+=2)J(n[t],n[t]+n[t+1]);return F}const j7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:K7,part1:Q7,part2:k7},Symbol.toStringTag,{value:"Module"}));var C7=[1195150,42550411,288,71503];function X1(e=""){var n=e.split(`
-`).map(J=>{var t=J.split(":")[1];return t.trim().split(/\s+/).map(r=>parseInt(r))}),[L,l]=n,F=1;return L.forEach((J,t)=>{var r=-J,d=l[t],s=Math.sqrt(r*r-4*d),i=(-r-s)/2,g=(-r+s)/2,o=1e-5,f=Math.floor(g-o)-Math.ceil(i+o)+1;F*=f}),F}function _7(e=""){return X1(e.replace(/ /g,""))}const z7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:C7,part1:X1,part2:_7},Symbol.toStringTag,{value:"Module"}));var q7=[249726565,251135960,6440,5905];function R7(e=""){var n="23456789TJQKA".split(""),L={};n.forEach((F,J)=>{L[F]=String.fromCharCode(65+J)});var l=e.split(`
-`).map(F=>{var[J,t]=F.trim().split(/\s+/),r=parseInt(t),d=J.split("").map(g=>L[g]),s={};d.forEach(g=>{s[g]=(s[g]||0)+1});var i=Object.keys(s).map(g=>s[g]).sort((g,o)=>o-g);return i.push(0,0),{chars:d,bid:r,ctList:i}});return l.sort((F,J)=>{for(var t=0;t<2;t++)if(F.ctList[t]!==J.ctList[t])return F.ctList[t]-J.ctList[t];for(var r=0;r<5;r++){var d=F.chars[r],s=J.chars[r];if(d!==s)return d>s?1:-1}return 0}),l.reduce((F,{bid:J},t)=>F+J*(t+1),0)}function G7(e=""){var n="J23456789TQKA".split(""),L={};n.forEach((F,J)=>{L[F]=String.fromCharCode(65+J)});var l=e.split(`
-`).map(F=>{var[J,t]=F.trim().split(/\s+/),r=parseInt(t),d=J.split("").map(o=>L[o]),s={},i=0;d.forEach(o=>{if(o==="A"){i++;return}s[o]=(s[o]||0)+1});var g=Object.keys(s).map(o=>s[o]).sort((o,f)=>f-o);return g.push(0,0),g[0]+=i,{chars:d,bid:r,ctList:g,hand:J}});return l.sort((F,J)=>{for(var t=0;t<2;t++)if(F.ctList[t]!==J.ctList[t])return F.ctList[t]-J.ctList[t];for(var r=0;r<5;r++){var d=F.chars[r],s=J.chars[r];if(d!==s)return d>s?1:-1}return 0}),l.reduce((F,{bid:J},t)=>F+J*(t+1),0)}const B7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:q7,part1:R7,part2:G7},Symbol.toStringTag,{value:"Module"}));var S7=[18673,17972669116327,2,,6,,,6];function M7(e=""){var n={},L=e.split(`
-`).map(r=>{if(r=r.trim(),!!r){if(!r.includes("="))return r.split("");var[,d,s,i]=/(\S+) = \((\S+), (\S+)\)/.exec(r);n[d]={L:s,R:i}}}),l=L.shift(),F="AAA";if(!n[F])return-1;for(var J=0,t=0;J<1e7;J++){if(F==="ZZZ")return J;F=n[F][l[t]],t=(t+1)%l.length}return-1}function D7(e=""){var n={},L=[],l={},F=e.split(`
-`).map(i=>{if(i=i.trim(),!!i){if(!i.includes("="))return i.split("");var[,g,o,f]=/(\S+) = \((\S+), (\S+)\)/.exec(i);/..A/.test(g)&&L.push(g),/..Z/.test(g)&&(l[g]=!0),n[g]={L:o,R:f}}}),J=F.shift(),t=L.map(i=>{for(var g=0,o=0;g<1e7;g++){if(i in l)return g;i=n[i][J[o]],o=(o+1)%J.length}});t.sort((i,g)=>i-g);for(var r=t.pop();t.length>0;)for(var d=r,s=t.pop();r%s!==0;)r+=d;return r}const A7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:S7,part1:M7,part2:D7},Symbol.toStringTag,{value:"Module"}));var H7=[1772145754,867,114,2];function X7(e=""){var n=(L=[1,1])=>{if(L.length<2)return NaN;for(var l=!0,F=[],J=1;J<L.length;J++){var t=L[J]-L[J-1];l&&(l=t===0),F.push(t)}var r=l?0:n(F);return r+L.at(-1)};return e.split(`
-`).reduce((L,l)=>{var F=l.trim().split(/\s+/).map(J=>parseInt(J));return L+=n(F)},0)}function V7(e=""){var n=(L=[1,1])=>{if(L.length<2)return NaN;for(var l=!0,F=[],J=1;J<L.length;J++){var t=L[J]-L[J-1];l&&(l=t===0),F.push(t)}var r=l?0:n(F);return L[0]-r};return e.split(`
-`).reduce((L,l)=>{var F=l.trim().split(/\s+/).map(J=>parseInt(J));return L+=n(F)},0)}const P7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:H7,part1:X7,part2:V7},Symbol.toStringTag,{value:"Module"}));var w7=[6757,523,8,,,10];function V1(e=""){var n=[],L=[0,0];e.split(`
-`).forEach((d,s)=>{n[s]=[],d.trim().split("").forEach((i,g)=>{i==="S"&&(L=[s,g]),n[s].push({x:g,y:s,char:i})})},0);var l=n.length,F=n[0].length,J=(d,s)=>d<0||d>=l||s<0||s>=F?null:n[d][s],t=J(...L),r=(d,s,i)=>{var g=J(d,s);if(g)for(var o=[g],f=0,h=(Q,m,R)=>{var _=J(Q,m);_&&i(p,_,R)&&o.push(_)};o.length>0&&f++<1e6;){var p=o.pop();h(p.y-1,p.x,0),h(p.y+1,p.x,2),h(p.y,p.x+1,1),h(p.y,p.x-1,3)}};return{start:t,sx:F,sy:l,getAt:J,flood:r}}function N7(e=""){var{start:n,sx:L,sy:l,getAt:F,flood:J}=V1(e),t={"|":[0,2],"-":[1,3],L:[0,1],J:[0,3],7:[2,3],F:[1,2],S:[0,1,2,3]},r=0;return J(n.y,n.x,(d,s,i)=>{if(d.seen=!0,s.seen)return!1;var g=t[d.char]||[];if(!g.includes(i))return!1;var o=t[s.char]||[],f=(i+2)%4;return o.includes(f)?(r++,!0):!1}),r/2}function y7(e=""){var{start:n,sx:L,sy:l,getAt:F,flood:J}=V1(e),t={"|":[0,2],"-":[1,3],L:[0,1],J:[0,3],7:[2,3],F:[1,2],S:[0,1,2,3]},r=[],d=[],s=(o,f,h,p)=>{h%2===0&&(o+=h-1),h%2===1&&(f+=2-h);var Q=F(o,f);Q&&!Q.seen&&p.push(Q)};J(n.y,n.x,(o,f,h)=>{if(o.seen=!0,f.seen)return!1;var p=t[o.char]||[];if(!p.includes(h))return!1;var Q=t[f.char]||[];if(!Q.includes((h+2)%4))return!1;if(o===n)return!0;for(var m=p[(p.indexOf(h)+1)%2],R=d,_=1;_<4;_++){var X=(h+_)%4;if(X===m){R=r;continue}s(o.y,o.x,X,R)}return!0});var i=o=>{var f=0,h=!1;return o.forEach(p=>{p.seen||J(p.y,p.x,(Q,m)=>{if(Q.seen)return!1;Q.seen=!0,f++;var{y:R,x:_}=Q;return(_===0||_===L-1)&&(h=!0),(R===0||R===l-1)&&(h=!0),!m.seen})}),{ct:f,borderSeen:h}},g=i(r);return g.borderSeen&&(g=i(d)),g.ct}const O7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:w7,part1:N7,part2:y7},Symbol.toStringTag,{value:"Module"}));var $7=[9623138,726820169514,374,82000210];function P1(e=""){var n=[],L=[],l=[];e.split(`
-`).forEach((r,d)=>{if(r=r.trim(),!!r){n.length===0&&(n.length=r.length,n.fill(!0)),L[d]=!0;for(var s=-1;s=r.indexOf("#",s),!(s<0);)n[s]=!1,L[d]=!1,l.push({x:s,y:d}),s++}});var F=0,J=n.map(r=>r?++F:F);F=0;var t=L.map(r=>r?++F:F);return l.forEach(r=>{r.emptyLeft=J[r.x],r.emptyAbove=t[r.y]}),{locs:l}}function E7(e=""){for(var{locs:n}=P1(e),L=(t,r)=>{var d=n[t],s=n[r],i=Math.abs(d.x-s.x),g=Math.abs(d.y-s.y),o=Math.abs(d.emptyLeft-s.emptyLeft),f=Math.abs(d.emptyAbove-s.emptyAbove);return i+g+o+f},l=0,F=0;F<n.length;F++)for(var J=F+1;J<n.length;J++)l+=L(F,J);return l}function Z7(e=""){for(var{locs:n}=P1(e),L=999999,l=(r,d)=>{var s=n[r],i=n[d],g=Math.abs(s.x-i.x),o=Math.abs(s.y-i.y),f=Math.abs(s.emptyLeft-i.emptyLeft)*L,h=Math.abs(s.emptyAbove-i.emptyAbove)*L;return g+o+f+h},F=0,J=0;J<n.length;J++)for(var t=J+1;t<n.length;t++)F+=l(J,t);return F}const I7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:$7,part1:E7,part2:Z7},Symbol.toStringTag,{value:"Module"}));var W7=[7379,7732028747925,21,525152];function U7(e=""){var n=(L="",l=0,F=0,J=[1])=>{if(l>L.length-1)return F===0?1:0;if(F>L.length-l)return 0;if(F===0)return L.substring(l).includes("#")?0:1;if(L[l]===".")return n(L,l+1,F,J);var t=0;L[l]==="?"&&(t+=n(L,l+1,F,J));var r=J[0];if(L.substring(l,l+r).includes(".")||L[l+r]==="#")return t;var d=J.filter((i,g)=>g>0),s=F-r-(J.length>1?1:0);return t+n(L,l+r+1,s,d)};return e.split(`
-`).reduce((L,l)=>{if(l=l.trim(),!l)return L;var[F,J]=l.split(/\s+/),t=F.split(/\.+/).join("."),r=J.split(",").map(s=>parseInt(s)),d=r.reduce((s,i)=>s+i)+r.length-1;return L+n(t,0,d,r)},0)}function Y7(e=""){var n=(F,J,t,r)=>{for(;t<r;)if(F[t++]===J)return!0},L=F=>{var J={};return(t,r,d)=>{var s=(t<<12)+r;return s in J?J[s]:J[s]=F(t,r,d)}},l=(F="")=>{var J=(t=0,r=0,d=[1])=>{if(t>F.length-1)return r===0?1:0;if(r>F.length-t)return 0;if(r===0)return n(F,"#",t,F.length)?0:1;if(F[t]===".")return J(t+1,r,d);var s=0;F[t]==="?"&&(s+=J(t+1,r,d));var i=d[0];if(n(F,".",t,t+i)||F[t+i]==="#")return s;var g=d.filter((f,h)=>h>0),o=r-i-(d.length>1?1:0);return s+J(t+i+1,o,g)};return J=L(J),J};return e.split(`
-`).reduce((F,J)=>{if(J=J.trim(),!J)return F;var[t,r]=J.split(/\s+/),d=t.split(/\.+/).join("."),s=r.split(",").map(o=>parseInt(o)),i=5;d=[...Array(i).fill(d)].join("?"),s=[].concat(...Array(i).fill(s));var g=s.reduce((o,f)=>o+f)+s.length-1;return F+l(d)(0,g,s)},0)}const nn=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:W7,part1:U7,part2:Y7},Symbol.toStringTag,{value:"Module"})),en=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Jn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Ln=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),Fn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),rn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),tn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),sn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),ln=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),dn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),gn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),on=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),fn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),vn=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),un=`1abc2
+var e1=Object.defineProperty;var J1=(n,e,J)=>e in n?e1(n,e,{enumerable:!0,configurable:!0,writable:!0,value:J}):n[e]=J;var cn=(n,e,J)=>(J1(n,typeof e!="symbol"?e+"":e,J),J);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))F(r);new MutationObserver(r=>{for(const L of r)if(L.type==="childList")for(const t of L.addedNodes)t.tagName==="LINK"&&t.rel==="modulepreload"&&F(t)}).observe(document,{childList:!0,subtree:!0});function J(r){const L={};return r.integrity&&(L.integrity=r.integrity),r.referrerPolicy&&(L.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?L.credentials="include":r.crossOrigin==="anonymous"?L.credentials="omit":L.credentials="same-origin",L}function F(r){if(r.ep)return;r.ep=!0;const L=J(r);fetch(r.href,L)}})();function rn(){}function Hn(n){return n()}function zn(){return Object.create(null)}function N(n){n.forEach(Hn)}function Vn(n){return typeof n=="function"}function r1(n,e){return n!=n?e==e:n!==e||n&&typeof n=="object"||typeof n=="function"}function L1(n){return Object.keys(n).length===0}function a(n,e){n.appendChild(e)}function bn(n,e,J){n.insertBefore(e,J||null)}function ln(n){n.parentNode&&n.parentNode.removeChild(n)}function Rn(n,e){for(let J=0;J<n.length;J+=1)n[J]&&n[J].d(e)}function T(n){return document.createElement(n)}function sn(n){return document.createTextNode(n)}function z(){return sn(" ")}function D(n,e,J,F){return n.addEventListener(e,J,F),()=>n.removeEventListener(e,J,F)}function c(n,e,J){J==null?n.removeAttribute(e):n.getAttribute(e)!==J&&n.setAttribute(e,J)}function t1(n){return Array.from(n.childNodes)}function Kn(n,e){e=""+e,n.data!==e&&(n.data=e)}function Y(n,e){n.value=e??""}function F1(n,e,J,F){J==null?n.style.removeProperty(e):n.style.setProperty(e,J,F?"important":"")}function H(n,e,J){n.classList.toggle(e,!!J)}let kn;function on(n){kn=n}const en=[],qn=[];let Jn=[];const Gn=[],O1=Promise.resolve();let xn=!1;function s1(){xn||(xn=!0,O1.then(Xn))}function Qn(n){Jn.push(n)}const mn=new Set;let nn=0;function Xn(){if(nn!==0)return;const n=kn;do{try{for(;nn<en.length;){const e=en[nn];nn++,on(e),o1(e.$$)}}catch(e){throw en.length=0,nn=0,e}for(on(null),en.length=0,nn=0;qn.length;)qn.pop()();for(let e=0;e<Jn.length;e+=1){const J=Jn[e];mn.has(J)||(mn.add(J),J())}Jn.length=0}while(en.length);for(;Gn.length;)Gn.pop()();xn=!1,mn.clear(),on(n)}function o1(n){if(n.fragment!==null){n.update(),N(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(Qn)}}function i1(n){const e=[],J=[];Jn.forEach(F=>n.indexOf(F)===-1?e.push(F):J.push(F)),J.forEach(F=>F()),Jn=e}const l1=new Set;function d1(n,e){n&&n.i&&(l1.delete(n),n.i(e))}function vn(n){return n?.length!==void 0?n:Array.from(n)}function f1(n,e,J){const{fragment:F,after_update:r}=n.$$;F&&F.m(e,J),Qn(()=>{const L=n.$$.on_mount.map(Hn).filter(Vn);n.$$.on_destroy?n.$$.on_destroy.push(...L):N(L),n.$$.on_mount=[]}),r.forEach(Qn)}function g1(n,e){const J=n.$$;J.fragment!==null&&(i1(J.after_update),N(J.on_destroy),J.fragment&&J.fragment.d(e),J.on_destroy=J.fragment=null,J.ctx=[])}function v1(n,e){n.$$.dirty[0]===-1&&(en.push(n),s1(),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function u1(n,e,J,F,r,L,t=null,O=[-1]){const o=kn;on(n);const s=n.$$={fragment:null,ctx:[],props:L,update:rn,not_equal:r,bound:zn(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(e.context||(o?o.$$.context:[])),callbacks:zn(),dirty:O,skip_bound:!1,root:e.target||o.$$.root};t&&t(s.root);let l=!1;if(s.ctx=J?J(n,e.props||{},(d,i,...g)=>{const v=g.length?g[0]:i;return s.ctx&&r(s.ctx[d],s.ctx[d]=v)&&(!s.skip_bound&&s.bound[d]&&s.bound[d](v),l&&v1(n,d)),i}):[],s.update(),l=!0,N(s.before_update),s.fragment=F?F(s.ctx):!1,e.target){if(e.hydrate){const d=t1(e.target);s.fragment&&s.fragment.l(d),d.forEach(ln)}else s.fragment&&s.fragment.c();e.intro&&d1(n.$$.fragment),f1(n,e.target,e.anchor),Xn()}on(o)}class a1{constructor(){cn(this,"$$");cn(this,"$$set")}$destroy(){g1(this,1),this.$destroy=rn}$on(e,J){if(!Vn(J))return rn;const F=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return F.push(J),()=>{const r=F.indexOf(J);r!==-1&&F.splice(r,1)}}$set(e){this.$$set&&!L1(e)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}const h1="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(h1);var b1=[54304,54418,142,,,281];function p1(n=""){return n.split(/\n/).reduce((e,J)=>{var F=J.split("").filter(r=>/\d/.test(r));return e+parseInt(F[0]+F.at(-1))||0},0)}function c1(n=""){var e=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return n.split(/\n/).reduce((J,F)=>{var r=-1,L=1/0,t=-1,O=-1;return e.forEach((o,s)=>{var l=F.indexOf(o);l>-1&&l<L&&(L=l,r=s%10);var d=F.lastIndexOf(o);d>-1&&d>O&&(O=d,t=s%10)}),J+parseInt(r+""+t)},0)}const m1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:b1,part1:p1,part2:c1},Symbol.toStringTag,{value:"Module"}));var T1=[2727,56580,8,2286];function K1(n=""){var e=0,J={red:12,green:13,blue:14};return n.split(`
+`).forEach(F=>{var[r,L]=F.split(":"),t=L.split(";").every(O=>O.split(",").every(o=>{var[,s,l]=/(\d+)\s+(\S+)/.exec(o);return J[l]?parseInt(s)<=J[l]:!0}));t&&(e+=parseInt(/\d+/.exec(r)[0]))}),e}function x1(n=""){var e=0;return n.split(`
+`).forEach(J=>{var F={red:0,green:0,blue:0},[,r]=J.split(":");r.split(";").forEach(L=>{L.split(",").forEach(t=>{var[,O,o]=/(\d+)\s+(\S+)/.exec(t),s=parseInt(O);s>F[o]&&(F[o]=s)})}),e+=F.red*F.green*F.blue}),e}const Q1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:T1,part1:K1,part2:x1},Symbol.toStringTag,{value:"Module"}));var j1=[539637,82818007,4361,467835];function k1(n=""){var e=[],J=[];n.split(`
+`).forEach((r,L)=>{e[L]=[],J[L]=[];for(var t=0;t<r.length;t++){var O=r[t];if(O!==".")if(/\d/.test(O)){var o=parseInt(r.substring(t)),s=String(o).length;e[L].push({y:L,x:t,value:o,len:s}),t+=s-1}else J[L].push({y:L,x:t})}});var F=0;return e.forEach(r=>{r.forEach(L=>{for(var t=L.y-1;t<L.y+2;t++){var O=J[t]||[],o=O.some(s=>{if(!(s.x<L.x-1)&&!(s.x>L.x+L.len))return!0});if(o){F+=L.value;return}}})}),F}function C1(n=""){var e=[],J=[];n.split(`
+`).forEach((r,L)=>{e[L]=[],J[L]=[];for(var t=0;t<r.length;t++){var O=r[t];if(O!==".")if(/\d/.test(O)){var o=parseInt(r.substring(t)),s=String(o).length;e[L].push({y:L,x:t,value:o,len:s}),t+=s-1}else O==="*"&&J[L].push({y:L,x:t})}});var F=0;return J.forEach(r=>{r.forEach(L=>{for(var t=0,O=1,o=L.y-1;o<L.y+2;o++){var s=e[o]||[];s.forEach(l=>{L.x<l.x-1||L.x>l.x+l.len||(t++,O*=l.value)})}t===2&&(F+=O)})}),F}const _1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:j1,part1:k1,part2:C1},Symbol.toStringTag,{value:"Module"}));var z1=[26443,6284877,13,30];function R1(n=""){var e=0;return n.split(`
+`).forEach((J,F)=>{var r=J.split(":")[1].split("|"),L=r[0].trim().split(/\s+/).map(o=>parseInt(o)),t=r[1].trim().split(/\s+/).map(o=>parseInt(o)),O=t.reduce((o,s)=>o+(L.includes(s)?1:0),0);O>0&&(e+=Math.pow(2,O-1))}),e}function q1(n=""){var e=n.split(`
+`).map((r,L)=>{var t=r.split(":")[1].split("|"),O=t[0].trim().split(/\s+/).map(l=>parseInt(l)),o=t[1].trim().split(/\s+/).map(l=>parseInt(l)),s=o.reduce((l,d)=>l+(O.includes(d)?1:0),0);return s>0&&(J+=Math.pow(2,s-1)),s}),J=0,F=[];return e.forEach((r,L)=>{for(var t=1+(F[L]||0),O=e[L],o=0;o<O;o++){var s=L+1+o;F[s]=(F[s]||0)+t}J+=t}),J}const G1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:z1,part1:R1,part2:q1},Symbol.toStringTag,{value:"Module"}));var B1=[525792406,79004094,35,46];function S1(n=""){var e=[],J=null;n.split(`
+`).forEach((r,L)=>{if(/:/.test(r)){var[,t]=r.split(":");e.push(J=[]),r=t}var O=r.trim().split(/\s+/).filter(o=>o).map(o=>parseInt(o));O.length>0&&J.push(O)});var F=e.shift()[0];return e.forEach(r=>{var L={};r.forEach(([t,O,o])=>{F.forEach((s,l)=>{L[l]||s>=O&&s<O+o&&(F[l]+=t-O,L[l]=!0)})})}),F.reduce((r,L)=>Math.min(r,L),1/0)}function A1(n=""){var e,J=[],F;n.split(`
+`).forEach((O,o)=>{if(/:/.test(O)){var[,s]=O.split(":");if(!e){e=s.trim().split(/\s+/).map(g=>parseInt(g));return}J.push(F=[]),O=s}if(O=O.trim(),!!O){var[l,d,i]=O.split(/\s+/).map(g=>parseInt(g));F.push([d,d+i,l-d])}}),J.forEach(O=>{O.sort((o,s)=>o[0]-s[0])});for(var r=1/0,L=(O,o,s=0)=>{if(s>=J.length){O<r&&(r=O);return}var l=J[s];l.some(([d,i,g])=>{if(!(O>=i)){if(o<=d)return!0;O<d&&(L(O,d,s+1),O=d);var v=Math.min(o,i);L(O+g,v+g,s+1),O=v}}),O<o&&L(O,o,s+1)},t=0;t<e.length;t+=2)L(e[t],e[t]+e[t+1]);return r}const M1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:B1,part1:S1,part2:A1},Symbol.toStringTag,{value:"Module"}));var D1=[1195150,42550411,288,71503];function Pn(n=""){var e=n.split(`
+`).map(L=>{var t=L.split(":")[1];return t.trim().split(/\s+/).map(O=>parseInt(O))}),[J,F]=e,r=1;return J.forEach((L,t)=>{var O=-L,o=F[t],s=Math.sqrt(O*O-4*o),l=(-O-s)/2,d=(-O+s)/2,i=1e-5,g=Math.floor(d-i)-Math.ceil(l+i)+1;r*=g}),r}function w1(n=""){return Pn(n.replace(/ /g,""))}const H1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:D1,part1:Pn,part2:w1},Symbol.toStringTag,{value:"Module"}));var V1=[249726565,251135960,6440,5905];function X1(n=""){var e="23456789TJQKA".split(""),J={};e.forEach((r,L)=>{J[r]=String.fromCharCode(65+L)});var F=n.split(`
+`).map(r=>{var[L,t]=r.trim().split(/\s+/),O=parseInt(t),o=L.split("").map(d=>J[d]),s={};o.forEach(d=>{s[d]=(s[d]||0)+1});var l=Object.keys(s).map(d=>s[d]).sort((d,i)=>i-d);return l.push(0,0),{chars:o,bid:O,ctList:l}});return F.sort((r,L)=>{for(var t=0;t<2;t++)if(r.ctList[t]!==L.ctList[t])return r.ctList[t]-L.ctList[t];for(var O=0;O<5;O++){var o=r.chars[O],s=L.chars[O];if(o!==s)return o>s?1:-1}return 0}),F.reduce((r,{bid:L},t)=>r+L*(t+1),0)}function P1(n=""){var e="J23456789TQKA".split(""),J={};e.forEach((r,L)=>{J[r]=String.fromCharCode(65+L)});var F=n.split(`
+`).map(r=>{var[L,t]=r.trim().split(/\s+/),O=parseInt(t),o=L.split("").map(i=>J[i]),s={},l=0;o.forEach(i=>{if(i==="A"){l++;return}s[i]=(s[i]||0)+1});var d=Object.keys(s).map(i=>s[i]).sort((i,g)=>g-i);return d.push(0,0),d[0]+=l,{chars:o,bid:O,ctList:d,hand:L}});return F.sort((r,L)=>{for(var t=0;t<2;t++)if(r.ctList[t]!==L.ctList[t])return r.ctList[t]-L.ctList[t];for(var O=0;O<5;O++){var o=r.chars[O],s=L.chars[O];if(o!==s)return o>s?1:-1}return 0}),F.reduce((r,{bid:L},t)=>r+L*(t+1),0)}const N1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:V1,part1:X1,part2:P1},Symbol.toStringTag,{value:"Module"}));var y1=[18673,17972669116327,2,,6,,,6];function $1(n=""){var e={},J=n.split(`
+`).map(O=>{if(O=O.trim(),!!O){if(!O.includes("="))return O.split("");var[,o,s,l]=/(\S+) = \((\S+), (\S+)\)/.exec(O);e[o]={L:s,R:l}}}),F=J.shift(),r="AAA";if(!e[r])return-1;for(var L=0,t=0;L<1e7;L++){if(r==="ZZZ")return L;r=e[r][F[t]],t=(t+1)%F.length}return-1}function E1(n=""){var e={},J=[],F={},r=n.split(`
+`).map(l=>{if(l=l.trim(),!!l){if(!l.includes("="))return l.split("");var[,d,i,g]=/(\S+) = \((\S+), (\S+)\)/.exec(l);/..A/.test(d)&&J.push(d),/..Z/.test(d)&&(F[d]=!0),e[d]={L:i,R:g}}}),L=r.shift(),t=J.map(l=>{for(var d=0,i=0;d<1e7;d++){if(l in F)return d;l=e[l][L[i]],i=(i+1)%L.length}});t.sort((l,d)=>l-d);for(var O=t.pop();t.length>0;)for(var o=O,s=t.pop();O%s!==0;)O+=o;return O}const Z1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:y1,part1:$1,part2:E1},Symbol.toStringTag,{value:"Module"}));var I1=[1772145754,867,114,2];function U1(n=""){var e=(J=[1,1])=>{if(J.length<2)return NaN;for(var F=!0,r=[],L=1;L<J.length;L++){var t=J[L]-J[L-1];F&&(F=t===0),r.push(t)}var O=F?0:e(r);return O+J.at(-1)};return n.split(`
+`).reduce((J,F)=>{var r=F.trim().split(/\s+/).map(L=>parseInt(L));return J+=e(r)},0)}function W1(n=""){var e=(J=[1,1])=>{if(J.length<2)return NaN;for(var F=!0,r=[],L=1;L<J.length;L++){var t=J[L]-J[L-1];F&&(F=t===0),r.push(t)}var O=F?0:e(r);return J[0]-O};return n.split(`
+`).reduce((J,F)=>{var r=F.trim().split(/\s+/).map(L=>parseInt(L));return J+=e(r)},0)}const Y1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:I1,part1:U1,part2:W1},Symbol.toStringTag,{value:"Module"}));var n7=[6757,523,8,,,10];function Nn(n=""){var e=[],J=[0,0];n.split(`
+`).forEach((o,s)=>{e[s]=[],o.trim().split("").forEach((l,d)=>{l==="S"&&(J=[s,d]),e[s].push({x:d,y:s,char:l})})},0);var F=e.length,r=e[0].length,L=(o,s)=>o<0||o>=F||s<0||s>=r?null:e[o][s],t=L(...J),O=(o,s,l)=>{var d=L(o,s);if(d)for(var i=[d],g=0,v=(f,m,R)=>{var C=L(f,m);C&&l(p,C,R)&&i.push(C)};i.length>0&&g++<1e6;){var p=i.pop();v(p.y-1,p.x,0),v(p.y+1,p.x,2),v(p.y,p.x+1,1),v(p.y,p.x-1,3)}};return{start:t,sx:r,sy:F,getAt:L,flood:O}}function e7(n=""){var{start:e,sx:J,sy:F,getAt:r,flood:L}=Nn(n),t={"|":[0,2],"-":[1,3],L:[0,1],J:[0,3],7:[2,3],F:[1,2],S:[0,1,2,3]},O=0;return L(e.y,e.x,(o,s,l)=>{if(o.seen=!0,s.seen)return!1;var d=t[o.char]||[];if(!d.includes(l))return!1;var i=t[s.char]||[],g=(l+2)%4;return i.includes(g)?(O++,!0):!1}),O/2}function J7(n=""){var{start:e,sx:J,sy:F,getAt:r,flood:L}=Nn(n),t={"|":[0,2],"-":[1,3],L:[0,1],J:[0,3],7:[2,3],F:[1,2],S:[0,1,2,3]},O=[],o=[],s=(i,g,v,p)=>{v%2===0&&(i+=v-1),v%2===1&&(g+=2-v);var f=r(i,g);f&&!f.seen&&p.push(f)};L(e.y,e.x,(i,g,v)=>{if(i.seen=!0,g.seen)return!1;var p=t[i.char]||[];if(!p.includes(v))return!1;var f=t[g.char]||[];if(!f.includes((v+2)%4))return!1;if(i===e)return!0;for(var m=p[(p.indexOf(v)+1)%2],R=o,C=1;C<4;C++){var w=(v+C)%4;if(w===m){R=O;continue}s(i.y,i.x,w,R)}return!0});var l=i=>{var g=0,v=!1;return i.forEach(p=>{p.seen||L(p.y,p.x,(f,m)=>{if(f.seen)return!1;f.seen=!0,g++;var{y:R,x:C}=f;return(C===0||C===J-1)&&(v=!0),(R===0||R===F-1)&&(v=!0),!m.seen})}),{ct:g,borderSeen:v}},d=l(O);return d.borderSeen&&(d=l(o)),d.ct}const r7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:n7,part1:e7,part2:J7},Symbol.toStringTag,{value:"Module"}));var L7=[9623138,726820169514,374,82000210];function yn(n=""){var e=[],J=[],F=[];n.split(`
+`).forEach((O,o)=>{if(O=O.trim(),!!O){e.length===0&&(e.length=O.length,e.fill(!0)),J[o]=!0;for(var s=-1;s=O.indexOf("#",s),!(s<0);)e[s]=!1,J[o]=!1,F.push({x:s,y:o}),s++}});var r=0,L=e.map(O=>O?++r:r);r=0;var t=J.map(O=>O?++r:r);return F.forEach(O=>{O.emptyLeft=L[O.x],O.emptyAbove=t[O.y]}),{locs:F}}function t7(n=""){for(var{locs:e}=yn(n),J=(t,O)=>{var o=e[t],s=e[O],l=Math.abs(o.x-s.x),d=Math.abs(o.y-s.y),i=Math.abs(o.emptyLeft-s.emptyLeft),g=Math.abs(o.emptyAbove-s.emptyAbove);return l+d+i+g},F=0,r=0;r<e.length;r++)for(var L=r+1;L<e.length;L++)F+=J(r,L);return F}function F7(n=""){for(var{locs:e}=yn(n),J=999999,F=(O,o)=>{var s=e[O],l=e[o],d=Math.abs(s.x-l.x),i=Math.abs(s.y-l.y),g=Math.abs(s.emptyLeft-l.emptyLeft)*J,v=Math.abs(s.emptyAbove-l.emptyAbove)*J;return d+i+g+v},r=0,L=0;L<e.length;L++)for(var t=L+1;t<e.length;t++)r+=F(L,t);return r}const O7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:L7,part1:t7,part2:F7},Symbol.toStringTag,{value:"Module"}));var s7=[7379,7732028747925,21,525152];function o7(n=""){var e=(J="",F=0,r=0,L=[1])=>{if(F>J.length-1)return r===0?1:0;if(r>J.length-F)return 0;if(r===0)return J.substring(F).includes("#")?0:1;if(J[F]===".")return e(J,F+1,r,L);var t=0;J[F]==="?"&&(t+=e(J,F+1,r,L));var O=L[0];if(J.substring(F,F+O).includes(".")||J[F+O]==="#")return t;var o=L.filter((l,d)=>d>0),s=r-O-(L.length>1?1:0);return t+e(J,F+O+1,s,o)};return n.split(`
+`).reduce((J,F)=>{if(F=F.trim(),!F)return J;var[r,L]=F.split(/\s+/),t=r.split(/\.+/).join("."),O=L.split(",").map(s=>parseInt(s)),o=O.reduce((s,l)=>s+l)+O.length-1;return J+e(t,0,o,O)},0)}function i7(n=""){var e=(r,L,t,O)=>{for(;t<O;)if(r[t++]===L)return!0},J=r=>{var L={};return(t,O,o)=>{var s=(t<<12)+O;return s in L?L[s]:L[s]=r(t,O,o)}},F=(r="")=>{var L=(t=0,O=0,o=[1])=>{if(t>r.length-1)return O===0?1:0;if(O>r.length-t)return 0;if(O===0)return e(r,"#",t,r.length)?0:1;if(r[t]===".")return L(t+1,O,o);var s=0;r[t]==="?"&&(s+=L(t+1,O,o));var l=o[0];if(e(r,".",t,t+l)||r[t+l]==="#")return s;var d=o.filter((g,v)=>v>0),i=O-l-(o.length>1?1:0);return s+L(t+l+1,i,d)};return L=J(L),L};return n.split(`
+`).reduce((r,L)=>{if(L=L.trim(),!L)return r;var[t,O]=L.split(/\s+/),o=t.split(/\.+/).join("."),s=O.split(",").map(i=>parseInt(i)),l=5;o=[...Array(l).fill(o)].join("?"),s=[].concat(...Array(l).fill(s));var d=s.reduce((i,g)=>i+g)+s.length-1;return r+F(o)(0,d,s)},0)}const l7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:s7,part1:o7,part2:i7},Symbol.toStringTag,{value:"Module"}));var d7=[35210,31974,405,400],$n=(n=[""],e=0,J=1)=>{for(var F=0;e>=0&&J<n.length;e--,J++)if(n[e]!==n[J]){for(var r=0;r<n[0].length;r++)if(n[e][r]!==n[J][r]&&(F++,F>1))return 2}return F},En=(n=[""],e=0,J=1)=>{for(var F=0;e>=0&&J<n[0].length;e--,J++)for(var r=0;r<n.length;r++)if(n[r][e]!==n[r][J]&&(F++,F>1))return 2;return F};function f7(n=""){return n.split(`
+
+`).reduce((e,J)=>{for(var F=J.split(`
+`).map(O=>O.trim()),r=1;r<F.length;r++){var L=$n(F,r-1,r);if(!(L>0))return e+r*100}for(var t=1;t<F[0].length;t++){var L=En(F,t-1,t);if(!(L>0))return e+t}throw"?"},0)}function g7(n=""){return n.split(`
+
+`).reduce((e,J)=>{for(var F=J.split(`
+`).map(O=>O.trim()),r=1;r<F.length;r++){var L=$n(F,r-1,r);if(L===1)return e+r*100}for(var t=1;t<F[0].length;t++){var L=En(F,t-1,t);if(L===1)return e+t}throw"?"},0)}const v7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:d7,part1:f7,part2:g7},Symbol.toStringTag,{value:"Module"}));function u7(n){return n&&n.__esModule&&Object.prototype.hasOwnProperty.call(n,"default")?n.default:n}function a7(n){for(var e=new Array(n),J=0;J<n;++J)e[J]=J;return e}var h7=a7;/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */var b7=function(n){return n!=null&&(Zn(n)||p7(n)||!!n._isBuffer)};function Zn(n){return!!n.constructor&&typeof n.constructor.isBuffer=="function"&&n.constructor.isBuffer(n)}function p7(n){return typeof n.readFloatLE=="function"&&typeof n.slice=="function"&&Zn(n.slice(0,0))}var c7=h7,m7=b7,T7=typeof Float64Array<"u";function K7(n,e){return n[0]-e[0]}function x7(){var n=this.stride,e=new Array(n.length),J;for(J=0;J<e.length;++J)e[J]=[Math.abs(n[J]),J];e.sort(K7);var F=new Array(e.length);for(J=0;J<F.length;++J)F[J]=e[J][1];return F}function Q7(n,e){var J=["View",e,"d",n].join("");e<0&&(J="View_Nil"+n);var F=n==="generic";if(e===-1){var r="function "+J+"(a){this.data=a;};var proto="+J+".prototype;proto.dtype='"+n+"';proto.index=function(){return -1};proto.size=0;proto.dimension=-1;proto.shape=proto.stride=proto.order=[];proto.lo=proto.hi=proto.transpose=proto.step=function(){return new "+J+"(this.data);};proto.get=proto.set=function(){};proto.pick=function(){return null};return function construct_"+J+"(a){return new "+J+"(a);}",p=new Function(r);return p()}else if(e===0){var r="function "+J+"(a,d) {this.data = a;this.offset = d};var proto="+J+".prototype;proto.dtype='"+n+"';proto.index=function(){return this.offset};proto.dimension=0;proto.size=1;proto.shape=proto.stride=proto.order=[];proto.lo=proto.hi=proto.transpose=proto.step=function "+J+"_copy() {return new "+J+"(this.data,this.offset)};proto.pick=function "+J+"_pick(){return TrivialArray(this.data);};proto.valueOf=proto.get=function "+J+"_get(){return "+(F?"this.data.get(this.offset)":"this.data[this.offset]")+"};proto.set=function "+J+"_set(v){return "+(F?"this.data.set(this.offset,v)":"this.data[this.offset]=v")+"};return function construct_"+J+"(a,b,c,d){return new "+J+"(a,d)}",p=new Function("TrivialArray",r);return p(an[n][0])}var r=["'use strict'"],L=c7(e),t=L.map(function(f){return"i"+f}),O="this.offset+"+L.map(function(f){return"this.stride["+f+"]*i"+f}).join("+"),o=L.map(function(f){return"b"+f}).join(","),s=L.map(function(f){return"c"+f}).join(",");r.push("function "+J+"(a,"+o+","+s+",d){this.data=a","this.shape=["+o+"]","this.stride=["+s+"]","this.offset=d|0}","var proto="+J+".prototype","proto.dtype='"+n+"'","proto.dimension="+e),r.push("Object.defineProperty(proto,'size',{get:function "+J+"_size(){return "+L.map(function(f){return"this.shape["+f+"]"}).join("*"),"}})"),e===1?r.push("proto.order=[0]"):(r.push("Object.defineProperty(proto,'order',{get:"),e<4?(r.push("function "+J+"_order(){"),e===2?r.push("return (Math.abs(this.stride[0])>Math.abs(this.stride[1]))?[1,0]:[0,1]}})"):e===3&&r.push("var s0=Math.abs(this.stride[0]),s1=Math.abs(this.stride[1]),s2=Math.abs(this.stride[2]);if(s0>s1){if(s1>s2){return [2,1,0];}else if(s0>s2){return [1,2,0];}else{return [1,0,2];}}else if(s0>s2){return [2,0,1];}else if(s2>s1){return [0,1,2];}else{return [0,2,1];}}})")):r.push("ORDER})")),r.push("proto.set=function "+J+"_set("+t.join(",")+",v){"),F?r.push("return this.data.set("+O+",v)}"):r.push("return this.data["+O+"]=v}"),r.push("proto.get=function "+J+"_get("+t.join(",")+"){"),F?r.push("return this.data.get("+O+")}"):r.push("return this.data["+O+"]}"),r.push("proto.index=function "+J+"_index(",t.join(),"){return "+O+"}"),r.push("proto.hi=function "+J+"_hi("+t.join(",")+"){return new "+J+"(this.data,"+L.map(function(f){return["(typeof i",f,"!=='number'||i",f,"<0)?this.shape[",f,"]:i",f,"|0"].join("")}).join(",")+","+L.map(function(f){return"this.stride["+f+"]"}).join(",")+",this.offset)}");var l=L.map(function(f){return"a"+f+"=this.shape["+f+"]"}),d=L.map(function(f){return"c"+f+"=this.stride["+f+"]"});r.push("proto.lo=function "+J+"_lo("+t.join(",")+"){var b=this.offset,d=0,"+l.join(",")+","+d.join(","));for(var i=0;i<e;++i)r.push("if(typeof i"+i+"==='number'&&i"+i+">=0){d=i"+i+"|0;b+=c"+i+"*d;a"+i+"-=d}");r.push("return new "+J+"(this.data,"+L.map(function(f){return"a"+f}).join(",")+","+L.map(function(f){return"c"+f}).join(",")+",b)}"),r.push("proto.step=function "+J+"_step("+t.join(",")+"){var "+L.map(function(f){return"a"+f+"=this.shape["+f+"]"}).join(",")+","+L.map(function(f){return"b"+f+"=this.stride["+f+"]"}).join(",")+",c=this.offset,d=0,ceil=Math.ceil");for(var i=0;i<e;++i)r.push("if(typeof i"+i+"==='number'){d=i"+i+"|0;if(d<0){c+=b"+i+"*(a"+i+"-1);a"+i+"=ceil(-a"+i+"/d)}else{a"+i+"=ceil(a"+i+"/d)}b"+i+"*=d}");r.push("return new "+J+"(this.data,"+L.map(function(f){return"a"+f}).join(",")+","+L.map(function(f){return"b"+f}).join(",")+",c)}");for(var g=new Array(e),v=new Array(e),i=0;i<e;++i)g[i]="a[i"+i+"]",v[i]="b[i"+i+"]";r.push("proto.transpose=function "+J+"_transpose("+t+"){"+t.map(function(f,m){return f+"=("+f+"===undefined?"+m+":"+f+"|0)"}).join(";"),"var a=this.shape,b=this.stride;return new "+J+"(this.data,"+g.join(",")+","+v.join(",")+",this.offset)}"),r.push("proto.pick=function "+J+"_pick("+t+"){var a=[],b=[],c=this.offset");for(var i=0;i<e;++i)r.push("if(typeof i"+i+"==='number'&&i"+i+">=0){c=(c+this.stride["+i+"]*i"+i+")|0}else{a.push(this.shape["+i+"]);b.push(this.stride["+i+"])}");r.push("var ctor=CTOR_LIST[a.length+1];return ctor(this.data,a,b,c)}"),r.push("return function construct_"+J+"(data,shape,stride,offset){return new "+J+"(data,"+L.map(function(f){return"shape["+f+"]"}).join(",")+","+L.map(function(f){return"stride["+f+"]"}).join(",")+",offset)}");var p=new Function("CTOR_LIST","ORDER",r.join(`
+`));return p(an[n],x7)}function j7(n){if(m7(n))return"buffer";if(T7)switch(Object.prototype.toString.call(n)){case"[object Float64Array]":return"float64";case"[object Float32Array]":return"float32";case"[object Int8Array]":return"int8";case"[object Int16Array]":return"int16";case"[object Int32Array]":return"int32";case"[object Uint8Array]":return"uint8";case"[object Uint16Array]":return"uint16";case"[object Uint32Array]":return"uint32";case"[object Uint8ClampedArray]":return"uint8_clamped";case"[object BigInt64Array]":return"bigint64";case"[object BigUint64Array]":return"biguint64"}return Array.isArray(n)?"array":"generic"}var an={float32:[],float64:[],int8:[],int16:[],int32:[],uint8:[],uint16:[],uint32:[],array:[],uint8_clamped:[],bigint64:[],biguint64:[],buffer:[],generic:[]};function k7(n,e,J,F){if(n===void 0){var s=an.array[0];return s([])}else typeof n=="number"&&(n=[n]);e===void 0&&(e=[n.length]);var r=e.length;if(J===void 0){J=new Array(r);for(var L=r-1,t=1;L>=0;--L)J[L]=t,t*=e[L]}if(F===void 0){F=0;for(var L=0;L<r;++L)J[L]<0&&(F-=(e[L]-1)*J[L])}for(var O=j7(n),o=an[O];o.length<=r+1;)o.push(Q7(O,o.length-1));var s=o[r+1];return s(n,e,J,F)}var C7=k7;const In=u7(C7);var _7=[108935,100876,136,64],jn=0,z7=1,hn=2,Un={".":jn,O:hn,"#":z7};function R7(n=""){var e=n.split(`
+`).map(F=>F.trim()),J=In([],[e.length,e[0].length]);return e.forEach((F,r)=>{F.split("").forEach((L,t)=>{J.set(r,t,Un[L])})}),Wn(J),Yn(J).load}var Wn=n=>{for(var e=0;e<n.shape[0];e++)for(var J=0;J<n.shape[1];J++){var F=n.get(e,J);if(F===hn)for(var r=e;r>0&&n.get(r-1,J)===jn;)n.set(r,J,jn),n.set(--r,J,hn)}},Yn=n=>{for(var e=0,J=0,F=0,r=0;F<n.shape[0];F++,r++)for(var L=0;L<n.shape[1];L++)n.get(F,L)===hn&&(e+=n.shape[0]-F,J+=L*17+F*177+r*1777);return{load:e,hash:J}};function q7(n=""){var e=n.split(`
+`).map(i=>i.trim()),J=In([],[e.length,e[0].length]);e.forEach((i,g)=>{i.split("").forEach((v,p)=>{J.set(g,p,Un[v])})});for(var F=[],r=[],L=0;L<1e4;L++){for(var t=0;t<4;t++)Wn(J),J=J.transpose(1,0).step(1,-1);var{load:O,hash:o}=Yn(J),s=r.indexOf(o)+1;if(s>0){var l=L+2,d=s+(1e9-l)%(l-s-1);return F[d]}F.push(O),r.push(o)}return-1}const G7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:_7,part1:R7,part2:q7},Symbol.toStringTag,{value:"Module"})),B7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),S7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),A7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),M7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),D7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),w7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),H7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),V7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),X7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),P7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),N7=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),y7=`1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
-treb7uchet`,hn=`two1nine
+treb7uchet`,$7=`two1nine
 eightwothree
 abcone2threexyz
 xtwone3four
 4nineeightseven2
 zoneight234
-7pqrstsixteen`,an=`8eight1
+7pqrstsixteen`,E7=`8eight1
 98126
 fourfourthreehnbhkmscqxdfksg64bvpppznkh
 8fivenvvtrlj
@@ -1025,11 +1039,11 @@ eight6kxqqdnqp
 6seventntzffjkkvvhtgtwoonethreefivekzvptvxfjg
 three6blrfsgdqsxgkbqj3
 eight1eighteight8
-8four419eighteight1bpv`,bn=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+8four419eighteight1bpv`,Z7=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
-Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,cn=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,I7=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
 Game 2: 9 red, 2 green; 5 red, 1 blue, 6 green; 3 green, 13 red, 1 blue; 3 red, 6 green; 1 blue, 14 red, 6 green
 Game 3: 6 red, 3 blue, 8 green; 6 blue, 12 green, 15 red; 3 blue, 18 green, 4 red
 Game 4: 1 blue, 4 red; 2 blue, 6 red; 13 blue; 11 blue, 1 green, 8 red; 10 blue, 3 green, 2 red; 3 green, 7 blue
@@ -1128,7 +1142,7 @@ Game 96: 1 green, 5 red, 13 blue; 1 green, 2 red, 13 blue; 2 green, 2 red, 17 bl
 Game 97: 1 green, 1 red, 1 blue; 2 blue, 11 green; 1 blue, 13 green; 9 blue, 6 green, 1 red; 10 green, 8 blue
 Game 98: 12 green, 9 red; 12 green, 10 blue, 3 red; 3 red, 13 green, 7 blue
 Game 99: 8 green, 10 blue, 1 red; 10 green, 2 red, 6 blue; 3 green, 1 blue, 1 red; 10 blue, 1 red
-Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,pn=`467..114..
+Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,U7=`467..114..
 ...*......
 ..35..633.
 ......#...
@@ -1137,7 +1151,7 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ..592.....
 ......755.
 ...$.*....
-.664.598..`,mn=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
+.664.598..`,W7=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
 .........*.........778....................*....124...................................*...............*........%..26.........................
 ......194..380....@....900..........639....467........478*..............582...........798.............326...........894.........#...........
 904...........*2.......#......259.....*..........801......464................597.569.............794+................$..218....502..........
@@ -1276,12 +1290,12 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ....#.......&..%692........+......#..333............41...............=204..................868............/.164..................316........
 ...346..................+.......$...*......396..315....119..@755...............942..918........................*........631.651.............
 .................=....836......402.755............=.......*.......*....181.62...*.....%........................596......*............#591...
-...............764.....................................488.....880.209........416..................183...156..........917...................`,Tn=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+...............764.....................................488.....880.209........416..................183...156..........917...................`,Y7=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
 Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
 Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
 Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
 Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
-Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,xn=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
+Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,n2=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
 Card   2: 83 16 24 23 59 70 14 57 74 53 | 79 82 70 23 61 14 74 57 36 37 59 72 83 16  3  2 28 63 50 60 38 86 97 24 53
 Card   3: 12 77 13 14 48 55 69  4 18 81 | 69  7 94 88 18 73 55 48 49 81 14 21 12 15  5 27 22 84 51 52 13 77  4 57 17
 Card   4: 32 35 57 27 15  5 16 40 36 46 | 84 47 76 35 83  5 22 15 72 48 57 33 46 53 43 16 10 65 32 51 36 44 40 27 97
@@ -1498,7 +1512,7 @@ Card 214: 38  6 78 12 88 14 51 82 29 75 | 70 16 48 74 19 29  5 71 40 93  1 18 83
 Card 215: 67 60 86 35 17 62 55 27 54 70 |  9 26 45 56 43 72  1 32 25 88  5 87 73 81  2 34 57 13 61  3 84  4 33 92 59
 Card 216: 18 71  4 89 17 31 63 28 25 20 | 67 97  6 76  3 95 30 75 99 26 27 32 21 73 86 31 59 98 85  1 54 93 94 69 66
 Card 217: 54 65 75 13 46  8 37 25 95 82 | 57 14 83 33 69 47 68 64  4 21 17 92  2 48 30 70 62 50 36  7 72 66 41 85 97
-Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,Kn=`seeds: 79 14 55 13
+Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,e2=`seeds: 79 14 55 13
 
 seed-to-soil map:
 50 98 2
@@ -1530,7 +1544,7 @@ temperature-to-humidity map:
 
 humidity-to-location map:
 60 56 37
-56 93 4`,Qn=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
+56 93 4`,J2=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
 
 seed-to-soil map:
 3680121696 1920754815 614845600
@@ -1779,13 +1793,13 @@ humidity-to-location map:
 1149193536 1342265550 29480816
 2997158500 3191476309 220034442
 2715114305 3573409942 126485175
-2446452559 2629702985 182296534`,kn=`Time:      7  15   30
-Distance:  9  40  200`,jn=`Time:        54     94     65     92
-Distance:   302   1476   1029   1404`,Cn=`32T3K 765
+2446452559 2629702985 182296534`,r2=`Time:      7  15   30
+Distance:  9  40  200`,L2=`Time:        54     94     65     92
+Distance:   302   1476   1029   1404`,t2=`32T3K 765
 T55J5 684
 KK677 28
 KTJJT 220
-QQQJA 483`,_n=`88223 818
+QQQJA 483`,F2=`88223 818
 66JQ9 398
 6T9AT 311
 53TT3 43
@@ -2784,7 +2798,7 @@ AAJAA 744
 7777K 350
 T6363 826
 J333J 41
-55AA6 787`,zn=`RL
+55AA6 787`,O2=`RL
 
 AAA = (BBB, CCC)
 BBB = (DDD, EEE)
@@ -2792,11 +2806,11 @@ CCC = (ZZZ, GGG)
 DDD = (DDD, DDD)
 EEE = (EEE, EEE)
 GGG = (GGG, GGG)
-ZZZ = (ZZZ, ZZZ)`,qn=`LLR
+ZZZ = (ZZZ, ZZZ)`,s2=`LLR
 
 AAA = (BBB, BBB)
 BBB = (AAA, ZZZ)
-ZZZ = (ZZZ, ZZZ)`,Rn=`LR
+ZZZ = (ZZZ, ZZZ)`,o2=`LR
 
 11A = (11B, XXX)
 11B = (XXX, 11Z)
@@ -2805,7 +2819,7 @@ ZZZ = (ZZZ, ZZZ)`,Rn=`LR
 22B = (22C, 22C)
 22C = (22Z, 22Z)
 22Z = (22B, 22B)
-XXX = (XXX, XXX)`,Gn=`LRRLLRRLLRRRLRLRRLRLRLRRLRLRLRLLLRRRLRLRRLLRLRRRLRRRLRLRLRRRLLRRLLRLRLRRRLRLLRRRLRLLRLRRRLRLRRRLRRRLLRRRLLRRRLRRLRRRLLRRRLRRLRRLRRLLRLRRLRRLRRRLRLRLRLRLRLRRRLLRLRRLRLRRLLRRLLRLRRLRRRLRLRLRLRRRLRRLRRLRRLRRLRRLRLRRRLRRRLRRRLRLRLLRRLRRRLRRLRLRRRLRRLRRRLRRLLRRLLLRRRR
+XXX = (XXX, XXX)`,i2=`LRRLLRRLLRRRLRLRRLRLRLRRLRLRLRLLLRRRLRLRRLLRLRRRLRRRLRLRLRRRLLRRLLRLRLRRRLRLLRRRLRLLRLRRRLRLRRRLRRRLLRRRLLRRRLRRLRRRLLRRRLRRLRRLRRLLRLRRLRRLRRRLRLRLRLRLRLRRRLLRLRRLRLRRLLRRLLRLRRLRRRLRLRLRLRRRLRRLRRLRRLRRLRRLRLRRRLRRRLRRRLRLRLLRRLRRRLRRLRLRRRLRRLRRRLRRLLRRLLLRRRR
 
 GSC = (CLG, RPF)
 NTQ = (RMN, HLB)
@@ -3592,9 +3606,9 @@ JBG = (SHB, BFN)
 BJL = (JRL, XSH)
 DBP = (RMQ, NMT)
 SFT = (PRM, KLH)
-CMD = (HFJ, QRF)`,Bn=`0 3 6 9 12 15
+CMD = (HFJ, QRF)`,l2=`0 3 6 9 12 15
 1 3 6 10 15 21
-10 13 16 21 30 45`,Sn=`12 12 11 5 -5 -5 40 194 558 1278 2553 4643 7877 12661 19486 28936 41696 58560 80439 108369 143519
+10 13 16 21 30 45`,d2=`12 12 11 5 -5 -5 40 194 558 1278 2553 4643 7877 12661 19486 28936 41696 58560 80439 108369 143519
 6 12 33 79 163 320 638 1301 2644 5220 9879 17859 30889 51304 82172 127433 192050 282172 405309 570519 788607
 3 5 5 3 9 60 262 872 2445 6091 13915 29744 60271 116756 217404 390473 678031 1140057 1858241 2938353 4509389
 15 21 23 31 67 161 350 681 1224 2114 3674 6758 13659 30354 71646 172084 407585 935627 2065861 4378033 8910071
@@ -3793,11 +3807,11 @@ CMD = (HFJ, QRF)`,Bn=`0 3 6 9 12 15
 -5 -12 -16 -9 23 117 374 1049 2736 6717 15564 34095 70784 139706 263056 474211 821201 1370314 2209376 3450015 5227933
 17 21 25 29 33 37 41 45 49 53 57 61 65 69 73 77 81 85 89 93 97
 6 13 32 80 180 368 717 1406 2880 6172 13500 29335 62308 128664 258590 507776 978143 1853856 3461417 6365291 11511885
-5 23 49 86 154 303 625 1278 2553 5048 10072 20498 42428 88236 181828 367312 722717 1380949 2560835 4611894 8077398`,Mn=`7-F7-
+5 23 49 86 154 303 625 1278 2553 5048 10072 20498 42428 88236 181828 367312 722717 1380949 2560835 4611894 8077398`,f2=`7-F7-
 .FJ|7
 SJLL7
 |F--J
-LJ.LJ`,Dn=`FF7FSF7F7F7F7F7F---7
+LJ.LJ`,g2=`FF7FSF7F7F7F7F7F---7
 L|LJ||||||||||||F--J
 FL-7LJLJ||||||LJL-77
 F--JF--7||LJLJ7F7FJ-
@@ -3806,7 +3820,7 @@ L---JF-JLJ.||-FJLJJ7
 |FFJF7L7F-JF7|JL---7
 7-L-JL7||F7|L7F-7F7|
 L.L7LFJ|||||FJL7||LJ
-L7JLJL-JLJLJL--JLJ.L`,An=`F-|-J7F7F7F-7F7F--7-L|-L7777.FFL-|.|.FF-FF7FFFFF7--F-J7.|-FF77|-F|777-F7.F7FF|-J7|-7.FFJ77FL.7-|-|7.|.77|-F-|-F|-FL.F77.FF-77|7.7--7--7FJ--7
+L7JLJL-JLJLJL--JLJ.L`,v2=`F-|-J7F7F7F-7F7F--7-L|-L7777.FFL-|.|.FF-FF7FFFFF7--F-J7.|-FF77|-F|777-F7.F7FF|-J7|-7.FFJ77FL.7-|-|7.|.77|-F-|-F|-FL.F77.FF-77|7.7--7--7FJ--7
 |7LJ7.F-JLJ7L7--7F77.|LLJ|LF7|.LLJ-|7L|FJLF77L-FJ7FJ.LFF|7L-LLF-LJF777||7L-F7LLLLJ7|L7||F-J|-|.J.F7FF7F7|J|F|-FJLF.FLL|7J|FF-7-FJ7J|J.F7L|LJ
 L|J.7.L-J7FJ--..F-J|-7-|.J|LL-J.F|J|-77L|.LL7J||FJ7|.F--J7-J|7.LJJJJFFJL7JF||7.||-LJ-F7-|FFJ-|77.|L7||||7F-LJF|L7J7FF|JL7L7JJL-|---|7-JJ-FJ7
 LJ.L-|--JF7J|LF7|L-7.|FFJJ-.|JL7JF7F7F7777F-JFFJJLLJFL-J-|.FLJ-7|FF7FL7FJF7||F7FF-J7F||F7-7L7L|7.L7||LJ|.LJ|FFJFF7F7FLLJLJ||LL-J7.L|7LJJFJF-
@@ -3945,7 +3959,7 @@ J.F..F-F|LJ77|FJF7..LL7|.JFLF7L7L77F7.|FJ|-LL|JJLJ||||||||JLL-.F||LL-JJF-7|LL.LJ
 FLF--7L-J7|-LL|-|J.J7--JF|77F|.FJLFJ.L|-FJ7.|F7-|7.7.LJJFF.JJJFL.|||FJ|-L--7JF--|FFF|---7J|LF-JJF--7--JL.L7.L|.|L|JLF7JF7-FJ|.F.F|.J.-7J|F-7
 F7|-FJ|L|-J7.F--F7|FJF|7L|||F77J-FFFL7.F|J|F-FJ|.F.--------|.|F.---7L-LF|-L7L7JL|L7.|.|7F-J.JJ.--|7|||.JF-F7|L|.|.|.FL-7L|L|7..|7-|.|LJ||7FL
 LJJJ||L-J7LJ7F|-LLJ|7L--7L-J-.|F--FJ.|7LL.|L--7-7L7|L||-7JJL-JJLLJFF7J.LL77..J.F|.|7LF---J.FL.JLF|LJJ-F-F..F--|.77F7-JJL77.||.|F7.LFL77|J7FJ
-LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.LFL-FJJL|.FLLF-FL|LL.J.FL|-JJ.JJL--JLL--JJ.|J-L|J--J.L7..JJJ`,Hn=`...#......
+LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.LFL-FJJL|.FLLF-FL|LL.J.FL|-JJ.JJL--JLL--JJ.|J-L|J--J.L7..JJJ`,u2=`...#......
 .......#..
 #.........
 ..........
@@ -3954,7 +3968,7 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 .........#
 ..........
 .......#..
-#...#.....`,Xn=`.......................................#..........................................................#......................................#..
+#...#.....`,a2=`.......................................#..........................................................#......................................#..
 .....................#................................#.....................................................................................
 ....#.....#...................#...............#....................#.....................#.....................#....................#.......
 ............................................................................................................................................
@@ -4093,12 +4107,12 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 .................................#..........#...............................................................................................
 ......#..........................................#............................#....................................#........................
 ...............................................................#...........................................#.............................#..
-..#.........#..........#.................#..........................................................#.......................................`,Vn=`???.### 1,1,3
+..#.........#..........#.................#..........................................................#.......................................`,h2=`???.### 1,1,3
 .??..??...?##. 1,1,3
 ?#?#?#?#?#?#?#? 1,3,1,6
 ????.#...#... 4,1,1
 ????.######..#####. 1,6,5
-?###???????? 3,2,1`,Pn=`?#??##?..???.?? 6,1,1
+?###???????? 3,2,1`,b2=`?#??##?..???.?? 6,1,1
 ?#?#?#????????. 8,1
 ??#?#????#.... 3,2
 .????????? 4,1
@@ -5097,6 +5111,1424 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 .?##?..#?#.??????? 2,1,1,2,2,1
 ?.##?#?.??. 4,1
 ??????#?#? 1,1,3
-?.??#??????#?????.? 1,8,3,1,1`,wn="",Nn="",yn="",On="",$n="",En="",Zn="",In="",Wn="",Un="",Yn="",n2="",e2="",J2="",L2="",F2="",r2="",t2="",s2="",l2="",d2="",i2="",g2="",o2="",f2="",v2="";var q1=Object.assign({"./advent/day01/solution.js":g7,"./advent/day02/solution.js":u7,"./advent/day03/solution.js":c7,"./advent/day04/solution.js":x7,"./advent/day05/solution.js":j7,"./advent/day06/solution.js":z7,"./advent/day07/solution.js":B7,"./advent/day08/solution.js":A7,"./advent/day09/solution.js":P7,"./advent/day10/solution.js":O7,"./advent/day11/solution.js":I7,"./advent/day12/solution.js":nn,"./advent/day13/solution.js":en,"./advent/day14/solution.js":Jn,"./advent/day15/solution.js":Ln,"./advent/day16/solution.js":Fn,"./advent/day17/solution.js":rn,"./advent/day18/solution.js":tn,"./advent/day19/solution.js":sn,"./advent/day20/solution.js":ln,"./advent/day21/solution.js":dn,"./advent/day22/solution.js":gn,"./advent/day23/solution.js":on,"./advent/day24/solution.js":fn,"./advent/day25/solution.js":vn}),p1=Object.assign({"./advent/day01/input-test.txt":un,"./advent/day01/input-test2.txt":hn,"./advent/day01/input.txt":an,"./advent/day02/input-test.txt":bn,"./advent/day02/input.txt":cn,"./advent/day03/input-test.txt":pn,"./advent/day03/input.txt":mn,"./advent/day04/input-test.txt":Tn,"./advent/day04/input.txt":xn,"./advent/day05/input-test.txt":Kn,"./advent/day05/input.txt":Qn,"./advent/day06/input-test.txt":kn,"./advent/day06/input.txt":jn,"./advent/day07/input-test.txt":Cn,"./advent/day07/input.txt":_n,"./advent/day08/input-test.txt":zn,"./advent/day08/input-test2.txt":qn,"./advent/day08/input-test3.txt":Rn,"./advent/day08/input.txt":Gn,"./advent/day09/input-test.txt":Bn,"./advent/day09/input.txt":Sn,"./advent/day10/input-test.txt":Mn,"./advent/day10/input-test2.txt":Dn,"./advent/day10/input.txt":An,"./advent/day11/input-test.txt":Hn,"./advent/day11/input.txt":Xn,"./advent/day12/input-test.txt":Vn,"./advent/day12/input.txt":Pn,"./advent/day13/input-test.txt":wn,"./advent/day13/input.txt":Nn,"./advent/day14/input-test.txt":yn,"./advent/day14/input.txt":On,"./advent/day15/input-test.txt":$n,"./advent/day15/input.txt":En,"./advent/day16/input-test.txt":Zn,"./advent/day16/input.txt":In,"./advent/day17/input-test.txt":Wn,"./advent/day17/input.txt":Un,"./advent/day18/input-test.txt":Yn,"./advent/day18/input.txt":n2,"./advent/day19/input-test.txt":e2,"./advent/day19/input.txt":J2,"./advent/day20/input-test.txt":L2,"./advent/day20/input.txt":F2,"./advent/day21/input-test.txt":r2,"./advent/day21/input.txt":t2,"./advent/day22/input-test.txt":s2,"./advent/day22/input.txt":l2,"./advent/day23/input-test.txt":d2,"./advent/day23/input.txt":i2,"./advent/day24/input-test.txt":g2,"./advent/day24/input.txt":o2,"./advent/day25/input-test.txt":f2,"./advent/day25/input.txt":v2});function w1(e,n,L,l){this.day=e||"01",this.input=L||"",this.testInputs=l||[""],this.part1=n.part1||null,this.part2=n.part2||null,this.knownAnswers=(n.knownAnswers||[]).map(F=>String(F))}function u2(){var e={},n={},L={};Object.keys(q1).forEach(J=>{var t=/day(\d+)/.exec(J)[1];e[t]=q1[J]||null}),Object.keys(p1).forEach(J=>{var t=/day(\d+)/.exec(J)[1];J.includes("test")?(L[t]=L[t]||[],L[t].push(p1[J]||"")):n[t]=p1[J]||""});var l={},F=Object.keys(e).sort();return F.forEach(J=>{var t=e[J]||{},r=n[J]||"",d=L[J]||[];l[J]=new w1(J,t,r,d)}),l}const h2=Object.freeze(Object.defineProperty({__proto__:null,DayData:w1,getDataByDay:u2},Symbol.toStringTag,{value:"Module"}));function R1(e,n,L){const l=e.slice();return l[28]=n[L],l[30]=L,l}function G1(e,n,L){const l=e.slice();return l[31]=n[L],l}function B1(e){let n,L=e[31]+"",l,F,J;function t(){return e[12](e[31])}return{c(){n=T("button"),l=l1(L),c(n,"class","button svelte-gd9guy"),V(n,"current",e[31]===e[2])},m(r,d){h1(r,n,d),u(n,l),F||(J=[H(n,"keydown",null),H(n,"click",t)],F=!0)},p(r,d){e=r,d[0]&2&&L!==(L=e[31]+"")&&m1(l,L),d[0]&6&&V(n,"current",e[31]===e[2])},d(r){r&&i1(n),F=!1,y(J)}}}function S1(e){let n,L,l;return{c(){n=T("button"),n.textContent="run all",c(n,"class","button run-all-button svelte-gd9guy")},m(F,J){h1(F,n,J),L||(l=[H(n,"keydown",null),H(n,"click",e[11])],L=!0)},p:L1,d(F){F&&i1(n),L=!1,y(l)}}}function M1(e){let n,L,l;function F(){return e[16](e[30])}return{c(){n=T("button"),n.textContent=`Test ${e[30]+1}`,c(n,"class","button input-toggle svelte-gd9guy"),V(n,"current",e[4]===e[30])},m(J,t){h1(J,n,t),L||(l=[H(n,"keydown",null),H(n,"click",F)],L=!0)},p(J,t){e=J,t[0]&16&&V(n,"current",e[4]===e[30])},d(J){J&&i1(n),L=!1,y(l)}}}function a2(e){let n,L,l,F,J,t,r,d,s,i,g,o,f,h=e[7][0]+"",p,Q,m,R,_,X,O,F1,$,E=e[7][1]+"",r1,g1,S,Z,o1,M,a,x,k,z,j,P,K,D,f1,I,t1,w,Q1,N,a1,k1,W=v1(e[1]),G=[];for(let v=0;v<W.length;v+=1)G[v]=B1(G1(e,W,v));let A=e[1].length>1&&S1(e),U=v1({length:e[3]}),B=[];for(let v=0;v<U.length;v+=1)B[v]=M1(R1(e,U,v));return{c(){n=T("div"),L=T("h2"),L.textContent="Advent 2023",l=q(),F=T("div"),J=T("div"),J.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',t=q(),r=T("div");for(let v=0;v<G.length;v+=1)G[v].c();d=q(),A&&A.c(),s=q(),i=T("div"),g=T("h4"),g.textContent="Part 1:",o=q(),f=T("div"),p=l1(h),Q=q(),m=T("textarea"),_=q(),X=T("div"),O=T("h4"),O.textContent="Part 2:",F1=q(),$=T("div"),r1=l1(E),g1=q(),S=T("textarea"),o1=q(),M=T("div"),a=T("h4"),a.textContent="Input:",x=q(),k=T("br"),z=q(),j=T("button"),j.textContent="Real",P=q();for(let v=0;v<B.length;v+=1)B[v].c();K=q(),D=T("textarea"),f1=q(),I=T("div"),t1=q(),w=T("div"),Q1=l1(`Catch errors
-      `),N=T("button"),N.textContent="x",c(J,"class","label svelte-gd9guy"),c(r,"class","day-list"),c(g,"class","svelte-gd9guy"),c(f,"class","time svelte-gd9guy"),c(i,"class","label svelte-gd9guy"),c(m,"name","output1"),c(m,"id","output1"),c(m,"rows",R=u1(e[6][0])),c(m,"class","svelte-gd9guy"),V(m,"known-good",e[8][0]),c(O,"class","svelte-gd9guy"),c($,"class","time svelte-gd9guy"),c(X,"class","label svelte-gd9guy"),c(S,"name","output2"),c(S,"id","output2"),c(S,"rows",Z=u1(e[6][1])),c(S,"class","svelte-gd9guy"),V(S,"known-good",e[8][1]),c(a,"class","svelte-gd9guy"),c(j,"class","button input-toggle svelte-gd9guy"),V(j,"current",e[4]===-1),c(M,"class","label svelte-gd9guy"),Z1(M,"align-self","flex-start"),c(D,"name","input"),c(D,"id","input"),c(D,"rows","14"),c(D,"class","svelte-gd9guy"),c(N,"class","button input-toggle catch-button svelte-gd9guy"),V(N,"current",e[5]),c(w,"class","catch-area svelte-gd9guy"),c(F,"class","layout svelte-gd9guy"),c(n,"class","outer svelte-gd9guy")},m(v,C){h1(v,n,C),u(n,L),u(n,l),u(n,F),u(F,J),u(F,t),u(F,r);for(let b=0;b<G.length;b+=1)G[b]&&G[b].m(r,null);u(r,d),A&&A.m(r,null),u(F,s),u(F,i),u(i,g),u(i,o),u(i,f),u(f,p),u(F,Q),u(F,m),Y(m,e[6][0]),u(F,_),u(F,X),u(X,O),u(X,F1),u(X,$),u($,r1),u(F,g1),u(F,S),Y(S,e[6][1]),u(F,o1),u(F,M),u(M,a),u(M,x),u(M,k),u(M,z),u(M,j),u(M,P);for(let b=0;b<B.length;b+=1)B[b]&&B[b].m(M,null);u(F,K),u(F,D),Y(D,e[0]),u(F,f1),u(F,I),u(F,t1),u(F,w),u(w,Q1),u(w,N),a1||(k1=[H(m,"input",e[13]),H(S,"input",e[14]),H(j,"keydown",null),H(j,"click",e[15]),H(D,"input",e[17]),H(N,"keydown",null),H(N,"click",e[18])],a1=!0)},p(v,C){if(C[0]&518){W=v1(v[1]);let b;for(b=0;b<W.length;b+=1){const s1=G1(v,W,b);G[b]?G[b].p(s1,C):(G[b]=B1(s1),G[b].c(),G[b].m(r,d))}for(;b<G.length;b+=1)G[b].d(1);G.length=W.length}if(v[1].length>1?A?A.p(v,C):(A=S1(v),A.c(),A.m(r,null)):A&&(A.d(1),A=null),C[0]&128&&h!==(h=v[7][0]+"")&&m1(p,h),C[0]&64&&R!==(R=u1(v[6][0]))&&c(m,"rows",R),C[0]&64&&Y(m,v[6][0]),C[0]&256&&V(m,"known-good",v[8][0]),C[0]&128&&E!==(E=v[7][1]+"")&&m1(r1,E),C[0]&64&&Z!==(Z=u1(v[6][1]))&&c(S,"rows",Z),C[0]&64&&Y(S,v[6][1]),C[0]&256&&V(S,"known-good",v[8][1]),C[0]&16&&V(j,"current",v[4]===-1),C[0]&1048){U=v1({length:v[3]});let b;for(b=0;b<U.length;b+=1){const s1=R1(v,U,b);B[b]?B[b].p(s1,C):(B[b]=M1(s1),B[b].c(),B[b].m(M,null))}for(;b<B.length;b+=1)B[b].d(1);B.length=U.length}C[0]&1&&Y(D,v[0]),C[0]&32&&V(N,"current",v[5])},i:L1,o:L1,d(v){v&&i1(n),C1(G,v),A&&A.d(),C1(B,v),a1=!1,y(k1)}}}function u1(e){var n=String(e||"").split(`
-`).length;return Math.min(n,Math.max(n,1,10))}function b2(e,n,L){var l=a=>new Promise(x=>setTimeout(x,a)),F={},J=[],t="xx",r="",d=1,s=-1,i=!0,g=["",""],o=["",""],f=[!1,!1];function h(a=""){a&&L(2,t=a);var x=F[t];L(3,d=x.testInputs.length),s>d-1&&L(4,s=d-1),L(0,r=s<0?x?.input:x?.testInputs[s]),R()}function p(a=""){r&&R()}function Q(a=-1){L(4,s=a),h()}var m=!1;async function R(){if(!m){m=!0,L(6,g=["",""]),L(7,o=["",""]),await l(10);for(var a=1;a<=2;a++){var[x,k]=_(t,a,r),z=F1(t,a,x,s);X(a,x,k,z),await l(1)}m=!1}}function _(a="",x=1,k=""){var z=(F[a]||{})["part"+x];if(!z)return["",-999];var j=performance.now();if(i)try{return[z(k),performance.now()-j]}catch(D){var P=String(D),K=/:(\d+:\d+)\)/.exec(D.stack||"");return K&&(P=`(${K[1]}) ${P}`),[P,performance.now()-j]}else return[z(k),performance.now()-j]}function X(a=1,x="",k=0,z=!1){L(6,g[a-1]=x,g),L(7,o[a-1]=k<0?"":`(${Math.round(k)}ms)`,o),L(6,g),L(7,o),L(8,f[a-1]=z,f),L(8,f)}async function O(){var w;if(!m){m=!0;var a=["",""],x=[0,0],k=[!0,!0];L(4,s=-1),L(0,r=""),await l(10);for(var z=0;z<J.length;z++)for(var j=J[z],P=F[j],K=1;K<3;K++){var D=P?.input,[f1,I]=_(j,K,D||""),t1=I>=0&&F1(j,K,f1);k[w=K-1]&&(k[w]=t1),a[K-1]+=t1?"★":"ー",I>=0&&(x[K-1]+=I),X(K,a[K-1],x[K-1],k[K-1]),await l(1)}L(8,f=k),m=!1}}function F1(a="",x=1,k="",z=-1){var j=F[a]?.knownAnswers||[],P=2+2*z+(x===1?0:1),K=String(j[P]||"");return!!(K&&K===String(k))}var $=a=>{!a||!a.getDataByDay||(F=a.getDataByDay(),L(1,J=Object.keys(F).filter(x=>!!F[x].part1).sort()),h(J.at(-1)))};$(h2);const E=a=>h(a);function r1(){g[0]=this.value,L(6,g)}function g1(){g[1]=this.value,L(6,g)}const S=()=>Q(-1),Z=a=>Q(a);function o1(){r=this.value,L(0,r)}const M=()=>{L(5,i=!i)};return e.$$.update=()=>{e.$$.dirty[0]&1&&p(r)},[r,J,t,d,s,i,g,o,f,h,Q,O,E,r1,g1,S,Z,o1,M]}class c2 extends t7{constructor(n){super(),r7(this,n,b2,a2,O1,{},null,[-1,-1])}}new c2({target:document.querySelector(".app")});
+?.??#??????#?????.? 1,8,3,1,1`,p2=`#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#`,c2=`##.####.######.##
+.#.#..#.#....#.#.
+...#..#...##...#.
+###....########..
+#..#..#..####..#.
+.#.#..#.#.##.#.#.
+...####...##...##
+..##..##......##.
+##.#..#.######.#.
+..#....#....#.#..
+..#....#......#..
+#...##...####...#
+#.######.####.###
+..##..##......##.
+#........####....
+
+.##......
+###.####.
+##.##...#
+..###..##
+...##..##
+#..#.##.#
+..#......
+.##..##..
+.##..##..
+
+.......####..##..
+.####.##.#.#....#
+.####...#.#.####.
+######.##.#######
+........#..#....#
+.####....########
+......###.###..##
+#....##.###......
+.####...#.###..##
+#....####.##....#
+........##..#####
+##..##.####.####.
+######..#....##..
+#....#..####....#
+.####.##.#.######
+
+..####...####
+..####...####
+#...###...###
+...##########
+#.#..#..##.##
+#.#.##.#..#..
+.#.#..##..#..
+##..###....##
+#.###...##.#.
+
+#....##..
+#.###..##
+##...##..
+#..######
+##.#....#
+#.#......
+#####..##
+##.######
+.#.######
+##...##..
+..#......
+.#.##..##
+.##......
+#.#......
+#####..##
+...######
+.####..##
+
+..##.##...###
+##.#.####.#..
+...#######.##
+###..##.####.
+#####.....###
+######...###.
+..##..##...##
+..#..###..##.
+####.##...#.#
+...#.#..#..##
+..##.#.#.####
+###..###....#
+###....#.####
+..##.##.##...
+..##.##..#...
+
+....#...####..#
+.###.....####.#
+###.#.##..#.#..
+#.#.######...#.
+#.#####.#..#.#.
+...#......#.##.
+####....#......
+#.#..#..#####.#
+##..#.##...#.##
+...#.#.###.###.
+..####.##...#.#
+..####.##...#.#
+...#.#..##.###.
+...#.#..##.###.
+..####.##...#.#
+..####.##...#.#
+...#.#.###.###.
+
+#...#...#...##.#.
+....#...#...##.#.
+..##.###.##..###.
+#.#.#.#.#.###..#.
+......##.#.#.##.#
+.#..#..#...#..#..
+##.##.....####..#
+####.##...#.###..
+####.##...#.###..
+##.##.....####..#
+.#..#..#...#..#..
+......##.#.#.##.#
+#.#.#.#.#.###..#.
+
+..##....#.#.##.#.
+..#......#..#.#..
+##.###.#..##..##.
+.#.###....##.##..
+#....##.#...##.##
+#.#..##.#.####.##
+#.#..##.#.####..#
+#....##.#...##.##
+.#.###....##.##..
+##.###.#..##..##.
+..#......#..#.#..
+..##....#.#.##.#.
+..##....#.#.##.#.
+
+.#..#.#...##.
+#....#.#.....
+.......##..##
+......###....
+.#..#.#...##.
+.#..#.#......
+..##..#.####.
+......#..#.##
+........#..#.
+#....###.####
+#....##..####
+
+#................
+#...####...#..#..
+.#.######.#.##.#.
+.#.######.#....#.
+..#.####.#..##..#
+#..######..####..
+.....##.....##...
+
+#...#.#####
+##.#..#.##.
+##.........
+#..#...#.##
+..#.##.#...
+##..#.###..
+##..#.###..
+
+...#.#...#..#.#
+#....##.....#.#
+..#..#..#####.#
+.##....#...#...
+##..........###
+......#...####.
+####.#.#.##.###
+..#.#..##..####
+..#.#..##.#####
+..#.#..##.#####
+..#.#..##..####
+
+###.#......
+.#.#.##..##
+.###..##...
+##...######
+##.#####.##
+#####.#.#..
+..###.##.##
+.#######.##
+.#.##..#...
+#....#.#...
+.#..####.##
+##.###..#..
+##.#.##...#
+#.##.##....
+..##.#.#...
+.#..#.##.##
+.#..#.##.##
+
+.......##....
+..#.#..##..#.
+..#....##....
+..#..##..##..
+...##......##
+..#..##..##..
+##.###....###
+......#..#...
+#######..###.
+
+####..##.
+.#..#...#
+###..####
+###..#.##
+.#..#...#
+####..##.
+#####.#..
+.#.#...#.
+.####.#.#
+#.#.#...#
+..##.###.
+##..##..#
+...#.###.
+...#.###.
+##..##..#
+
+#.###..####
+.#..##...##
+##.##.#.#..
+.#..#...###
+.##..#..###
+####.##.###
+####.#..###
+
+#######..##
+######....#
+.####......
+#....#.##.#
+######....#
+#....##..##
+#######..##
+.####......
+.........#.
+.####......
+.####.#..#.
+#.##.######
+######.##.#
+##..##.##.#
+..##..####.
+#....#.##.#
+.####......
+
+#.#..#..##.
+#####.###..
+##.##.##...
+##.##.##...
+#####.###..
+#.#..#..##.
+###...#.#.#
+.#.#....###
+.#.#....###
+###...#...#
+#.#..#..##.
+
+#####.#..#.
+#.###.####.
+#..###.##.#
+.##.###..##
+....#..##..
+#..##.#..#.
+......####.
+
+##.#.######
+.#.#.#.##.#
+..###.##.#.
+##..#######
+#.##.######
+.####......
+..#....##..
+#.###......
+.#..#.####.
+..#..#....#
+.#.###....#
+.#.###....#
+..#..#....#
+
+##.#.####.#.###
+.##...##...##..
+.############..
+...########...#
+#....#..#....##
+....#....#.....
+..#.#.##.#.#...
+
+.#.#...#..#...#.#
+.#.#...#..#...#.#
+###.###.##.###.##
+#....##....##....
+#.#..##.##.##..#.
+#.#.###....#####.
+###.##########.##
+#..#.#.#..#.#.#..
+#.#...#.##.#...#.
+..##.#.####.#.##.
+#####.######.####
+
+.#..####..#..#.
+.##.#...#.#...#
+##.####.###.###
+.#.#####..####.
+..##..##..#.###
+..##..##..#.###
+.#.#####..####.
+##.####.###.###
+.##.#...#.#...#
+.#..####..#..#.
+.#.###..#######
+##.##.####.#...
+##.##.####.#...
+.#.###..#######
+.#..####..#..#.
+.##.....#.#...#
+##.####.###.###
+
+.##.##..##.
+....######.
+#####....##
+....#.##.#.
+.##.##.###.
+#..#......#
+#..##....##
+.##.######.
+.##.##..##.
+....##..##.
+#..###..###
+.##.#....#.
+....#....#.
+....#.##.#.
+######..###
+
+#.#.###
+...#...
+...#..#
+#.#.#.#
+##..#.#
+###.#.#
+#.#.#.#
+...#..#
+...#...
+#.#.###
+######.
+..#####
+#.##.##
+#.##.##
+..#####
+
+....#.#..
+....#.#..
+.##.#####
+###......
+#.#..####
+#........
+#...#..##
+.###...##
+.#.....##
+#...#..##
+#.###.#..
+#..#.#...
+..##.###.
+##.###.##
+.###.####
+...##.###
+#..####..
+
+#.#.#..
+#.#.#..
+##..#..
+####...
+....###
+..#..##
+.#####.
+.#####.
+..#...#
+
+#.#...###.####...
+######.##..#..##.
+.#.#.####.#..#..#
+..#..####.##...##
+..###.#....##...#
+..###.#....##...#
+..#..####.##...##
+.#.#.####.#..#..#
+######.##..#..##.
+#.#...###.####...
+..####...##.##.#.
+##..#...#.#..#...
+#.###....##...#..
+.#.##.#..#.#.#...
+##.#.#..##.##.##.
+##.###.....##.#..
+##.####....##.#..
+
+###..######..##
+........###..##
+##.##.###.####.
+##....##..#..#.
+#..##..#.......
+#..#...#..####.
+.#.##.#.#..##..
+..####..#.#..#.
+.######........
+#.####.##.#..#.
+##########....#
+.######.#......
+.######.#..##..
+
+#.#.###
+..#..##
+..#..##
+#.#..##
+..#####
+....###
+.######
+.##..##
+.###.##
+##.#...
+##..#..
+
+###....#...
+#.##..#.#..
+..##..#.#..
+###....#...
+##..###.#..
+...#..####.
+...###.####
+...###.####
+...#..####.
+##..###.#..
+###....#...
+..##..#.#..
+#.##..#.#..
+###....#...
+.####.###..
+
+#.##.##.##.#..#
+...#....#...##.
+#..........##..
+.#..####..#....
+...#.##.#...#..
+##.##..##.###.#
+..#.####.#..##.
+..##.##.##..#..
+..#..##..#...##
+##.##..##.###..
+##.##..##.###.#
+
+##...#.#.#...
+##.####.#.#..
+#####..###.##
+..#....##.#..
+.#####..##.##
+......##.##..
+###.###.#.#..
+###..######..
+####.#####...
+
+.##.###.##.......
+.#..#.....#..###.
+.#.#######.##.##.
+......##.##..#..#
+.##.#####..#.#..#
+..##.#.....#.####
+#...#..##...#.##.
+#.##.#####.###..#
+#.##.#####.###..#
+#...#..##...#.##.
+..##.#.....#.####
+
+..#.####.#.......
+...#.#..#...#....
+..#.#..#.#..##..#
+.##.#..#.##.#....
+#.#.####.#.#.....
+....####.........
+..#.#..#.#..#....
+.#.######.#..####
+##.##..##.###....
+############.....
+..#..##..#...####
+.###.##.###.#.##.
+#.#.#..#.#.#.####
+.#..####..#......
+.####..####..#..#
+
+.#.##.#......
+..####..#..##
+.##..##.#..#.
+.#.##.#..##..
+..#..#.......
+..#..#...##..
+..####..#..#.
+###..###....#
+.#.##.#.####.
+...##....##..
+#.####.#....#
+
+..#########
+.#..#.##.#.
+..###....##
+##.###..###
+#.###...###
+.#####..###
+##.#......#
+#.###.##.##
+..#..#..#..
+#.#.#.##.#.
+....######.
+..##......#
+.##..####..
+.#.#..##..#
+.#.###..###
+#.....##...
+#.....##...
+
+.##....
+.###...
+..#....
+##..##.
+##..##.
+..#....
+.###...
+.##....
+.##..##
+.....##
+...####
+
+.##..##...####...
+.###...#.#.#..#..
+##.......###...#.
+#...#..##....##.#
+#.##########.##..
+...######..#.##.#
+#......#..#.##...
+#......#..#.##...
+...######..#.##.#
+#.########.#.##..
+#...#..##....##.#
+##.......###...#.
+.###...#.#.#..#..
+.##..##...####...
+.##..##...####...
+
+#........####..
+#.#....#.####.#
+#.#.##.#.#..#.#
+#..#..#..#..#..
+##......######.
+.###..###....##
+#...##...####..
+.##....##.##.##
+#.#.####.#..#.#
+
+###....
+##.####
+..#####
+.#.....
+.#.....
+..#####
+##..##.
+
+.#.##.#.##.#.##.#
+.#.##.#.##.#.##.#
+..#.#.#....#.#.#.
+##...########...#
+###.#...##.#.#.##
+.#..#...##...#..#
+.#.#..........#.#
+.####.######.####
+...#.#.#..#.#.#..
+
+.....###....#
+......##.##.#
+...#..##.##.#
+.....###....#
+##...#.######
+.##.##...##..
+#..###..#..#.
+....#........
+.#..###.#..#.
+
+..#.##..###.###.#
+..#.##..###.###.#
+###..###....#.##.
+....#.####.#.###.
+##.##.#..#..#.#..
+###.###.#..#.####
+..#.#..#.##..#.##
+###....#..#.#.#.#
+.#.###.#.##.#.#.#
+
+#....#.....#.
+#.#.##..#..#.
+###.##.###...
+.#.##...#.###
+..#..###.....
+.###..#...##.
+..##..#...##.
+..#..###.....
+.#.##...#.###
+###.##.###...
+#.#.##..#..#.
+#....#.....#.
+#....#.....#.
+
+#.####..#
+#####.##.
+...##....
+...##....
+#####.##.
+..####..#
+..###....
+#...#.##.
+#.##.#..#
+
+#..####
+##..#..
+..#..#.
+#..####
+#..###.
+..#..#.
+##..#..
+#..####
+.#..##.
+.#..##.
+#..####
+
+.#.#...##...#
+.#.##......##
+##...##..##..
+.####.#.##.##
+###.##....##.
+.###..####..#
+#..#........#
+..#.#.#..#.#.
+..#.#.#..#.#.
+
+###.#####
+###.#.###
+#.#.###..
+#..##.###
+.###.##..
+##..#....
+.......##
+...######
+.......##
+##.##....
+.#..#####
+.##.#.###
+#..#.....
+#.#.#....
+#.#..#.##
+
+.####.#
+#....##
+.#..#.#
+.#..#.#
+#....##
+.####..
+#.##.#.
+#....##
+#.##.#.
+######.
+##..##.
+
+.###...##
+.....#.##
+..#..##..
+...####..
+..#.##...
+#.#######
+#.####.##
+
+###..#..#..##
+#..#.#..#.#..
+.....####....
+####.#..#.###
+...#.####.#..
+#..#.#..#.#..
+#.....##.....
+#.##########.
+######..#####
+.###.#..#.###
+.#####..#####
+.....####....
+######..#####
+
+..#####..
+..##.....
+#.#...#..
+.#.######
+.#.#####.
+..##.#.#.
+..##.#.#.
+.#.#####.
+.#.######
+
+#..####
+#..#..#
+#..#..#
+.##....
+....#.#
+.##.#..
+######.
+....#.#
+....#..
+
+##..##.##.#..#..#
+###.#.#.....#....
+###.#.#.....#....
+##..##.##.#..#..#
+....####.....####
+##.#..#.######..#
+.#.#######...#..#
+.##.#.#.#.#.....#
+..##......#...###
+.#.######.#######
+.#.######.#######
+..##......#...###
+.##.#.#.#.#.....#
+.#.#.#####...#..#
+##.#..#.######..#
+....####.....####
+##..##.##.#..#..#
+
+.....#.##.##.#.
+.....#..#.##.#.
+#####...#.#..##
+.##.#..##.#...#
+#..##..##..#..#
+.....###.###.##
+#####.#....#.#.
+#####..####..##
+.##..#...#..#.#
+#####..#.#.####
+......##.###.#.
+####.##.....###
+####.###.##...#
+
+.############...#
+.############...#
+###........###.#.
+####.#..#.####..#
+.###..##..###.##.
+.##.######.##..##
+##..######..####.
+.####.##.####...#
+.#.#..##..#.#.##.
+##..#######.##..#
+#..###..###..#...
+
+.#...#..######.
+#..#####.####.#
+....#.###.##.##
+#.###.##.#..#.#
+#.....###.##.##
+#...#.###.##.##
+#.###.##.#..#.#
+
+#.#..#.###..#
+...##.....##.
+.######......
+..#..#.......
+#.#..#.#.####
+.######.#####
+###..###.#..#
+.######......
+#.#..####....
+.#....#.#####
+#..##..#.....
+...##...##..#
+.##..##..#..#
+
+###...####...
+....########.
+####.#.##.#.#
+######.##.###
+##.#.######.#
+###..........
+##.##########
+..##...##...#
+##.#.######.#
+###..#.##....
+..#.#.####.#.
+####..####..#
+##...#....#..
+###..#.##.#..
+###..#....#..
+..#.#..##..#.
+..#....##....
+
+..#.#..#.#..##..#
+#.#......#.##..#.
+..########..##...
+..########..##...
+.##.####.##.####.
+.#..#..#..#.#.#..
+...######....###.
+...######....###.
+.#..#..#..#.#.#..
+.##.####.##..###.
+..########..##...
+
+#..#..##......##.
+#..#..##......##.
+####..##......##.
+.##.##.########.#
+..#....#.#..#.#..
+.#.#..#.##..##.##
+#.#.#.##......##.
+
+####.##.##.##
+.#####..#..##
+.#....#.#.#..
+..#..#.#.#.##
+.#...####....
+#.#.###..#.##
+..####.....##
+..####.....##
+#.#.###..#.##
+.#...####....
+..#..#.#.#.##
+.#....#.###..
+.#####..#..##
+####.##.##.##
+##.#...#.....
+
+#..#.#...##
+.##.######.
+####.##.#.#
+.##.##..#.#
+.##.##..#.#
+####.##.#..
+.##.######.
+#..#.#...##
+####....#.#
+
+.....##.#
+.......#.
+....#.##.
+.....#...
+.....##.#
+####..###
+........#
+####.....
+.##.#.#..
+....#####
+#####.###
+####...#.
+....##.#.
+....##.##
+####.#...
+
+.#..#.....##.
+##..##.#..##.
+#.##.###.#..#
+##..##.######
+#.##.#....##.
+#.##.#.##....
+######.######
+.####..#.....
+..##....#####
+#######.....#
+.......######
+######.##....
+......#.##..#
+#....########
+##..###......
+
+#.#.##..#.#
+.##.#....##
+####.##..#.
+.#..####.#.
+.#..####.#.
+####.##..#.
+.##.#....##
+#.#.###.#.#
+.....####..
+#.....#####
+##..#.####.
+#####.####.
+########.#.
+########.#.
+#####.####.
+
+.#.....#.
+.#....##.
+##....#.#
+####.#.#.
+##....#.#
+####.#.##
+..#.##...
+#.#.##.##
+..####..#
+##.#.#.#.
+.#...#.#.
+#.##....#
+#.##.###.
+##...##..
+##...##..
+#.##.###.
+#.##....#
+
+..##.....#...#...
+......##.######..
+.........####.#..
+........####.###.
+.####...#..#..#.#
+.......#..#.##...
+##..#####...#.#.#
+
+..##....#
+..##....#
+#.#......
+..##.##.#
+#...#..#.
+..####.##
+.###....#
+
+.######.#..#.##.#
+##.##.##..#.#..#.
+#..##..##.#.#..#.
+.#.##.#.#########
+.#....#.#.#.####.
+.##..##.##..#.##.
+.........####..##
+#########.##....#
+#......#.#..####.
+
+#.##.#....#.##.##
+##..##....##..###
+..##........##..#
+.####......####..
+.#..#.####.#..#.#
+.##.#.####.#.##..
+################.
+......####.......
+#....######....##
+#######..#######.
+.......##.......#
+..##...##...##...
+......####.......
+#....#.##.#....#.
+.####..##..####.#
+
+.#.#.##..#.######
+.##....#.#.......
+#.#...##.#.###..#
+#.#.##.##.###....
+.#.#..#.##.#.....
+#..##.####.......
+..###..##...#....
+...#..#...#.#.##.
+......###...##..#
+.#..#.#...#.##..#
+##.####.##..##..#
+##.#..#.#.#.#.##.
+.#.#.....#..#....
+.###..#.#...##..#
+...#.##.######..#
+...#.##..#####..#
+.###..#.#...##..#
+
+###...#..##.##.
+.#..###.##.#..#
+##.....#..##..#
+....#.#........
+#..####.#..####
+.####..#..##..#
+#####.#.#######
+#...#..########
+.##......#.#..#
+.######.#...###
+...##.#.#.#####
+..#.....##.....
+.....###...####
+......#.##.....
+......#.##.....
+
+#........###.....
+....##.......#.##
+....##.......#.##
+#........###..#..
+.###..###..###...
+.#.####.#.#.#..#.
+##.####.##..#...#
+
+####.#......#.#
+....#.......##.
+####..#....#..#
+##..#..####..#.
+..#.#........#.
+##.##.#.##.#.##
+.......####....
+##.#.########.#
+##.##..####..##
+...#.###..###.#
+.....########..
+
+...#.#..##.###.
+...#..#...#..#.
+...#..###..###.
+###......#.#..#
+####....####.##
+..#....####..#.
+...##....##..#.
+..#..##..#.#...
+##..###..####.#
+..#..#.#..#.#.#
+##.....##..##..
+##....##.#..##.
+##.....##.##.##
+..#.##.#.##..#.
+###..##.##.###.
+###.###.##.###.
+..#.##.#.##..#.
+
+#..#.##..
+#..#.#.##
+#####.###
+.##..####
+..#.#####
+#..#.##..
+....#....
+#..##..##
+#..#.####
+.....####
+####.####
+.##..#.##
+#####.###
+.##..#...
+.##.##.##
+
+..##.###.#.##..
+..#..##.#.##..#
+##.......#..#..
+##..##...####.#
+##..##...####.#
+##.......#..#..
+..#..##.#.##..#
+..##.###.#.##..
+..#..##....#.#.
+#....##.#......
+##.#..###.....#
+##.#..###.....#
+#..#.##.#......
+
+##.##.##..####..#
+#......#........#
+###..#####....###
+.#....#.#.####.#.
+###..###.#....#.#
+.##..##...####...
+..#..#..#..##..#.
+.##..##...#..#...
+#......##..##..##
+##....###.####.##
+#......#..#..#..#
+###..####..##..##
+#......####..####
+##.##.###......##
+###..####.####.##
+.######..######..
+.#######..#..#..#
+
+####..#..#..#
+.##.#..#...#.
+#..#.#....#.#
+....########.
+#..#.#.##.#.#
+....##.##.##.
+.....#....#..
+
+..##.#.#.
+......###
+..#.##.##
+###..####
+.#.######
+#.....###
+....#.#..
+....#.#..
+#.....###
+.#.######
+###..####
+
+..#.##.####
+#.#.##.#.#.
+#.##..#....
+.##.##...#.
+.###.#.##.#
+#.#.###...#
+.#.#..#####
+......#.###
+......#..##
+......#..##
+......#.###
+
+.#.##....
+####.####
+##.###..#
+.....####
+..##.####
+#..#..##.
+#######.#
+#...##..#
+..#.#....
+#.##.....
+###.#.##.
+#....#..#
+#...##..#
+###......
+#..######
+#..######
+###......
+
+.#....#.####.##
+.#....#.####.##
+#...#......##.#
+##.....#.#.#.##
+.###.......##.#
+...##.###.##.##
+#####....#..#..
+#....#..#.###..
+#....#..#.####.
+
+###...##..#.##.
+...##.#..##..#.
+##.#.#..#..#..#
+##.#.#..#..#..#
+...##.#..##..#.
+###...##..#.##.
+.#..##..#..#..#
+
+.##..##
+#..###.
+.##...#
+.....##
+.....##
+.##...#
+#..#.#.
+
+###......
+.#.##.##.
+.#.##.##.
+###......
+..####..#
+#.##.###.
+.##.#.##.
+.#.#..#..
+.#.#..#..
+.##.#.##.
+#.##..##.
+
+###.#.##.
+##..####.
+##......#
+##....#.#
+###.#..#.
+.#.#.#.#.
+###.##.##
+..#..#.#.
+..#..#.#.
+
+..#.#...#.#..##
+..#.#...#.#..##
+.#...#####.#..#
+...###....#..#.
+.#..####..#.#.#
+.#..#..##.####.
+#######.##.##..
+..#####.####..#
+#.####.##...##.
+.##...####....#
+##.###.#..#####
+#..###........#
+.#.#######..#.#
+...#......#..##
+..........#..##
+
+.#.##.##.#####.
+.#..##..##..##.
+.#...#.#####.#.
+#......#..##...
+.#....##...#.##
+#....######..#.
+..#..#.#..##...
+..#..#.#..##...
+#....######..#.
+.#....##...####
+#......#..##...
+.#...#.#####.#.
+.#..##..##..##.
+.#.##.##.#####.
+.#.##.##.#####.
+.#..##..##..##.
+.#...#.#####.#.
+
+.....###.####.###
+.#...###.####.###
+.#...####....####
+#.##.....####....
+#.#...###....###.
+#....##.##..##.##
+#..#..##.####.##.
+.#.##.....##.....
+#####.##......##.
+##.#.............
+#.###.#.######.#.
+
+...##.##.##.#.#
+###.#.#...#####
+.#..##...##..#.
+.#..##...##..#.
+###.#.#....####
+...##.##.##.#.#
+.###.##......#.
+.###.##......#.
+...##.##.##.#.#
+###.#.#....####
+.#..##...##..#.
+.#..##...##..#.
+###.#.#...#####
+...##.##.##.#.#
+#.##.#..##..#..
+
+##...#..#...#
+..##.#..#.##.
+...###..###..
+..#..#..#..#.
+..###.##.###.
+..###...####.
+#####....####
+
+.#...#.####
+.#..#..####
+.###.#..##.
+.###.#..##.
+.#..#.#####
+.#...#.####
+.##.#......
+#.#...#.##.
+...#.###..#
+.#..#.##..#
+..##.###..#
+#.#..#.....
+####.###..#
+
+..#....########
+..#....########
+.#.##.#...##...
+.###.#.###.####
+#...#...#.##.#.
+##..####.####.#
+##..##.##.##.##
+#...#.####..###
+##.#.###.#..#.#
+
+#####.#..###.
+...#...####..
+...#...####..
+#####.#..###.
+...##..##...#
+#..#.#.##.#..
+###.####.###.
+##.#...##..#.
+###.###...#.#
+
+..#..#.###.#.##
+.....#...#.#.##
+.....#...#.#.##
+..#..#.###.#.##
+##.#..##....##.
+..#.###.#.#....
+#####....#.##..
+..#...#....#..#
+##..##.######.#
+...#..#..#####.
+##..#..#.##....
+...##.#####...#
+.#.###....##..#
+
+#..#..#..##..#.
+...#..##.##.#..
+###.#.########.
+##.#...##..##..
+#.####...##...#
+.####.#.####.#.
+##.##..######..
+.####..#....#..
+.##.##.##..##.#
+..#.##...##...#
+#.#.#.##.##.##.
+#####.#.#..#.#.
+...##...####...
+#.#..##.#..#.##
+.####.#.####.#.
+.####.#.####.#.
+#.#..##.#..#.##`,m2=`O....#....
+O.OO#....#
+.....##...
+OO.#O....O
+.O.....O#.
+O.#..O.#.#
+..O..#O..O
+.......O..
+#....###..
+#OO..#....`,T2=`...O.....#O#....O###...#..OOO.O#....#.O.O.....O...OO##.#..O.O...........O........#...#.#O........##.
+#OO..O.##..#..........#.....O...##..O#.#O#O..##.....#.......O....##.#..#OO.O#O#....O..OO.O.....OO#.#
+.###..O.#...O.#......O.#.......#.........#OO##.....#...#...O....#..O.O.O.#.O..O...##....O.O#.O....O.
+O.O......OO.O#..#....O...#..##...O.#..##O.#...O.O....OO#......O...#...OO#O......O.....#O.O.#.#O.#O..
+.#....#.O#...O..O#..O.##..##.O..O...#...#....O#.#..OOO##..O#.#...#.#O.O#...#...O.O...#...O#O.###....
+.#.....O..#...#..#.##.OO.#O.#........................#...#OO.O.OO.##....O..#OOO#........O.....OO.#OO
+O....#.O.#O#O..#...#O.O.OO#O.OO......O.O.OOO...O..O.#....#.OO.......OO..#.....O.#..#.OO#.....#.#....
+.#..##.O....##O#.O...O...#.O..#.O.O.......#..........O#.O#.O..O..O#.#O...#O.#......O.......#.####..O
+....#......#...##.OOO##O.#.O##.....O.....O.........#...#.#.#.#..#.OO#O.#.###...O...O#O.O.#O..O#O....
+..O....##O#.....#O..#O..O...O..O....O..O..O..O...OO#...#O....#.#...#O.#..O.O#O..O........O#O......##
+..O....#.##OO.O..O##..#..OO#.....#O.#.#..#.OO......#.#..O.....O..#.O.O..O.O..........O...#.O#O...O.#
+O.#.#.O.#OO...OO.......OOO..OO......#..O.OO.#............OO...#O....O.OO#.O....O........###..#...O.#
+..#.O#...........O.#..O..OO.O#..#OOO.O#...OO..OO....O...#.O#.O.....#.OO.O.O...O.....#.##O.O.....#...
+#......OO.O#..O.......O...#.O.O#......#.###.#.#.O.......O.#.#..O..O...O#....OO..OOO.O....##...#.#.##
+.#..O...O.O..OO.....O#...#..O....O..#.....OOO...O##.........O..OOOO#........#OOO#.....O#.O.......#O#
+#..OO#.O#O...O......#.....#O.#........#.....O.OO..#O#..................#OO.#..O..#...O.....O..##.#..
+.#.#O..#..OO.O.....OOO......O.O#..O...#....##...###O..OOO.....O....O.....#..#.#....OO..##.......O...
+...O.OO....#.##O#..O..O.#...O.............O#...O#.##.O....OO.......OO..#OO...O#O#......O....#..OOOO.
+.O..OO..#..O...#.O#.....##..#.........O.##.....O...O.....#.#.#O.....#OO......#..OO...O......#O.OO.#.
+.O#OO.......O##...#............OO##....OO.O#.#O.O...#..#...#.OO.O..O.O.O#O..O...#........#.#O...O...
+.#.#.O#OOO.##OO...O..O.O##.O.O#....#O....####.O.O..#..O..O.O.#....O..#....O..#......O.O.#OO..#.O.#..
+...OOO...O.....O....O......OO#...#....OO.#.O#O....O#.O.O...#.O....O.#...#.....O#..#.O#.#.O.....#OO#.
+OO..O....O.O#.O...#....O.#........#.#....#....O...OOO.#.....OO..#.........O..##.........OO.........O
+#...##.....OO#...#..O...#.O#.#.#O....OO.O..O#.##.O.....O.O#.#OO..#...#OOO..#....OO..#O..#O#...#.#OO.
+OO.#.#....#..O.....#..OO......O......OO.OO.#..OO.#..#..#.........O#......##.##O...O#..OO.OO...#O....
+....O..#.O#.O#..##O.O...#......O.......#....#..#..##...OO.O..O#.O.....OO##.#..O.....O#.O#....O...#O.
+.#.O..#.OOOO#...#O......O.#..##...#.O#...O.##OO.O.O.O...#..O#.#O...O..#O.O..OO.O.OOOO#O..O...O#..#..
+....O#..#..###..O#O....OO...#.O.O..#....#O...#O.....#OO...O...OO......##.OO.....O.O..#.....O.O.....#
+...###.O....O..#..#.#OO.#.O..O.#OO.#...#....O.....#O.....#.#...OO.......O.#...O##O.......O.##.O...O.
+.......#....#O#O.#...OO..#OOO.....OOO.....##....###...O...O...#OO.O.##..#OO...#..#.....O.....O.O#O.#
+#O.O..O.#.O....#OO.OO....OO.....OO.OOO..##O.#.....O#OO....#O...O#..O#..#.OO.O......O...O......O#..O#
+O.......#..O............#O.#O.OO.##....OO.#OO..##O...#OO....#...#..#....O#..O......O..O.#......#.O#.
+O.....#O#O......#..#...OO#.....#.#.....OO#..OO#.O..#.O....#..O..#.....O...O...#......O.....OO....#.O
+...#...#......O....#..O..O#O..#.##O.#O...O....O..#.O###.#.#..........O...#.....O........#..#..#...O.
+.#....#.....O.#.OOO........O......#...#.O..#..O.O...O#.......O.O.#..#..O.....O......O#OOO...O#......
+.O...O#....O.....O.O...#O.#....#.##......O.O#OO#.....O..O..OOO..#...#....##.....#O.O.#.O#..........#
+#....#..#..O..O#.O#O.........O..O.#.O.OO..#O....O.OO.#.OO......#.#..O...O.#.#O.#.#..O.O#..O.#...#O.#
+OO...#...O...O.#O.O.#....OO##.#.#...O#....O.#..O...O...#......#.O.O...O.O.OO.#..O..O.#O..O#.#..#...#
+.....O..#...O#.O.#.O.#O##O.##.OO#..O.O#O#...O#........#........OO.OOO.O.O.........#..O...........O..
+..O...O.O..O..O......O#..##.O..#.#.#......O...#...#O........###..##......O........#.#...OO..........
+.....OO#....O.#.O.O..OO#...O.....O..OO.#O..........##..##..#.O..#O.O#OO#O#.O.O#.OO....#O..O....O....
+#.O.#.#.O........#..OOOO..O.O#.#.#.....O#.O#..##.....#..O..O#O#OO...#..O#O..OO.O........#......#.#..
+.##.....O.#.......O......O##O#.........OO#..###..#............O....O.#.OO......#.....OO#..#..O...O#.
+O.O..#.O.O.....O...O....O..OO....OO#...#.OO........O.O...O.....#.#....#O..#.#......#.#....#....#.O#O
+..O#..#.#.#....O..#..O.O.O...#..##...O..O##.......O...O...O..O.O#O......O..O.O.OO.##OO.OO........O..
+..##.....#.O......#.O....O.O..O#..O....OO#O...O.#.O.OO#.OOO#.#.OO..#O.O#..##.O.#...#O.#.....#.O#.O..
+#O..#..O..#.O..O...O....#OOOO..O.O#.##O.O#O...#OO...O.#OOO.#.#......#...#.O#.O..##.#..#..O.#.......#
+..O.#.#OO...O...O#...O...O#...O.........#...#.O..#...##..O..O.....#...OOO.##..........O..#O#O.#.O...
+...#..O....#...#.O.......O...##...O..O....O.......O.....O..#..OO.....OO..#....OO#O.O#..#OO..O....#O.
+.....#O.O#.#...#.O.....##..###..O......O.O#.O#.....O......#....O.O.......O#...##.O....O#O...#..##..#
+....#.#..#..#..##O.##.#.O.....O..#OO..O#.O.#OO.#O#..OO..OO#.#.....O..#.OO###.##.......O...#......#..
+..O..#O.....O......#...O.#...O..O.#....#.#.O...O.#.OOO...O.O.##.....O..##....#O...##.O.O#.##O#...OO.
+..#O.#...O#.#............#.O..O.#.O.#O#.#...##.O#..O##..#..#OO.O............O.#.OOOO......O.O.....##
+..O...OO..#......OO.#OOOO.O.#.#..#..O..OO.O.O.....#.##O......O...O.#....O....#.OOO.O..#..#.##.O.#O..
+O.#.#.O...#..##O.OO......O.O..O.O.#O...........O...OO#O#...OO..#..O..#O...##.O......OOO.......#O..#.
+......OOO....#..##O#....O.O.#.O...O#OO..#.O.......O.O..OOO.#...O.#OOO.O.OOOO#...#.....OO..O.O.OOO#..
+..OO.....#.O#......#.O..##..O..OO.O#..O#....O...O.....#..#......O.....O#.O.O#OO.OO.O.OO..#.OO.O.#O#.
+.##........O.OO..#...#..#.#O.....#O..#O..O.O..#.O.OO...O.#O#...#.OO.O...#.O#....OO#...##..#O........
+O.#..O.#O.#..#..O#.......O.#.OO..OOO#..##.##.....#..#.OOO..OO#...#O.O#.O..#........##...O....O.O.OOO
+.O..#..#O...OO......#...OO#.#........OO..O.#O.........O..#O.#O...##.#O..#...O...O........##..O##..O.
+.O.#.....#O....O....OO....#....O..#..O......#..OOO.O.#O....OOO.#....OO.###.#....O.O..#..#..#..#.....
+.#..O..#.##....#..#O.O..O.OO#..#....OO...O.O...........O#....O....O......#...O#O.....O.O.....OO.O...
+##......O#...................O..O.O....#.........#....O###.#...#.OO.O..#.OO.O....OO.#.O...O...#...##
+##...................O...........O.O##....##O...OOOO.O..#.O....O.#...#..OO......O.O.#O.#....#.#.O..#
+...#O..O....#......#.#.#.....#.O#..###.#.#...O#OO.O..O.O...#OO#.......#.O...O.#...#...O..O..#O...#..
+O..O....#..O...#.O.O#......O.......#.OO...O...OO....O#O.OOO...O#....O...O..OO.O#.......O.O..O#......
+#...OOO.O..........#..O.#...#..O.#O.O#O.#....#.O.##....#..OO##OO.O.....OO.....OO.#.O...O.......#..O.
+.O...O.O...O..O#.....##..O#.O#....OO..###O#..O#..#.#.#..O.O#..#.....##.O.#O#.O.#O.....#.O...OO...#O.
+#O#.O...O#...#...O....#.O.##O#...O#.#.#O#.....O.O.O...OO#OO#...O............###....O..#OO#....O..#.O
+..#..O.O#..#......#..#........O..O....#...O.O........#.#....#..#.....OOO#.#....OOOO.#O.#..##O...#..O
+......O..O..O.#..#...O...#..#..O...OOO.O.OO.O...#.OOO.#...O.#...O...OO#.##..#.##.O...O.OO...OO....##
+..#....O..#.#..##O.....O..O...#OOO#..O....#.......##.O..OO#.OO#O..O....O.##O..O....O##O#OO#O...#..O.
+....#.#OO.#.#O...#OOO....OOOO.#..O....O...O.........#O#...###...#..OO..O.....O.O.#O..#....###O..##..
+#..O.#.O.O....OO.#..#.OOO....O.#....###O.#.##.O....#O......O..O..OOO.#..O......OOO..O.....OO.O.#.#.O
+#.O.#....O..#O.##.O......OO....O.....O#O......#.O...#.##..O#..O.OO#..##..O...#.#O.O..O.O#OO.#..##O..
+....OO.O....#....O#...O..#.O..O.#.O.#.#....#.O....O#OO..O.O.O....#...#...O#O...O...O....#....O.O.O..
+.....#.OOOO.....#...#OO...O.#....###...O.O...#..#..OO..O.O#..O#OO.O.#.O#O.OO....#.#O#OO...O.OOO...#.
+.O..#.#.###OOO....#..O....OO.#..O..OO..OO#O#O#..#...O...#...##O..#.......#O...##O..#...##......O.O.#
+.O.###..O....O..OO#O....O#....O...O...O..#....O...#.......O.......#.O.O.#......#.OO#..O.OO..O.O.#..O
+....#O...#.O.#.O.........#...#....O...#.O.#...O..#.#..O............O...O.#O..O..##.O.O...OO.#O.O...#
+#.#.....OO#...O#OO.#..#..........#........O.O#.O.....O...#..#.OO#O.............O.O.##...##OO..#....#
+O.OO...O#.OOO#O..O.......O##O#O###.##..#..O...#.#.....O...#..O.O..O..O#.O##.OOOO#...#.....##........
+#............#O....#....O#.....O.OO.O...#....O.#O.#...##.....O..OO#...##.O...#.O....#....O....OO#O..
+#..OO...O.....O.#..O#OO........O.......O....O#O###.#....O#O..##.###O..#O.O....O.O....O.#O..#...O##.#
+..OO..#.......#...OO.#OOO#..#OO....#...OO..#O...O....O...#...O#......O.O...O##...OOO.#........O.O..O
+O#.OO..O.O..#...O#O..#OO..#.#.....O.##.O.O.O.#..O.O...#O...#.......#..OOO##OO.#..O....OO....#OO.#.O.
+.......#...#.#O.OOO#..#......OO.#O...##..O#.O...#O.....O..#....OO.O...OO..OO.OO..O...#.O#..OOOO#.O##
+.#.#.O..O...O..#.....#..O........#.O.#..O...#.O..O..#.O.#..#..O.....O.O#...O....O....###..O.#....#..
+..O..OOOO#...#...#...O....#O##.O.#..#...#O...O....O.....#..O..O...##O..O.##O.....O...##....#..#.....
+...#.#.....#.......O...O#....#..O........O......#...#.#..##.O..O....#.O.....O.O#.##..O..#..#...#..#O
+..OO......O..#...#.......#.O....O.##.#O.#O..O.O.OOO..O.##.#O..#..O#.O..#O..O.#O.....#..#..O.O.......
+##O#O.....O......OOO..........O#OO...OO...#..#......#.O.....O#....O..OOO......#...O..O..#O......#...
+..O....O...O...##O.O#O.#.#...#.O#O...#.#......##..O#O.#.OO......##O..O#.#..O......##...#O...#..OOOO#
+....#O..##.....#........O...O..###..#...O...#O.O..O.O...#..#O......O#....OO#....O.#...#..OO..#..O.O.
+OOO.#O.#.#.#..O.#.#O.....#.O##............#........O..OO#O##..O...O..#..O......O....OOO..O..OO......
+..O.#......O.O..#O..O.#.O.O##...OOOO..O...#OO#.....O...OO......O.O...#.O.....OO.O.O..#.O..O.O.O...##
+..OO.....#..#.....OO.#.O..#.........O..#..O.......O.##..OOO.......##.....O..#.#.O....#.O#....#..##..
+..#..OO.OO......O.O....#...O.#..#...O..O##...O.OOO....O.O#..O.#..#......#.....O.O.O#.....##.....#O..
+OO...#.##....OO.O...O..O...O..#.O.#.#.#.O.##.#...#.........O#.OO...O...#O...#....OO....#......#O.O..
+.O...#.....O.OO.O##......O...#..#..O.#.....O.#O.O.##O.O.OO.OOOO...#O.#.O....O.#..O........#..O..OOO.`,K2="",x2="",Q2="",j2="",k2="",C2="",_2="",z2="",R2="",q2="",G2="",B2="",S2="",A2="",M2="",D2="",w2="",H2="",V2="",X2="",P2="",N2="";var Bn=Object.assign({"./advent/day01/solution.js":m1,"./advent/day02/solution.js":Q1,"./advent/day03/solution.js":_1,"./advent/day04/solution.js":G1,"./advent/day05/solution.js":M1,"./advent/day06/solution.js":H1,"./advent/day07/solution.js":N1,"./advent/day08/solution.js":Z1,"./advent/day09/solution.js":Y1,"./advent/day10/solution.js":r7,"./advent/day11/solution.js":O7,"./advent/day12/solution.js":l7,"./advent/day13/solution.js":v7,"./advent/day14/solution.js":G7,"./advent/day15/solution.js":B7,"./advent/day16/solution.js":S7,"./advent/day17/solution.js":A7,"./advent/day18/solution.js":M7,"./advent/day19/solution.js":D7,"./advent/day20/solution.js":w7,"./advent/day21/solution.js":H7,"./advent/day22/solution.js":V7,"./advent/day23/solution.js":X7,"./advent/day24/solution.js":P7,"./advent/day25/solution.js":N7}),Tn=Object.assign({"./advent/day01/input-test.txt":y7,"./advent/day01/input-test2.txt":$7,"./advent/day01/input.txt":E7,"./advent/day02/input-test.txt":Z7,"./advent/day02/input.txt":I7,"./advent/day03/input-test.txt":U7,"./advent/day03/input.txt":W7,"./advent/day04/input-test.txt":Y7,"./advent/day04/input.txt":n2,"./advent/day05/input-test.txt":e2,"./advent/day05/input.txt":J2,"./advent/day06/input-test.txt":r2,"./advent/day06/input.txt":L2,"./advent/day07/input-test.txt":t2,"./advent/day07/input.txt":F2,"./advent/day08/input-test.txt":O2,"./advent/day08/input-test2.txt":s2,"./advent/day08/input-test3.txt":o2,"./advent/day08/input.txt":i2,"./advent/day09/input-test.txt":l2,"./advent/day09/input.txt":d2,"./advent/day10/input-test.txt":f2,"./advent/day10/input-test2.txt":g2,"./advent/day10/input.txt":v2,"./advent/day11/input-test.txt":u2,"./advent/day11/input.txt":a2,"./advent/day12/input-test.txt":h2,"./advent/day12/input.txt":b2,"./advent/day13/input-test.txt":p2,"./advent/day13/input.txt":c2,"./advent/day14/input-test.txt":m2,"./advent/day14/input.txt":T2,"./advent/day15/input-test.txt":K2,"./advent/day15/input.txt":x2,"./advent/day16/input-test.txt":Q2,"./advent/day16/input.txt":j2,"./advent/day17/input-test.txt":k2,"./advent/day17/input.txt":C2,"./advent/day18/input-test.txt":_2,"./advent/day18/input.txt":z2,"./advent/day19/input-test.txt":R2,"./advent/day19/input.txt":q2,"./advent/day20/input-test.txt":G2,"./advent/day20/input.txt":B2,"./advent/day21/input-test.txt":S2,"./advent/day21/input.txt":A2,"./advent/day22/input-test.txt":M2,"./advent/day22/input.txt":D2,"./advent/day23/input-test.txt":w2,"./advent/day23/input.txt":H2,"./advent/day24/input-test.txt":V2,"./advent/day24/input.txt":X2,"./advent/day25/input-test.txt":P2,"./advent/day25/input.txt":N2});function n1(n,e,J,F){this.day=n||"01",this.input=J||"",this.testInputs=F||[""],this.part1=e.part1||null,this.part2=e.part2||null,this.knownAnswers=(e.knownAnswers||[]).map(r=>String(r))}function y2(){var n={},e={},J={};Object.keys(Bn).forEach(L=>{var t=/day(\d+)/.exec(L)[1];n[t]=Bn[L]||null}),Object.keys(Tn).forEach(L=>{var t=/day(\d+)/.exec(L)[1];L.includes("test")?(J[t]=J[t]||[],J[t].push(Tn[L]||"")):e[t]=Tn[L]||""});var F={},r=Object.keys(n).sort();return r.forEach(L=>{var t=n[L]||{},O=e[L]||"",o=J[L]||[];F[L]=new n1(L,t,O,o)}),F}const $2=Object.freeze(Object.defineProperty({__proto__:null,DayData:n1,getDataByDay:y2},Symbol.toStringTag,{value:"Module"}));function Sn(n,e,J){const F=n.slice();return F[28]=e[J],F[30]=J,F}function An(n,e,J){const F=n.slice();return F[31]=e[J],F}function Mn(n){let e,J=n[31]+"",F,r,L;function t(){return n[12](n[31])}return{c(){e=T("button"),F=sn(J),c(e,"class","button svelte-gd9guy"),H(e,"current",n[31]===n[2])},m(O,o){bn(O,e,o),a(e,F),r||(L=[D(e,"keydown",null),D(e,"click",t)],r=!0)},p(O,o){n=O,o[0]&2&&J!==(J=n[31]+"")&&Kn(F,J),o[0]&6&&H(e,"current",n[31]===n[2])},d(O){O&&ln(e),r=!1,N(L)}}}function Dn(n){let e,J,F;return{c(){e=T("button"),e.textContent="run all",c(e,"class","button run-all-button svelte-gd9guy")},m(r,L){bn(r,e,L),J||(F=[D(e,"keydown",null),D(e,"click",n[11])],J=!0)},p:rn,d(r){r&&ln(e),J=!1,N(F)}}}function wn(n){let e,J,F;function r(){return n[16](n[30])}return{c(){e=T("button"),e.textContent=`Test ${n[30]+1}`,c(e,"class","button input-toggle svelte-gd9guy"),H(e,"current",n[4]===n[30])},m(L,t){bn(L,e,t),J||(F=[D(e,"keydown",null),D(e,"click",r)],J=!0)},p(L,t){n=L,t[0]&16&&H(e,"current",n[4]===n[30])},d(L){L&&ln(e),J=!1,N(F)}}}function E2(n){let e,J,F,r,L,t,O,o,s,l,d,i,g,v=n[7][0]+"",p,f,m,R,C,w,y,Ln,$,E=n[7][1]+"",tn,dn,B,Z,fn,S,h,K,Q,_,j,V,x,A,gn,I,Fn,X,Cn,P,pn,_n,U=vn(n[1]),q=[];for(let u=0;u<U.length;u+=1)q[u]=Mn(An(n,U,u));let M=n[1].length>1&&Dn(n),W=vn({length:n[3]}),G=[];for(let u=0;u<W.length;u+=1)G[u]=wn(Sn(n,W,u));return{c(){e=T("div"),J=T("h2"),J.textContent="Advent 2023",F=z(),r=T("div"),L=T("div"),L.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',t=z(),O=T("div");for(let u=0;u<q.length;u+=1)q[u].c();o=z(),M&&M.c(),s=z(),l=T("div"),d=T("h4"),d.textContent="Part 1:",i=z(),g=T("div"),p=sn(v),f=z(),m=T("textarea"),C=z(),w=T("div"),y=T("h4"),y.textContent="Part 2:",Ln=z(),$=T("div"),tn=sn(E),dn=z(),B=T("textarea"),fn=z(),S=T("div"),h=T("h4"),h.textContent="Input:",K=z(),Q=T("br"),_=z(),j=T("button"),j.textContent="Real",V=z();for(let u=0;u<G.length;u+=1)G[u].c();x=z(),A=T("textarea"),gn=z(),I=T("div"),Fn=z(),X=T("div"),Cn=sn(`Catch errors
+      `),P=T("button"),P.textContent="x",c(L,"class","label svelte-gd9guy"),c(O,"class","day-list"),c(d,"class","svelte-gd9guy"),c(g,"class","time svelte-gd9guy"),c(l,"class","label svelte-gd9guy"),c(m,"name","output1"),c(m,"id","output1"),c(m,"rows",R=un(n[6][0])),c(m,"class","svelte-gd9guy"),H(m,"known-good",n[8][0]),c(y,"class","svelte-gd9guy"),c($,"class","time svelte-gd9guy"),c(w,"class","label svelte-gd9guy"),c(B,"name","output2"),c(B,"id","output2"),c(B,"rows",Z=un(n[6][1])),c(B,"class","svelte-gd9guy"),H(B,"known-good",n[8][1]),c(h,"class","svelte-gd9guy"),c(j,"class","button input-toggle svelte-gd9guy"),H(j,"current",n[4]===-1),c(S,"class","label svelte-gd9guy"),F1(S,"align-self","flex-start"),c(A,"name","input"),c(A,"id","input"),c(A,"rows","14"),c(A,"class","svelte-gd9guy"),c(P,"class","button input-toggle catch-button svelte-gd9guy"),H(P,"current",n[5]),c(X,"class","catch-area svelte-gd9guy"),c(r,"class","layout svelte-gd9guy"),c(e,"class","outer svelte-gd9guy")},m(u,k){bn(u,e,k),a(e,J),a(e,F),a(e,r),a(r,L),a(r,t),a(r,O);for(let b=0;b<q.length;b+=1)q[b]&&q[b].m(O,null);a(O,o),M&&M.m(O,null),a(r,s),a(r,l),a(l,d),a(l,i),a(l,g),a(g,p),a(r,f),a(r,m),Y(m,n[6][0]),a(r,C),a(r,w),a(w,y),a(w,Ln),a(w,$),a($,tn),a(r,dn),a(r,B),Y(B,n[6][1]),a(r,fn),a(r,S),a(S,h),a(S,K),a(S,Q),a(S,_),a(S,j),a(S,V);for(let b=0;b<G.length;b+=1)G[b]&&G[b].m(S,null);a(r,x),a(r,A),Y(A,n[0]),a(r,gn),a(r,I),a(r,Fn),a(r,X),a(X,Cn),a(X,P),pn||(_n=[D(m,"input",n[13]),D(B,"input",n[14]),D(j,"keydown",null),D(j,"click",n[15]),D(A,"input",n[17]),D(P,"keydown",null),D(P,"click",n[18])],pn=!0)},p(u,k){if(k[0]&518){U=vn(u[1]);let b;for(b=0;b<U.length;b+=1){const On=An(u,U,b);q[b]?q[b].p(On,k):(q[b]=Mn(On),q[b].c(),q[b].m(O,o))}for(;b<q.length;b+=1)q[b].d(1);q.length=U.length}if(u[1].length>1?M?M.p(u,k):(M=Dn(u),M.c(),M.m(O,null)):M&&(M.d(1),M=null),k[0]&128&&v!==(v=u[7][0]+"")&&Kn(p,v),k[0]&64&&R!==(R=un(u[6][0]))&&c(m,"rows",R),k[0]&64&&Y(m,u[6][0]),k[0]&256&&H(m,"known-good",u[8][0]),k[0]&128&&E!==(E=u[7][1]+"")&&Kn(tn,E),k[0]&64&&Z!==(Z=un(u[6][1]))&&c(B,"rows",Z),k[0]&64&&Y(B,u[6][1]),k[0]&256&&H(B,"known-good",u[8][1]),k[0]&16&&H(j,"current",u[4]===-1),k[0]&1048){W=vn({length:u[3]});let b;for(b=0;b<W.length;b+=1){const On=Sn(u,W,b);G[b]?G[b].p(On,k):(G[b]=wn(On),G[b].c(),G[b].m(S,null))}for(;b<G.length;b+=1)G[b].d(1);G.length=W.length}k[0]&1&&Y(A,u[0]),k[0]&32&&H(P,"current",u[5])},i:rn,o:rn,d(u){u&&ln(e),Rn(q,u),M&&M.d(),Rn(G,u),pn=!1,N(_n)}}}function un(n){var e=String(n||"").split(`
+`).length;return Math.min(e,Math.max(e,1,10))}function Z2(n,e,J){var F=h=>new Promise(K=>setTimeout(K,h)),r={},L=[],t="xx",O="",o=1,s=-1,l=!0,d=["",""],i=["",""],g=[!1,!1];function v(h=""){h&&J(2,t=h);var K=r[t];J(3,o=K.testInputs.length),s>o-1&&J(4,s=o-1),J(0,O=s<0?K?.input:K?.testInputs[s]),R()}function p(h=""){O&&R()}function f(h=-1){J(4,s=h),v()}var m=!1;async function R(){if(!m){m=!0,J(6,d=["",""]),J(7,i=["",""]),await F(10);for(var h=1;h<=2;h++){var[K,Q]=C(t,h,O),_=Ln(t,h,K,s);w(h,K,Q,_),await F(1)}m=!1}}function C(h="",K=1,Q=""){var _=(r[h]||{})["part"+K];if(!_)return["",-999];var j=performance.now();if(l)try{return[_(Q),performance.now()-j]}catch(A){var V=String(A),x=/:(\d+:\d+)\)/.exec(A.stack||"");return x&&(V=`(${x[1]}) ${V}`),[V,performance.now()-j]}else return[_(Q),performance.now()-j]}function w(h=1,K="",Q=0,_=!1){J(6,d[h-1]=K,d),J(7,i[h-1]=Q<0?"":`(${Math.round(Q)}ms)`,i),J(6,d),J(7,i),J(8,g[h-1]=_,g),J(8,g)}async function y(){var X;if(!m){m=!0;var h=["",""],K=[0,0],Q=[!0,!0];J(4,s=-1),J(0,O=""),await F(10);for(var _=0;_<L.length;_++)for(var j=L[_],V=r[j],x=1;x<3;x++){var A=V?.input,[gn,I]=C(j,x,A||""),Fn=I>=0&&Ln(j,x,gn);Q[X=x-1]&&(Q[X]=Fn),h[x-1]+=Fn?"★":"ー",I>=0&&(K[x-1]+=I),w(x,h[x-1],K[x-1],Q[x-1]),await F(1)}J(8,g=Q),m=!1}}function Ln(h="",K=1,Q="",_=-1){var j=r[h]?.knownAnswers||[],V=2+2*_+(K===1?0:1),x=String(j[V]||"");return!!(x&&x===String(Q))}var $=h=>{!h||!h.getDataByDay||(r=h.getDataByDay(),J(1,L=Object.keys(r).filter(K=>!!r[K].part1).sort()),v(L.at(-1)))};$($2);const E=h=>v(h);function tn(){d[0]=this.value,J(6,d)}function dn(){d[1]=this.value,J(6,d)}const B=()=>f(-1),Z=h=>f(h);function fn(){O=this.value,J(0,O)}const S=()=>{J(5,l=!l)};return n.$$.update=()=>{n.$$.dirty[0]&1&&p(O)},[O,L,t,o,s,l,d,i,g,v,f,y,E,tn,dn,B,Z,fn,S]}class I2 extends a1{constructor(e){super(),u1(this,e,Z2,E2,r1,{},null,[-1,-1])}}new I2({target:document.querySelector(".app")});
