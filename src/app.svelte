@@ -148,19 +148,19 @@
    *
    *
    */
-  var onDataImport = (mod) => {
+  var onDataImport = (mod, init) => {
     if (!mod || !mod.getDataByDay) return
     dataByDay = mod.getDataByDay()
     dayNumList = Object.keys(dataByDay)
       .filter((day) => !!dataByDay[day].part1)
       .sort()
-    setDay(dayNumList.at(-1))
+    setDay(init ? dayNumList.at(-1) : '')
   }
   if (import.meta.hot) {
-    import.meta.hot.accept('./importer.js', onDataImport)
+    import.meta.hot.accept('./importer.js', (mod) => onDataImport(mod, false))
   }
   import * as importedMod from './importer.js'
-  onDataImport(importedMod)
+  onDataImport(importedMod, true)
 </script>
 
 <!-- 
