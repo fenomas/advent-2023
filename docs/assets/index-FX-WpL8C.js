@@ -1,52 +1,63 @@
-var J1=Object.defineProperty;var L1=(n,e,r)=>e in n?J1(n,e,{enumerable:!0,configurable:!0,writable:!0,value:r}):n[e]=r;var mn=(n,e,r)=>(L1(n,typeof e!="symbol"?e+"":e,r),r);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))F(t);new MutationObserver(t=>{for(const J of t)if(J.type==="childList")for(const L of J.addedNodes)L.tagName==="LINK"&&L.rel==="modulepreload"&&F(L)}).observe(document,{childList:!0,subtree:!0});function r(t){const J={};return t.integrity&&(J.integrity=t.integrity),t.referrerPolicy&&(J.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?J.credentials="include":t.crossOrigin==="anonymous"?J.credentials="omit":J.credentials="same-origin",J}function F(t){if(t.ep)return;t.ep=!0;const J=r(t);fetch(t.href,J)}})();function rn(){}function Hn(n){return n()}function Rn(){return Object.create(null)}function P(n){n.forEach(Hn)}function Vn(n){return typeof n=="function"}function F1(n,e){return n!=n?e==e:n!==e||n&&typeof n=="object"||typeof n=="function"}function s1(n){return Object.keys(n).length===0}function i(n,e){n.appendChild(e)}function pn(n,e,r){n.insertBefore(e,r||null)}function ln(n){n.parentNode&&n.parentNode.removeChild(n)}function Cn(n,e){for(let r=0;r<n.length;r+=1)n[r]&&n[r].d(e)}function z(n){return document.createElement(n)}function dn(n){return document.createTextNode(n)}function R(){return dn(" ")}function M(n,e,r,F){return n.addEventListener(e,r,F),()=>n.removeEventListener(e,r,F)}function m(n,e,r){r==null?n.removeAttribute(e):n.getAttribute(e)!==r&&n.setAttribute(e,r)}function d1(n){return Array.from(n.childNodes)}function kn(n,e){e=""+e,n.data!==e&&(n.data=e)}function W(n,e){n.value=e??""}function f1(n,e,r,F){r==null?n.style.removeProperty(e):n.style.setProperty(e,r,F?"important":"")}function S(n,e,r){n.classList.toggle(e,!!r)}let Tn;function fn(n){Tn=n}const nn=[],_n=[];let en=[];const Dn=[],l1=Promise.resolve();let xn=!1;function v1(){xn||(xn=!0,l1.then(Xn))}function jn(n){en.push(n)}const un=new Set;let Y=0;function Xn(){if(Y!==0)return;const n=Tn;do{try{for(;Y<nn.length;){const e=nn[Y];Y++,fn(e),g1(e.$$)}}catch(e){throw nn.length=0,Y=0,e}for(fn(null),nn.length=0,Y=0;_n.length;)_n.pop()();for(let e=0;e<en.length;e+=1){const r=en[e];un.has(r)||(un.add(r),r())}en.length=0}while(nn.length);for(;Dn.length;)Dn.pop()();xn=!1,un.clear(),fn(n)}function g1(n){if(n.fragment!==null){n.update(),P(n.before_update);const e=n.dirty;n.dirty=[-1],n.fragment&&n.fragment.p(n.ctx,e),n.after_update.forEach(jn)}}function O1(n){const e=[],r=[];en.forEach(F=>n.indexOf(F)===-1?e.push(F):r.push(F)),r.forEach(F=>F()),en=e}const h1=new Set;function b1(n,e){n&&n.i&&(h1.delete(n),n.i(e))}function hn(n){return n?.length!==void 0?n:Array.from(n)}function c1(n,e,r){const{fragment:F,after_update:t}=n.$$;F&&F.m(e,r),jn(()=>{const J=n.$$.on_mount.map(Hn).filter(Vn);n.$$.on_destroy?n.$$.on_destroy.push(...J):P(J),n.$$.on_mount=[]}),t.forEach(jn)}function o1(n,e){const r=n.$$;r.fragment!==null&&(O1(r.after_update),P(r.on_destroy),r.fragment&&r.fragment.d(e),r.on_destroy=r.fragment=null,r.ctx=[])}function i1(n,e){n.$$.dirty[0]===-1&&(nn.push(n),v1(),n.$$.dirty.fill(0)),n.$$.dirty[e/31|0]|=1<<e%31}function p1(n,e,r,F,t,J,L=null,s=[-1]){const f=Tn;fn(n);const d=n.$$={fragment:null,ctx:[],props:J,update:rn,not_equal:t,bound:Rn(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(e.context||(f?f.$$.context:[])),callbacks:Rn(),dirty:s,skip_bound:!1,root:e.target||f.$$.root};L&&L(d.root);let v=!1;if(d.ctx=r?r(n,e.props||{},(g,l,...h)=>{const o=h.length?h[0]:l;return d.ctx&&t(d.ctx[g],d.ctx[g]=o)&&(!d.skip_bound&&d.bound[g]&&d.bound[g](o),v&&i1(n,g)),l}):[],d.update(),v=!0,P(d.before_update),d.fragment=F?F(d.ctx):!1,e.target){if(e.hydrate){const g=d1(e.target);d.fragment&&d.fragment.l(g),g.forEach(ln)}else d.fragment&&d.fragment.c();e.intro&&b1(n.$$.fragment),c1(n,e.target,e.anchor),Xn()}fn(f)}class a1{constructor(){mn(this,"$$");mn(this,"$$set")}$destroy(){o1(this,1),this.$destroy=rn}$on(e,r){if(!Vn(r))return rn;const F=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return F.push(r),()=>{const t=F.indexOf(r);t!==-1&&F.splice(t,1)}}$set(e){this.$$set&&!s1(e)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}const m1="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(m1);var u1=[54304,54418,142,,,281];function z1(n=""){return n.split(/\n/).reduce((e,r)=>{var F=r.split("").filter(t=>/\d/.test(t));return e+parseInt(F[0]+F.at(-1))||0},0)}function k1(n=""){var e=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return n.split(/\n/).reduce((r,F)=>{var t=-1,J=1/0,L=-1,s=-1;return e.forEach((f,d)=>{var v=F.indexOf(f);v>-1&&v<J&&(J=v,t=d%10);var g=F.lastIndexOf(f);g>-1&&g>s&&(s=g,L=d%10)}),r+parseInt(t+""+L)},0)}const x1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:u1,part1:z1,part2:k1},Symbol.toStringTag,{value:"Module"}));var j1=[2727,56580,8,2286];function q1(n=""){var e=0,r={red:12,green:13,blue:14};return n.split(`
-`).forEach(F=>{var[t,J]=F.split(":"),L=J.split(";").every(s=>s.split(",").every(f=>{var[,d,v]=/(\d+)\s+(\S+)/.exec(f);return r[v]?parseInt(d)<=r[v]:!0}));L&&(e+=parseInt(/\d+/.exec(t)[0]))}),e}function T1(n=""){var e=0;return n.split(`
-`).forEach(r=>{var F={red:0,green:0,blue:0},[,t]=r.split(":");t.split(";").forEach(J=>{J.split(",").forEach(L=>{var[,s,f]=/(\d+)\s+(\S+)/.exec(L),d=parseInt(s);d>F[f]&&(F[f]=d)})}),e+=F.red*F.green*F.blue}),e}const K1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:j1,part1:q1,part2:T1},Symbol.toStringTag,{value:"Module"}));var Q1=[539637,82818007,4361,467835];function R1(n=""){var e=[],r=[];n.split(`
-`).forEach((t,J)=>{e[J]=[],r[J]=[];for(var L=0;L<t.length;L++){var s=t[L];if(s!==".")if(/\d/.test(s)){var f=parseInt(t.substring(L)),d=String(f).length;e[J].push({y:J,x:L,value:f,len:d}),L+=d-1}else r[J].push({y:J,x:L})}});var F=0;return e.forEach(t=>{t.forEach(J=>{for(var L=J.y-1;L<J.y+2;L++){var s=r[L]||[],f=s.some(d=>{if(!(d.x<J.x-1)&&!(d.x>J.x+J.len))return!0});if(f){F+=J.value;return}}})}),F}function C1(n=""){var e=[],r=[];n.split(`
-`).forEach((t,J)=>{e[J]=[],r[J]=[];for(var L=0;L<t.length;L++){var s=t[L];if(s!==".")if(/\d/.test(s)){var f=parseInt(t.substring(L)),d=String(f).length;e[J].push({y:J,x:L,value:f,len:d}),L+=d-1}else s==="*"&&r[J].push({y:J,x:L})}});var F=0;return r.forEach(t=>{t.forEach(J=>{for(var L=0,s=1,f=J.y-1;f<J.y+2;f++){var d=e[f]||[];d.forEach(v=>{J.x<v.x-1||J.x>v.x+v.len||(L++,s*=v.value)})}L===2&&(F+=s)})}),F}const _1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Q1,part1:R1,part2:C1},Symbol.toStringTag,{value:"Module"}));var D1=[26443,6284877,13,30];function G1(n=""){var e=0;return n.split(`
-`).forEach((r,F)=>{var t=r.split(":")[1].split("|"),J=t[0].trim().split(/\s+/).map(f=>parseInt(f)),L=t[1].trim().split(/\s+/).map(f=>parseInt(f)),s=L.reduce((f,d)=>f+(J.includes(d)?1:0),0);s>0&&(e+=Math.pow(2,s-1))}),e}function B1(n=""){var e=n.split(`
-`).map((t,J)=>{var L=t.split(":")[1].split("|"),s=L[0].trim().split(/\s+/).map(v=>parseInt(v)),f=L[1].trim().split(/\s+/).map(v=>parseInt(v)),d=f.reduce((v,g)=>v+(s.includes(g)?1:0),0);return d>0&&(r+=Math.pow(2,d-1)),d}),r=0,F=[];return e.forEach((t,J)=>{for(var L=1+(F[J]||0),s=e[J],f=0;f<s;f++){var d=J+1+f;F[d]=(F[d]||0)+L}r+=L}),r}const A1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:D1,part1:G1,part2:B1},Symbol.toStringTag,{value:"Module"}));var M1=[525792406,79004094,35,46];function S1(n=""){var e=[],r=null;n.split(`
-`).forEach((t,J)=>{if(/:/.test(t)){var[,L]=t.split(":");e.push(r=[]),t=L}var s=t.trim().split(/\s+/).filter(f=>f).map(f=>parseInt(f));s.length>0&&r.push(s)});var F=e.shift()[0];return e.forEach(t=>{var J={};t.forEach(([L,s,f])=>{F.forEach((d,v)=>{J[v]||d>=s&&d<s+f&&(F[v]+=L-s,J[v]=!0)})})}),F.reduce((t,J)=>Math.min(t,J),1/0)}function w1(n=""){var e,r=[],F;n.split(`
-`).forEach((s,f)=>{if(/:/.test(s)){var[,d]=s.split(":");if(!e){e=d.trim().split(/\s+/).map(h=>parseInt(h));return}r.push(F=[]),s=d}if(s=s.trim(),!!s){var[v,g,l]=s.split(/\s+/).map(h=>parseInt(h));F.push([g,g+l,v-g])}}),r.forEach(s=>{s.sort((f,d)=>f[0]-d[0])});for(var t=1/0,J=(s,f,d=0)=>{if(d>=r.length){s<t&&(t=s);return}var v=r[d];v.some(([g,l,h])=>{if(!(s>=l)){if(f<=g)return!0;s<g&&(J(s,g,d+1),s=g);var o=Math.min(f,l);J(s+h,o+h,d+1),s=o}}),s<f&&J(s,f,d+1)},L=0;L<e.length;L+=2)J(e[L],e[L]+e[L+1]);return t}const H1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:M1,part1:S1,part2:w1},Symbol.toStringTag,{value:"Module"}));var V1=[1195150,42550411,288,71503];function Pn(n=""){var e=n.split(`
-`).map(J=>{var L=J.split(":")[1];return L.trim().split(/\s+/).map(s=>parseInt(s))}),[r,F]=e,t=1;return r.forEach((J,L)=>{var s=-J,f=F[L],d=Math.sqrt(s*s-4*f),v=(-s-d)/2,g=(-s+d)/2,l=1e-5,h=Math.floor(g-l)-Math.ceil(v+l)+1;t*=h}),t}function X1(n=""){return Pn(n.replace(/ /g,""))}const P1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:V1,part1:Pn,part2:X1},Symbol.toStringTag,{value:"Module"}));var N1=[249726565,251135960,6440,5905];function y1(n=""){var e="23456789TJQKA".split(""),r={};e.forEach((t,J)=>{r[t]=String.fromCharCode(65+J)});var F=n.split(`
-`).map(t=>{var[J,L]=t.trim().split(/\s+/),s=parseInt(L),f=J.split("").map(g=>r[g]),d={};f.forEach(g=>{d[g]=(d[g]||0)+1});var v=Object.keys(d).map(g=>d[g]).sort((g,l)=>l-g);return v.push(0,0),{chars:f,bid:s,ctList:v}});return F.sort((t,J)=>{for(var L=0;L<2;L++)if(t.ctList[L]!==J.ctList[L])return t.ctList[L]-J.ctList[L];for(var s=0;s<5;s++){var f=t.chars[s],d=J.chars[s];if(f!==d)return f>d?1:-1}return 0}),F.reduce((t,{bid:J},L)=>t+J*(L+1),0)}function U1(n=""){var e="J23456789TQKA".split(""),r={};e.forEach((t,J)=>{r[t]=String.fromCharCode(65+J)});var F=n.split(`
-`).map(t=>{var[J,L]=t.trim().split(/\s+/),s=parseInt(L),f=J.split("").map(l=>r[l]),d={},v=0;f.forEach(l=>{if(l==="A"){v++;return}d[l]=(d[l]||0)+1});var g=Object.keys(d).map(l=>d[l]).sort((l,h)=>h-l);return g.push(0,0),g[0]+=v,{chars:f,bid:s,ctList:g,hand:J}});return F.sort((t,J)=>{for(var L=0;L<2;L++)if(t.ctList[L]!==J.ctList[L])return t.ctList[L]-J.ctList[L];for(var s=0;s<5;s++){var f=t.chars[s],d=J.chars[s];if(f!==d)return f>d?1:-1}return 0}),F.reduce((t,{bid:J},L)=>t+J*(L+1),0)}const $1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:N1,part1:y1,part2:U1},Symbol.toStringTag,{value:"Module"}));var E1=[18673,17972669116327,2,,6,,,6];function I1(n=""){var e={},r=n.split(`
-`).map(s=>{if(s=s.trim(),!!s){if(!s.includes("="))return s.split("");var[,f,d,v]=/(\S+) = \((\S+), (\S+)\)/.exec(s);e[f]={L:d,R:v}}}),F=r.shift(),t="AAA";if(!e[t])return-1;for(var J=0,L=0;J<1e7;J++){if(t==="ZZZ")return J;t=e[t][F[L]],L=(L+1)%F.length}return-1}function Z1(n=""){var e={},r=[],F={},t=n.split(`
-`).map(v=>{if(v=v.trim(),!!v){if(!v.includes("="))return v.split("");var[,g,l,h]=/(\S+) = \((\S+), (\S+)\)/.exec(v);/..A/.test(g)&&r.push(g),/..Z/.test(g)&&(F[g]=!0),e[g]={L:l,R:h}}}),J=t.shift(),L=r.map(v=>{for(var g=0,l=0;g<1e7;g++){if(v in F)return g;v=e[v][J[l]],l=(l+1)%J.length}});L.sort((v,g)=>v-g);for(var s=L.pop();L.length>0;)for(var f=s,d=L.pop();s%d!==0;)s+=f;return s}const W1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:E1,part1:I1,part2:Z1},Symbol.toStringTag,{value:"Module"}));var Y1=[1772145754,867,114,2];function n7(n=""){var e=(r=[1,1])=>{if(r.length<2)return NaN;for(var F=!0,t=[],J=1;J<r.length;J++){var L=r[J]-r[J-1];F&&(F=L===0),t.push(L)}var s=F?0:e(t);return s+r.at(-1)};return n.split(`
-`).reduce((r,F)=>{var t=F.trim().split(/\s+/).map(J=>parseInt(J));return r+=e(t)},0)}function e7(n=""){var e=(r=[1,1])=>{if(r.length<2)return NaN;for(var F=!0,t=[],J=1;J<r.length;J++){var L=r[J]-r[J-1];F&&(F=L===0),t.push(L)}var s=F?0:e(t);return r[0]-s};return n.split(`
-`).reduce((r,F)=>{var t=F.trim().split(/\s+/).map(J=>parseInt(J));return r+=e(t)},0)}const r7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Y1,part1:n7,part2:e7},Symbol.toStringTag,{value:"Module"}));var t7=[6757,523,8,,,10];function J7(n=""){var{perimeter:e}=Nn(n);return e/2}function L7(n=""){var{perimeter:e,area:r}=Nn(n);return r-e/2+1}var Nn=n=>{var e=[],r=[0,0];n.split(`
-`).forEach((O,c)=>{e[c]=O.trim();var q=e[c].indexOf("S");q>-1&&(r=[q,c])},0);for(var F=(O,c)=>c<0||c>=e.length?".":e[c][O]||".",t=(O,c,q)=>(O+=[0,1,0,-1][q],c+=[-1,0,1,0][q],[O,c]),J={"|":[0,-1,2,-1],"-":[-1,1,-1,3],L:[-1,-1,1,0],F:[1,-1,-1,2],7:[3,2,-1,-1],J:[-1,0,3,-1],".":[-1,-1,-1,-1]},[L,s]=r,f=[0,1,2,3].filter(O=>{var c=t(...r,O),q=F(...c);return q&&J[q][O]>=0})[0],d=0,v=0,g=0;g<1e5;g++){v++;var[l,h]=t(L,s,f),o=F(l,h);if(o==="S")break;var u=J[o];if(!o||!u)throw"?";d-=s*(l-L),[L,s]=[l,h],f=u[f]}return d-=s*(r[0]-L),{perimeter:v,area:d}};const F7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:t7,part1:J7,part2:L7},Symbol.toStringTag,{value:"Module"}));var s7=[9623138,726820169514,374,82000210];function yn(n=""){var e=[],r=[],F=[];n.split(`
-`).forEach((s,f)=>{if(s=s.trim(),!!s){e.length===0&&(e.length=s.length,e.fill(!0)),r[f]=!0;for(var d=-1;d=s.indexOf("#",d),!(d<0);)e[d]=!1,r[f]=!1,F.push({x:d,y:f}),d++}});var t=0,J=e.map(s=>s?++t:t);t=0;var L=r.map(s=>s?++t:t);return F.forEach(s=>{s.emptyLeft=J[s.x],s.emptyAbove=L[s.y]}),{locs:F}}function d7(n=""){for(var{locs:e}=yn(n),r=(L,s)=>{var f=e[L],d=e[s],v=Math.abs(f.x-d.x),g=Math.abs(f.y-d.y),l=Math.abs(f.emptyLeft-d.emptyLeft),h=Math.abs(f.emptyAbove-d.emptyAbove);return v+g+l+h},F=0,t=0;t<e.length;t++)for(var J=t+1;J<e.length;J++)F+=r(t,J);return F}function f7(n=""){for(var{locs:e}=yn(n),r=999999,F=(s,f)=>{var d=e[s],v=e[f],g=Math.abs(d.x-v.x),l=Math.abs(d.y-v.y),h=Math.abs(d.emptyLeft-v.emptyLeft)*r,o=Math.abs(d.emptyAbove-v.emptyAbove)*r;return g+l+h+o},t=0,J=0;J<e.length;J++)for(var L=J+1;L<e.length;L++)t+=F(J,L);return t}const l7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:s7,part1:d7,part2:f7},Symbol.toStringTag,{value:"Module"}));var v7=[7379,7732028747925,21,525152];function g7(n=""){var e=(r="",F=0,t=0,J=[1])=>{if(F>r.length-1)return t===0?1:0;if(t>r.length-F)return 0;if(t===0)return r.substring(F).includes("#")?0:1;if(r[F]===".")return e(r,F+1,t,J);var L=0;r[F]==="?"&&(L+=e(r,F+1,t,J));var s=J[0];if(r.substring(F,F+s).includes(".")||r[F+s]==="#")return L;var f=J.filter((v,g)=>g>0),d=t-s-(J.length>1?1:0);return L+e(r,F+s+1,d,f)};return n.split(`
-`).reduce((r,F)=>{if(F=F.trim(),!F)return r;var[t,J]=F.split(/\s+/),L=t.split(/\.+/).join("."),s=J.split(",").map(d=>parseInt(d)),f=s.reduce((d,v)=>d+v)+s.length-1;return r+e(L,0,f,s)},0)}function O7(n=""){var e=(t,J,L,s)=>{for(;L<s;)if(t[L++]===J)return!0},r=t=>{var J={};return(L,s,f)=>{var d=(L<<12)+s;return d in J?J[d]:J[d]=t(L,s,f)}},F=(t="")=>{var J=(L=0,s=0,f=[1])=>{if(L>t.length-1)return s===0?1:0;if(s>t.length-L)return 0;if(s===0)return e(t,"#",L,t.length)?0:1;if(t[L]===".")return J(L+1,s,f);var d=0;t[L]==="?"&&(d+=J(L+1,s,f));var v=f[0];if(e(t,".",L,L+v)||t[L+v]==="#")return d;var g=f.filter((h,o)=>o>0),l=s-v-(f.length>1?1:0);return d+J(L+v+1,l,g)};return J=r(J),J};return n.split(`
-`).reduce((t,J)=>{if(J=J.trim(),!J)return t;var[L,s]=J.split(/\s+/),f=L.split(/\.+/).join("."),d=s.split(",").map(l=>parseInt(l)),v=5;f=[...Array(v).fill(f)].join("?"),d=[].concat(...Array(v).fill(d));var g=d.reduce((l,h)=>l+h)+d.length-1;return t+F(f)(0,g,d)},0)}const h7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:v7,part1:g7,part2:O7},Symbol.toStringTag,{value:"Module"}));var b7=[35210,31974,405,400],Un=(n=[""],e=0,r=1)=>{for(var F=0;e>=0&&r<n.length;e--,r++)if(n[e]!==n[r]){for(var t=0;t<n[0].length;t++)if(n[e][t]!==n[r][t]&&(F++,F>1))return 2}return F},$n=(n=[""],e=0,r=1)=>{for(var F=0;e>=0&&r<n[0].length;e--,r++)for(var t=0;t<n.length;t++)if(n[t][e]!==n[t][r]&&(F++,F>1))return 2;return F};function c7(n=""){return n.split(`
+var s1=Object.defineProperty;var F1=(t,n,r)=>n in t?s1(t,n,{enumerable:!0,configurable:!0,writable:!0,value:r}):t[n]=r;var on=(t,n,r)=>(F1(t,typeof n!="symbol"?n+"":n,r),r);(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const J of e)if(J.type==="childList")for(const L of J.addedNodes)L.tagName==="LINK"&&L.rel==="modulepreload"&&s(L)}).observe(document,{childList:!0,subtree:!0});function r(e){const J={};return e.integrity&&(J.integrity=e.integrity),e.referrerPolicy&&(J.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?J.credentials="include":e.crossOrigin==="anonymous"?J.credentials="omit":J.credentials="same-origin",J}function s(e){if(e.ep)return;e.ep=!0;const J=r(e);fetch(e.href,J)}})();function vn(){}function Xn(t){return t()}function _n(){return Object.create(null)}function nn(t){t.forEach(Xn)}function Pn(t){return typeof t=="function"}function f1(t,n){return t!=t?n==n:t!==n||t&&typeof t=="object"||typeof t=="function"}function v1(t){return Object.keys(t).length===0}function q(t,n){t.appendChild(n)}function zn(t,n,r){t.insertBefore(n,r||null)}function bn(t){t.parentNode&&t.parentNode.removeChild(t)}function Dn(t,n){for(let r=0;r<t.length;r+=1)t[r]&&t[r].d(n)}function R(t){return document.createElement(t)}function gn(t){return document.createTextNode(t)}function A(){return gn(" ")}function y(t,n,r,s){return t.addEventListener(n,r,s),()=>t.removeEventListener(n,r,s)}function K(t,n,r){r==null?t.removeAttribute(n):t.getAttribute(n)!==r&&t.setAttribute(n,r)}function l1(t){return Array.from(t.childNodes)}function qn(t,n){n=""+n,t.data!==n&&(t.data=n)}function Ln(t,n){t.value=n??""}function d1(t,n,r,s){r==null?t.style.removeProperty(n):t.style.setProperty(n,r,s?"important":"")}function U(t,n,r){t.classList.toggle(n,!!r)}let Qn;function hn(t){Qn=t}const Fn=[],Gn=[];let fn=[];const Bn=[],g1=Promise.resolve();let un=!1;function h1(){un||(un=!0,g1.then(Nn))}function Tn(t){fn.push(t)}const kn=new Set;let sn=0;function Nn(){if(sn!==0)return;const t=Qn;do{try{for(;sn<Fn.length;){const n=Fn[sn];sn++,hn(n),b1(n.$$)}}catch(n){throw Fn.length=0,sn=0,n}for(hn(null),Fn.length=0,sn=0;Gn.length;)Gn.pop()();for(let n=0;n<fn.length;n+=1){const r=fn[n];kn.has(r)||(kn.add(r),r())}fn.length=0}while(Fn.length);for(;Bn.length;)Bn.pop()();un=!1,kn.clear(),hn(t)}function b1(t){if(t.fragment!==null){t.update(),nn(t.before_update);const n=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,n),t.after_update.forEach(Tn)}}function c1(t){const n=[],r=[];fn.forEach(s=>t.indexOf(s)===-1?n.push(s):r.push(s)),r.forEach(s=>s()),fn=n}const p1=new Set;function m1(t,n){t&&t.i&&(p1.delete(t),t.i(n))}function pn(t){return t?.length!==void 0?t:Array.from(t)}function a1(t,n,r){const{fragment:s,after_update:e}=t.$$;s&&s.m(n,r),Tn(()=>{const J=t.$$.on_mount.map(Xn).filter(Pn);t.$$.on_destroy?t.$$.on_destroy.push(...J):nn(J),t.$$.on_mount=[]}),e.forEach(Tn)}function O1(t,n){const r=t.$$;r.fragment!==null&&(c1(r.after_update),nn(r.on_destroy),r.fragment&&r.fragment.d(n),r.on_destroy=r.fragment=null,r.ctx=[])}function z1(t,n){t.$$.dirty[0]===-1&&(Fn.push(t),h1(),t.$$.dirty.fill(0)),t.$$.dirty[n/31|0]|=1<<n%31}function x1(t,n,r,s,e,J,L=null,F=[-1]){const f=Qn;hn(t);const v=t.$$={fragment:null,ctx:[],props:J,update:vn,not_equal:e,bound:_n(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(f?f.$$.context:[])),callbacks:_n(),dirty:F,skip_bound:!1,root:n.target||f.$$.root};L&&L(v.root);let d=!1;if(v.ctx=r?r(t,n.props||{},(g,l,...h)=>{const c=h.length?h[0]:l;return v.ctx&&e(v.ctx[g],v.ctx[g]=c)&&(!v.skip_bound&&v.bound[g]&&v.bound[g](c),d&&z1(t,g)),l}):[],v.update(),d=!0,nn(v.before_update),v.fragment=s?s(v.ctx):!1,n.target){if(n.hydrate){const g=l1(n.target);v.fragment&&v.fragment.l(g),g.forEach(bn)}else v.fragment&&v.fragment.c();n.intro&&m1(t.$$.fragment),a1(t,n.target,n.anchor),Nn()}hn(f)}class i1{constructor(){on(this,"$$");on(this,"$$set")}$destroy(){O1(this,1),this.$destroy=vn}$on(n,r){if(!Pn(r))return vn;const s=this.$$.callbacks[n]||(this.$$.callbacks[n]=[]);return s.push(r),()=>{const e=s.indexOf(r);e!==-1&&s.splice(e,1)}}$set(n){this.$$set&&!v1(n)&&(this.$$.skip_bound=!0,this.$$set(n),this.$$.skip_bound=!1)}}const o1="4";typeof window<"u"&&(window.__svelte||(window.__svelte={v:new Set})).v.add(o1);var k1=[54304,54418,142,,,281];function j1(t=""){return t.split(/\n/).reduce((n,r)=>{var s=r.split("").filter(e=>/\d/.test(e));return n+parseInt(s[0]+s.at(-1))||0},0)}function q1(t=""){var n=[..."0123456789".split(""),"zero","one","two","three","four","five","six","seven","eight","nine"];return t.split(/\n/).reduce((r,s)=>{var e=-1,J=1/0,L=-1,F=-1;return n.forEach((f,v)=>{var d=s.indexOf(f);d>-1&&d<J&&(J=d,e=v%10);var g=s.lastIndexOf(f);g>-1&&g>F&&(F=g,L=v%10)}),r+parseInt(e+""+L)},0)}const u1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:k1,part1:j1,part2:q1},Symbol.toStringTag,{value:"Module"}));var T1=[2727,56580,8,2286];function K1(t=""){var n=0,r={red:12,green:13,blue:14};return t.split(`
+`).forEach(s=>{var[e,J]=s.split(":"),L=J.split(";").every(F=>F.split(",").every(f=>{var[,v,d]=/(\d+)\s+(\S+)/.exec(f);return r[d]?parseInt(v)<=r[d]:!0}));L&&(n+=parseInt(/\d+/.exec(e)[0]))}),n}function Q1(t=""){var n=0;return t.split(`
+`).forEach(r=>{var s={red:0,green:0,blue:0},[,e]=r.split(":");e.split(";").forEach(J=>{J.split(",").forEach(L=>{var[,F,f]=/(\d+)\s+(\S+)/.exec(L),v=parseInt(F);v>s[f]&&(s[f]=v)})}),n+=s.red*s.green*s.blue}),n}const R1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:T1,part1:K1,part2:Q1},Symbol.toStringTag,{value:"Module"}));var C1=[539637,82818007,4361,467835];function _1(t=""){var n=[],r=[];t.split(`
+`).forEach((e,J)=>{n[J]=[],r[J]=[];for(var L=0;L<e.length;L++){var F=e[L];if(F!==".")if(/\d/.test(F)){var f=parseInt(e.substring(L)),v=String(f).length;n[J].push({y:J,x:L,value:f,len:v}),L+=v-1}else r[J].push({y:J,x:L})}});var s=0;return n.forEach(e=>{e.forEach(J=>{for(var L=J.y-1;L<J.y+2;L++){var F=r[L]||[],f=F.some(v=>{if(!(v.x<J.x-1)&&!(v.x>J.x+J.len))return!0});if(f){s+=J.value;return}}})}),s}function D1(t=""){var n=[],r=[];t.split(`
+`).forEach((e,J)=>{n[J]=[],r[J]=[];for(var L=0;L<e.length;L++){var F=e[L];if(F!==".")if(/\d/.test(F)){var f=parseInt(e.substring(L)),v=String(f).length;n[J].push({y:J,x:L,value:f,len:v}),L+=v-1}else F==="*"&&r[J].push({y:J,x:L})}});var s=0;return r.forEach(e=>{e.forEach(J=>{for(var L=0,F=1,f=J.y-1;f<J.y+2;f++){var v=n[f]||[];v.forEach(d=>{J.x<d.x-1||J.x>d.x+d.len||(L++,F*=d.value)})}L===2&&(s+=F)})}),s}const G1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:C1,part1:_1,part2:D1},Symbol.toStringTag,{value:"Module"}));var B1=[26443,6284877,13,30];function M1(t=""){var n=0;return t.split(`
+`).forEach((r,s)=>{var e=r.split(":")[1].split("|"),J=e[0].trim().split(/\s+/).map(f=>parseInt(f)),L=e[1].trim().split(/\s+/).map(f=>parseInt(f)),F=L.reduce((f,v)=>f+(J.includes(v)?1:0),0);F>0&&(n+=Math.pow(2,F-1))}),n}function w1(t=""){var n=t.split(`
+`).map((e,J)=>{var L=e.split(":")[1].split("|"),F=L[0].trim().split(/\s+/).map(d=>parseInt(d)),f=L[1].trim().split(/\s+/).map(d=>parseInt(d)),v=f.reduce((d,g)=>d+(F.includes(g)?1:0),0);return v>0&&(r+=Math.pow(2,v-1)),v}),r=0,s=[];return n.forEach((e,J)=>{for(var L=1+(s[J]||0),F=n[J],f=0;f<F;f++){var v=J+1+f;s[v]=(s[v]||0)+L}r+=L}),r}const A1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:B1,part1:M1,part2:w1},Symbol.toStringTag,{value:"Module"}));var S1=[525792406,79004094,35,46];function H1(t=""){var n=[],r=null;t.split(`
+`).forEach((e,J)=>{if(/:/.test(e)){var[,L]=e.split(":");n.push(r=[]),e=L}var F=e.trim().split(/\s+/).filter(f=>f).map(f=>parseInt(f));F.length>0&&r.push(F)});var s=n.shift()[0];return n.forEach(e=>{var J={};e.forEach(([L,F,f])=>{s.forEach((v,d)=>{J[d]||v>=F&&v<F+f&&(s[d]+=L-F,J[d]=!0)})})}),s.reduce((e,J)=>Math.min(e,J),1/0)}function V1(t=""){var n,r=[],s;t.split(`
+`).forEach((F,f)=>{if(/:/.test(F)){var[,v]=F.split(":");if(!n){n=v.trim().split(/\s+/).map(h=>parseInt(h));return}r.push(s=[]),F=v}if(F=F.trim(),!!F){var[d,g,l]=F.split(/\s+/).map(h=>parseInt(h));s.push([g,g+l,d-g])}}),r.forEach(F=>{F.sort((f,v)=>f[0]-v[0])});for(var e=1/0,J=(F,f,v=0)=>{if(v>=r.length){F<e&&(e=F);return}var d=r[v];d.some(([g,l,h])=>{if(!(F>=l)){if(f<=g)return!0;F<g&&(J(F,g,v+1),F=g);var c=Math.min(f,l);J(F+h,c+h,v+1),F=c}}),F<f&&J(F,f,v+1)},L=0;L<n.length;L+=2)J(n[L],n[L]+n[L+1]);return e}const X1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:S1,part1:H1,part2:V1},Symbol.toStringTag,{value:"Module"}));var P1=[1195150,42550411,288,71503];function yn(t=""){var n=t.split(`
+`).map(J=>{var L=J.split(":")[1];return L.trim().split(/\s+/).map(F=>parseInt(F))}),[r,s]=n,e=1;return r.forEach((J,L)=>{var F=-J,f=s[L],v=Math.sqrt(F*F-4*f),d=(-F-v)/2,g=(-F+v)/2,l=1e-5,h=Math.floor(g-l)-Math.ceil(d+l)+1;e*=h}),e}function N1(t=""){return yn(t.replace(/ /g,""))}const y1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:P1,part1:yn,part2:N1},Symbol.toStringTag,{value:"Module"}));var U1=[249726565,251135960,6440,5905];function E1(t=""){var n="23456789TJQKA".split(""),r={};n.forEach((e,J)=>{r[e]=String.fromCharCode(65+J)});var s=t.split(`
+`).map(e=>{var[J,L]=e.trim().split(/\s+/),F=parseInt(L),f=J.split("").map(g=>r[g]),v={};f.forEach(g=>{v[g]=(v[g]||0)+1});var d=Object.keys(v).map(g=>v[g]).sort((g,l)=>l-g);return d.push(0,0),{chars:f,bid:F,ctList:d}});return s.sort((e,J)=>{for(var L=0;L<2;L++)if(e.ctList[L]!==J.ctList[L])return e.ctList[L]-J.ctList[L];for(var F=0;F<5;F++){var f=e.chars[F],v=J.chars[F];if(f!==v)return f>v?1:-1}return 0}),s.reduce((e,{bid:J},L)=>e+J*(L+1),0)}function $1(t=""){var n="J23456789TQKA".split(""),r={};n.forEach((e,J)=>{r[e]=String.fromCharCode(65+J)});var s=t.split(`
+`).map(e=>{var[J,L]=e.trim().split(/\s+/),F=parseInt(L),f=J.split("").map(l=>r[l]),v={},d=0;f.forEach(l=>{if(l==="A"){d++;return}v[l]=(v[l]||0)+1});var g=Object.keys(v).map(l=>v[l]).sort((l,h)=>h-l);return g.push(0,0),g[0]+=d,{chars:f,bid:F,ctList:g,hand:J}});return s.sort((e,J)=>{for(var L=0;L<2;L++)if(e.ctList[L]!==J.ctList[L])return e.ctList[L]-J.ctList[L];for(var F=0;F<5;F++){var f=e.chars[F],v=J.chars[F];if(f!==v)return f>v?1:-1}return 0}),s.reduce((e,{bid:J},L)=>e+J*(L+1),0)}const I1=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:U1,part1:E1,part2:$1},Symbol.toStringTag,{value:"Module"}));var Z1=[18673,17972669116327,2,,6,,,6];function W1(t=""){var n={},r=t.split(`
+`).map(F=>{if(F=F.trim(),!!F){if(!F.includes("="))return F.split("");var[,f,v,d]=/(\S+) = \((\S+), (\S+)\)/.exec(F);n[f]={L:v,R:d}}}),s=r.shift(),e="AAA";if(!n[e])return-1;for(var J=0,L=0;J<1e7;J++){if(e==="ZZZ")return J;e=n[e][s[L]],L=(L+1)%s.length}return-1}function Y1(t=""){var n={},r=[],s={},e=t.split(`
+`).map(d=>{if(d=d.trim(),!!d){if(!d.includes("="))return d.split("");var[,g,l,h]=/(\S+) = \((\S+), (\S+)\)/.exec(d);/..A/.test(g)&&r.push(g),/..Z/.test(g)&&(s[g]=!0),n[g]={L:l,R:h}}}),J=e.shift(),L=r.map(d=>{for(var g=0,l=0;g<1e7;g++){if(d in s)return g;d=n[d][J[l]],l=(l+1)%J.length}});L.sort((d,g)=>d-g);for(var F=L.pop();L.length>0;)for(var f=F,v=L.pop();F%v!==0;)F+=f;return F}const n2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:Z1,part1:W1,part2:Y1},Symbol.toStringTag,{value:"Module"}));var e2=[1772145754,867,114,2];function r2(t=""){var n=(r=[1,1])=>{if(r.length<2)return NaN;for(var s=!0,e=[],J=1;J<r.length;J++){var L=r[J]-r[J-1];s&&(s=L===0),e.push(L)}var F=s?0:n(e);return F+r.at(-1)};return t.split(`
+`).reduce((r,s)=>{var e=s.trim().split(/\s+/).map(J=>parseInt(J));return r+=n(e)},0)}function t2(t=""){var n=(r=[1,1])=>{if(r.length<2)return NaN;for(var s=!0,e=[],J=1;J<r.length;J++){var L=r[J]-r[J-1];s&&(s=L===0),e.push(L)}var F=s?0:n(e);return r[0]-F};return t.split(`
+`).reduce((r,s)=>{var e=s.trim().split(/\s+/).map(J=>parseInt(J));return r+=n(e)},0)}const J2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:e2,part1:r2,part2:t2},Symbol.toStringTag,{value:"Module"}));var L2=[6757,523,8,,,10];function s2(t=""){var{perimeter:n}=Un(t);return n/2}function F2(t=""){var{perimeter:n,area:r}=Un(t);return r-n/2+1}var Un=t=>{var n=[],r=[0,0];t.split(`
+`).forEach((b,a)=>{n[a]=b.trim();var p=n[a].indexOf("S");p>-1&&(r=[p,a])},0);for(var s=(b,a)=>a<0||a>=n.length?".":n[a][b]||".",e=(b,a,p)=>(b+=[0,1,0,-1][p],a+=[-1,0,1,0][p],[b,a]),J={"|":[0,-1,2,-1],"-":[-1,1,-1,3],L:[-1,-1,1,0],F:[1,-1,-1,2],7:[3,2,-1,-1],J:[-1,0,3,-1],".":[-1,-1,-1,-1]},[L,F]=r,f=[0,1,2,3].filter(b=>{var a=e(...r,b),p=s(...a);return p&&J[p][b]>=0})[0],v=0,d=0,g=0;g<1e5;g++){d++;var[l,h]=e(L,F,f),c=s(l,h);if(c==="S")break;var m=J[c];if(!c||!m)throw"?";v-=F*(l-L),[L,F]=[l,h],f=m[f]}return v-=F*(r[0]-L),{perimeter:d,area:v}};const f2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:L2,part1:s2,part2:F2},Symbol.toStringTag,{value:"Module"}));var v2=[9623138,726820169514,374,82000210];function En(t=""){var n=[],r=[],s=[];t.split(`
+`).forEach((F,f)=>{if(F=F.trim(),!!F){n.length===0&&(n.length=F.length,n.fill(!0)),r[f]=!0;for(var v=-1;v=F.indexOf("#",v),!(v<0);)n[v]=!1,r[f]=!1,s.push({x:v,y:f}),v++}});var e=0,J=n.map(F=>F?++e:e);e=0;var L=r.map(F=>F?++e:e);return s.forEach(F=>{F.emptyLeft=J[F.x],F.emptyAbove=L[F.y]}),{locs:s}}function l2(t=""){for(var{locs:n}=En(t),r=(L,F)=>{var f=n[L],v=n[F],d=Math.abs(f.x-v.x),g=Math.abs(f.y-v.y),l=Math.abs(f.emptyLeft-v.emptyLeft),h=Math.abs(f.emptyAbove-v.emptyAbove);return d+g+l+h},s=0,e=0;e<n.length;e++)for(var J=e+1;J<n.length;J++)s+=r(e,J);return s}function d2(t=""){for(var{locs:n}=En(t),r=999999,s=(F,f)=>{var v=n[F],d=n[f],g=Math.abs(v.x-d.x),l=Math.abs(v.y-d.y),h=Math.abs(v.emptyLeft-d.emptyLeft)*r,c=Math.abs(v.emptyAbove-d.emptyAbove)*r;return g+l+h+c},e=0,J=0;J<n.length;J++)for(var L=J+1;L<n.length;L++)e+=s(J,L);return e}const g2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:v2,part1:l2,part2:d2},Symbol.toStringTag,{value:"Module"}));var h2=[7379,7732028747925,21,525152];function b2(t=""){var n=(r="",s=0,e=0,J=[1])=>{if(s>r.length-1)return e===0?1:0;if(e>r.length-s)return 0;if(e===0)return r.substring(s).includes("#")?0:1;if(r[s]===".")return n(r,s+1,e,J);var L=0;r[s]==="?"&&(L+=n(r,s+1,e,J));var F=J[0];if(r.substring(s,s+F).includes(".")||r[s+F]==="#")return L;var f=J.filter((d,g)=>g>0),v=e-F-(J.length>1?1:0);return L+n(r,s+F+1,v,f)};return t.split(`
+`).reduce((r,s)=>{if(s=s.trim(),!s)return r;var[e,J]=s.split(/\s+/),L=e.split(/\.+/).join("."),F=J.split(",").map(v=>parseInt(v)),f=F.reduce((v,d)=>v+d)+F.length-1;return r+n(L,0,f,F)},0)}function c2(t=""){var n=(e,J,L,F)=>{for(;L<F;)if(e[L++]===J)return!0},r=e=>{var J={};return(L,F,f)=>{var v=(L<<12)+F;return v in J?J[v]:J[v]=e(L,F,f)}},s=(e="")=>{var J=(L=0,F=0,f=[1])=>{if(L>e.length-1)return F===0?1:0;if(F>e.length-L)return 0;if(F===0)return n(e,"#",L,e.length)?0:1;if(e[L]===".")return J(L+1,F,f);var v=0;e[L]==="?"&&(v+=J(L+1,F,f));var d=f[0];if(n(e,".",L,L+d)||e[L+d]==="#")return v;var g=f.filter((h,c)=>c>0),l=F-d-(f.length>1?1:0);return v+J(L+d+1,l,g)};return J=r(J),J};return t.split(`
+`).reduce((e,J)=>{if(J=J.trim(),!J)return e;var[L,F]=J.split(/\s+/),f=L.split(/\.+/).join("."),v=F.split(",").map(l=>parseInt(l)),d=5;f=[...Array(d).fill(f)].join("?"),v=[].concat(...Array(d).fill(v));var g=v.reduce((l,h)=>l+h)+v.length-1;return e+s(f)(0,g,v)},0)}const p2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:h2,part1:b2,part2:c2},Symbol.toStringTag,{value:"Module"}));var m2=[35210,31974,405,400],$n=(t=[""],n=0,r=1)=>{for(var s=0;n>=0&&r<t.length;n--,r++)if(t[n]!==t[r]){for(var e=0;e<t[0].length;e++)if(t[n][e]!==t[r][e]&&(s++,s>1))return 2}return s},In=(t=[""],n=0,r=1)=>{for(var s=0;n>=0&&r<t[0].length;n--,r++)for(var e=0;e<t.length;e++)if(t[e][n]!==t[e][r]&&(s++,s>1))return 2;return s};function a2(t=""){return t.split(`
 
-`).reduce((e,r)=>{for(var F=r.split(`
-`).map(s=>s.trim()),t=1;t<F.length;t++){var J=Un(F,t-1,t);if(!(J>0))return e+t*100}for(var L=1;L<F[0].length;L++){var J=$n(F,L-1,L);if(!(J>0))return e+L}throw"?"},0)}function o7(n=""){return n.split(`
+`).reduce((n,r)=>{for(var s=r.split(`
+`).map(F=>F.trim()),e=1;e<s.length;e++){var J=$n(s,e-1,e);if(!(J>0))return n+e*100}for(var L=1;L<s[0].length;L++){var J=In(s,L-1,L);if(!(J>0))return n+L}throw"?"},0)}function O2(t=""){return t.split(`
 
-`).reduce((e,r)=>{for(var F=r.split(`
-`).map(s=>s.trim()),t=1;t<F.length;t++){var J=Un(F,t-1,t);if(J===1)return e+t*100}for(var L=1;L<F[0].length;L++){var J=$n(F,L-1,L);if(J===1)return e+L}throw"?"},0)}const i7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:b7,part1:c7,part2:o7},Symbol.toStringTag,{value:"Module"}));function p7(n){return n&&n.__esModule&&Object.prototype.hasOwnProperty.call(n,"default")?n.default:n}function a7(n){for(var e=new Array(n),r=0;r<n;++r)e[r]=r;return e}var m7=a7;/*!
+`).reduce((n,r)=>{for(var s=r.split(`
+`).map(F=>F.trim()),e=1;e<s.length;e++){var J=$n(s,e-1,e);if(J===1)return n+e*100}for(var L=1;L<s[0].length;L++){var J=In(s,L-1,L);if(J===1)return n+L}throw"?"},0)}const z2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:m2,part1:a2,part2:O2},Symbol.toStringTag,{value:"Module"}));function x2(t){return t&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")?t.default:t}function i2(t){for(var n=new Array(t),r=0;r<t;++r)n[r]=r;return n}var o2=i2;/*!
  * Determine if an object is a Buffer
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
- */var u7=function(n){return n!=null&&(En(n)||z7(n)||!!n._isBuffer)};function En(n){return!!n.constructor&&typeof n.constructor.isBuffer=="function"&&n.constructor.isBuffer(n)}function z7(n){return typeof n.readFloatLE=="function"&&typeof n.slice=="function"&&En(n.slice(0,0))}var k7=m7,x7=u7,j7=typeof Float64Array<"u";function q7(n,e){return n[0]-e[0]}function T7(){var n=this.stride,e=new Array(n.length),r;for(r=0;r<e.length;++r)e[r]=[Math.abs(n[r]),r];e.sort(q7);var F=new Array(e.length);for(r=0;r<F.length;++r)F[r]=e[r][1];return F}function K7(n,e){var r=["View",e,"d",n].join("");e<0&&(r="View_Nil"+n);var F=n==="generic";if(e===-1){var t="function "+r+"(a){this.data=a;};var proto="+r+".prototype;proto.dtype='"+n+"';proto.index=function(){return -1};proto.size=0;proto.dimension=-1;proto.shape=proto.stride=proto.order=[];proto.lo=proto.hi=proto.transpose=proto.step=function(){return new "+r+"(this.data);};proto.get=proto.set=function(){};proto.pick=function(){return null};return function construct_"+r+"(a){return new "+r+"(a);}",u=new Function(t);return u()}else if(e===0){var t="function "+r+"(a,d) {this.data = a;this.offset = d};var proto="+r+".prototype;proto.dtype='"+n+"';proto.index=function(){return this.offset};proto.dimension=0;proto.size=1;proto.shape=proto.stride=proto.order=[];proto.lo=proto.hi=proto.transpose=proto.step=function "+r+"_copy() {return new "+r+"(this.data,this.offset)};proto.pick=function "+r+"_pick(){return TrivialArray(this.data);};proto.valueOf=proto.get=function "+r+"_get(){return "+(F?"this.data.get(this.offset)":"this.data[this.offset]")+"};proto.set=function "+r+"_set(v){return "+(F?"this.data.set(this.offset,v)":"this.data[this.offset]=v")+"};return function construct_"+r+"(a,b,c,d){return new "+r+"(a,d)}",u=new Function("TrivialArray",t);return u(cn[n][0])}var t=["'use strict'"],J=k7(e),L=J.map(function(O){return"i"+O}),s="this.offset+"+J.map(function(O){return"this.stride["+O+"]*i"+O}).join("+"),f=J.map(function(O){return"b"+O}).join(","),d=J.map(function(O){return"c"+O}).join(",");t.push("function "+r+"(a,"+f+","+d+",d){this.data=a","this.shape=["+f+"]","this.stride=["+d+"]","this.offset=d|0}","var proto="+r+".prototype","proto.dtype='"+n+"'","proto.dimension="+e),t.push("Object.defineProperty(proto,'size',{get:function "+r+"_size(){return "+J.map(function(O){return"this.shape["+O+"]"}).join("*"),"}})"),e===1?t.push("proto.order=[0]"):(t.push("Object.defineProperty(proto,'order',{get:"),e<4?(t.push("function "+r+"_order(){"),e===2?t.push("return (Math.abs(this.stride[0])>Math.abs(this.stride[1]))?[1,0]:[0,1]}})"):e===3&&t.push("var s0=Math.abs(this.stride[0]),s1=Math.abs(this.stride[1]),s2=Math.abs(this.stride[2]);if(s0>s1){if(s1>s2){return [2,1,0];}else if(s0>s2){return [1,2,0];}else{return [1,0,2];}}else if(s0>s2){return [2,0,1];}else if(s2>s1){return [0,1,2];}else{return [0,2,1];}}})")):t.push("ORDER})")),t.push("proto.set=function "+r+"_set("+L.join(",")+",v){"),F?t.push("return this.data.set("+s+",v)}"):t.push("return this.data["+s+"]=v}"),t.push("proto.get=function "+r+"_get("+L.join(",")+"){"),F?t.push("return this.data.get("+s+")}"):t.push("return this.data["+s+"]}"),t.push("proto.index=function "+r+"_index(",L.join(),"){return "+s+"}"),t.push("proto.hi=function "+r+"_hi("+L.join(",")+"){return new "+r+"(this.data,"+J.map(function(O){return["(typeof i",O,"!=='number'||i",O,"<0)?this.shape[",O,"]:i",O,"|0"].join("")}).join(",")+","+J.map(function(O){return"this.stride["+O+"]"}).join(",")+",this.offset)}");var v=J.map(function(O){return"a"+O+"=this.shape["+O+"]"}),g=J.map(function(O){return"c"+O+"=this.stride["+O+"]"});t.push("proto.lo=function "+r+"_lo("+L.join(",")+"){var b=this.offset,d=0,"+v.join(",")+","+g.join(","));for(var l=0;l<e;++l)t.push("if(typeof i"+l+"==='number'&&i"+l+">=0){d=i"+l+"|0;b+=c"+l+"*d;a"+l+"-=d}");t.push("return new "+r+"(this.data,"+J.map(function(O){return"a"+O}).join(",")+","+J.map(function(O){return"c"+O}).join(",")+",b)}"),t.push("proto.step=function "+r+"_step("+L.join(",")+"){var "+J.map(function(O){return"a"+O+"=this.shape["+O+"]"}).join(",")+","+J.map(function(O){return"b"+O+"=this.stride["+O+"]"}).join(",")+",c=this.offset,d=0,ceil=Math.ceil");for(var l=0;l<e;++l)t.push("if(typeof i"+l+"==='number'){d=i"+l+"|0;if(d<0){c+=b"+l+"*(a"+l+"-1);a"+l+"=ceil(-a"+l+"/d)}else{a"+l+"=ceil(a"+l+"/d)}b"+l+"*=d}");t.push("return new "+r+"(this.data,"+J.map(function(O){return"a"+O}).join(",")+","+J.map(function(O){return"b"+O}).join(",")+",c)}");for(var h=new Array(e),o=new Array(e),l=0;l<e;++l)h[l]="a[i"+l+"]",o[l]="b[i"+l+"]";t.push("proto.transpose=function "+r+"_transpose("+L+"){"+L.map(function(O,c){return O+"=("+O+"===undefined?"+c+":"+O+"|0)"}).join(";"),"var a=this.shape,b=this.stride;return new "+r+"(this.data,"+h.join(",")+","+o.join(",")+",this.offset)}"),t.push("proto.pick=function "+r+"_pick("+L+"){var a=[],b=[],c=this.offset");for(var l=0;l<e;++l)t.push("if(typeof i"+l+"==='number'&&i"+l+">=0){c=(c+this.stride["+l+"]*i"+l+")|0}else{a.push(this.shape["+l+"]);b.push(this.stride["+l+"])}");t.push("var ctor=CTOR_LIST[a.length+1];return ctor(this.data,a,b,c)}"),t.push("return function construct_"+r+"(data,shape,stride,offset){return new "+r+"(data,"+J.map(function(O){return"shape["+O+"]"}).join(",")+","+J.map(function(O){return"stride["+O+"]"}).join(",")+",offset)}");var u=new Function("CTOR_LIST","ORDER",t.join(`
-`));return u(cn[n],T7)}function Q7(n){if(x7(n))return"buffer";if(j7)switch(Object.prototype.toString.call(n)){case"[object Float64Array]":return"float64";case"[object Float32Array]":return"float32";case"[object Int8Array]":return"int8";case"[object Int16Array]":return"int16";case"[object Int32Array]":return"int32";case"[object Uint8Array]":return"uint8";case"[object Uint16Array]":return"uint16";case"[object Uint32Array]":return"uint32";case"[object Uint8ClampedArray]":return"uint8_clamped";case"[object BigInt64Array]":return"bigint64";case"[object BigUint64Array]":return"biguint64"}return Array.isArray(n)?"array":"generic"}var cn={float32:[],float64:[],int8:[],int16:[],int32:[],uint8:[],uint16:[],uint32:[],array:[],uint8_clamped:[],bigint64:[],biguint64:[],buffer:[],generic:[]};function R7(n,e,r,F){if(n===void 0){var d=cn.array[0];return d([])}else typeof n=="number"&&(n=[n]);e===void 0&&(e=[n.length]);var t=e.length;if(r===void 0){r=new Array(t);for(var J=t-1,L=1;J>=0;--J)r[J]=L,L*=e[J]}if(F===void 0){F=0;for(var J=0;J<t;++J)r[J]<0&&(F-=(e[J]-1)*r[J])}for(var s=Q7(n),f=cn[s];f.length<=t+1;)f.push(K7(s,f.length-1));var d=f[t+1];return d(n,e,r,F)}var C7=R7;const In=p7(C7);var _7=[108935,100876,136,64],qn=0,D7=1,on=2,Zn={".":qn,O:on,"#":D7};function G7(n=""){var e=n.split(`
-`).map(F=>F.trim()),r=In([],[e.length,e[0].length]);return e.forEach((F,t)=>{F.split("").forEach((J,L)=>{r.set(t,L,Zn[J])})}),Wn(r),Yn(r).load}var Wn=n=>{for(var e=0;e<n.shape[0];e++)for(var r=0;r<n.shape[1];r++){var F=n.get(e,r);if(F===on)for(var t=e;t>0&&n.get(t-1,r)===qn;)n.set(t,r,qn),n.set(--t,r,on)}},Yn=n=>{for(var e=0,r=0,F=0,t=0;F<n.shape[0];F++,t++)for(var J=0;J<n.shape[1];J++)n.get(F,J)===on&&(e+=n.shape[0]-F,r+=J*17+F*177+t*1777);return{load:e,hash:r}};function B7(n=""){var e=n.split(`
-`).map(l=>l.trim()),r=In([],[e.length,e[0].length]);e.forEach((l,h)=>{l.split("").forEach((o,u)=>{r.set(h,u,Zn[o])})});for(var F=[],t=[],J=0;J<1e4;J++){for(var L=0;L<4;L++)Wn(r),r=r.transpose(1,0).step(1,-1);var{load:s,hash:f}=Yn(r),d=t.indexOf(f)+1;if(d>0){var v=J+2,g=d+(1e9-v)%(v-d-1);return F[g]}F.push(s),t.push(f)}return-1}const A7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:_7,part1:G7,part2:B7},Symbol.toStringTag,{value:"Module"}));var M7=[505459,228508,1320,145],n1=(n="")=>{for(var e=0,r=0;r<n.length;r++)e+=n.charCodeAt(r),e*=17,e%=256;return e};function S7(n=""){return n.split(`
-`).join("").split(",").reduce((e,r)=>e+n1(r),0)}function w7(n=""){var e=Array(256).fill(1).map(r=>[]);return n.split(`
-`).join("").split(",").forEach(r=>{var[,F,t]=/^(\w+)(.*)/.exec(r),J=n1(F),L=e[J];if(t==="-"){e[J]=L.filter(d=>d.label!==F);return}var s=parseInt(t.substring(1)),f=L.some((d,v)=>{if(d.label===F)return d.num=s,!0});f||L.push({label:F,num:s})}),e.reduce((r,F,t)=>r+F.reduce((J,L,s)=>J+(t+1)*(s+1)*L.num,0),0)}const H7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:M7,part1:S7,part2:w7},Symbol.toStringTag,{value:"Module"}));var V7=[6361,6701,46,51];function X7(n=""){var{countFrom:e}=e1(n);return e(-1,0,1)}function P7(n=""){for(var{countFrom:e,clearData:r,sx:F,sy:t}=e1(n),J=(d,v,g)=>(r(),e(d,v,g)),L=0,s=0;s<F;s++)L=Math.max(L,J(s,-1,2)),L=Math.max(L,J(s,t,0));for(var f=0;f<t;f++)L=Math.max(L,J(-1,f,1)),L=Math.max(L,J(F,f,3));return L}var e1=n=>{var e=n.split(`
-`).map(f=>f.trim().split("").map(d=>({char:d,flags:[]}))),r=e[0].length,F=e.length,t=(f,d)=>f<0||d<0||f>=r||d>=F,J=(f,d)=>f==="/"?[[1,0,3,2][d]]:f==="\\"?[[3,2,1,0][d]]:f==="|"&&d%2?[0,2]:f==="-"&&!(d%2)?[1,3]:[d],L=(f,d,v)=>{if(f+=[0,1,0,-1][v],d+=[-1,0,1,0][v],t(f,d))return 0;var{char:g,flags:l}=e[d][f];if(l[v])return 0;l[v]=!0;var h=l[4]?0:1;return l[4]=!0,g==="."?h+L(f,d,v):(J(g,v).forEach(o=>h+=L(f,d,o)),h)},s=()=>{e.forEach(f=>{f.forEach(d=>{d.flags=[]})})};return{sx:r,sy:F,countFrom:L,clearData:s}};const N7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:V7,part1:X7,part2:P7},Symbol.toStringTag,{value:"Module"}));var y7=[674,773,102,94];function U7(n=""){return r1(n,1,3)}function $7(n=""){return r1(n,4,10)}var E7=n=>{var e=n.split(`
-`).map(s=>s.trim().split("").map(f=>({cost:parseInt(f),best:[1/0,1/0]}))),r=e[0].length,F=e.length,t=(s,f)=>s<0||f<0||s>=r||f>=F,J=(s,f)=>e[f][s],L=(s,f)=>Math.abs(r-1-s)+Math.abs(F-1-f);return{getData:J,OOB:t,goalDist:L}};function I7(){var n={},e=[],r=(t,J)=>{if(t in n)return n[t].push(J);n[t]=[J],e.push(t),e.sort((L,s)=>s-L)},F=()=>{if(e.length===0)return null;var t=e.at(-1),J=n[t];return J.length>1?J.pop():(e.pop(),delete n[t],J[0])};return{pushQueue:r,popQueue:F}}function r1(n="",e=1,r=3){var{getData:F,OOB:t,goalDist:J}=E7(n),{pushQueue:L,popQueue:s}=I7(),f=(l=0,h=0,o=0,u=0)=>{if(!t(l,h)){var O=o%2,c=F(l,h);if(!(u>=c.best[O])){c.best[O]=u;var q=u+J(l,h);L(q,{x:l,y:h,dir:(o+1)%4,cost:u}),L(q,{x:l,y:h,dir:(o+3)%4,cost:u})}}};f(0,0,1,0),f(0,0,2,0);for(var d=-1,v=l=>{var{x:h,y:o,dir:u,cost:O}=l;if(J(h,o)===0){d=O;return}for(var c=1;c<=r;c++){if(h+=[0,1,0,-1][u],o+=[-1,0,1,0][u],t(h,o))return;O+=F(h,o).cost,c>=e&&f(h,o,u,O)}};d<0;){var g=s();if(!g)return-1;v(g)}return d}const Z7=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:y7,part1:U7,part2:$7},Symbol.toStringTag,{value:"Module"}));var W7=[38188,93325849869340,62,952408144115];function Y7(n=""){var e=0,r=0,F=0;return n.split(`
-`).forEach(t=>{var[J,L,s]=t.trim().split(/\s+/),f=parseInt(L),d={R:1,L:-1}[J]||0,v={D:1,U:-1}[J]||0;F+=f,r-=e*d*f,e+=v*f}),r+F/2+1}function n2(n=""){var e=0,r=0,F=0;return n.split(`
-`).forEach(t=>{var[,,J]=t.trim().split(/\s+/),L="RDLU"[J.substring(7,8)],s=parseInt(J.substring(2,7),16),f={R:1,L:-1}[L]||0,d={D:1,U:-1}[L]||0;F+=s,f!==0&&(r+=e*-f*s),e+=d*s}),r+F/2+1}const e2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:W7,part1:Y7,part2:n2},Symbol.toStringTag,{value:"Module"})),r2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),t2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),J2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),L2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),F2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),s2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),d2=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"})),f2=`1abc2
+ */var k2=function(t){return t!=null&&(Zn(t)||j2(t)||!!t._isBuffer)};function Zn(t){return!!t.constructor&&typeof t.constructor.isBuffer=="function"&&t.constructor.isBuffer(t)}function j2(t){return typeof t.readFloatLE=="function"&&typeof t.slice=="function"&&Zn(t.slice(0,0))}var q2=o2,u2=k2,T2=typeof Float64Array<"u";function K2(t,n){return t[0]-n[0]}function Q2(){var t=this.stride,n=new Array(t.length),r;for(r=0;r<n.length;++r)n[r]=[Math.abs(t[r]),r];n.sort(K2);var s=new Array(n.length);for(r=0;r<s.length;++r)s[r]=n[r][1];return s}function R2(t,n){var r=["View",n,"d",t].join("");n<0&&(r="View_Nil"+t);var s=t==="generic";if(n===-1){var e="function "+r+"(a){this.data=a;};var proto="+r+".prototype;proto.dtype='"+t+"';proto.index=function(){return -1};proto.size=0;proto.dimension=-1;proto.shape=proto.stride=proto.order=[];proto.lo=proto.hi=proto.transpose=proto.step=function(){return new "+r+"(this.data);};proto.get=proto.set=function(){};proto.pick=function(){return null};return function construct_"+r+"(a){return new "+r+"(a);}",m=new Function(e);return m()}else if(n===0){var e="function "+r+"(a,d) {this.data = a;this.offset = d};var proto="+r+".prototype;proto.dtype='"+t+"';proto.index=function(){return this.offset};proto.dimension=0;proto.size=1;proto.shape=proto.stride=proto.order=[];proto.lo=proto.hi=proto.transpose=proto.step=function "+r+"_copy() {return new "+r+"(this.data,this.offset)};proto.pick=function "+r+"_pick(){return TrivialArray(this.data);};proto.valueOf=proto.get=function "+r+"_get(){return "+(s?"this.data.get(this.offset)":"this.data[this.offset]")+"};proto.set=function "+r+"_set(v){return "+(s?"this.data.set(this.offset,v)":"this.data[this.offset]=v")+"};return function construct_"+r+"(a,b,c,d){return new "+r+"(a,d)}",m=new Function("TrivialArray",e);return m(an[t][0])}var e=["'use strict'"],J=q2(n),L=J.map(function(b){return"i"+b}),F="this.offset+"+J.map(function(b){return"this.stride["+b+"]*i"+b}).join("+"),f=J.map(function(b){return"b"+b}).join(","),v=J.map(function(b){return"c"+b}).join(",");e.push("function "+r+"(a,"+f+","+v+",d){this.data=a","this.shape=["+f+"]","this.stride=["+v+"]","this.offset=d|0}","var proto="+r+".prototype","proto.dtype='"+t+"'","proto.dimension="+n),e.push("Object.defineProperty(proto,'size',{get:function "+r+"_size(){return "+J.map(function(b){return"this.shape["+b+"]"}).join("*"),"}})"),n===1?e.push("proto.order=[0]"):(e.push("Object.defineProperty(proto,'order',{get:"),n<4?(e.push("function "+r+"_order(){"),n===2?e.push("return (Math.abs(this.stride[0])>Math.abs(this.stride[1]))?[1,0]:[0,1]}})"):n===3&&e.push("var s0=Math.abs(this.stride[0]),s1=Math.abs(this.stride[1]),s2=Math.abs(this.stride[2]);if(s0>s1){if(s1>s2){return [2,1,0];}else if(s0>s2){return [1,2,0];}else{return [1,0,2];}}else if(s0>s2){return [2,0,1];}else if(s2>s1){return [0,1,2];}else{return [0,2,1];}}})")):e.push("ORDER})")),e.push("proto.set=function "+r+"_set("+L.join(",")+",v){"),s?e.push("return this.data.set("+F+",v)}"):e.push("return this.data["+F+"]=v}"),e.push("proto.get=function "+r+"_get("+L.join(",")+"){"),s?e.push("return this.data.get("+F+")}"):e.push("return this.data["+F+"]}"),e.push("proto.index=function "+r+"_index(",L.join(),"){return "+F+"}"),e.push("proto.hi=function "+r+"_hi("+L.join(",")+"){return new "+r+"(this.data,"+J.map(function(b){return["(typeof i",b,"!=='number'||i",b,"<0)?this.shape[",b,"]:i",b,"|0"].join("")}).join(",")+","+J.map(function(b){return"this.stride["+b+"]"}).join(",")+",this.offset)}");var d=J.map(function(b){return"a"+b+"=this.shape["+b+"]"}),g=J.map(function(b){return"c"+b+"=this.stride["+b+"]"});e.push("proto.lo=function "+r+"_lo("+L.join(",")+"){var b=this.offset,d=0,"+d.join(",")+","+g.join(","));for(var l=0;l<n;++l)e.push("if(typeof i"+l+"==='number'&&i"+l+">=0){d=i"+l+"|0;b+=c"+l+"*d;a"+l+"-=d}");e.push("return new "+r+"(this.data,"+J.map(function(b){return"a"+b}).join(",")+","+J.map(function(b){return"c"+b}).join(",")+",b)}"),e.push("proto.step=function "+r+"_step("+L.join(",")+"){var "+J.map(function(b){return"a"+b+"=this.shape["+b+"]"}).join(",")+","+J.map(function(b){return"b"+b+"=this.stride["+b+"]"}).join(",")+",c=this.offset,d=0,ceil=Math.ceil");for(var l=0;l<n;++l)e.push("if(typeof i"+l+"==='number'){d=i"+l+"|0;if(d<0){c+=b"+l+"*(a"+l+"-1);a"+l+"=ceil(-a"+l+"/d)}else{a"+l+"=ceil(a"+l+"/d)}b"+l+"*=d}");e.push("return new "+r+"(this.data,"+J.map(function(b){return"a"+b}).join(",")+","+J.map(function(b){return"b"+b}).join(",")+",c)}");for(var h=new Array(n),c=new Array(n),l=0;l<n;++l)h[l]="a[i"+l+"]",c[l]="b[i"+l+"]";e.push("proto.transpose=function "+r+"_transpose("+L+"){"+L.map(function(b,a){return b+"=("+b+"===undefined?"+a+":"+b+"|0)"}).join(";"),"var a=this.shape,b=this.stride;return new "+r+"(this.data,"+h.join(",")+","+c.join(",")+",this.offset)}"),e.push("proto.pick=function "+r+"_pick("+L+"){var a=[],b=[],c=this.offset");for(var l=0;l<n;++l)e.push("if(typeof i"+l+"==='number'&&i"+l+">=0){c=(c+this.stride["+l+"]*i"+l+")|0}else{a.push(this.shape["+l+"]);b.push(this.stride["+l+"])}");e.push("var ctor=CTOR_LIST[a.length+1];return ctor(this.data,a,b,c)}"),e.push("return function construct_"+r+"(data,shape,stride,offset){return new "+r+"(data,"+J.map(function(b){return"shape["+b+"]"}).join(",")+","+J.map(function(b){return"stride["+b+"]"}).join(",")+",offset)}");var m=new Function("CTOR_LIST","ORDER",e.join(`
+`));return m(an[t],Q2)}function C2(t){if(u2(t))return"buffer";if(T2)switch(Object.prototype.toString.call(t)){case"[object Float64Array]":return"float64";case"[object Float32Array]":return"float32";case"[object Int8Array]":return"int8";case"[object Int16Array]":return"int16";case"[object Int32Array]":return"int32";case"[object Uint8Array]":return"uint8";case"[object Uint16Array]":return"uint16";case"[object Uint32Array]":return"uint32";case"[object Uint8ClampedArray]":return"uint8_clamped";case"[object BigInt64Array]":return"bigint64";case"[object BigUint64Array]":return"biguint64"}return Array.isArray(t)?"array":"generic"}var an={float32:[],float64:[],int8:[],int16:[],int32:[],uint8:[],uint16:[],uint32:[],array:[],uint8_clamped:[],bigint64:[],biguint64:[],buffer:[],generic:[]};function _2(t,n,r,s){if(t===void 0){var v=an.array[0];return v([])}else typeof t=="number"&&(t=[t]);n===void 0&&(n=[t.length]);var e=n.length;if(r===void 0){r=new Array(e);for(var J=e-1,L=1;J>=0;--J)r[J]=L,L*=n[J]}if(s===void 0){s=0;for(var J=0;J<e;++J)r[J]<0&&(s-=(n[J]-1)*r[J])}for(var F=C2(t),f=an[F];f.length<=e+1;)f.push(R2(F,f.length-1));var v=f[e+1];return v(t,n,r,s)}var D2=_2;const Wn=x2(D2);var G2=[108935,100876,136,64],Kn=0,B2=1,On=2,Yn={".":Kn,O:On,"#":B2};function M2(t=""){var n=t.split(`
+`).map(s=>s.trim()),r=Wn([],[n.length,n[0].length]);return n.forEach((s,e)=>{s.split("").forEach((J,L)=>{r.set(e,L,Yn[J])})}),n1(r),e1(r).load}var n1=t=>{for(var n=0;n<t.shape[0];n++)for(var r=0;r<t.shape[1];r++){var s=t.get(n,r);if(s===On)for(var e=n;e>0&&t.get(e-1,r)===Kn;)t.set(e,r,Kn),t.set(--e,r,On)}},e1=t=>{for(var n=0,r=0,s=0,e=0;s<t.shape[0];s++,e++)for(var J=0;J<t.shape[1];J++)t.get(s,J)===On&&(n+=t.shape[0]-s,r+=J*17+s*177+e*1777);return{load:n,hash:r}};function w2(t=""){var n=t.split(`
+`).map(l=>l.trim()),r=Wn([],[n.length,n[0].length]);n.forEach((l,h)=>{l.split("").forEach((c,m)=>{r.set(h,m,Yn[c])})});for(var s=[],e=[],J=0;J<1e4;J++){for(var L=0;L<4;L++)n1(r),r=r.transpose(1,0).step(1,-1);var{load:F,hash:f}=e1(r),v=e.indexOf(f)+1;if(v>0){var d=J+2,g=v+(1e9-d)%(d-v-1);return s[g]}s.push(F),e.push(f)}return-1}const A2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:G2,part1:M2,part2:w2},Symbol.toStringTag,{value:"Module"}));var S2=[505459,228508,1320,145],r1=(t="")=>{for(var n=0,r=0;r<t.length;r++)n+=t.charCodeAt(r),n*=17,n%=256;return n};function H2(t=""){return t.split(`
+`).join("").split(",").reduce((n,r)=>n+r1(r),0)}function V2(t=""){var n=Array(256).fill(1).map(r=>[]);return t.split(`
+`).join("").split(",").forEach(r=>{var[,s,e]=/^(\w+)(.*)/.exec(r),J=r1(s),L=n[J];if(e==="-"){n[J]=L.filter(v=>v.label!==s);return}var F=parseInt(e.substring(1)),f=L.some((v,d)=>{if(v.label===s)return v.num=F,!0});f||L.push({label:s,num:F})}),n.reduce((r,s,e)=>r+s.reduce((J,L,F)=>J+(e+1)*(F+1)*L.num,0),0)}const X2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:S2,part1:H2,part2:V2},Symbol.toStringTag,{value:"Module"}));var P2=[6361,6701,46,51];function N2(t=""){var{countFrom:n}=t1(t);return n(-1,0,1)}function y2(t=""){for(var{countFrom:n,clearData:r,sx:s,sy:e}=t1(t),J=(v,d,g)=>(r(),n(v,d,g)),L=0,F=0;F<s;F++)L=Math.max(L,J(F,-1,2)),L=Math.max(L,J(F,e,0));for(var f=0;f<e;f++)L=Math.max(L,J(-1,f,1)),L=Math.max(L,J(s,f,3));return L}var t1=t=>{var n=t.split(`
+`).map(f=>f.trim().split("").map(v=>({char:v,flags:[]}))),r=n[0].length,s=n.length,e=(f,v)=>f<0||v<0||f>=r||v>=s,J=(f,v)=>f==="/"?[[1,0,3,2][v]]:f==="\\"?[[3,2,1,0][v]]:f==="|"&&v%2?[0,2]:f==="-"&&!(v%2)?[1,3]:[v],L=(f,v,d)=>{if(f+=[0,1,0,-1][d],v+=[-1,0,1,0][d],e(f,v))return 0;var{char:g,flags:l}=n[v][f];if(l[d])return 0;l[d]=!0;var h=l[4]?0:1;return l[4]=!0,g==="."?h+L(f,v,d):(J(g,d).forEach(c=>h+=L(f,v,c)),h)},F=()=>{n.forEach(f=>{f.forEach(v=>{v.flags=[]})})};return{sx:r,sy:s,countFrom:L,clearData:F}};const U2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:P2,part1:N2,part2:y2},Symbol.toStringTag,{value:"Module"}));var E2=[674,773,102,94];function $2(t=""){return J1(t,1,3)}function I2(t=""){return J1(t,4,10)}var Z2=t=>{var n=t.split(`
+`).map(F=>F.trim().split("").map(f=>({cost:parseInt(f),best:[1/0,1/0]}))),r=n[0].length,s=n.length,e=(F,f)=>F<0||f<0||F>=r||f>=s,J=(F,f)=>n[f][F],L=(F,f)=>Math.abs(r-1-F)+Math.abs(s-1-f);return{getData:J,OOB:e,goalDist:L}};function W2(){var t={},n=[],r=(e,J)=>{if(e in t)return t[e].push(J);t[e]=[J],n.push(e),n.sort((L,F)=>F-L)},s=()=>{if(n.length===0)return null;var e=n.at(-1),J=t[e];return J.length>1?J.pop():(n.pop(),delete t[e],J[0])};return{pushQueue:r,popQueue:s}}function J1(t="",n=1,r=3){var{getData:s,OOB:e,goalDist:J}=Z2(t),{pushQueue:L,popQueue:F}=W2(),f=(l=0,h=0,c=0,m=0)=>{if(!e(l,h)){var b=c%2,a=s(l,h);if(!(m>=a.best[b])){a.best[b]=m;var p=m+J(l,h);L(p,{x:l,y:h,dir:(c+1)%4,cost:m}),L(p,{x:l,y:h,dir:(c+3)%4,cost:m})}}};f(0,0,1,0),f(0,0,2,0);for(var v=-1,d=l=>{var{x:h,y:c,dir:m,cost:b}=l;if(J(h,c)===0){v=b;return}for(var a=1;a<=r;a++){if(h+=[0,1,0,-1][m],c+=[-1,0,1,0][m],e(h,c))return;b+=s(h,c).cost,a>=n&&f(h,c,m,b)}};v<0;){var g=F();if(!g)return-1;d(g)}return v}const Y2=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:E2,part1:$2,part2:I2},Symbol.toStringTag,{value:"Module"}));var n3=[38188,93325849869340,62,952408144115];function e3(t=""){var n=0,r=0,s=0;return t.split(`
+`).forEach(e=>{var[J,L,F]=e.trim().split(/\s+/),f=parseInt(L),v={R:1,L:-1}[J]||0,d={D:1,U:-1}[J]||0;s+=f,r-=n*v*f,n+=d*f}),r+s/2+1}function r3(t=""){var n=0,r=0,s=0;return t.split(`
+`).forEach(e=>{var[,,J]=e.trim().split(/\s+/),L="RDLU"[J.substring(7,8)],F=parseInt(J.substring(2,7),16),f={R:1,L:-1}[L]||0,v={D:1,U:-1}[L]||0;s+=F,f!==0&&(r+=n*-f*F),n+=v*F}),r+s/2+1}const t3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:n3,part1:e3,part2:r3},Symbol.toStringTag,{value:"Module"})),J3=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"}));var L3=[896998430,0xd6ba61c4ab3b,32e6,,11687500],$="low",Z="high";function s3(t=""){var n={};t.split(`
+`).forEach(F=>{var[f,v]=F.trim().split(/\s*->\s*/),d=f[0],g=f.substring(1),l=v.split(/\s*,\s*/),h=!1,c=[],m={};n[g]={type:d,label:g,dest:l,inputs:c,state:h,remembered:m}}),Object.keys(n).forEach(F=>{n[F].dest.forEach(f=>{f in n&&(n[f].inputs.push(F),n[f].remembered[F]=$)})});for(var r=[],s={[$]:0,[Z]:0},e=(F="",f="",v=$)=>{s[v]++,f in n&&r.push({src:F,tgt:f,pulse:v})},J=()=>{r=[],e("button","roadcaster",$);for(var F=0;F<r.length;F++){var{src:f,tgt:v,pulse:d}=r[F],{type:g,label:l,dest:h,inputs:c,state:m,remembered:b}=n[v];if(g==="b")h.forEach(p=>e(l,p,d));else if(g==="%"){if(d===Z)continue;m=!m,n[v].state=m,h.forEach(p=>e(l,p,m?Z:$))}else if(g==="&"){b[f]=d;var a=c.every(p=>b[p]===Z);h.forEach(p=>e(l,p,a?$:Z))}}},L=0;L<1e3;L++)J();return s.high*s.low}function F3(t=""){var n="rx",r="",s={};if(t.split(`
+`).forEach(l=>{var[h,c]=l.trim().split(/\s*->\s*/),m=h[0],b=h.substring(1),a=c.split(/\s*,\s*/),p=!1,O=[],i={};s[b]={type:m,label:b,dest:a,inputs:O,state:p,remembered:i}}),Object.keys(s).forEach(l=>{s[l].dest.forEach(h=>{h===n&&(r=l),h in s&&(s[h].inputs.push(l),s[h].remembered[l]=$)})}),!r)return-1;var e=s[r].inputs.slice(),J=0,L={};for(var F of e)L[F]=-1;for(var f=0,v=(l,h="",c="",m=$)=>{h in L&&m===Z&&L[h]<0&&(L[h]=f,J++),c in s&&l.push({src:h,tgt:c,pulse:m})},d=()=>{var l=[];f++,v(l,"button","roadcaster",$);for(var h=0;h<l.length;h++){var{src:c,tgt:m,pulse:b}=l[h],{type:a,label:p,dest:O,inputs:i,state:o,remembered:z}=s[m];if(a==="b")O.forEach(u=>v(l,p,u,b));else if(a==="%"){if(b===Z)continue;o=!o,s[m].state=o,O.forEach(u=>v(l,p,u,o?Z:$))}else if(a==="&"){z[c]=b;var k=i.every(u=>z[u]===Z);O.forEach(u=>v(l,p,u,k?$:Z))}}},g=0;g<1e5&&(d(),J!==e.length);g++);return e.reduce((l,h)=>l*L[h],1)}const f3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:L3,part1:s3,part2:F3},Symbol.toStringTag,{value:"Module"}));var v3=[3830,637087163925555,16];function l3(t=""){for(var n=[0,0],r=t.split(`
+`).map((g,l)=>g.trim().split("").map((h,c)=>h==="#"?{val:-1}:(h==="S"&&(n=[c,l]),{val:0}))),s=r[0].length,e=r.length,J=([g,l])=>r[l][g],L=[n],F=s<20?6:64,f=0,v=1;v<=F;v++){var d=[];L.forEach(([g,l])=>{for(var h=0;h<4;h++){var c=g+[0,1,0,-1][h],m=l+[-1,0,1,0][h];if(!(c<0||c>=s)&&!(m<0||m>=e)){var b=J([c,m]);b.val===0&&(b.val=1,v%2===0&&f++,d.push([c,m]))}}}),L=d}return f}function d3(t=""){for(var n=[0,0],r=t.split(`
+`).map((o,z)=>o.trim().split("").map((k,u)=>k==="#"?!1:(k==="S"&&(n=[u,z]),!0))),s=r[0].length,e=r.length,J=(o,z)=>(o=(o%s+s)%s,z=(z%e+e)%e,r[z][o]),L=(o,z)=>[o[0]+[0,1,0,-1][z],o[1]+[-1,0,1,0][z]],F=[0],f=[n],v={},d=1e3,g=Math.floor(s/2),l=26501365,h=[],c=[],m=[],b=1;b<=d;b++){var a=[],p=0;if(f.forEach(o=>{for(var z=0;z<4;z++){var k=L(o,z);if(J(...k)){var u=k.join(",");u in v||(p++,v[u]=1,a.push(k))}}}),p+=F[b-2]||0,F.push(p),f=a,b%s===g&&(h.push(p),h.length>1&&c.push(h.at(-1)-h.at(-2)),c.length>1&&m.push(c.at(-1)-c.at(-2)),m.length>1&&m.at(-1)===m.at(-2))){var O=(l-b)/s;if(O%1!==0)return-1;var i=h.at(-1);return i+=c.at(-1)*O,i+=m.at(-1)*(O+1)*O/2,i}}return-1}const g3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:v3,part1:l3,part2:d3},Symbol.toStringTag,{value:"Module"}));var h3=[512,98167,5,7];function b3(t=""){var n=[];t.split(`
+`).forEach((e,J)=>{var[L,F]=e.trim().split("~");if(L){var f=L.split(",").map(l=>parseInt(l)),v=F.split(",").map(l=>parseInt(l)),d=f.map((l,h)=>Math.min(l,v[h])),g=f.map((l,h)=>Math.max(l,v[h]));n.push({min:d,max:g,belowMe:[],aboveMe:[],restingOn:[],restedOnBy:[]})}}),n.forEach((e,J)=>{n.forEach((L,F)=>{J!==F&&(e.min[0]>L.max[0]||e.max[0]<L.min[0]||e.min[1]>L.max[1]||e.max[1]<L.min[1]||e.min[2]<L.min[2]&&(L.belowMe.push(e),e.aboveMe.push(L)))})}),n.sort((e,J)=>e.min[2]-J.min[2]),n.forEach(e=>{var J=e.belowMe.reduce((F,f)=>Math.max(F,f.max[2]),0),L=e.min[2]-(J+1);e.min[2]-=L,e.max[2]-=L});var r=(e,J)=>e.max[2]+1===J.min[2];n.forEach(e=>{e.restingOn=e.belowMe.filter(J=>r(J,e)),e.restedOnBy=e.aboveMe.filter(J=>r(e,J))});var s=e=>{for(var J of e.restedOnBy)if(J.restingOn.length===1)return!1;return!0};return n.reduce((e,J)=>e+(s(J)?1:0),0)}function c3(t=""){var n=[];t.split(`
+`).forEach((e,J)=>{var[L,F]=e.trim().split("~");if(L){var f=L.split(",").map(h=>parseInt(h)),v=F.split(",").map(h=>parseInt(h)),d=f.map((h,c)=>Math.min(h,v[c])),g=f.map((h,c)=>Math.max(h,v[c])),l=String.fromCharCode(65+J);n.push({char:l,min:d,max:g,belowMe:[],aboveMe:[],restingOn:[],restedOnBy:[],chainsTo:[],flag:!1})}}),n.forEach((e,J)=>{n.forEach((L,F)=>{J!==F&&(e.min[0]>L.max[0]||e.max[0]<L.min[0]||e.min[1]>L.max[1]||e.max[1]<L.min[1]||e.min[2]<L.min[2]&&(L.belowMe.push(e),e.aboveMe.push(L)))})}),n.sort((e,J)=>e.min[2]-J.min[2]),n.forEach(e=>{var J=e.belowMe.reduce((F,f)=>Math.max(F,f.max[2]),0),L=e.min[2]-(J+1);e.min[2]-=L,e.max[2]-=L});var r=(e,J)=>e.max[2]+1===J.min[2];n.forEach(e=>{e.restingOn=e.belowMe.filter(J=>r(J,e)),e.restedOnBy=e.aboveMe.filter(J=>r(e,J))}),n.forEach(e=>{e.chainsTo=e.restedOnBy.filter(J=>J.restingOn.length===1)});var s=e=>{n.forEach(L=>L.flag=!1),e.flag=!0;var J=0;return n.forEach(L=>{if(L.restingOn.length!==0){var F=L.restingOn.every(f=>f.flag);F&&(J++,L.flag=!0)}}),J};return n.reduce((e,J)=>e+s(J),0)}const p3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:h3,part1:b3,part2:c3},Symbol.toStringTag,{value:"Module"}));var m3=[2086,6526,94,154];function a3(t=""){var n=t.split(`
+`).map(z=>z.split("").map(k=>({char:k,max:-1}))),r=n[0].length,s=n.length,e=(z,k)=>z<0||k<0||z>=r||k>=s,J=(z,k)=>n[k][z],L=(z,k,u)=>(z+=[0,1,0,-1][u],k+=[-1,0,1,0][u],[z,k]),F="^>v<",f=[n[0].findIndex(z=>z.char==="."),0],v=[n[s-1].findIndex(z=>z.char==="."),s-1],d=[],g=(z,k,u,V)=>d.push({x:z,y:k,dir:u,ct:V});for(g(...f,2,0);d.length>0;){if(d.length>1e5)throw"inf loop";var{x:l,y:h,dir:c,ct:m}=d.pop(),b=J(l,h);if(!(b.max>m)){if(b.max=m,b.char!=="."){var a=F.indexOf(b.char);if(a!==c)continue;g(...L(l,h,a),a,m+1);continue}for(var p=(c+2)%4,O=0;O<4;O++)if(O!==p){var i=L(l,h,O);if(!e(...i)){var o=J(...i);o.char!=="#"&&g(...i,O,m+1)}}}}return J(...v).max}function O3(t=""){var n=t.split(`
+`).map(p=>p.split("").map(O=>({wall:O==="#",searched:Array(4).fill(!1)}))),r=n[0].length,s=n.length,e=(p,O)=>p<0||O<0||p>=r||O>=s,J=(p,O)=>n[O][p],L=(p,O,i)=>(p+=[0,1,0,-1][i],O+=[-1,0,1,0][i],[p,O]),F=[n[0].findIndex(p=>!p.wall),0],f=[n[s-1].findIndex(p=>!p.wall),s-1],v=[],d=(p,O,i,o,z)=>v.push({dist:p,x0:O,y0:i,x1:o,y1:z}),g=(p,O,i)=>{if(!J(p,O).searched[i]){J(p,O).searched[i]=!0;for(var o=1,[z,k]=L(p,O,i),u=(i+2)%4,V=0;V<1e4;V++){var X=[0,1,2,3].filter(C=>{if(C===u)return!1;var E=L(z,k,C);return e(...E)?!1:!J(...E).wall});if(X.length===1){[z,k]=L(z,k,X[0]),u=(X[0]+2)%4,o++;continue}if(X.length===0&&(z!==f[0]||k!==f[1]))return;d(o,p,O,z,k),X.forEach(C=>g(z,k,C));return}}};g(...F,2);var l={},h=(p,O)=>[p,O].join(",");v.forEach(({dist:p,x0:O,y0:i,x1:o,y1:z})=>{var k=h(O,i),u=h(o,z);l[k]||(l[k]={out:[],dists:{},painted:!1}),l[u]||(l[u]={out:[],dists:{},painted:!1}),l[k].dists[u]=p,l[u].dists[k]=p});for(var c in l)l[c].out=Object.keys(l[c].dists);var m=h(...F),b=h(...f);if(!l[m])throw"?";var a=(p="")=>{var O=l[p];if(b in O.dists)return O.dists[b];O.painted=!0;for(var i=-1/0,o=0;o<O.out.length;o++){var z=O.out[o];l[z].painted||(i=Math.max(i,O.dists[z]+a(z)))}return O.painted=!1,i};return a(m)}const z3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:m3,part1:a3,part2:O3},Symbol.toStringTag,{value:"Module"}));var x3=[15558,765636044333842,2,47];function i3(t=""){var n=t.split(`
+`).map((e,J)=>{var[L,F]=e.split("@"),f=L.split(",").map(l=>parseInt(l)),v=F.split(",").map(l=>parseInt(l)),d=v[1]/v[0];if(v[0]===0)throw"fix";var g=f[1]-d*f[0];return{pos:f,vel:v,m:d,b:g,ix:J}}),r=[2e14,4e14];n.length<20&&(r=[7,27]);var s=0;return n.forEach(e=>{n.forEach(J=>{if(!(e.ix<=J.ix)){if(e.m===J.m){e.b===J.b&&s++;return}var L=(J.b-e.b)/(e.m-J.m),F=L*e.m+e.b;if(!(Math.min(L,F)<r[0])&&!(Math.max(L,F)>r[1])){var f=(L-e.pos[0])/e.vel[0];if(!(f<0)){var v=(L-J.pos[0])/J.vel[0];v<0||s++}}}})}),s}function o3(t=""){for(var n=t.split(`
+`).map((d,g)=>{var[l,h]=d.split("@"),c=l.split(",").map(b=>parseInt(b)),m=h.split(",").map(b=>parseInt(b));return{pos:c,vel:m,ix:g}}),r=[],s=0;s<3;s++){var e=Array(2e3).fill(0).map((d,g)=>g-1e3);n.forEach((d,g)=>{n.forEach((l,h)=>{if(!(h<=g)&&d.vel[s]===l.vel[s]){var c=Math.abs(d.pos[s]-l.pos[s]);e=e.filter(m=>{var b=m-d.vel[s];return c%b===0})}})}),r[s]=e}var J=d=>{var g=[0,0,0],l=n.some((O,i)=>{var o=O.vel.map((u,V)=>u-d[V]);if(o[0]!==0){var z=o[1]/o[0],k=O.pos[1]-z*O.pos[0];return n.some((u,V)=>{if(!(V<=i)){var X=u.vel.map((j,Q)=>j-d[Q]);if(X[0]!==0){var C=X[1]/X[0],E=u.pos[1]-C*u.pos[0],en=(E-k)/(z-C),M=(en-O.pos[0])/o[0];return g=O.pos.map((j,Q)=>j+M*o[Q]),!0}}})}});if(!l)throw"fix";for(var h of g)if(h%1!==0)return;for(var c of n){var m;if(c.vel[0]!==0)for(var b=0;b<3;b++){var a=c.vel[b]-d[b];if(a!==0){var p=g[b]-c.pos[b];if(b===0)m=p/a;else if(m!==p/a)return}}}return g.reduce((O,i)=>O+i,0)};for(var L of r[0])for(var F of r[1])for(var f of r[2]){var v=J([L,F,f]);if(!isNaN(v))return v}return-1}const k3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:x3,part1:i3,part2:o3},Symbol.toStringTag,{value:"Module"}));var j3=[571753,1,54,1];function q3(t=""){var n={},r=f=>({outKeys:{},out:[],painted:!1}),s=(f,v)=>{n[f]=n[f]||r(),n[v]=n[v]||r(),n[f].outKeys[v]=n[v].outKeys[f]=!0};t.split(`
+`).forEach((f,v)=>{var[d,g]=f.trim().split(/\s*:\s*/);g.split(/\s+/).forEach(l=>s(d,l))}),Object.keys(n).forEach(f=>{n[f].out=Object.keys(n[f].outKeys).map(v=>n[v])});for(var e=f=>f.out.reduce((v,d)=>v+(d.painted?1:0),0),J=()=>{var f=Object.keys(n).map(h=>n[h]);f.forEach(h=>h.red=!1);for(var v=0;v<1e4;v++){var d=-1,g=-1;if(f.forEach((h,c)=>{var m=e(h);m>g&&(g=m,d=c)}),g<0)return-1;f[d].painted=!0,f.splice(d,1);var l=f.reduce((h,c)=>h+e(c),0);if(l===3)return f.length*(Object.keys(n).length-f.length);if(f.length===0)return-1}},L=0;L<1e3;L++){var F=J();if(F>0)return F}return-1}function u3(t=""){return 1}const T3=Object.freeze(Object.defineProperty({__proto__:null,knownAnswers:j3,part1:q3,part2:u3},Symbol.toStringTag,{value:"Module"})),K3=`1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
-treb7uchet`,l2=`two1nine
+treb7uchet`,Q3=`two1nine
 eightwothree
 abcone2threexyz
 xtwone3four
 4nineeightseven2
 zoneight234
-7pqrstsixteen`,v2=`8eight1
+7pqrstsixteen`,R3=`8eight1
 98126
 fourfourthreehnbhkmscqxdfksg64bvpppznkh
 8fivenvvtrlj
@@ -1045,11 +1056,11 @@ eight6kxqqdnqp
 6seventntzffjkkvvhtgtwoonethreefivekzvptvxfjg
 three6blrfsgdqsxgkbqj3
 eight1eighteight8
-8four419eighteight1bpv`,g2=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+8four419eighteight1bpv`,C3=`Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
 Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
 Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
 Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
-Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,O2=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,_3=`Game 1: 3 blue, 2 green, 6 red; 17 green, 4 red, 8 blue; 2 red, 1 green, 10 blue; 1 blue, 5 green
 Game 2: 9 red, 2 green; 5 red, 1 blue, 6 green; 3 green, 13 red, 1 blue; 3 red, 6 green; 1 blue, 14 red, 6 green
 Game 3: 6 red, 3 blue, 8 green; 6 blue, 12 green, 15 red; 3 blue, 18 green, 4 red
 Game 4: 1 blue, 4 red; 2 blue, 6 red; 13 blue; 11 blue, 1 green, 8 red; 10 blue, 3 green, 2 red; 3 green, 7 blue
@@ -1148,7 +1159,7 @@ Game 96: 1 green, 5 red, 13 blue; 1 green, 2 red, 13 blue; 2 green, 2 red, 17 bl
 Game 97: 1 green, 1 red, 1 blue; 2 blue, 11 green; 1 blue, 13 green; 9 blue, 6 green, 1 red; 10 green, 8 blue
 Game 98: 12 green, 9 red; 12 green, 10 blue, 3 red; 3 red, 13 green, 7 blue
 Game 99: 8 green, 10 blue, 1 red; 10 green, 2 red, 6 blue; 3 green, 1 blue, 1 red; 10 blue, 1 red
-Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,h2=`467..114..
+Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 green, 7 red; 3 red, 7 green, 1 blue`,D3=`467..114..
 ...*......
 ..35..633.
 ......#...
@@ -1157,7 +1168,7 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ..592.....
 ......755.
 ...$.*....
-.664.598..`,b2=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
+.664.598..`,G3=`...............776..............552........968..................589...26...........484..............958......186....546.........484.........
 .........*.........778....................*....124...................................*...............*........%..26.........................
 ......194..380....@....900..........639....467........478*..............582...........798.............326...........894.........#...........
 904...........*2.......#......259.....*..........801......464................597.569.............794+................$..218....502..........
@@ -1296,12 +1307,12 @@ Game 100: 8 blue, 6 green, 8 red; 7 red, 2 blue; 2 red, 10 green, 10 blue; 9 gre
 ....#.......&..%692........+......#..333............41...............=204..................868............/.164..................316........
 ...346..................+.......$...*......396..315....119..@755...............942..918........................*........631.651.............
 .................=....836......402.755............=.......*.......*....181.62...*.....%........................596......*............#591...
-...............764.....................................488.....880.209........416..................183...156..........917...................`,c2=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+...............764.....................................488.....880.209........416..................183...156..........917...................`,B3=`Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
 Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
 Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
 Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
 Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
-Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,o2=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
+Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`,M3=`Card   1: 79 93 21 74 81 76 17 89  3  5 |  5 67 87 81 76 35 79 21 15 80  8 74 99 28  3 23 19 42 89 16 22 77 92 70 34
 Card   2: 83 16 24 23 59 70 14 57 74 53 | 79 82 70 23 61 14 74 57 36 37 59 72 83 16  3  2 28 63 50 60 38 86 97 24 53
 Card   3: 12 77 13 14 48 55 69  4 18 81 | 69  7 94 88 18 73 55 48 49 81 14 21 12 15  5 27 22 84 51 52 13 77  4 57 17
 Card   4: 32 35 57 27 15  5 16 40 36 46 | 84 47 76 35 83  5 22 15 72 48 57 33 46 53 43 16 10 65 32 51 36 44 40 27 97
@@ -1518,7 +1529,7 @@ Card 214: 38  6 78 12 88 14 51 82 29 75 | 70 16 48 74 19 29  5 71 40 93  1 18 83
 Card 215: 67 60 86 35 17 62 55 27 54 70 |  9 26 45 56 43 72  1 32 25 88  5 87 73 81  2 34 57 13 61  3 84  4 33 92 59
 Card 216: 18 71  4 89 17 31 63 28 25 20 | 67 97  6 76  3 95 30 75 99 26 27 32 21 73 86 31 59 98 85  1 54 93 94 69 66
 Card 217: 54 65 75 13 46  8 37 25 95 82 | 57 14 83 33 69 47 68 64  4 21 17 92  2 48 30 70 62 50 36  7 72 66 41 85 97
-Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,i2=`seeds: 79 14 55 13
+Card 218: 68 97 66 41 88 16 65 31 23 63 | 29 67 55 64 91  4 12 83  1 40 74 94 58 81 98 82 78 70 26 34 96 14 36 50 56`,w3=`seeds: 79 14 55 13
 
 seed-to-soil map:
 50 98 2
@@ -1550,7 +1561,7 @@ temperature-to-humidity map:
 
 humidity-to-location map:
 60 56 37
-56 93 4`,p2=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
+56 93 4`,A3=`seeds: 28965817 302170009 1752849261 48290258 804904201 243492043 2150339939 385349830 1267802202 350474859 2566296746 17565716 3543571814 291402104 447111316 279196488 3227221259 47952959 1828835733 9607836
 
 seed-to-soil map:
 3680121696 1920754815 614845600
@@ -1799,13 +1810,13 @@ humidity-to-location map:
 1149193536 1342265550 29480816
 2997158500 3191476309 220034442
 2715114305 3573409942 126485175
-2446452559 2629702985 182296534`,a2=`Time:      7  15   30
-Distance:  9  40  200`,m2=`Time:        54     94     65     92
-Distance:   302   1476   1029   1404`,u2=`32T3K 765
+2446452559 2629702985 182296534`,S3=`Time:      7  15   30
+Distance:  9  40  200`,H3=`Time:        54     94     65     92
+Distance:   302   1476   1029   1404`,V3=`32T3K 765
 T55J5 684
 KK677 28
 KTJJT 220
-QQQJA 483`,z2=`88223 818
+QQQJA 483`,X3=`88223 818
 66JQ9 398
 6T9AT 311
 53TT3 43
@@ -2804,7 +2815,7 @@ AAJAA 744
 7777K 350
 T6363 826
 J333J 41
-55AA6 787`,k2=`RL
+55AA6 787`,P3=`RL
 
 AAA = (BBB, CCC)
 BBB = (DDD, EEE)
@@ -2812,11 +2823,11 @@ CCC = (ZZZ, GGG)
 DDD = (DDD, DDD)
 EEE = (EEE, EEE)
 GGG = (GGG, GGG)
-ZZZ = (ZZZ, ZZZ)`,x2=`LLR
+ZZZ = (ZZZ, ZZZ)`,N3=`LLR
 
 AAA = (BBB, BBB)
 BBB = (AAA, ZZZ)
-ZZZ = (ZZZ, ZZZ)`,j2=`LR
+ZZZ = (ZZZ, ZZZ)`,y3=`LR
 
 11A = (11B, XXX)
 11B = (XXX, 11Z)
@@ -2825,7 +2836,7 @@ ZZZ = (ZZZ, ZZZ)`,j2=`LR
 22B = (22C, 22C)
 22C = (22Z, 22Z)
 22Z = (22B, 22B)
-XXX = (XXX, XXX)`,q2=`LRRLLRRLLRRRLRLRRLRLRLRRLRLRLRLLLRRRLRLRRLLRLRRRLRRRLRLRLRRRLLRRLLRLRLRRRLRLLRRRLRLLRLRRRLRLRRRLRRRLLRRRLLRRRLRRLRRRLLRRRLRRLRRLRRLLRLRRLRRLRRRLRLRLRLRLRLRRRLLRLRRLRLRRLLRRLLRLRRLRRRLRLRLRLRRRLRRLRRLRRLRRLRRLRLRRRLRRRLRRRLRLRLLRRLRRRLRRLRLRRRLRRLRRRLRRLLRRLLLRRRR
+XXX = (XXX, XXX)`,U3=`LRRLLRRLLRRRLRLRRLRLRLRRLRLRLRLLLRRRLRLRRLLRLRRRLRRRLRLRLRRRLLRRLLRLRLRRRLRLLRRRLRLLRLRRRLRLRRRLRRRLLRRRLLRRRLRRLRRRLLRRRLRRLRRLRRLLRLRRLRRLRRRLRLRLRLRLRLRRRLLRLRRLRLRRLLRRLLRLRRLRRRLRLRLRLRRRLRRLRRLRRLRRLRRLRLRRRLRRRLRRRLRLRLLRRLRRRLRRLRLRRRLRRLRRRLRRLLRRLLLRRRR
 
 GSC = (CLG, RPF)
 NTQ = (RMN, HLB)
@@ -3612,9 +3623,9 @@ JBG = (SHB, BFN)
 BJL = (JRL, XSH)
 DBP = (RMQ, NMT)
 SFT = (PRM, KLH)
-CMD = (HFJ, QRF)`,T2=`0 3 6 9 12 15
+CMD = (HFJ, QRF)`,E3=`0 3 6 9 12 15
 1 3 6 10 15 21
-10 13 16 21 30 45`,K2=`12 12 11 5 -5 -5 40 194 558 1278 2553 4643 7877 12661 19486 28936 41696 58560 80439 108369 143519
+10 13 16 21 30 45`,$3=`12 12 11 5 -5 -5 40 194 558 1278 2553 4643 7877 12661 19486 28936 41696 58560 80439 108369 143519
 6 12 33 79 163 320 638 1301 2644 5220 9879 17859 30889 51304 82172 127433 192050 282172 405309 570519 788607
 3 5 5 3 9 60 262 872 2445 6091 13915 29744 60271 116756 217404 390473 678031 1140057 1858241 2938353 4509389
 15 21 23 31 67 161 350 681 1224 2114 3674 6758 13659 30354 71646 172084 407585 935627 2065861 4378033 8910071
@@ -3813,11 +3824,11 @@ CMD = (HFJ, QRF)`,T2=`0 3 6 9 12 15
 -5 -12 -16 -9 23 117 374 1049 2736 6717 15564 34095 70784 139706 263056 474211 821201 1370314 2209376 3450015 5227933
 17 21 25 29 33 37 41 45 49 53 57 61 65 69 73 77 81 85 89 93 97
 6 13 32 80 180 368 717 1406 2880 6172 13500 29335 62308 128664 258590 507776 978143 1853856 3461417 6365291 11511885
-5 23 49 86 154 303 625 1278 2553 5048 10072 20498 42428 88236 181828 367312 722717 1380949 2560835 4611894 8077398`,Q2=`7-F7-
+5 23 49 86 154 303 625 1278 2553 5048 10072 20498 42428 88236 181828 367312 722717 1380949 2560835 4611894 8077398`,I3=`7-F7-
 .FJ|7
 SJLL7
 |F--J
-LJ.LJ`,R2=`FF7FSF7F7F7F7F7F---7
+LJ.LJ`,Z3=`FF7FSF7F7F7F7F7F---7
 L|LJ||||||||||||F--J
 FL-7LJLJ||||||LJL-77
 F--JF--7||LJLJ7F7FJ-
@@ -3826,7 +3837,7 @@ L---JF-JLJ.||-FJLJJ7
 |FFJF7L7F-JF7|JL---7
 7-L-JL7||F7|L7F-7F7|
 L.L7LFJ|||||FJL7||LJ
-L7JLJL-JLJLJL--JLJ.L`,C2=`F-|-J7F7F7F-7F7F--7-L|-L7777.FFL-|.|.FF-FF7FFFFF7--F-J7.|-FF77|-F|777-F7.F7FF|-J7|-7.FFJ77FL.7-|-|7.|.77|-F-|-F|-FL.F77.FF-77|7.7--7--7FJ--7
+L7JLJL-JLJLJL--JLJ.L`,W3=`F-|-J7F7F7F-7F7F--7-L|-L7777.FFL-|.|.FF-FF7FFFFF7--F-J7.|-FF77|-F|777-F7.F7FF|-J7|-7.FFJ77FL.7-|-|7.|.77|-F-|-F|-FL.F77.FF-77|7.7--7--7FJ--7
 |7LJ7.F-JLJ7L7--7F77.|LLJ|LF7|.LLJ-|7L|FJLF77L-FJ7FJ.LFF|7L-LLF-LJF777||7L-F7LLLLJ7|L7||F-J|-|.J.F7FF7F7|J|F|-FJLF.FLL|7J|FF-7-FJ7J|J.F7L|LJ
 L|J.7.L-J7FJ--..F-J|-7-|.J|LL-J.F|J|-77L|.LL7J||FJ7|.F--J7-J|7.LJJJJFFJL7JF||7.||-LJ-F7-|FFJ-|77.|L7||||7F-LJF|L7J7FF|JL7L7JJL-|---|7-JJ-FJ7
 LJ.L-|--JF7J|LF7|L-7.|FFJJ-.|JL7JF7F7F7777F-JFFJJLLJFL-J-|.FLJ-7|FF7FL7FJF7||F7FF-J7F||F7-7L7L|7.L7||LJ|.LJ|FFJFF7F7FLLJLJ||LL-J7.L|7LJJFJF-
@@ -3965,7 +3976,7 @@ J.F..F-F|LJ77|FJF7..LL7|.JFLF7L7L77F7.|FJ|-LL|JJLJ||||||||JLL-.F||LL-JJF-7|LL.LJ
 FLF--7L-J7|-LL|-|J.J7--JF|77F|.FJLFJ.L|-FJ7.|F7-|7.7.LJJFF.JJJFL.|||FJ|-L--7JF--|FFF|---7J|LF-JJF--7--JL.L7.L|.|L|JLF7JF7-FJ|.F.F|.J.-7J|F-7
 F7|-FJ|L|-J7.F--F7|FJF|7L|||F77J-FFFL7.F|J|F-FJ|.F.--------|.|F.---7L-LF|-L7L7JL|L7.|.|7F-J.JJ.--|7|||.JF-F7|L|.|.|.FL-7L|L|7..|7-|.|LJ||7FL
 LJJJ||L-J7LJ7F|-LLJ|7L--7L-J-.|F--FJ.|7LL.|L--7-7L7|L||-7JJL-JJLLJFF7J.LL77..J.F|.|7LF---J.FL.JLF|LJJ-F-F..F--|.77F7-JJL77.||.|F7.LFL77|J7FJ
-LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.LFL-FJJL|.FLLF-FL|LL.J.FL|-JJ.JJL--JLL--JJ.|J-L|J--J.L7..JJJ`,_2=`...#......
+LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.LFL-FJJL|.FLLF-FL|LL.J.FL|-JJ.JJL--JLL--JJ.|J-L|J--J.L7..JJJ`,Y3=`...#......
 .......#..
 #.........
 ..........
@@ -3974,7 +3985,7 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 .........#
 ..........
 .......#..
-#...#.....`,D2=`.......................................#..........................................................#......................................#..
+#...#.....`,n7=`.......................................#..........................................................#......................................#..
 .....................#................................#.....................................................................................
 ....#.....#...................#...............#....................#.....................#.....................#....................#.......
 ............................................................................................................................................
@@ -4113,12 +4124,12 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 .................................#..........#...............................................................................................
 ......#..........................................#............................#....................................#........................
 ...............................................................#...........................................#.............................#..
-..#.........#..........#.................#..........................................................#.......................................`,G2=`???.### 1,1,3
+..#.........#..........#.................#..........................................................#.......................................`,e7=`???.### 1,1,3
 .??..??...?##. 1,1,3
 ?#?#?#?#?#?#?#? 1,3,1,6
 ????.#...#... 4,1,1
 ????.######..#####. 1,6,5
-?###???????? 3,2,1`,B2=`?#??##?..???.?? 6,1,1
+?###???????? 3,2,1`,r7=`?#??##?..???.?? 6,1,1
 ?#?#?#????????. 8,1
 ??#?#????#.... 3,2
 .????????? 4,1
@@ -5117,7 +5128,7 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 .?##?..#?#.??????? 2,1,1,2,2,1
 ?.##?#?.??. 4,1
 ??????#?#? 1,1,3
-?.??#??????#?????.? 1,8,3,1,1`,A2=`#.##..##.
+?.??#??????#?????.? 1,8,3,1,1`,t7=`#.##..##.
 ..#.##.#.
 ##......#
 ##......#
@@ -5131,7 +5142,7 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 #####.##.
 #####.##.
 ..##..###
-#....#..#`,M2=`##.####.######.##
+#....#..#`,J7=`##.####.######.##
 .#.#..#.#....#.#.
 ...#..#...##...#.
 ###....########..
@@ -6427,7 +6438,7 @@ LJJ..LL-JJ-L---7J-F77LL.LFJJLL-J-7JJ.L-LL7-L7.LLJL|JJF7-J-JLLJLLJ-7LJJ..LLJ-LJJ.
 #.#..##.#..#.##
 .####.#.####.#.
 .####.#.####.#.
-#.#..##.#..#.##`,S2=`O....#....
+#.#..##.#..#.##`,L7=`O....#....
 O.OO#....#
 .....##...
 OO.#O....O
@@ -6436,7 +6447,7 @@ O.#..O.#.#
 ..O..#O..O
 .......O..
 #....###..
-#OO..#....`,w2=`...O.....#O#....O###...#..OOO.O#....#.O.O.....O...OO##.#..O.O...........O........#...#.#O........##.
+#OO..#....`,s7=`...O.....#O#....O###...#..OOO.O#....#.O.O.....O...OO##.#..O.O...........O........#...#.#O........##.
 #OO..O.##..#..........#.....O...##..O#.#O#O..##.....#.......O....##.#..#OO.O#O#....O..OO.O.....OO#.#
 .###..O.#...O.#......O.#.......#.........#OO##.....#...#...O....#..O.O.O.#.O..O...##....O.O#.O....O.
 O.O......OO.O#..#....O...#..##...O.#..##O.#...O.O....OO#......O...#...OO#O......O.....#O.O.#.#O.#O..
@@ -6535,7 +6546,7 @@ OOO.#O.#.#.#..O.#.#O.....#.O##............#........O..OO#O##..O...O..#..O......O
 ..OO.....#..#.....OO.#.O..#.........O..#..O.......O.##..OOO.......##.....O..#.#.O....#.O#....#..##..
 ..#..OO.OO......O.O....#...O.#..#...O..O##...O.OOO....O.O#..O.#..#......#.....O.O.O#.....##.....#O..
 OO...#.##....OO.O...O..O...O..#.O.#.#.#.O.##.#...#.........O#.OO...O...#O...#....OO....#......#O.O..
-.O...#.....O.OO.O##......O...#..#..O.#.....O.#O.O.##O.O.OO.OOOO...#O.#.O....O.#..O........#..O..OOO.`,H2="rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7",V2="kf=9,gmn=6,sfvcm=2,cm-,dqb-,vxt=6,mnvm-,jd=7,glz=6,pfr-,kzt=2,nk=6,lsnmn=7,lx-,nz=5,rpm-,nz=6,fsn-,dl=1,jb=5,bd=3,zhr=1,qkzfg=6,vt=1,qsm=5,jtvcd=2,fsp-,sfvcm=7,vklt-,hd=9,vv-,cm-,jzz=2,pt-,pd=6,hvttcx-,dplfr-,qk-,pf=3,gsqglz-,mhb-,zsk-,nn-,jd-,cmmntt-,xsj=5,kmb-,gmn=8,bs-,srp=5,csh=6,fqm=2,dq-,dpb=5,gz=6,cqsnhr=4,mgm-,rqrq=7,xzd=2,krvb=8,fgj-,jzz-,vmxg=1,rxnvmc=8,zn-,cph=9,dqb=4,vcd-,sf-,mb-,dkgk-,bcs=6,nvrb-,jpd-,zf-,mxdx=8,bjpd-,ftf-,jzz=5,gmb=2,qbh-,sqj-,fqd-,ktdfd-,hnd=9,ch=1,lmv-,hddj-,zxfg=9,gfg-,cgb-,gmb-,nzgt-,qsm-,dplfr=1,sf-,mgd-,fgj-,gz=7,qsm-,vv=5,hbk-,nj=3,lhg-,bnb-,rrx-,nhzr=7,jn=4,xkn-,knpt-,dsz=9,jpd=4,vsz-,lq-,bpxhkz=8,cgb-,vb-,kkbf-,cvk-,tjbrb-,nnrl=4,zc=6,tq=3,rrjfx=8,lx=3,br-,sth-,kn=4,kklj=3,xljlkv=1,jnggl-,mmmc=3,jphfq=5,hxr=1,xhxb-,bd-,nnrl=3,rxnvmc-,hr-,pzcx-,jpm=8,zprvk-,vvl-,bmpq-,jrd=9,sxnb=7,nrf=9,zlf-,gmn=5,gsqglz=4,vvv-,ptpf=4,hqb=9,qknsk-,br=8,jrd-,trf-,bjpd=3,bh=1,tvbv=3,rhpplz=3,lmh-,rtr=6,lm-,pm=2,xn=8,bdl-,zf=9,fg-,tnm=9,fg-,gvz=2,jnggl-,rbf-,jd=2,bsd=2,gjqb=1,nzgt=2,gzv-,vcjv=1,kvj=9,vvz=8,gpkk-,htkzr-,vkxnmt-,fqd-,fpn=8,rhg-,ffnsd=9,ds-,tc-,gsqglz-,tjbrb=6,bcs=8,zsjh=4,mhrm-,kvj-,zmmzd=5,lksd=9,zp-,lm=3,nffg=6,cnr=5,znf-,csh=3,jc=6,gzglg=6,rrjfx=8,lx=3,gz=7,ldq-,jsp-,dnf-,qlgm-,xk-,hvmdmh-,ptpf=8,xvv-,gvz-,bsd-,gcn=3,fsqh=7,jphfq=1,vmh-,bmpq-,zlksl=9,nj-,mgf-,zbnzll-,bdxhj-,bc=2,vbz-,fsl-,zp-,lht=9,dcb=8,sqsb-,dd=3,tx=7,mmk=5,lq=3,jphfq=7,fqm-,br-,mgm-,cds=8,zskvv=5,fqm=3,zsk-,zprvk=2,zprvk-,ttcjrf-,ksj=3,qlszt=4,qlvt-,ls=1,rbf=6,zlf-,ljv-,rv-,pvm-,nsdg=9,psh=1,tk=7,qknsk=9,zvg=4,btfm=2,rxct-,rmn=5,dsz-,qdk-,rhpplz-,zbss-,dxknq-,rp-,rh-,fhg=5,mlq-,xqnlt=8,pzcx-,lmj-,ssz-,hdk=6,gj-,vtv=2,tx=6,vcd-,lczz=4,lb=6,lj-,rt-,nz-,dnb-,rvpp-,zxb=9,pv=3,ftf-,ppmdf-,rmhbz=8,ggr=3,kvj-,ksn-,tv=3,btfm=9,np-,rr-,bdxhj=5,zz=4,mnzlc=4,xsj=3,dffh-,ksj-,bsr=4,cds-,cnr-,rnd-,vt-,ll=5,fpc-,xm-,jsp=2,mvsq-,fnps=8,cq=9,tqcf-,cdg-,nd-,jxl=9,pf=2,tkhd-,dxl=6,hn-,ckzcrf-,xl=1,qb=6,vjqxp=1,ssz=7,mnvm=6,zxfg-,cxpsv=1,sbcq=1,pm=6,kvj=8,ffnsd=5,lbp=8,dbcf-,cqsnhr=1,ltqj-,cph-,mrb-,fsp-,vbz=4,tkhd=3,sfvcm=5,ksrrz-,lr-,tq=6,lmj-,bfj-,qs-,zmzr=7,qdlprm=6,rj-,zsz=6,vr=4,nr=9,kctn=9,lmcr-,mj=2,fmc=9,tkjhs-,bmpq=4,gr=7,znx-,lfns=5,mvh=4,rnk=6,dpb=4,bc-,cxpsv=2,tqtg=7,zt-,nsp=7,jtvcd=1,znf-,nrf=7,jm=4,dnf-,vt-,pv-,lmh=2,jzz=5,bs=3,rvpp-,vzzvn=8,nzgt=2,cdtm-,mnzlc-,hddj-,lm=3,knv=1,gqstb-,zskvv=6,hbk=7,dqb=6,tqcf-,gxb=2,vjqxp-,gf=7,kkbf=6,knv=5,fz=3,jrd-,sdt-,mmk=9,xq=8,ltqj-,rtdlr-,fhg-,fsqh-,csh-,rtdlr-,vb=1,vgkx-,xrb=9,ggzx-,hv=1,zprvk-,xm-,zmzr-,js=4,rhg=1,qbh=8,mhc=5,tjc-,vv-,lj=5,gqstb-,ck=6,znx-,zt-,hdk=1,ggzx=2,kklj=7,grr=5,pg=5,gzglg-,fh-,kvj-,rtr=2,gfg-,mvsq=8,zmzr-,mgm-,lj-,gvz-,cz=3,vtt-,bsd=1,blvg=2,mtcr-,bgzhqx=6,lht=5,xn=5,fqd=6,cq-,zmmzd-,cz=9,glr=5,pp=2,bqlk=6,gsqglz-,rtr-,jn-,vcjv-,mmk=6,gzv=8,kmb=6,qntl-,jm-,zgx-,rmn-,dcb=2,hvttcx=5,cgb-,zvg-,sxnb-,qsm=2,mnvm=1,lv-,nsdg-,jrbk-,cgb-,spln=8,rnh-,bjpd-,mvh-,zhr-,mlq=8,mpn=3,mhc-,lv=3,mx-,bgzhqx-,gzv=5,bk=4,rxnvmc=7,qlgm-,fqd=4,cds=7,vvl=2,mvh-,zr=8,cnr=7,zhr-,ckzcrf=5,bs-,rf-,bsd-,gj-,jnggl=4,jzp=7,gvz=8,bgzhqx-,mqg=5,zsz=6,mvh-,vcjv-,tc-,zsjh=2,xn-,bc-,xsj=2,fmzk-,mjpx=2,rnh=8,zz-,rp=9,fsqh=9,rpm=5,tpf=3,bblmtm-,xxsbv-,ctc-,gmb=5,jhc=9,vkxnmt=5,jrd=7,gmb=5,dsz-,qs-,gzv-,rrjfx-,vr-,txzv=2,ps-,vp=9,fp=5,kz=7,qbh=7,mlq-,pf-,kq=3,dj-,xzd-,vp=3,thh=1,xp-,bnb=9,bk=4,csh=7,rrx-,kz=6,kklj-,tvbv-,lj=3,rf=6,vg=8,fb=1,mlq=9,rvd=2,mlq=9,mmmc=5,vnv-,cgl-,gmb-,jtrsqg-,vmxjr-,lb-,knv-,qf=5,lmcr-,vj-,qkzfg=5,lmj=9,mgm-,prf=7,tqcf=6,rhg-,hkc=7,ldq=1,rnh-,ldq=6,pp=7,bml=8,mnzlc-,nsdg-,nvrb-,hgfhk=5,gjqb=6,xm-,hvttcx=7,pzcx=9,qz=8,pdg=4,ttcjrf=5,bh=3,tqcf=7,tlx=8,vb-,xrb=9,hqb=9,qb=7,brnp=7,bcs-,jhc=7,sdq=5,tvbv=7,hvttcx=2,vcjv-,hcx-,gzglg-,lqx=7,rxct=2,srx=5,kkbf=6,zsk-,tjc=4,bv=1,nxhd-,tjbrb-,jbh-,qlk-,vbz=2,pfr=7,nzqmkk=8,pfr-,mlg=9,ld=5,mzgj=5,mpn-,tpf=9,mb-,fsn-,nzqmkk-,gfg-,kgxp=2,hvmdmh=8,mb=5,ksrrz-,jpm=3,jx-,kq-,jbh-,vcd=3,nlsz=6,mjpx=1,crq-,lq=7,nzgt=5,jv-,lv-,rxnvmc=3,pp-,dplfr-,rnd=5,sfb=2,xqnlt=7,xgsz=6,vr-,jttps=5,vd-,kdrq=7,khqs=3,brnp=3,ck=2,znf=4,pbsr=8,qdlprm=1,ljv-,bsr-,tk=8,rpbgt=7,xgzm-,gcn=8,nsdg=7,sf=8,bcs=9,zskvv=3,nnrl-,nrf-,nvrb=7,ptpf-,nkzv-,ktdfd=7,rr-,dh-,jm=3,vcjv-,mmk-,kklj=7,kh=2,xn-,fj=3,tkhd=6,dplfr-,ccq=9,sdq-,zhr-,nsp-,kdrq-,gz-,lqx=7,tc-,sf-,gbh=8,tv=5,bmdc-,sfb=1,nsp=9,srx-,lksd=7,rv-,nsdg=8,hg=1,jtvcd=5,xs-,lv=1,qlz-,sbcq=9,npc-,tlx-,vpk-,gpkk-,xn-,tv-,bv-,ppmdf=9,zhr-,srp=4,hvmdmh-,zsk-,zv-,trf=2,gd-,fp-,qlk-,qs=1,jzp-,lx-,rvpp-,zsk-,cvk-,npc-,xp-,rxct=2,ggzx-,cgl=8,xgzm=7,rtr=2,txzv=2,kh=8,qlszt=1,jd=6,vr=2,zlf-,gvz=8,gj=5,zt=7,fsp=7,kv-,nz-,jn=3,trf=5,dj-,lq-,jbh-,vzzvn-,gvz-,bm-,jrbk=7,qdk=5,qc=1,bv=2,ccq-,jzp=1,ds-,rmhbz-,qlgm-,zv-,ffnsd-,hv=6,tjbrb-,lht-,dqb=2,vbz=7,blvg=9,tqq-,zs=4,pdg=8,nnrl=4,dxknq=5,qkzfg=3,xgsz-,bf-,dmmv=6,cx=1,pbsr=1,zvg=5,kf=5,xs=6,jx=1,jp=2,kh-,kzt=5,ktdfd-,qf-,hv-,lsnmn-,zz=4,dj=4,ftf-,tq-,mjpx-,kg=1,xltsh=5,dnb=7,vp=5,mhb=6,ch-,thp-,bs-,xltsh=8,jrd-,vvz=2,xk=3,dh=2,jtvcd=2,dj=3,tnm-,fqxhfv=2,rvpp-,bs-,cx=5,zbnzll-,zbss=6,vj-,hgfhk-,nj-,zsk=8,cxpsv=6,kklj-,xkn-,mhc=8,hg-,gjqb=2,kpg=2,dxknq=8,tpz-,dq-,qbh-,nkzv=2,xn-,gqstb=5,qhb=3,knv-,lczz=3,zgx-,gxb=2,zsk-,vzzvn=9,dbcf-,ss=5,fh-,bnb=1,tnm=1,sqsb-,xk=9,gr=7,jrbk-,rbf=5,mhb-,nzqmkk=3,qbh=1,rhg-,hjd-,vgbp=8,mj-,ndvtb-,cq-,kctn-,hn-,vxt=9,sth=1,ttcjrf=9,jm-,vmh-,tkjhs=9,dbs=2,zl-,rj-,hzm=4,tf-,lzg=6,xrb=9,dmmv=1,jc-,fmc=6,vpk=4,qxqq-,dl-,rhpplz=1,qc-,zn-,mgx=2,mhrm=3,qsm=4,xqnlt-,dxl=1,kv-,qkzfg=4,fhg-,gvz-,dbs-,pnd=8,rt=4,kh-,vklt-,vcd-,zsk-,hgfhk-,gjqb=7,xgzm=7,rhg-,cq=8,jzp=2,pc-,np=1,fmzk=4,xhxb-,thh=8,snj-,hvmdmh=2,srp-,hv=3,zv-,ccq=2,fj-,zq=9,tv=8,mqg-,sfb=6,bs-,dxl=3,nlndb=4,psh-,dffh-,btfm=8,sf=7,zbss=6,nj=8,csh-,qp=7,lfns=6,ptpf=9,zbss=8,fjpt-,mfj=9,vvz-,rrx=1,rpm-,qxqq-,xq-,dxl-,fz=2,hgfhk=9,drl-,hd=2,mfg-,xhpg-,qk-,cm-,bblmtm-,xq-,fjpt=8,fqm=6,rhpplz-,vzzvn-,csh=7,ldq-,hxr-,pc-,qr-,fjtbvs=2,nxhd-,zg-,nxhd-,cg=8,hqb-,bmpq-,mgf-,rxct-,nlsz-,zskvv-,rbf-,gjqb-,sth=9,qlz-,bv-,rhpplz=4,qlszt=1,np-,mlg-,shllq-,nj-,zxb=8,zlf-,mj=8,qhb-,kz=3,vf=8,gckt=7,zlksl=6,tx-,mx-,pm-,drl-,bm-,rvpp-,bd=6,mfg-,tgl=5,nz-,bm=8,np-,nj-,dxl=6,zdn=4,rtdlr-,vpk=4,jb-,hqb=5,vzzvn-,bsd-,ftf-,fmdf=4,nhzr=3,ggzx-,jp-,cxp-,fjtbvs-,rhg-,pq=7,fsl-,nz-,mvsq-,rrjfx-,nfgghx=1,bqlk-,qdjh=3,pstjdj=5,xk-,ksj-,jttps-,xgsz-,ck=5,lmcr-,dxknq=7,vp-,xhpg=6,hg-,dh=1,kvj-,ftnj-,cmmntt=9,dj-,zf=9,kklj-,xqnlt=2,lzg-,bpxhkz=9,gz=3,lm=5,zxb-,ljv-,tdfj=1,dbs=1,ljv-,dsz-,csbj-,zg=2,zl-,bc-,xhpg-,hqj=5,pm=1,rgf-,ggzx=2,mnzlc-,nmbrj=2,vmh=7,hzm=5,vd=7,br=1,xvv=7,jzz=8,xk=2,ps-,ch=3,shllq-,nffg=4,qlk=7,rp=7,cz=4,cg=1,gpn=5,pg=1,kmb=8,rp-,bs-,rxct=9,bm-,knpt-,dqb=1,zv=3,jc-,rnh=2,rrjfx=9,kq-,cdtm-,tqcf=7,jbh-,znx-,bn-,fgj=2,rpbgt=1,ltqj=1,dffh-,npc-,fsl=9,bc-,ldq=4,lq=4,lbp=2,sqsb-,fmc-,ftf-,mxdx=9,vnv-,xhpg=3,rf-,js-,rhg-,khqs-,pt=2,mvh-,zs-,fg-,xhxb-,hgfhk-,zhfq-,gmb=3,bn=1,kpg=5,lm=7,jrbk=3,rqrq-,hkc-,prf-,ggzx=6,qxqq=6,dqb=8,rrx-,vhc=1,tpz-,vt-,glz=8,ndvtb-,qlgm-,zf=8,hzm-,trf-,sf-,tx-,cx=4,ggzx-,bm-,dxknq-,sfb=4,mhc-,zmmzd-,vd=8,js=4,tkhd=8,xqnlt=3,nffg=1,vtt=5,ggr-,pg-,jpm=3,nvrb-,pm-,sdq-,bnb=5,rmn-,np=2,ldq=8,sfvcm-,mvh-,fj-,tkjhs=9,bm=2,rhg-,qr-,jd-,gf=7,xl-,gd=8,sgg=5,cm-,qkzfg=9,ckzcrf-,mhc=2,rxct=9,ll=3,dnf=9,tqtg=7,cxpsv=5,fsqh-,hkc-,zhr=3,xgsz-,vj=5,xl=5,tc-,hm-,htkzr=1,gvz=9,tqcf=6,jp-,fh=6,sdt-,pv-,gmm=6,zl=5,fgj=4,pbsr-,gv=7,rj=9,qb=9,tb=2,tvbv-,xgsz=2,gsqglz=6,bpxhkz-,cvk-,fhg=4,mx=4,lbp-,dqb=6,tk=2,hbbh-,gxb=9,jphfq-,tv-,bc-,cmmntt-,cx=1,rtr-,klcm=6,nd=1,qz-,xgsz=6,dxknq-,tnm-,xq-,pbq-,jd=8,qdjh=2,vnv-,ch-,xn-,gqstb-,zhf=9,hkc=6,fsn=9,bsd-,gcn-,gxb=9,kn-,gr-,rvd=3,rms-,rv-,dmmv=5,pg=1,hd-,tz-,ffnsd-,vhc=6,fmc-,nnrl-,qp=3,hdk=8,gvz=3,fjpt-,gqstb-,lmv-,qhb=5,xq=9,qb-,dj-,dbs=7,fdsfpx=9,dxknq-,ktdfd=7,mmmc=2,nj-,nc=6,ll-,gzglg-,hdk-,jd-,xgzm=4,vgkx=1,thp=2,gpkk=2,fjtbvs-,pp=8,kmb-,mpzb-,znf-,krvb=1,ss=1,qc=4,gpkk-,zq-,cgl=8,zsjh=3,mlg-,sbcq=5,srx=1,rp-,mgx-,fsn-,dj=3,kkbf-,jtvcd=4,fmc=9,ndvtb=3,lx=8,vklt=9,nnrl=8,cx=1,zbnzll-,lhg-,kn=4,tns-,bpxhkz-,fpc=6,jx=7,lq-,pf=5,nsp=3,xvv-,nzgqc-,trf=3,pbq-,zg-,nrf-,ppmdf-,jttps=3,xxsbv=4,ls-,zxfg=9,ll-,rf-,dpb-,fh-,znx=3,kf-,lv=3,qxqq-,qxn-,srqx-,mgf-,fmzk-,glr-,bdl-,lmh-,vmh-,zt-,cg=8,knv-,kdrq-,rnh-,rxnvmc=9,jpm=4,zmzr=7,gbh-,nvrg-,qc=6,knpt-,qf-,lmv=7,pvm=8,hddj=6,qlz=2,lmv=3,tvbv=7,dq=4,hddj=4,zskvv-,bdl=3,zg-,gf=8,gzv=1,bh=4,dpb-,fsn=1,ccq=1,fh=6,rxnvmc-,nkzv=5,znf=7,tns=6,hvmdmh=5,tv-,bm=3,qlszt=5,mpzb=1,spln-,ps-,pp-,ll-,bqlk=9,tqm-,fb-,tf-,mpzb-,pm-,kjl-,hn-,qlvt-,fjpt-,vgbp-,xgsz-,fg=2,rpm-,kctn-,nr-,ck-,jd=3,gmn=7,fsqh=3,kq=8,ggzx-,ljv-,zxfg=3,gsqglz=6,fjtbvs=5,cx=4,ctc=9,bn-,tvbv-,nfgghx-,mdpl-,lmh-,bblmtm=7,fsqh=9,kdrq=5,jp-,vr-,thh=1,cm-,rmn=2,cgl-,vhc=4,hzm-,nz-,xn-,fb=6,bgzhqx-,bd-,pq=2,jpd-,fgj=2,zs-,hbk-,ksj=6,vtv-,bmdc=2,mfg=4,rtdlr=4,vcjv=5,ntl-,ksrrz-,pnd-,qxqq-,mvh=8,jphfq-,jpd-,qdlprm=5,glz=9,nn=9,cq=7,rmn=2,rj-,sfb-,mtcr=6,vgkx=7,sqsb=4,kgxp-,vvz=1,jhc=9,mpn=3,hsdzn=4,hs=6,xfft-,qvzgl-,jttps-,fpc=2,bk=5,nnrl=2,rklr-,rvpp=2,hqj=7,knpt-,lmv-,gckt=7,qf-,cph-,jzz-,nlndb-,knpt=2,fsn=4,dd-,pv=6,dfgpj=8,lsnmn-,kdrq=6,zprvk=2,pp-,txzv=9,hr-,bgzhqx=4,jp=7,bdxhj-,cxp-,qc-,sbcq-,hq-,qlz-,rhg-,qxqq-,xp=9,gpkk-,jv=7,hq-,dkgk=8,rrjfx=9,mqg-,khqs-,mj=5,lmcr=1,mzgj=3,dpb=7,zlf-,zbnzll=9,xp-,thp=5,vnv=6,hq-,rv=5,kctn=6,fg=4,tgl-,hnd=2,prf=1,thh=7,kkbf=9,kklj=2,rbf-,rhpplz=3,mdpl-,hqj=3,nsp-,zvg=9,rd=5,rnd-,mfg=8,xl=8,xcn-,qdk-,lmcr=7,ccq=7,nzgt-,vjqxp-,zt-,fhg-,pvm=6,tgl=4,sth=4,nvrg=1,vcjv-,vmh-,lj=1,bmpq=4,qdlprm=3,czv=4,cj-,vvz-,mgd-,cds=5,hnd=2,klcm-,nhzr=9,jtrsqg=7,hvttcx-,krvb=8,nzgqc=1,dkgk-,cdtm=2,nn=4,cnr-,xvv-,rgf-,vgbp=2,mxdx-,ppmdf-,zn=5,hnd=9,xltsh-,ggr-,pf=9,snj=2,zhf=4,hvmdmh=5,mpzb-,jm=1,zgx-,knv-,lvv=1,fmc=5,tgl-,xvv-,nnrl-,ldq=2,tz-,hdk=8,zp=8,gpkk=4,hm=4,tlx=9,gzv=7,js-,tf=2,lczz=2,jpd-,rmhbz=9,lj-,nc=5,pt=8,qntl-,ckzcrf-,tlx-,zn-,rqrq-,cdg-,tvbv=4,hd-,lfns=4,dxknq=7,np-,fpn=1,tqtg-,zlf-,dnb=9,nrf-,vvz=6,knpt-,dnb=9,shllq=5,zf=7,csh=3,jzp=3,bk=7,rrx-,lczz-,mvsq=7,vb-,mvsq=7,fmzk=5,gz=3,dbcf=9,vklt-,txzv=6,rvpp-,shllq=9,thp-,nkzv-,ksj=8,hqj-,vgbp=6,rbf=2,ckzcrf=4,lht=8,tpz-,fjpt-,zbss-,sxnb=5,rj=2,pfr-,qr=7,fsp=4,gvz-,csbj-,mfj=2,mlq-,knv=5,bml-,qntl-,zq=1,sqj-,tpz-,mmmc-,sxnb=9,rpm=5,rf=5,zbnzll-,jzp-,bsd=5,gbh=8,zxfg-,znf=1,hn=5,ksrrz-,xljlkv-,pstjdj-,np=1,rhg-,lq=9,hqj-,rrjfx-,tk=6,tvbv-,dkgk=2,bn=7,krvb=2,cds-,vzzvn-,ckzcrf-,mpzb=9,kctn=4,fmzk-,hjd-,jtvcd-,fqd-,xn-,xqnlt-,dfgpj-,jzz=9,nkzv=8,ss-,kg=4,hvttcx=8,hg-,fnps=6,fqd=3,lsnmn-,vb=6,sxnb=5,gsqglz=3,kkbf-,js-,pzmd=6,qk-,lfns=7,gz-,sth-,hbk=7,tqtg=8,ldq=9,zvg-,tkjhs-,kmb-,fp=2,tpz=8,ldq-,cxpsv-,fgj-,rvd=5,zxfg=5,dcb=9,dfgpj=7,vmxjr-,vmh-,zr-,vmxg-,nxkmn=7,ppmdf-,mpn=9,ccq=8,rgf=1,qb-,jzz=1,pzcx=3,bs=2,vnv=6,ld-,lm=2,zs-,jzz=6,hnd-,krqsb=7,kh-,nlsz=4,ksj-,fh-,mmmc-,vtv-,qb-,mhb=5,jttps=2,kv=6,kq=4,dq=4,mzgj=7,dh=3,nfgghx-,ptpf=8,gpkk=7,hd-,fp=6,hvmdmh-,ls-,kkk-,jp=1,rp=5,zhfq=1,mhrm=1,lksd=6,knpt=8,rnd=5,nsdg-,xfft-,kjl-,bdxhj-,ccq-,jv-,xn-,tdfj-,lx-,fjbhsc=1,rxnvmc-,ndvtb-,krvb-,mgx=9,lht=1,nnrl-,jb=1,nnrl-,bd-,hsdzn=5,prf-,lznhkq=5,ndvtb=1,kv=4,hvttcx-,hsdzn=6,zbss=5,hgfhk=3,rxnvmc-,dxknq=3,xcn=8,qp=2,jrbk=3,vnv=3,xs=3,tkjhs-,nffg-,jv=4,mpn=7,nd=2,zbnzll-,nlsz-,rxct-,ffnsd-,hr=3,zxfg=4,mdpl-,mmmc-,mhc=9,ksn-,qbh-,nr=3,lmcr-,ctc=9,hkc-,dnb=7,ftf-,thp-,xhxb-,hxr=7,rnh=5,ll=7,hqb-,hdk-,jtvcd-,jc=3,jhc-,zsk-,cg-,dxknq-,tdfj-,cvk=6,mmk-,pf=8,ggr-,rhg=6,ksrrz=7,vjqxp=4,kvj=1,brnp=7,ccq-,ndvtb-,zdn=2,vmxg=2,xfft=9,mpn=7,lqx-,fz-,qlk-,bmpq-,zgx=3,jn=8,kg-,jtrsqg-,ss-,xxsbv=7,qc-,jsp=5,rtdlr-,qlk-,qxn-,znf-,ld=9,rt-,rrx-,qbh-,pg-,bd-,rxnvmc-,pvm=1,vd-,hddj-,cxpsv-,qdjh=4,hqj-,kpzv=4,kn=9,fpn=7,kkbf-,zbss-,vcd=3,mfj=3,dj=7,dlpmn-,lhg-,bm=1,gr=3,kkbf-,zhfq-,hq=6,mtcr=3,fqd=4,qp-,vvz=3,pd=3,dxknq-,mmmc-,zn=4,vf-,sf-,kh=4,mx-,jd-,nc=3,ckzcrf-,lr=2,dsz-,mxdx-,csbj-,czv=3,btfm-,mrb-,cph=8,pdg=1,zr-,fsqh-,mhrm-,nzgt=1,bc=4,sgg=3,pdg=6,ccq=4,rklr=1,zbss-,lsnmn=5,gf=8,ccq=7,qc=6,zlf-,lksd-,br=3,gj-,mx=5,cq=3,tqcf-,xrb-,nkzv=6,bc=2,mb=8,qkzfg-,tx-,mdpl=8,znx-,zt=8,xqnlt-,zlksl-,trf-,xkn=5,xsj=6,mhc=4,fpn=6,hvmdmh-,bs-,xk=2,kmb-,prf=6,tjc=9,vzzvn-,vv=9,mgm-,jv-,jc=4,hm-,xkn-,mhb-,zbnzll-,vsz=7,jphfq-,fsl=4,mhrm=7,nj-,kpg-,vnv=1,xxsbv=4,bgzhqx=3,bnb-,gv-,drl-,gfg=5,zc-,gvz=6,pbsr=2,lmh-,ggkxb=5,bmpq=2,bpxhkz-,tqm=2,zhf=4,zc-,xgsz-,ckzcrf=3,sqsb=2,hr=7,pbsr-,dcb=6,xxsbv=1,mj-,tjbrb-,nr=1,pv-,kg=4,mzgj-,sgg-,jsp-,zxb=7,nsp-,trf=7,zt=3,hg-,tk=3,mgf-,vb-,qr-,zxfg-,bs=4,tjc-,dlpmn=9,qsm=1,gxb-,lqx=4,jrbk-,hzm-,jtrsqg=9,dnb=3,tvbv=3,hq=5,vmxjr-,kctn=8,krvb=2,qr-,rmhbz-,ps-,nxkmn-,gmm-,bjpd=8,rr=6,gpn=4,vtv=1,cgb-,dpb-,gsqglz-,hkc-,gbh-,cph-,vf-,tpf-,jx-,hjd=3,qkzfg=8,cg=8,nrf-,hs=4,nzgqc-,nd=8,lmh-,hs=4,tz-,rgf-,mnvm-,nd-,mfj-,qlz=5,dsz-,hkc-,vcd=2,bmpq-,cqsnhr-,zq=7,hm-,dd=9,bmpq=7,gpn-,ptpf-,zskvv-,fpc=4,dfgpj-,tk-,jv=7,tlx-,mvsq-,cm=2,pfr=2,srx=8,nd-,rrjfx=6,dkgk=2,thh=7,gf=9,kmb-,pvm=9,rklr=6,zhf=8,qlvt=6,snj-,gckt=9,ch-,jttps=4,kq=5,sdt=2,dffh=8,mmmc=7,lx=2,thh=2,ch-,bdl=7,vzzvn=2,psh=4,kkbf-,mgd-,cxp-,gsqglz=7,hkc=5,pnd=2,dj-,gxb=9,gz-,jb-,tlx-,tns=9,lksd=4,npc=3,bsd=7,mb-,zr=1,hddj=9,bv=4,mfj=8,glz-,pc-,tqq=9,mjpx=2,ftnj-,xqnlt-,qlgm-,bm-,vhc=1,rpm=5,czv=3,tdfj-,zc-,hjd=2,mdpl=4,zq-,dxknq=2,cds-,kh-,ccq-,rh=8,nj-,zf=4,cg-,bn-,znx-,rmn=7,lczz-,bc=3,fp=6,zv-,bdxhj-,xk=9,npc-,ljv=5,dq-,bm=4,nzgqc=1,jzz=1,dsz-,qlszt-,zprvk=9,hcx=5,pnd=5,xfft=8,cx-,gqstb-,jpd=8,tgl-,ld=8,tpf=8,ldq=6,nsp=4,sfb=2,kctn=1,gzglg-,xrb=6,jsp=9,nzqmkk=1,gcn-,rnh-,knpt=9,fh-,nvrb=6,nkzv-,tpf-,xzd=4,cx-,fhg=2,hcx-,ds-,kpzv-,npc-,fh=5,ntl=7,glr-,fsqh=7,rrjfx-,zsk=6,bdxhj=4,rnk-,bk=9,cds-,xsj=9,tns-,cq-,vzzvn=2,zhf=2,ggr-,nc-,pzcx=7,cgl-,mtcr=7,mhrm-,ldq-,fh-,pdg=3,rv-,vtt=4,tgl-,qdjh-,bn-,ls-,fb=2,cc=7,zmzr-,zv-,dkgk-,lmj=7,zmmzd=6,ftf=4,npc=8,pf=1,vmxjr-,cds-,lsnmn-,jxl=5,mmmc-,xxg=5,tg-,rp-,rvd=7,nlsz=8,lbp-,vbz=3,pstjdj-,rvpp-,kq=2,gfg=5,qsm-,hgfhk-,cxpsv-,zl-,krqsb-,nvrg=4,gzv=6,thh=5,kz=5,lmv-,lznhkq=9,dmmv-,jxl=5,jbh=1,jphfq-,qdk=3,jbh=2,jtvcd-,qsm=1,nrf=2,zz-,fsl=7,fjbhsc-,zxr-,hjd=4,zbss-,krvb-,thp-,ctc-,klcm=7,kjl-,tkjhs-,nkzv=3,pbsr-,zhf-,dcb-,fnps=8,fg-,nxkmn-,cds-,cvk-,xk-,qlszt=1,qb-,sbcq=2,sth-,lznhkq-,rh-,fp-,nlsz-,vmxjr=8,rnk-,gz=6,fpn=2,cg-,btfm-,bml=6,zskvv=8,gbh=3,fgj=9,zs-,qdjh-,qlszt-,nn=6,gd=6,vf-,hqb-,zz=8,zprvk-,kpzv-,gfg-,tv=4,trf=4,ssz=2,xm-,gvz=6,tkhd-,nffg=2,rnk=3,rnh-,xgzm=2,lvv-,znf-,vcd-,jsp-,qbh=4,kkk=2,cz=7,srp=8,vv=9,bdxhj-,krqsb=2,dq-,pf=2,sts-,rh-,zsz=3,mgm=5,qxqq=9,zlksl=6,hbk-,np-,zn-,kvj-,rxnvmc=9,zmzr=7,gsqglz-,xljlkv=3,nfgghx-,qxqq=5,xrb-,fg=2,xvv=5,jxl=3,ktdfd=8,hbk-,ps=3,gmm-,sfb-,hsdzn-,cxp=1,vg-,ls-,bnb-,tf=8,bjpd=5,xgzm=2,pq=4,cx-,mtcr-,bml=2,fz=1,jc=7,tpf-,qz=7,hr-,lmj=4,rp-,khqs=1,vsz=9,zmzr=5,ksj=4,cqsnhr=3,fhg-,kkk-,rf-,zn-,vhc-,cc=4,rs=6,rtdlr-,tns-,cc=3,kpg=5,vb-,bmdc-,js=7,rnh=9,ptpf-,bc=6,kvj=7,dxl-,ggkxb-,zxr=6,hxr=8,nrf=2,kdrq-,xqnlt-,xxsbv-,zlf=8,zr=9,bcs-,br=6,lb-,qf-,kpg-,ftf=4,znf-,cds-,ss=9,khqs=4,cj-,ftnj=3,xxg=3,vg=3,qbh=4,thp=7,ll-,sts-,rv=6,mnzlc-,tz=3,jm-,snj-,hzm=1,rxnvmc=2,pq-,nlsz-,zf=1,pf=1,khqs-,bf=3,kh-,cz=2,kvj=9,srp-,kpg-,tqq-,bnb-,np-,ggzx-,rbf=3,mfg=2,lhg=7,sxnb=8,fgj=8,tqm-,sth-,qlvt-,mb-,bml-,rtdlr-,bsr=6,knpt-,tqcf=1,prf=1,cdtm-,tjbrb-,dcb=1,mfg-,tkjhs=4,zxb=2,xl=4,gj-,pd-,lzg-,pt=3,tlx-,fjtbvs=3,nzqmkk=6,mvsq-,rd-,cph=1,tjbrb=8,lhg=8,pstjdj-,dd=2,ggkxb-,gsqglz=5,lzg-,jv-,pt-,hs=3,xcn=1,kdrq=1,xsj=5,ds=7,hbbh=6,zf-,tqm-,hjd=8,qlz-,cvk=3,fz=9,bd-,gd=7,ll-,zp-,kctn-,fsqh-,zt=8,mxdx=8,lzg=6,rxnvmc-,zbss-,qr-,jb-,ds=4,vt-,ps=6,kzt-,vcd=3,xt-,vg=5,psh-,mvsq=1,ggr-,ch=8,cgb=6,vcjv=3,pvm-,vklt=4,gxb=2,tz=3,blvg-,kvj-,lmcr-,sbcq-,xzd=6,rrx=8,shllq=7,lhg=5,ggr=9,ksn-,spln=1,zv-,qz-,tkhd-,mnvm-,jxl=6,dfgpj-,cm=2,zsz-,mj=8,dh-,vj=1,vp=4,hn-,pbsr=1,sqsb-,ktdfd=5,kpzv=7,vcd-,nhzr-,jx=8,lv-,bm=6,hm-,knpt=2,tg-,pzcx=6,hs-,cnr=9,bml=9,xhxb-,vp-,mvh-,kq=3,mqg-,vvv=2,fh=3,hgfhk-,fmzk-,nmbrj=5,dfgpj-,xm-,qkzfg-,zv-,bk=2,vmh=1,nvrb-,bdxhj-,nlsz=3,mpzb=9,ggzx-,hxr-,qvzgl-,xzd-,ksj-,kg=8,mnzlc=9,nvrg-,ndvtb-,xqnlt-,lmh-,js=5,xltsh-,bblmtm-,vzzvn=7,fh-,zdn=1,lht-,nk=8,qs=4,sqj-,srp=2,lv=5,lsnmn=6,rgf-,vt-,ftnj=5,fb-,nxhd-,znf-,snj=7,khqs=8,sgg=3,gvz=4,fg=8,hqj-,gzglg-,sfvcm=4,ndvtb=8,rgf-,sqj=8,tqcf=1,cdg-,vjqxp-,lvv=6,rj-,nmbrj-,rt=1,dxl-,mlg=4,vvv-,gd=2,vkxnmt-,pt=1,gpn-,tlx=4,gf=4,nxhd=4,qknsk=8,mdpl=8,bfj-,ftnj=9,khqs=8,gmb=4,pdg=5,zhf=3,tb-,nkzv-,zp-,fg=6,bml-,hddj-,hkc=7,kjl=1,sts-,jn-,hnd=4,kz=8,fqxhfv-,kv=9,rklr-,gjqb-,zz-,glz-,gr=4,fnps-,zc-,fjtbvs-,rvpp-,bc-,hqj-,rhpplz=3,zg=2,ksj-,mhrm=3,xl=3,jb-,br=6,gmn-,gjqb=9,vtt-,kh=5,zskvv-,csh-,ccq-,mx=8,mmk=4,vtt-,lksd-,rhpplz-,knpt=9,tns-,htkzr-,pbq=5,qdjh-,xfft-,mmk-,fgj-,sqj-,lb=5,sgg=3,cdtm=1,hbk-,thp=8,pnd-,vvv=4,qlk-,glr-,jv-,ggr-,nc=7,vbz-,tkhd-,dbcf-,nhzr=1,cm-,bmdc-,zv=7,vv=6,ktdfd=6,dq=1,xq=3,fmzk-,ksn-,cph=3,jtvcd=5,xt-,xq=3,bqlk-,rj-,hsdzn-,thh=9,bml=2,hgfhk=9,zbnzll=6,zgx-,kklj=4,nzqmkk-,hvmdmh-,jd-,hkc=4,cx-,zq-,pc=4,ls-,jrbk=7,qvzgl=6,znx-,rf=1,dkgk-,ktdfd-,cc-,fqxhfv-,lksd-,mhb-,dl=9,vtt-,jp=2,crq-,gpkk=9,lq=4,jttps=3,cz-,czv-,gqstb-,gf=3,vvv-,pd=8,hdk-,tqtg=8,jbh-,vmxjr=2,pq=1,sqj-,jc=7,qc=4,mgf=6,qhb=1,vkxnmt=3,kkbf=7,kgxp=1,tkhd=5,krqsb=8,bblmtm=2,vt=8,nsp-,mj-,pfr=3,kn-,nzgt=2,lhg-,rtr-,mqg-,lqx=6,dnf-,kv=7,cq-,mlg=8,rh=7,lfns=5,dbcf=8,xvv-,csbj-,bqlk=7,kjl=7,zv=4,xq=7,rmhbz-,fjpt-,xn-,ktdfd-,mvh-,vcjv-,dplfr-,tqcf=7,tnq=2,cxpsv=2,kklj-,ggkxb-,vzzvn=7,hvmdmh-,mfj=7,gd=1,ggr-,rp=3,mnvm=1,rgf=7,ksn-,lb-,nn-,rs=9,gmb-,cxpsv-,qr=3,qlszt=5,jp-,np=7,nvrg=4,zbss=8,vkxnmt=1,cx-,gcn=4,mvsq-,fmc=5,qkzfg-,ggzx=3,nkzv-,zf=5,csh-,krqsb=4,hdk=7,gj=4,kpzv=8,sxnb=4,dxknq=2,qlvt=4,qdjh=2,rxct=9,zp-,kn-,dpb=8,csbj-,lksd-,qknsk-,rxnvmc=2,pnd-,kvj-,pd-,bqlk-,ktdfd=6,rrjfx=7,dkgk-,fh=1,zsk-,hddj=3,qlszt-,fgj=8,cqsnhr-,bmpq=6,tg-,mpzb-,qz-,kh-,tkhd=1,jzp=2,gfg-,rnh=2,ftf-,qp-,fpn-,gjqb-,hvmdmh=6,hm-,qc-,drl=5,xp-,rmhbz=3,cg=7,tns=7,fsl=1,fnps=9,tb-,jrd-,jx-,qf=8,kpg=9,fgj=2,vv=4,qxqq=2,xfft=4,fmdf-,nxkmn=6,qp=4,ggr=5,mpzb=8,bpxhkz=5,lksd-,lhg=4,csm-,jtrsqg-,npc=6,btfm-,ffnsd-,bh-,dbcf=3,rgf=3,vvv-,ldq-,vnv-,mzgj-,xkn=8,jxl=3,zmzr=6,lhg-,hdk=2,lb=2,nvrb-,cc-,ljv=5,gvz=5,hs-,gpn-,xqnlt=6,np-,mx=8,czv=6,pg=8,pbsr-,bs=4,gr-,gf-,qknsk=6,bqlk=1,nlndb-,dkgk=1,fsl-,rvd=5,fqm-,ckzcrf-,nvrb=3,xcn=9,xzd=6,hxr-,br=1,mlq=3,qf-,zgx=8,dnf-,vcd-,fnps-,qhb-,nc=6,lmh=8,dplfr-,vsz-,pv=3,ck-,rtdlr=8,vp-,tjc-,knpt=6,nn-,jbh-,xt=7,xgzm=1,bjpd-,lm-,fsp-,pnd-,sts-,vmh-,jttps=2,dl=4,bdl-,vhc-,btfm-,mlq-,xrb=9,vtv-,cmmntt-,mmmc=9,cm=3,qknsk=2,jv-,zs=6,gz=2,hm-,mnzlc=2,fp-,kf-,dj=8,zq-,pzcx=5,rh=6,vgbp=9,zl-,pbsr=2,rqrq=8,zsk=6,rvd-,bs=6,bdxhj=3,mpn-,rnh-,jpd=3,jzp=4,hr-,nk=3,bgzhqx-,tqq=9,bv=4,nlndb-,zlf=4,hsdzn-,mdpl-,czv=9,tkhd=6,qlszt=3,hd-,qxqq=7,nvrg=2,fsqh-,vmxg=5,xkn=6,vmxg=3,pd-,vxt=8,rf-,mhb-,cgb-,jv-,krqsb=1,jc=4,qsm-,mgm=3,zmmzd-,hg-,qdk-,pstjdj=8,fqd-,nd-,hjd=8,cgl-,rrjfx-,mfj-,xxsbv=8,rbf=7,bml-,mhc-,dcb-,gj-,hd-,gpkk=9,nzgqc=7,sth-,zq=9,cm-,mpn-,nz-,fjtbvs=4,zhr-,bd-,xhxb=2,mrb-,vnv=8,nn-,ffnsd=8,ksj=8,xn-,sxnb=6,dd-,jc-,jbh-,tx-,krqsb=8,cgb-,bmdc=8,qz=9,nvrb=4,nn=1,lv=4,prf-,sbcq=1,nffg-,hq-,xn-,zdn-,xvv=2,zsjh-,hqb=4,cc=6,xhxb-,ssz=3,lq-,lvv=7,dfgpj=6,qhb-,vjqxp=2,vmh-,np-,nlndb-,dnb-,dnb=9,kz=1,jzp=9,vtt-,lhg=5,fh=3,mmmc=3,jc-,cx-,vvl-,rvd-,cdtm=5,pzmd=1,xs-,rvd=2,ndvtb-,tnm=7,ptpf=7,hbk=7,sqj-,fsn=4,xljlkv=5,bdxhj=4,vvl=2,ggkxb=7,hsdzn-,kg=8,crq-,vmxg-,cxpsv-,hjd-,zn-,gmn-,nvrg-,cnr=4,jhc-,xxg-,crq=7,sdq-,xgsz=9,sbcq-,kg-,kkbf-,vg=2,fsp-,hvttcx-,zlksl=2,zl=5,fpn=4,bblmtm=1,qhb-,qkzfg-,ccq-,kdrq=9,gpkk=9,pp-,zc=8,vf-,spln-,nmbrj=5,dkgk-,mzgj-,fpc-,knv-,cz=4,mhb-,bml-,dfgpj-,zs=8,kklj-,lsnmn=9,mzgj-,cgl-,xzd-,dxknq=2,mpzb=5,mpzb-,nvrb=4,hdk=1,dj-,mmmc-,qhb-,fsp=5,cm-,qk-,fqd-,blvg=4,ch=5,dd-,rnk-,dmmv-,krqsb-,vhc-,qz-,vbz=4,mgm-,vf-,dqb-,zmzr=2,ggkxb-,dzc-,tpf=2,dmmv=4,crq=9,hq-,rklr-,cnr-,dbcf=3,nz-,kpzv=5,hs=6,ftnj-,cm=3,xhpg=6,jsp=8,dd-,bs=2,dpb-,mmk-,hnd=4,jrd=9,pc-,rnh=5,tlx-,nzqmkk-,vv-,tkhd=9,jzp-,nlsz-,jzp-,qs=8,qxn=1,mpzb-,vmxjr-,lr=1,tjc=8,lb-,znf-,sgg=2,fh=4,hn-,glz-,hd-,vb=1,mx-,jxl-,csbj=5,ndvtb-,xhxb-,cj-,xhxb=6,gcn-,dplfr=8,dxl-,bcs=9,spln-,ls=9,ll=4,vd-,rnd-,br-,zhfq=3,gf-,qc=5,mnzlc-,vmh=8,gpkk-,fmzk=8,vvl-,zz-,rpm-,tdfj-,bjpd-,bcs=1,bm-,nn=6,fjtbvs-,zbss-,tlx=8,rbf=4,pnd-,mgf-,vpk=9,cdtm=2,mmmc-,vp=8,tgl=4,nc-,lbp-,bmdc=4,pbsr-,sdq=2,tnq-,lzg=7,ndvtb-,zr-,kkk=1,jrbk-,gbh-,pf-,lksd=4,sts-,nxhd=8,dsz-,lbp=4,vtt-,vj-,qlgm=4,gj=3,lfns=3,tq-,cmmntt-,qlgm=1,glr=2,mtcr-,zf-,ftnj=5,nz-,zsk=3,xltsh-,xgsz-,jv-,hqb=7,lbp-,tkhd-,xvv-,qs-,mgx-,gsqglz=8,ck=7,zdn=7,fb=6,rhg-,knv=4,ccq-,tdfj=5,fnps-,kpg-,vsz=2,blvg-,lbp=2,mxdx-,zdn-,rgf=3,fsp-,hddj-,qf-,lksd-,gqstb=5,qlszt=4,bdxhj-,nr=3,dq=1,rrx-,hr=1,xltsh=6,jrbk=6,cdg=3,rrx=3,zsk-,tg-,jtvcd=8,zmmzd=6,zs=9,sgg-,gxb=5,hnd=7,dcb=8,kvj-,rgf-,jpm=7,vsz=6,zgx=1,mgx-,bml=2,qlvt=2,pfr=8,qs=8,ggr-,hd=3,vj-,mpzb-,qdjh-,ndvtb-,lq-,jhc=4,vv-,tc=7,tv=1,vxt=6,hs-,thp-,jpm=4,mrb=8,nkzv=3,zs-,hg=4,zq=5,qr-,vv=2,drl=9,xgzm-,srp-,mpzb=1,knpt-,sbcq-,xxg-,mgm-,lj-,qxqq-,ls-,rp=6,rqrq=1,srp=1,pm=7,tc-,qvzgl=2,kn-,vpk-,qf-,npc=3,cj-,qkzfg-,qr=7,hbbh-,kg=9,nj=9,srqx=1,hgfhk=9,hv=1,gmn=1,tc=2,sdt=9,rd-,zsz=7,knpt=3,gckt=7,dplfr=8,ptpf-,fqd-,zc-,hnd=8,rmhbz=2,htkzr=2,glz=6,nsp-,tg-,fhg=9,mlq-,gvz-,rr=3,fpn-,pt-,fp-,zz=9,cg-,nsdg-,mlq-,zdn-,jhc=7,kh=3,zhfq=5,mnzlc=4,fsn-,rhpplz-,vv-,pbsr-,qknsk=5,drl-,dxknq=2,snj-,glz-,zmmzd=4,xhxb-,fb-,zxb-,knpt=9,cmmntt=2,gzglg-,bk-,qntl-,hzm=6,qc-,mx-,mpzb=5,hs=4,qknsk=2,jx=2,vnv=7,kz-,jsp-,kf-,pfr-,rtr=1,nzgqc=2,tjbrb=3,fjtbvs=4,rnk=5,tb-,zz=7,lmv=4,xfft=3,jbh-,ttcjrf=5,fnps-,rj=7,dffh-,kq-,zhr=4,zbnzll-,mgx=8,rt=8,vcjv=3,gzv-,fh-,bdxhj-,xgsz=1,jrd-,vr-,tnq=3,lfns=5,hgfhk-,rnh=5,dkgk-,tjc-,ldq-,gd=6,nnrl-,crq=8,ckzcrf=6,vpk-,zc-,tx=1,mx-,zz=2,gmn=8,mqg-,rhg-,snj=1,zz=3,tjbrb-,xzd-,sdq=2,ctc=8,cj-,ch=1,rrx=7,js=9,tqtg=4,vv=1,sbcq-,fg=7,fsn-,qc=7,hd-,ttcjrf-,trf=6,nzgt-,ds=2,pd-,tnq=3,xgsz-,ljv-,trf-,kh=1,ck=3,qkzfg-,sfvcm=9,xq=6,tnq=1,rnd=5,thh-,htkzr-,sxnb=7,glr-,qdjh-,thp=9,mgf=4,hvttcx=5,xhpg=2,dlpmn-,dqb-,lmh=4,rvpp=4,kpg=5,mnvm=6,thp=9,jx=3,xl=2,gj=9,tx-,pd=4,vcjv-,vpk=8,pf-,mfg-,dbcf=2,kmb=9,lm=6,xljlkv=4,gpkk=4,lq=6,gzv-,zlf=6,jrbk=6,crq=7,zsz-,rd=1,gckt=8,qb=4,vr=9,ggzx=5,rxct-,fg-,vklt=8,lsnmn=1,zgx=1,fmzk=9,zg=4,lvv-,dh-,gpkk-,knpt-,cq=8,cgb-,fpn-,bd=7,rt-,nzgqc=7,bs=5,zsk=6,mrb-,csh-,kz-,btfm-,sfb-,fpn=1,vmh-,brnp-,kn=4,fqm=3,fnps=5,zsk-,ksj=4,hqj=6,qdlprm-,rpm-,br-,pv=6,nzgqc-,jc-,kv=9,ftf-,nxhd-,kpg-,cph-,nmbrj-,kdrq=9,htkzr=7,hvmdmh-,ntl-,jnggl-,fhg=7,lm-,sth-,jm=9,kkbf=5,sfvcm-,xk=1,thp=5,vtv=2,zmzr-,nlndb=3,bsr-,tnq-,xltsh=5,bmdc=6,htkzr-,nfgghx-,lr-,prf-,tns-,psh=4,dmmv=4,jpd=5,tlx=5,tk-,bk=8,rrx-,qz=5,hcx-,dplfr-,tqtg=8,rtdlr-,bn=5,gpn-,grr=3,txzv-,vtt=4,gpkk=9,gz=2,hgfhk-,mnzlc-,vgkx-,rtdlr=9,hbbh=8,gmn-,vvz=7,lb-,lksd-,jsp-,mpn-,kn=5,vb-,fjpt=4,fmzk=5,mrb=4,pnd-,vvl=2,qr=8,psh-,nvrg-,dpb=8,bsr-,vkxnmt-,krqsb-,brnp=2,gz=7,lksd=1,dcb-,srqx=2,vj=2,xgsz=9,vmxg-,rnd-,tnm=3,bmpq=4,glr-,pxc=1,zf-,fpn-,fpc-,zq-,kdrq-,bc=5,rhg-,kgxp=2,mfj-,qc-,xltsh=4,dxl-,nlndb-,fjtbvs-,prf=9,xcn-,vnv-,blvg-,ptpf-,qhb-,zprvk-,hgfhk-,xm=8,hdk=6,dj=7,rmn=8,kkbf-,hm-,pnd-,xl=2,mx-,qk=2,zbss-,cnr-,mgx=8,spln-,khqs=1,tlx=5,tnq=2,zc=7,tjbrb-,zmzr=3,jzz=8,lhg-,ttcjrf=9,dsz-,cm=1,csbj=2,xljlkv=6,dplfr=4,ss-,cmmntt-,bv=3,czv-,ctc-,rvpp=8,lqx=1,xcn-,kzt-,mb=7,lht=8,bdl=1,rh-,zhfq=5,jb-,pt=4,pp=4,rj-,cmmntt=8,vbz=7,pt=1,zl=6,vg-,tjc-,tq=7,xzd=9,hvttcx=9,ssz=4,tf-,pzmd-,rpm=6,qdk-,lq-,xvv=9,zprvk-,znf=3,ffnsd-,ccq=9,rtdlr=3,vpk-,kjl=4,ds=6,nlsz=3,kkbf=2,kvj=5,kpzv=3,pf=2,csm-,gzglg-,nffg-,fdsfpx-,dxl-,klcm-,ffnsd-,dbs=2,lht-,nsp-,rr=5,kdrq-,zz=7,ggr=2,kctn=9,fnps=7,lmh=3,tvbv=7",X2=`.|...\\....
+.O...#.....O.OO.O##......O...#..#..O.#.....O.#O.O.##O.O.OO.OOOO...#O.#.O....O.#..O........#..O..OOO.`,F7="rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7",f7="kf=9,gmn=6,sfvcm=2,cm-,dqb-,vxt=6,mnvm-,jd=7,glz=6,pfr-,kzt=2,nk=6,lsnmn=7,lx-,nz=5,rpm-,nz=6,fsn-,dl=1,jb=5,bd=3,zhr=1,qkzfg=6,vt=1,qsm=5,jtvcd=2,fsp-,sfvcm=7,vklt-,hd=9,vv-,cm-,jzz=2,pt-,pd=6,hvttcx-,dplfr-,qk-,pf=3,gsqglz-,mhb-,zsk-,nn-,jd-,cmmntt-,xsj=5,kmb-,gmn=8,bs-,srp=5,csh=6,fqm=2,dq-,dpb=5,gz=6,cqsnhr=4,mgm-,rqrq=7,xzd=2,krvb=8,fgj-,jzz-,vmxg=1,rxnvmc=8,zn-,cph=9,dqb=4,vcd-,sf-,mb-,dkgk-,bcs=6,nvrb-,jpd-,zf-,mxdx=8,bjpd-,ftf-,jzz=5,gmb=2,qbh-,sqj-,fqd-,ktdfd-,hnd=9,ch=1,lmv-,hddj-,zxfg=9,gfg-,cgb-,gmb-,nzgt-,qsm-,dplfr=1,sf-,mgd-,fgj-,gz=7,qsm-,vv=5,hbk-,nj=3,lhg-,bnb-,rrx-,nhzr=7,jn=4,xkn-,knpt-,dsz=9,jpd=4,vsz-,lq-,bpxhkz=8,cgb-,vb-,kkbf-,cvk-,tjbrb-,nnrl=4,zc=6,tq=3,rrjfx=8,lx=3,br-,sth-,kn=4,kklj=3,xljlkv=1,jnggl-,mmmc=3,jphfq=5,hxr=1,xhxb-,bd-,nnrl=3,rxnvmc-,hr-,pzcx-,jpm=8,zprvk-,vvl-,bmpq-,jrd=9,sxnb=7,nrf=9,zlf-,gmn=5,gsqglz=4,vvv-,ptpf=4,hqb=9,qknsk-,br=8,jrd-,trf-,bjpd=3,bh=1,tvbv=3,rhpplz=3,lmh-,rtr=6,lm-,pm=2,xn=8,bdl-,zf=9,fg-,tnm=9,fg-,gvz=2,jnggl-,rbf-,jd=2,bsd=2,gjqb=1,nzgt=2,gzv-,vcjv=1,kvj=9,vvz=8,gpkk-,htkzr-,vkxnmt-,fqd-,fpn=8,rhg-,ffnsd=9,ds-,tc-,gsqglz-,tjbrb=6,bcs=8,zsjh=4,mhrm-,kvj-,zmmzd=5,lksd=9,zp-,lm=3,nffg=6,cnr=5,znf-,csh=3,jc=6,gzglg=6,rrjfx=8,lx=3,gz=7,ldq-,jsp-,dnf-,qlgm-,xk-,hvmdmh-,ptpf=8,xvv-,gvz-,bsd-,gcn=3,fsqh=7,jphfq=1,vmh-,bmpq-,zlksl=9,nj-,mgf-,zbnzll-,bdxhj-,bc=2,vbz-,fsl-,zp-,lht=9,dcb=8,sqsb-,dd=3,tx=7,mmk=5,lq=3,jphfq=7,fqm-,br-,mgm-,cds=8,zskvv=5,fqm=3,zsk-,zprvk=2,zprvk-,ttcjrf-,ksj=3,qlszt=4,qlvt-,ls=1,rbf=6,zlf-,ljv-,rv-,pvm-,nsdg=9,psh=1,tk=7,qknsk=9,zvg=4,btfm=2,rxct-,rmn=5,dsz-,qdk-,rhpplz-,zbss-,dxknq-,rp-,rh-,fhg=5,mlq-,xqnlt=8,pzcx-,lmj-,ssz-,hdk=6,gj-,vtv=2,tx=6,vcd-,lczz=4,lb=6,lj-,rt-,nz-,dnb-,rvpp-,zxb=9,pv=3,ftf-,ppmdf-,rmhbz=8,ggr=3,kvj-,ksn-,tv=3,btfm=9,np-,rr-,bdxhj=5,zz=4,mnzlc=4,xsj=3,dffh-,ksj-,bsr=4,cds-,cnr-,rnd-,vt-,ll=5,fpc-,xm-,jsp=2,mvsq-,fnps=8,cq=9,tqcf-,cdg-,nd-,jxl=9,pf=2,tkhd-,dxl=6,hn-,ckzcrf-,xl=1,qb=6,vjqxp=1,ssz=7,mnvm=6,zxfg-,cxpsv=1,sbcq=1,pm=6,kvj=8,ffnsd=5,lbp=8,dbcf-,cqsnhr=1,ltqj-,cph-,mrb-,fsp-,vbz=4,tkhd=3,sfvcm=5,ksrrz-,lr-,tq=6,lmj-,bfj-,qs-,zmzr=7,qdlprm=6,rj-,zsz=6,vr=4,nr=9,kctn=9,lmcr-,mj=2,fmc=9,tkjhs-,bmpq=4,gr=7,znx-,lfns=5,mvh=4,rnk=6,dpb=4,bc-,cxpsv=2,tqtg=7,zt-,nsp=7,jtvcd=1,znf-,nrf=7,jm=4,dnf-,vt-,pv-,lmh=2,jzz=5,bs=3,rvpp-,vzzvn=8,nzgt=2,cdtm-,mnzlc-,hddj-,lm=3,knv=1,gqstb-,zskvv=6,hbk=7,dqb=6,tqcf-,gxb=2,vjqxp-,gf=7,kkbf=6,knv=5,fz=3,jrd-,sdt-,mmk=9,xq=8,ltqj-,rtdlr-,fhg-,fsqh-,csh-,rtdlr-,vb=1,vgkx-,xrb=9,ggzx-,hv=1,zprvk-,xm-,zmzr-,js=4,rhg=1,qbh=8,mhc=5,tjc-,vv-,lj=5,gqstb-,ck=6,znx-,zt-,hdk=1,ggzx=2,kklj=7,grr=5,pg=5,gzglg-,fh-,kvj-,rtr=2,gfg-,mvsq=8,zmzr-,mgm-,lj-,gvz-,cz=3,vtt-,bsd=1,blvg=2,mtcr-,bgzhqx=6,lht=5,xn=5,fqd=6,cq-,zmmzd-,cz=9,glr=5,pp=2,bqlk=6,gsqglz-,rtr-,jn-,vcjv-,mmk=6,gzv=8,kmb=6,qntl-,jm-,zgx-,rmn-,dcb=2,hvttcx=5,cgb-,zvg-,sxnb-,qsm=2,mnvm=1,lv-,nsdg-,jrbk-,cgb-,spln=8,rnh-,bjpd-,mvh-,zhr-,mlq=8,mpn=3,mhc-,lv=3,mx-,bgzhqx-,gzv=5,bk=4,rxnvmc=7,qlgm-,fqd=4,cds=7,vvl=2,mvh-,zr=8,cnr=7,zhr-,ckzcrf=5,bs-,rf-,bsd-,gj-,jnggl=4,jzp=7,gvz=8,bgzhqx-,mqg=5,zsz=6,mvh-,vcjv-,tc-,zsjh=2,xn-,bc-,xsj=2,fmzk-,mjpx=2,rnh=8,zz-,rp=9,fsqh=9,rpm=5,tpf=3,bblmtm-,xxsbv-,ctc-,gmb=5,jhc=9,vkxnmt=5,jrd=7,gmb=5,dsz-,qs-,gzv-,rrjfx-,vr-,txzv=2,ps-,vp=9,fp=5,kz=7,qbh=7,mlq-,pf-,kq=3,dj-,xzd-,vp=3,thh=1,xp-,bnb=9,bk=4,csh=7,rrx-,kz=6,kklj-,tvbv-,lj=3,rf=6,vg=8,fb=1,mlq=9,rvd=2,mlq=9,mmmc=5,vnv-,cgl-,gmb-,jtrsqg-,vmxjr-,lb-,knv-,qf=5,lmcr-,vj-,qkzfg=5,lmj=9,mgm-,prf=7,tqcf=6,rhg-,hkc=7,ldq=1,rnh-,ldq=6,pp=7,bml=8,mnzlc-,nsdg-,nvrb-,hgfhk=5,gjqb=6,xm-,hvttcx=7,pzcx=9,qz=8,pdg=4,ttcjrf=5,bh=3,tqcf=7,tlx=8,vb-,xrb=9,hqb=9,qb=7,brnp=7,bcs-,jhc=7,sdq=5,tvbv=7,hvttcx=2,vcjv-,hcx-,gzglg-,lqx=7,rxct=2,srx=5,kkbf=6,zsk-,tjc=4,bv=1,nxhd-,tjbrb-,jbh-,qlk-,vbz=2,pfr=7,nzqmkk=8,pfr-,mlg=9,ld=5,mzgj=5,mpn-,tpf=9,mb-,fsn-,nzqmkk-,gfg-,kgxp=2,hvmdmh=8,mb=5,ksrrz-,jpm=3,jx-,kq-,jbh-,vcd=3,nlsz=6,mjpx=1,crq-,lq=7,nzgt=5,jv-,lv-,rxnvmc=3,pp-,dplfr-,rnd=5,sfb=2,xqnlt=7,xgsz=6,vr-,jttps=5,vd-,kdrq=7,khqs=3,brnp=3,ck=2,znf=4,pbsr=8,qdlprm=1,ljv-,bsr-,tk=8,rpbgt=7,xgzm-,gcn=8,nsdg=7,sf=8,bcs=9,zskvv=3,nnrl-,nrf-,nvrb=7,ptpf-,nkzv-,ktdfd=7,rr-,dh-,jm=3,vcjv-,mmk-,kklj=7,kh=2,xn-,fj=3,tkhd=6,dplfr-,ccq=9,sdq-,zhr-,nsp-,kdrq-,gz-,lqx=7,tc-,sf-,gbh=8,tv=5,bmdc-,sfb=1,nsp=9,srx-,lksd=7,rv-,nsdg=8,hg=1,jtvcd=5,xs-,lv=1,qlz-,sbcq=9,npc-,tlx-,vpk-,gpkk-,xn-,tv-,bv-,ppmdf=9,zhr-,srp=4,hvmdmh-,zsk-,zv-,trf=2,gd-,fp-,qlk-,qs=1,jzp-,lx-,rvpp-,zsk-,cvk-,npc-,xp-,rxct=2,ggzx-,cgl=8,xgzm=7,rtr=2,txzv=2,kh=8,qlszt=1,jd=6,vr=2,zlf-,gvz=8,gj=5,zt=7,fsp=7,kv-,nz-,jn=3,trf=5,dj-,lq-,jbh-,vzzvn-,gvz-,bm-,jrbk=7,qdk=5,qc=1,bv=2,ccq-,jzp=1,ds-,rmhbz-,qlgm-,zv-,ffnsd-,hv=6,tjbrb-,lht-,dqb=2,vbz=7,blvg=9,tqq-,zs=4,pdg=8,nnrl=4,dxknq=5,qkzfg=3,xgsz-,bf-,dmmv=6,cx=1,pbsr=1,zvg=5,kf=5,xs=6,jx=1,jp=2,kh-,kzt=5,ktdfd-,qf-,hv-,lsnmn-,zz=4,dj=4,ftf-,tq-,mjpx-,kg=1,xltsh=5,dnb=7,vp=5,mhb=6,ch-,thp-,bs-,xltsh=8,jrd-,vvz=2,xk=3,dh=2,jtvcd=2,dj=3,tnm-,fqxhfv=2,rvpp-,bs-,cx=5,zbnzll-,zbss=6,vj-,hgfhk-,nj-,zsk=8,cxpsv=6,kklj-,xkn-,mhc=8,hg-,gjqb=2,kpg=2,dxknq=8,tpz-,dq-,qbh-,nkzv=2,xn-,gqstb=5,qhb=3,knv-,lczz=3,zgx-,gxb=2,zsk-,vzzvn=9,dbcf-,ss=5,fh-,bnb=1,tnm=1,sqsb-,xk=9,gr=7,jrbk-,rbf=5,mhb-,nzqmkk=3,qbh=1,rhg-,hjd-,vgbp=8,mj-,ndvtb-,cq-,kctn-,hn-,vxt=9,sth=1,ttcjrf=9,jm-,vmh-,tkjhs=9,dbs=2,zl-,rj-,hzm=4,tf-,lzg=6,xrb=9,dmmv=1,jc-,fmc=6,vpk=4,qxqq-,dl-,rhpplz=1,qc-,zn-,mgx=2,mhrm=3,qsm=4,xqnlt-,dxl=1,kv-,qkzfg=4,fhg-,gvz-,dbs-,pnd=8,rt=4,kh-,vklt-,vcd-,zsk-,hgfhk-,gjqb=7,xgzm=7,rhg-,cq=8,jzp=2,pc-,np=1,fmzk=4,xhxb-,thh=8,snj-,hvmdmh=2,srp-,hv=3,zv-,ccq=2,fj-,zq=9,tv=8,mqg-,sfb=6,bs-,dxl=3,nlndb=4,psh-,dffh-,btfm=8,sf=7,zbss=6,nj=8,csh-,qp=7,lfns=6,ptpf=9,zbss=8,fjpt-,mfj=9,vvz-,rrx=1,rpm-,qxqq-,xq-,dxl-,fz=2,hgfhk=9,drl-,hd=2,mfg-,xhpg-,qk-,cm-,bblmtm-,xq-,fjpt=8,fqm=6,rhpplz-,vzzvn-,csh=7,ldq-,hxr-,pc-,qr-,fjtbvs=2,nxhd-,zg-,nxhd-,cg=8,hqb-,bmpq-,mgf-,rxct-,nlsz-,zskvv-,rbf-,gjqb-,sth=9,qlz-,bv-,rhpplz=4,qlszt=1,np-,mlg-,shllq-,nj-,zxb=8,zlf-,mj=8,qhb-,kz=3,vf=8,gckt=7,zlksl=6,tx-,mx-,pm-,drl-,bm-,rvpp-,bd=6,mfg-,tgl=5,nz-,bm=8,np-,nj-,dxl=6,zdn=4,rtdlr-,vpk=4,jb-,hqb=5,vzzvn-,bsd-,ftf-,fmdf=4,nhzr=3,ggzx-,jp-,cxp-,fjtbvs-,rhg-,pq=7,fsl-,nz-,mvsq-,rrjfx-,nfgghx=1,bqlk-,qdjh=3,pstjdj=5,xk-,ksj-,jttps-,xgsz-,ck=5,lmcr-,dxknq=7,vp-,xhpg=6,hg-,dh=1,kvj-,ftnj-,cmmntt=9,dj-,zf=9,kklj-,xqnlt=2,lzg-,bpxhkz=9,gz=3,lm=5,zxb-,ljv-,tdfj=1,dbs=1,ljv-,dsz-,csbj-,zg=2,zl-,bc-,xhpg-,hqj=5,pm=1,rgf-,ggzx=2,mnzlc-,nmbrj=2,vmh=7,hzm=5,vd=7,br=1,xvv=7,jzz=8,xk=2,ps-,ch=3,shllq-,nffg=4,qlk=7,rp=7,cz=4,cg=1,gpn=5,pg=1,kmb=8,rp-,bs-,rxct=9,bm-,knpt-,dqb=1,zv=3,jc-,rnh=2,rrjfx=9,kq-,cdtm-,tqcf=7,jbh-,znx-,bn-,fgj=2,rpbgt=1,ltqj=1,dffh-,npc-,fsl=9,bc-,ldq=4,lq=4,lbp=2,sqsb-,fmc-,ftf-,mxdx=9,vnv-,xhpg=3,rf-,js-,rhg-,khqs-,pt=2,mvh-,zs-,fg-,xhxb-,hgfhk-,zhfq-,gmb=3,bn=1,kpg=5,lm=7,jrbk=3,rqrq-,hkc-,prf-,ggzx=6,qxqq=6,dqb=8,rrx-,vhc=1,tpz-,vt-,glz=8,ndvtb-,qlgm-,zf=8,hzm-,trf-,sf-,tx-,cx=4,ggzx-,bm-,dxknq-,sfb=4,mhc-,zmmzd-,vd=8,js=4,tkhd=8,xqnlt=3,nffg=1,vtt=5,ggr-,pg-,jpm=3,nvrb-,pm-,sdq-,bnb=5,rmn-,np=2,ldq=8,sfvcm-,mvh-,fj-,tkjhs=9,bm=2,rhg-,qr-,jd-,gf=7,xl-,gd=8,sgg=5,cm-,qkzfg=9,ckzcrf-,mhc=2,rxct=9,ll=3,dnf=9,tqtg=7,cxpsv=5,fsqh-,hkc-,zhr=3,xgsz-,vj=5,xl=5,tc-,hm-,htkzr=1,gvz=9,tqcf=6,jp-,fh=6,sdt-,pv-,gmm=6,zl=5,fgj=4,pbsr-,gv=7,rj=9,qb=9,tb=2,tvbv-,xgsz=2,gsqglz=6,bpxhkz-,cvk-,fhg=4,mx=4,lbp-,dqb=6,tk=2,hbbh-,gxb=9,jphfq-,tv-,bc-,cmmntt-,cx=1,rtr-,klcm=6,nd=1,qz-,xgsz=6,dxknq-,tnm-,xq-,pbq-,jd=8,qdjh=2,vnv-,ch-,xn-,gqstb-,zhf=9,hkc=6,fsn=9,bsd-,gcn-,gxb=9,kn-,gr-,rvd=3,rms-,rv-,dmmv=5,pg=1,hd-,tz-,ffnsd-,vhc=6,fmc-,nnrl-,qp=3,hdk=8,gvz=3,fjpt-,gqstb-,lmv-,qhb=5,xq=9,qb-,dj-,dbs=7,fdsfpx=9,dxknq-,ktdfd=7,mmmc=2,nj-,nc=6,ll-,gzglg-,hdk-,jd-,xgzm=4,vgkx=1,thp=2,gpkk=2,fjtbvs-,pp=8,kmb-,mpzb-,znf-,krvb=1,ss=1,qc=4,gpkk-,zq-,cgl=8,zsjh=3,mlg-,sbcq=5,srx=1,rp-,mgx-,fsn-,dj=3,kkbf-,jtvcd=4,fmc=9,ndvtb=3,lx=8,vklt=9,nnrl=8,cx=1,zbnzll-,lhg-,kn=4,tns-,bpxhkz-,fpc=6,jx=7,lq-,pf=5,nsp=3,xvv-,nzgqc-,trf=3,pbq-,zg-,nrf-,ppmdf-,jttps=3,xxsbv=4,ls-,zxfg=9,ll-,rf-,dpb-,fh-,znx=3,kf-,lv=3,qxqq-,qxn-,srqx-,mgf-,fmzk-,glr-,bdl-,lmh-,vmh-,zt-,cg=8,knv-,kdrq-,rnh-,rxnvmc=9,jpm=4,zmzr=7,gbh-,nvrg-,qc=6,knpt-,qf-,lmv=7,pvm=8,hddj=6,qlz=2,lmv=3,tvbv=7,dq=4,hddj=4,zskvv-,bdl=3,zg-,gf=8,gzv=1,bh=4,dpb-,fsn=1,ccq=1,fh=6,rxnvmc-,nkzv=5,znf=7,tns=6,hvmdmh=5,tv-,bm=3,qlszt=5,mpzb=1,spln-,ps-,pp-,ll-,bqlk=9,tqm-,fb-,tf-,mpzb-,pm-,kjl-,hn-,qlvt-,fjpt-,vgbp-,xgsz-,fg=2,rpm-,kctn-,nr-,ck-,jd=3,gmn=7,fsqh=3,kq=8,ggzx-,ljv-,zxfg=3,gsqglz=6,fjtbvs=5,cx=4,ctc=9,bn-,tvbv-,nfgghx-,mdpl-,lmh-,bblmtm=7,fsqh=9,kdrq=5,jp-,vr-,thh=1,cm-,rmn=2,cgl-,vhc=4,hzm-,nz-,xn-,fb=6,bgzhqx-,bd-,pq=2,jpd-,fgj=2,zs-,hbk-,ksj=6,vtv-,bmdc=2,mfg=4,rtdlr=4,vcjv=5,ntl-,ksrrz-,pnd-,qxqq-,mvh=8,jphfq-,jpd-,qdlprm=5,glz=9,nn=9,cq=7,rmn=2,rj-,sfb-,mtcr=6,vgkx=7,sqsb=4,kgxp-,vvz=1,jhc=9,mpn=3,hsdzn=4,hs=6,xfft-,qvzgl-,jttps-,fpc=2,bk=5,nnrl=2,rklr-,rvpp=2,hqj=7,knpt-,lmv-,gckt=7,qf-,cph-,jzz-,nlndb-,knpt=2,fsn=4,dd-,pv=6,dfgpj=8,lsnmn-,kdrq=6,zprvk=2,pp-,txzv=9,hr-,bgzhqx=4,jp=7,bdxhj-,cxp-,qc-,sbcq-,hq-,qlz-,rhg-,qxqq-,xp=9,gpkk-,jv=7,hq-,dkgk=8,rrjfx=9,mqg-,khqs-,mj=5,lmcr=1,mzgj=3,dpb=7,zlf-,zbnzll=9,xp-,thp=5,vnv=6,hq-,rv=5,kctn=6,fg=4,tgl-,hnd=2,prf=1,thh=7,kkbf=9,kklj=2,rbf-,rhpplz=3,mdpl-,hqj=3,nsp-,zvg=9,rd=5,rnd-,mfg=8,xl=8,xcn-,qdk-,lmcr=7,ccq=7,nzgt-,vjqxp-,zt-,fhg-,pvm=6,tgl=4,sth=4,nvrg=1,vcjv-,vmh-,lj=1,bmpq=4,qdlprm=3,czv=4,cj-,vvz-,mgd-,cds=5,hnd=2,klcm-,nhzr=9,jtrsqg=7,hvttcx-,krvb=8,nzgqc=1,dkgk-,cdtm=2,nn=4,cnr-,xvv-,rgf-,vgbp=2,mxdx-,ppmdf-,zn=5,hnd=9,xltsh-,ggr-,pf=9,snj=2,zhf=4,hvmdmh=5,mpzb-,jm=1,zgx-,knv-,lvv=1,fmc=5,tgl-,xvv-,nnrl-,ldq=2,tz-,hdk=8,zp=8,gpkk=4,hm=4,tlx=9,gzv=7,js-,tf=2,lczz=2,jpd-,rmhbz=9,lj-,nc=5,pt=8,qntl-,ckzcrf-,tlx-,zn-,rqrq-,cdg-,tvbv=4,hd-,lfns=4,dxknq=7,np-,fpn=1,tqtg-,zlf-,dnb=9,nrf-,vvz=6,knpt-,dnb=9,shllq=5,zf=7,csh=3,jzp=3,bk=7,rrx-,lczz-,mvsq=7,vb-,mvsq=7,fmzk=5,gz=3,dbcf=9,vklt-,txzv=6,rvpp-,shllq=9,thp-,nkzv-,ksj=8,hqj-,vgbp=6,rbf=2,ckzcrf=4,lht=8,tpz-,fjpt-,zbss-,sxnb=5,rj=2,pfr-,qr=7,fsp=4,gvz-,csbj-,mfj=2,mlq-,knv=5,bml-,qntl-,zq=1,sqj-,tpz-,mmmc-,sxnb=9,rpm=5,rf=5,zbnzll-,jzp-,bsd=5,gbh=8,zxfg-,znf=1,hn=5,ksrrz-,xljlkv-,pstjdj-,np=1,rhg-,lq=9,hqj-,rrjfx-,tk=6,tvbv-,dkgk=2,bn=7,krvb=2,cds-,vzzvn-,ckzcrf-,mpzb=9,kctn=4,fmzk-,hjd-,jtvcd-,fqd-,xn-,xqnlt-,dfgpj-,jzz=9,nkzv=8,ss-,kg=4,hvttcx=8,hg-,fnps=6,fqd=3,lsnmn-,vb=6,sxnb=5,gsqglz=3,kkbf-,js-,pzmd=6,qk-,lfns=7,gz-,sth-,hbk=7,tqtg=8,ldq=9,zvg-,tkjhs-,kmb-,fp=2,tpz=8,ldq-,cxpsv-,fgj-,rvd=5,zxfg=5,dcb=9,dfgpj=7,vmxjr-,vmh-,zr-,vmxg-,nxkmn=7,ppmdf-,mpn=9,ccq=8,rgf=1,qb-,jzz=1,pzcx=3,bs=2,vnv=6,ld-,lm=2,zs-,jzz=6,hnd-,krqsb=7,kh-,nlsz=4,ksj-,fh-,mmmc-,vtv-,qb-,mhb=5,jttps=2,kv=6,kq=4,dq=4,mzgj=7,dh=3,nfgghx-,ptpf=8,gpkk=7,hd-,fp=6,hvmdmh-,ls-,kkk-,jp=1,rp=5,zhfq=1,mhrm=1,lksd=6,knpt=8,rnd=5,nsdg-,xfft-,kjl-,bdxhj-,ccq-,jv-,xn-,tdfj-,lx-,fjbhsc=1,rxnvmc-,ndvtb-,krvb-,mgx=9,lht=1,nnrl-,jb=1,nnrl-,bd-,hsdzn=5,prf-,lznhkq=5,ndvtb=1,kv=4,hvttcx-,hsdzn=6,zbss=5,hgfhk=3,rxnvmc-,dxknq=3,xcn=8,qp=2,jrbk=3,vnv=3,xs=3,tkjhs-,nffg-,jv=4,mpn=7,nd=2,zbnzll-,nlsz-,rxct-,ffnsd-,hr=3,zxfg=4,mdpl-,mmmc-,mhc=9,ksn-,qbh-,nr=3,lmcr-,ctc=9,hkc-,dnb=7,ftf-,thp-,xhxb-,hxr=7,rnh=5,ll=7,hqb-,hdk-,jtvcd-,jc=3,jhc-,zsk-,cg-,dxknq-,tdfj-,cvk=6,mmk-,pf=8,ggr-,rhg=6,ksrrz=7,vjqxp=4,kvj=1,brnp=7,ccq-,ndvtb-,zdn=2,vmxg=2,xfft=9,mpn=7,lqx-,fz-,qlk-,bmpq-,zgx=3,jn=8,kg-,jtrsqg-,ss-,xxsbv=7,qc-,jsp=5,rtdlr-,qlk-,qxn-,znf-,ld=9,rt-,rrx-,qbh-,pg-,bd-,rxnvmc-,pvm=1,vd-,hddj-,cxpsv-,qdjh=4,hqj-,kpzv=4,kn=9,fpn=7,kkbf-,zbss-,vcd=3,mfj=3,dj=7,dlpmn-,lhg-,bm=1,gr=3,kkbf-,zhfq-,hq=6,mtcr=3,fqd=4,qp-,vvz=3,pd=3,dxknq-,mmmc-,zn=4,vf-,sf-,kh=4,mx-,jd-,nc=3,ckzcrf-,lr=2,dsz-,mxdx-,csbj-,czv=3,btfm-,mrb-,cph=8,pdg=1,zr-,fsqh-,mhrm-,nzgt=1,bc=4,sgg=3,pdg=6,ccq=4,rklr=1,zbss-,lsnmn=5,gf=8,ccq=7,qc=6,zlf-,lksd-,br=3,gj-,mx=5,cq=3,tqcf-,xrb-,nkzv=6,bc=2,mb=8,qkzfg-,tx-,mdpl=8,znx-,zt=8,xqnlt-,zlksl-,trf-,xkn=5,xsj=6,mhc=4,fpn=6,hvmdmh-,bs-,xk=2,kmb-,prf=6,tjc=9,vzzvn-,vv=9,mgm-,jv-,jc=4,hm-,xkn-,mhb-,zbnzll-,vsz=7,jphfq-,fsl=4,mhrm=7,nj-,kpg-,vnv=1,xxsbv=4,bgzhqx=3,bnb-,gv-,drl-,gfg=5,zc-,gvz=6,pbsr=2,lmh-,ggkxb=5,bmpq=2,bpxhkz-,tqm=2,zhf=4,zc-,xgsz-,ckzcrf=3,sqsb=2,hr=7,pbsr-,dcb=6,xxsbv=1,mj-,tjbrb-,nr=1,pv-,kg=4,mzgj-,sgg-,jsp-,zxb=7,nsp-,trf=7,zt=3,hg-,tk=3,mgf-,vb-,qr-,zxfg-,bs=4,tjc-,dlpmn=9,qsm=1,gxb-,lqx=4,jrbk-,hzm-,jtrsqg=9,dnb=3,tvbv=3,hq=5,vmxjr-,kctn=8,krvb=2,qr-,rmhbz-,ps-,nxkmn-,gmm-,bjpd=8,rr=6,gpn=4,vtv=1,cgb-,dpb-,gsqglz-,hkc-,gbh-,cph-,vf-,tpf-,jx-,hjd=3,qkzfg=8,cg=8,nrf-,hs=4,nzgqc-,nd=8,lmh-,hs=4,tz-,rgf-,mnvm-,nd-,mfj-,qlz=5,dsz-,hkc-,vcd=2,bmpq-,cqsnhr-,zq=7,hm-,dd=9,bmpq=7,gpn-,ptpf-,zskvv-,fpc=4,dfgpj-,tk-,jv=7,tlx-,mvsq-,cm=2,pfr=2,srx=8,nd-,rrjfx=6,dkgk=2,thh=7,gf=9,kmb-,pvm=9,rklr=6,zhf=8,qlvt=6,snj-,gckt=9,ch-,jttps=4,kq=5,sdt=2,dffh=8,mmmc=7,lx=2,thh=2,ch-,bdl=7,vzzvn=2,psh=4,kkbf-,mgd-,cxp-,gsqglz=7,hkc=5,pnd=2,dj-,gxb=9,gz-,jb-,tlx-,tns=9,lksd=4,npc=3,bsd=7,mb-,zr=1,hddj=9,bv=4,mfj=8,glz-,pc-,tqq=9,mjpx=2,ftnj-,xqnlt-,qlgm-,bm-,vhc=1,rpm=5,czv=3,tdfj-,zc-,hjd=2,mdpl=4,zq-,dxknq=2,cds-,kh-,ccq-,rh=8,nj-,zf=4,cg-,bn-,znx-,rmn=7,lczz-,bc=3,fp=6,zv-,bdxhj-,xk=9,npc-,ljv=5,dq-,bm=4,nzgqc=1,jzz=1,dsz-,qlszt-,zprvk=9,hcx=5,pnd=5,xfft=8,cx-,gqstb-,jpd=8,tgl-,ld=8,tpf=8,ldq=6,nsp=4,sfb=2,kctn=1,gzglg-,xrb=6,jsp=9,nzqmkk=1,gcn-,rnh-,knpt=9,fh-,nvrb=6,nkzv-,tpf-,xzd=4,cx-,fhg=2,hcx-,ds-,kpzv-,npc-,fh=5,ntl=7,glr-,fsqh=7,rrjfx-,zsk=6,bdxhj=4,rnk-,bk=9,cds-,xsj=9,tns-,cq-,vzzvn=2,zhf=2,ggr-,nc-,pzcx=7,cgl-,mtcr=7,mhrm-,ldq-,fh-,pdg=3,rv-,vtt=4,tgl-,qdjh-,bn-,ls-,fb=2,cc=7,zmzr-,zv-,dkgk-,lmj=7,zmmzd=6,ftf=4,npc=8,pf=1,vmxjr-,cds-,lsnmn-,jxl=5,mmmc-,xxg=5,tg-,rp-,rvd=7,nlsz=8,lbp-,vbz=3,pstjdj-,rvpp-,kq=2,gfg=5,qsm-,hgfhk-,cxpsv-,zl-,krqsb-,nvrg=4,gzv=6,thh=5,kz=5,lmv-,lznhkq=9,dmmv-,jxl=5,jbh=1,jphfq-,qdk=3,jbh=2,jtvcd-,qsm=1,nrf=2,zz-,fsl=7,fjbhsc-,zxr-,hjd=4,zbss-,krvb-,thp-,ctc-,klcm=7,kjl-,tkjhs-,nkzv=3,pbsr-,zhf-,dcb-,fnps=8,fg-,nxkmn-,cds-,cvk-,xk-,qlszt=1,qb-,sbcq=2,sth-,lznhkq-,rh-,fp-,nlsz-,vmxjr=8,rnk-,gz=6,fpn=2,cg-,btfm-,bml=6,zskvv=8,gbh=3,fgj=9,zs-,qdjh-,qlszt-,nn=6,gd=6,vf-,hqb-,zz=8,zprvk-,kpzv-,gfg-,tv=4,trf=4,ssz=2,xm-,gvz=6,tkhd-,nffg=2,rnk=3,rnh-,xgzm=2,lvv-,znf-,vcd-,jsp-,qbh=4,kkk=2,cz=7,srp=8,vv=9,bdxhj-,krqsb=2,dq-,pf=2,sts-,rh-,zsz=3,mgm=5,qxqq=9,zlksl=6,hbk-,np-,zn-,kvj-,rxnvmc=9,zmzr=7,gsqglz-,xljlkv=3,nfgghx-,qxqq=5,xrb-,fg=2,xvv=5,jxl=3,ktdfd=8,hbk-,ps=3,gmm-,sfb-,hsdzn-,cxp=1,vg-,ls-,bnb-,tf=8,bjpd=5,xgzm=2,pq=4,cx-,mtcr-,bml=2,fz=1,jc=7,tpf-,qz=7,hr-,lmj=4,rp-,khqs=1,vsz=9,zmzr=5,ksj=4,cqsnhr=3,fhg-,kkk-,rf-,zn-,vhc-,cc=4,rs=6,rtdlr-,tns-,cc=3,kpg=5,vb-,bmdc-,js=7,rnh=9,ptpf-,bc=6,kvj=7,dxl-,ggkxb-,zxr=6,hxr=8,nrf=2,kdrq-,xqnlt-,xxsbv-,zlf=8,zr=9,bcs-,br=6,lb-,qf-,kpg-,ftf=4,znf-,cds-,ss=9,khqs=4,cj-,ftnj=3,xxg=3,vg=3,qbh=4,thp=7,ll-,sts-,rv=6,mnzlc-,tz=3,jm-,snj-,hzm=1,rxnvmc=2,pq-,nlsz-,zf=1,pf=1,khqs-,bf=3,kh-,cz=2,kvj=9,srp-,kpg-,tqq-,bnb-,np-,ggzx-,rbf=3,mfg=2,lhg=7,sxnb=8,fgj=8,tqm-,sth-,qlvt-,mb-,bml-,rtdlr-,bsr=6,knpt-,tqcf=1,prf=1,cdtm-,tjbrb-,dcb=1,mfg-,tkjhs=4,zxb=2,xl=4,gj-,pd-,lzg-,pt=3,tlx-,fjtbvs=3,nzqmkk=6,mvsq-,rd-,cph=1,tjbrb=8,lhg=8,pstjdj-,dd=2,ggkxb-,gsqglz=5,lzg-,jv-,pt-,hs=3,xcn=1,kdrq=1,xsj=5,ds=7,hbbh=6,zf-,tqm-,hjd=8,qlz-,cvk=3,fz=9,bd-,gd=7,ll-,zp-,kctn-,fsqh-,zt=8,mxdx=8,lzg=6,rxnvmc-,zbss-,qr-,jb-,ds=4,vt-,ps=6,kzt-,vcd=3,xt-,vg=5,psh-,mvsq=1,ggr-,ch=8,cgb=6,vcjv=3,pvm-,vklt=4,gxb=2,tz=3,blvg-,kvj-,lmcr-,sbcq-,xzd=6,rrx=8,shllq=7,lhg=5,ggr=9,ksn-,spln=1,zv-,qz-,tkhd-,mnvm-,jxl=6,dfgpj-,cm=2,zsz-,mj=8,dh-,vj=1,vp=4,hn-,pbsr=1,sqsb-,ktdfd=5,kpzv=7,vcd-,nhzr-,jx=8,lv-,bm=6,hm-,knpt=2,tg-,pzcx=6,hs-,cnr=9,bml=9,xhxb-,vp-,mvh-,kq=3,mqg-,vvv=2,fh=3,hgfhk-,fmzk-,nmbrj=5,dfgpj-,xm-,qkzfg-,zv-,bk=2,vmh=1,nvrb-,bdxhj-,nlsz=3,mpzb=9,ggzx-,hxr-,qvzgl-,xzd-,ksj-,kg=8,mnzlc=9,nvrg-,ndvtb-,xqnlt-,lmh-,js=5,xltsh-,bblmtm-,vzzvn=7,fh-,zdn=1,lht-,nk=8,qs=4,sqj-,srp=2,lv=5,lsnmn=6,rgf-,vt-,ftnj=5,fb-,nxhd-,znf-,snj=7,khqs=8,sgg=3,gvz=4,fg=8,hqj-,gzglg-,sfvcm=4,ndvtb=8,rgf-,sqj=8,tqcf=1,cdg-,vjqxp-,lvv=6,rj-,nmbrj-,rt=1,dxl-,mlg=4,vvv-,gd=2,vkxnmt-,pt=1,gpn-,tlx=4,gf=4,nxhd=4,qknsk=8,mdpl=8,bfj-,ftnj=9,khqs=8,gmb=4,pdg=5,zhf=3,tb-,nkzv-,zp-,fg=6,bml-,hddj-,hkc=7,kjl=1,sts-,jn-,hnd=4,kz=8,fqxhfv-,kv=9,rklr-,gjqb-,zz-,glz-,gr=4,fnps-,zc-,fjtbvs-,rvpp-,bc-,hqj-,rhpplz=3,zg=2,ksj-,mhrm=3,xl=3,jb-,br=6,gmn-,gjqb=9,vtt-,kh=5,zskvv-,csh-,ccq-,mx=8,mmk=4,vtt-,lksd-,rhpplz-,knpt=9,tns-,htkzr-,pbq=5,qdjh-,xfft-,mmk-,fgj-,sqj-,lb=5,sgg=3,cdtm=1,hbk-,thp=8,pnd-,vvv=4,qlk-,glr-,jv-,ggr-,nc=7,vbz-,tkhd-,dbcf-,nhzr=1,cm-,bmdc-,zv=7,vv=6,ktdfd=6,dq=1,xq=3,fmzk-,ksn-,cph=3,jtvcd=5,xt-,xq=3,bqlk-,rj-,hsdzn-,thh=9,bml=2,hgfhk=9,zbnzll=6,zgx-,kklj=4,nzqmkk-,hvmdmh-,jd-,hkc=4,cx-,zq-,pc=4,ls-,jrbk=7,qvzgl=6,znx-,rf=1,dkgk-,ktdfd-,cc-,fqxhfv-,lksd-,mhb-,dl=9,vtt-,jp=2,crq-,gpkk=9,lq=4,jttps=3,cz-,czv-,gqstb-,gf=3,vvv-,pd=8,hdk-,tqtg=8,jbh-,vmxjr=2,pq=1,sqj-,jc=7,qc=4,mgf=6,qhb=1,vkxnmt=3,kkbf=7,kgxp=1,tkhd=5,krqsb=8,bblmtm=2,vt=8,nsp-,mj-,pfr=3,kn-,nzgt=2,lhg-,rtr-,mqg-,lqx=6,dnf-,kv=7,cq-,mlg=8,rh=7,lfns=5,dbcf=8,xvv-,csbj-,bqlk=7,kjl=7,zv=4,xq=7,rmhbz-,fjpt-,xn-,ktdfd-,mvh-,vcjv-,dplfr-,tqcf=7,tnq=2,cxpsv=2,kklj-,ggkxb-,vzzvn=7,hvmdmh-,mfj=7,gd=1,ggr-,rp=3,mnvm=1,rgf=7,ksn-,lb-,nn-,rs=9,gmb-,cxpsv-,qr=3,qlszt=5,jp-,np=7,nvrg=4,zbss=8,vkxnmt=1,cx-,gcn=4,mvsq-,fmc=5,qkzfg-,ggzx=3,nkzv-,zf=5,csh-,krqsb=4,hdk=7,gj=4,kpzv=8,sxnb=4,dxknq=2,qlvt=4,qdjh=2,rxct=9,zp-,kn-,dpb=8,csbj-,lksd-,qknsk-,rxnvmc=2,pnd-,kvj-,pd-,bqlk-,ktdfd=6,rrjfx=7,dkgk-,fh=1,zsk-,hddj=3,qlszt-,fgj=8,cqsnhr-,bmpq=6,tg-,mpzb-,qz-,kh-,tkhd=1,jzp=2,gfg-,rnh=2,ftf-,qp-,fpn-,gjqb-,hvmdmh=6,hm-,qc-,drl=5,xp-,rmhbz=3,cg=7,tns=7,fsl=1,fnps=9,tb-,jrd-,jx-,qf=8,kpg=9,fgj=2,vv=4,qxqq=2,xfft=4,fmdf-,nxkmn=6,qp=4,ggr=5,mpzb=8,bpxhkz=5,lksd-,lhg=4,csm-,jtrsqg-,npc=6,btfm-,ffnsd-,bh-,dbcf=3,rgf=3,vvv-,ldq-,vnv-,mzgj-,xkn=8,jxl=3,zmzr=6,lhg-,hdk=2,lb=2,nvrb-,cc-,ljv=5,gvz=5,hs-,gpn-,xqnlt=6,np-,mx=8,czv=6,pg=8,pbsr-,bs=4,gr-,gf-,qknsk=6,bqlk=1,nlndb-,dkgk=1,fsl-,rvd=5,fqm-,ckzcrf-,nvrb=3,xcn=9,xzd=6,hxr-,br=1,mlq=3,qf-,zgx=8,dnf-,vcd-,fnps-,qhb-,nc=6,lmh=8,dplfr-,vsz-,pv=3,ck-,rtdlr=8,vp-,tjc-,knpt=6,nn-,jbh-,xt=7,xgzm=1,bjpd-,lm-,fsp-,pnd-,sts-,vmh-,jttps=2,dl=4,bdl-,vhc-,btfm-,mlq-,xrb=9,vtv-,cmmntt-,mmmc=9,cm=3,qknsk=2,jv-,zs=6,gz=2,hm-,mnzlc=2,fp-,kf-,dj=8,zq-,pzcx=5,rh=6,vgbp=9,zl-,pbsr=2,rqrq=8,zsk=6,rvd-,bs=6,bdxhj=3,mpn-,rnh-,jpd=3,jzp=4,hr-,nk=3,bgzhqx-,tqq=9,bv=4,nlndb-,zlf=4,hsdzn-,mdpl-,czv=9,tkhd=6,qlszt=3,hd-,qxqq=7,nvrg=2,fsqh-,vmxg=5,xkn=6,vmxg=3,pd-,vxt=8,rf-,mhb-,cgb-,jv-,krqsb=1,jc=4,qsm-,mgm=3,zmmzd-,hg-,qdk-,pstjdj=8,fqd-,nd-,hjd=8,cgl-,rrjfx-,mfj-,xxsbv=8,rbf=7,bml-,mhc-,dcb-,gj-,hd-,gpkk=9,nzgqc=7,sth-,zq=9,cm-,mpn-,nz-,fjtbvs=4,zhr-,bd-,xhxb=2,mrb-,vnv=8,nn-,ffnsd=8,ksj=8,xn-,sxnb=6,dd-,jc-,jbh-,tx-,krqsb=8,cgb-,bmdc=8,qz=9,nvrb=4,nn=1,lv=4,prf-,sbcq=1,nffg-,hq-,xn-,zdn-,xvv=2,zsjh-,hqb=4,cc=6,xhxb-,ssz=3,lq-,lvv=7,dfgpj=6,qhb-,vjqxp=2,vmh-,np-,nlndb-,dnb-,dnb=9,kz=1,jzp=9,vtt-,lhg=5,fh=3,mmmc=3,jc-,cx-,vvl-,rvd-,cdtm=5,pzmd=1,xs-,rvd=2,ndvtb-,tnm=7,ptpf=7,hbk=7,sqj-,fsn=4,xljlkv=5,bdxhj=4,vvl=2,ggkxb=7,hsdzn-,kg=8,crq-,vmxg-,cxpsv-,hjd-,zn-,gmn-,nvrg-,cnr=4,jhc-,xxg-,crq=7,sdq-,xgsz=9,sbcq-,kg-,kkbf-,vg=2,fsp-,hvttcx-,zlksl=2,zl=5,fpn=4,bblmtm=1,qhb-,qkzfg-,ccq-,kdrq=9,gpkk=9,pp-,zc=8,vf-,spln-,nmbrj=5,dkgk-,mzgj-,fpc-,knv-,cz=4,mhb-,bml-,dfgpj-,zs=8,kklj-,lsnmn=9,mzgj-,cgl-,xzd-,dxknq=2,mpzb=5,mpzb-,nvrb=4,hdk=1,dj-,mmmc-,qhb-,fsp=5,cm-,qk-,fqd-,blvg=4,ch=5,dd-,rnk-,dmmv-,krqsb-,vhc-,qz-,vbz=4,mgm-,vf-,dqb-,zmzr=2,ggkxb-,dzc-,tpf=2,dmmv=4,crq=9,hq-,rklr-,cnr-,dbcf=3,nz-,kpzv=5,hs=6,ftnj-,cm=3,xhpg=6,jsp=8,dd-,bs=2,dpb-,mmk-,hnd=4,jrd=9,pc-,rnh=5,tlx-,nzqmkk-,vv-,tkhd=9,jzp-,nlsz-,jzp-,qs=8,qxn=1,mpzb-,vmxjr-,lr=1,tjc=8,lb-,znf-,sgg=2,fh=4,hn-,glz-,hd-,vb=1,mx-,jxl-,csbj=5,ndvtb-,xhxb-,cj-,xhxb=6,gcn-,dplfr=8,dxl-,bcs=9,spln-,ls=9,ll=4,vd-,rnd-,br-,zhfq=3,gf-,qc=5,mnzlc-,vmh=8,gpkk-,fmzk=8,vvl-,zz-,rpm-,tdfj-,bjpd-,bcs=1,bm-,nn=6,fjtbvs-,zbss-,tlx=8,rbf=4,pnd-,mgf-,vpk=9,cdtm=2,mmmc-,vp=8,tgl=4,nc-,lbp-,bmdc=4,pbsr-,sdq=2,tnq-,lzg=7,ndvtb-,zr-,kkk=1,jrbk-,gbh-,pf-,lksd=4,sts-,nxhd=8,dsz-,lbp=4,vtt-,vj-,qlgm=4,gj=3,lfns=3,tq-,cmmntt-,qlgm=1,glr=2,mtcr-,zf-,ftnj=5,nz-,zsk=3,xltsh-,xgsz-,jv-,hqb=7,lbp-,tkhd-,xvv-,qs-,mgx-,gsqglz=8,ck=7,zdn=7,fb=6,rhg-,knv=4,ccq-,tdfj=5,fnps-,kpg-,vsz=2,blvg-,lbp=2,mxdx-,zdn-,rgf=3,fsp-,hddj-,qf-,lksd-,gqstb=5,qlszt=4,bdxhj-,nr=3,dq=1,rrx-,hr=1,xltsh=6,jrbk=6,cdg=3,rrx=3,zsk-,tg-,jtvcd=8,zmmzd=6,zs=9,sgg-,gxb=5,hnd=7,dcb=8,kvj-,rgf-,jpm=7,vsz=6,zgx=1,mgx-,bml=2,qlvt=2,pfr=8,qs=8,ggr-,hd=3,vj-,mpzb-,qdjh-,ndvtb-,lq-,jhc=4,vv-,tc=7,tv=1,vxt=6,hs-,thp-,jpm=4,mrb=8,nkzv=3,zs-,hg=4,zq=5,qr-,vv=2,drl=9,xgzm-,srp-,mpzb=1,knpt-,sbcq-,xxg-,mgm-,lj-,qxqq-,ls-,rp=6,rqrq=1,srp=1,pm=7,tc-,qvzgl=2,kn-,vpk-,qf-,npc=3,cj-,qkzfg-,qr=7,hbbh-,kg=9,nj=9,srqx=1,hgfhk=9,hv=1,gmn=1,tc=2,sdt=9,rd-,zsz=7,knpt=3,gckt=7,dplfr=8,ptpf-,fqd-,zc-,hnd=8,rmhbz=2,htkzr=2,glz=6,nsp-,tg-,fhg=9,mlq-,gvz-,rr=3,fpn-,pt-,fp-,zz=9,cg-,nsdg-,mlq-,zdn-,jhc=7,kh=3,zhfq=5,mnzlc=4,fsn-,rhpplz-,vv-,pbsr-,qknsk=5,drl-,dxknq=2,snj-,glz-,zmmzd=4,xhxb-,fb-,zxb-,knpt=9,cmmntt=2,gzglg-,bk-,qntl-,hzm=6,qc-,mx-,mpzb=5,hs=4,qknsk=2,jx=2,vnv=7,kz-,jsp-,kf-,pfr-,rtr=1,nzgqc=2,tjbrb=3,fjtbvs=4,rnk=5,tb-,zz=7,lmv=4,xfft=3,jbh-,ttcjrf=5,fnps-,rj=7,dffh-,kq-,zhr=4,zbnzll-,mgx=8,rt=8,vcjv=3,gzv-,fh-,bdxhj-,xgsz=1,jrd-,vr-,tnq=3,lfns=5,hgfhk-,rnh=5,dkgk-,tjc-,ldq-,gd=6,nnrl-,crq=8,ckzcrf=6,vpk-,zc-,tx=1,mx-,zz=2,gmn=8,mqg-,rhg-,snj=1,zz=3,tjbrb-,xzd-,sdq=2,ctc=8,cj-,ch=1,rrx=7,js=9,tqtg=4,vv=1,sbcq-,fg=7,fsn-,qc=7,hd-,ttcjrf-,trf=6,nzgt-,ds=2,pd-,tnq=3,xgsz-,ljv-,trf-,kh=1,ck=3,qkzfg-,sfvcm=9,xq=6,tnq=1,rnd=5,thh-,htkzr-,sxnb=7,glr-,qdjh-,thp=9,mgf=4,hvttcx=5,xhpg=2,dlpmn-,dqb-,lmh=4,rvpp=4,kpg=5,mnvm=6,thp=9,jx=3,xl=2,gj=9,tx-,pd=4,vcjv-,vpk=8,pf-,mfg-,dbcf=2,kmb=9,lm=6,xljlkv=4,gpkk=4,lq=6,gzv-,zlf=6,jrbk=6,crq=7,zsz-,rd=1,gckt=8,qb=4,vr=9,ggzx=5,rxct-,fg-,vklt=8,lsnmn=1,zgx=1,fmzk=9,zg=4,lvv-,dh-,gpkk-,knpt-,cq=8,cgb-,fpn-,bd=7,rt-,nzgqc=7,bs=5,zsk=6,mrb-,csh-,kz-,btfm-,sfb-,fpn=1,vmh-,brnp-,kn=4,fqm=3,fnps=5,zsk-,ksj=4,hqj=6,qdlprm-,rpm-,br-,pv=6,nzgqc-,jc-,kv=9,ftf-,nxhd-,kpg-,cph-,nmbrj-,kdrq=9,htkzr=7,hvmdmh-,ntl-,jnggl-,fhg=7,lm-,sth-,jm=9,kkbf=5,sfvcm-,xk=1,thp=5,vtv=2,zmzr-,nlndb=3,bsr-,tnq-,xltsh=5,bmdc=6,htkzr-,nfgghx-,lr-,prf-,tns-,psh=4,dmmv=4,jpd=5,tlx=5,tk-,bk=8,rrx-,qz=5,hcx-,dplfr-,tqtg=8,rtdlr-,bn=5,gpn-,grr=3,txzv-,vtt=4,gpkk=9,gz=2,hgfhk-,mnzlc-,vgkx-,rtdlr=9,hbbh=8,gmn-,vvz=7,lb-,lksd-,jsp-,mpn-,kn=5,vb-,fjpt=4,fmzk=5,mrb=4,pnd-,vvl=2,qr=8,psh-,nvrg-,dpb=8,bsr-,vkxnmt-,krqsb-,brnp=2,gz=7,lksd=1,dcb-,srqx=2,vj=2,xgsz=9,vmxg-,rnd-,tnm=3,bmpq=4,glr-,pxc=1,zf-,fpn-,fpc-,zq-,kdrq-,bc=5,rhg-,kgxp=2,mfj-,qc-,xltsh=4,dxl-,nlndb-,fjtbvs-,prf=9,xcn-,vnv-,blvg-,ptpf-,qhb-,zprvk-,hgfhk-,xm=8,hdk=6,dj=7,rmn=8,kkbf-,hm-,pnd-,xl=2,mx-,qk=2,zbss-,cnr-,mgx=8,spln-,khqs=1,tlx=5,tnq=2,zc=7,tjbrb-,zmzr=3,jzz=8,lhg-,ttcjrf=9,dsz-,cm=1,csbj=2,xljlkv=6,dplfr=4,ss-,cmmntt-,bv=3,czv-,ctc-,rvpp=8,lqx=1,xcn-,kzt-,mb=7,lht=8,bdl=1,rh-,zhfq=5,jb-,pt=4,pp=4,rj-,cmmntt=8,vbz=7,pt=1,zl=6,vg-,tjc-,tq=7,xzd=9,hvttcx=9,ssz=4,tf-,pzmd-,rpm=6,qdk-,lq-,xvv=9,zprvk-,znf=3,ffnsd-,ccq=9,rtdlr=3,vpk-,kjl=4,ds=6,nlsz=3,kkbf=2,kvj=5,kpzv=3,pf=2,csm-,gzglg-,nffg-,fdsfpx-,dxl-,klcm-,ffnsd-,dbs=2,lht-,nsp-,rr=5,kdrq-,zz=7,ggr=2,kctn=9,fnps=7,lmh=3,tvbv=7",v7=`.|...\\....
 |.-.\\.....
 .....|-...
 ........|.
@@ -6544,7 +6555,7 @@ OO...#.##....OO.O...O..O...O..#.O.#.#.#.O.##.#...#.........O#.OO...O...#O...#...
 ..../.\\\\..
 .-.-/..|..
 .|....-|.\\
-..//.|....`,P2=`\\..................-............-.........|-......................\\\\.../..........|......|........../.........
+..//.|....`,l7=`\\..................-............-.........|-......................\\\\.../..........|......|........../.........
 ...-.......-.-........|........../.............................-..............-....|.-.........-..............
 .|......................|........-.....\\.././.........|......|-....|..|........|......./...|............|..\\\\.
 ../....|..................-................-\\....../...../...................\\............../...../...../.....
@@ -6653,7 +6664,7 @@ OO...#.##....OO.O...O..O...O..#.O.#.#.#.O.##.#...#.........O#.OO...O...#O...#...
 ........\\...||.........-.../.|..........-.|-........\\.....................|..\\....|...........................
 .............-......................|/..-............\\.....\\.......|../.././-....-./..........|.........\\.....
 .................\\................./..................\\......./..-...-..|....\\........-.......................
-....................-.........\\.../../-......../....\\......|-..-.../.......-..........\\.......................`,N2=`2413432311323
+....................-.........\\.../../-......../....\\......|-..-.../.......-..........\\.......................`,d7=`2413432311323
 3215453535623
 3255245654254
 3446585845452
@@ -6665,7 +6676,7 @@ OO...#.##....OO.O...O..O...O..#.O.#.#.#.O.##.#...#.........O#.OO...O...#O...#...
 4564679986453
 1224686865563
 2546548887735
-4322674655533`,y2=`221111112123113232223221211223431421234233422312143231535322415224214525132414123325214251231222122422133431331343133332311121121111311212121
+4322674655533`,g7=`221111112123113232223221211223431421234233422312143231535322415224214525132414123325214251231222122422133431331343133332311121121111311212121
 211122211133211332121231312344123432112311144414235315524424354544513135154222442511331423512341112233243413331223414221112333312313311121222
 111212111232312122122123411211113414114234314333354231345141532533115144311545125122533135244454413423434214432314333422122112211321213211221
 221122231321333121323232442421144114441343141354135215251552232314544323421141432422435232132143452331432111434413312222323323231113332322112
@@ -6805,7 +6816,7 @@ OO...#.##....OO.O...O..O...O..#.O.#.#.#.O.##.#...#.........O#.OO...O...#O...#...
 122111232133212333114241342211414432432451525532212541215254352135314151345452314123533254542323111254213312342213222422324223233113312333211
 112221312121332223111124124211412322424112443244532125423544253254455521144521222323412142453225133322144423313322213112233113122332123222111
 222222213133232221311123322442113434233223134131232412515351432512434332551315534323552531252322544341242341431223321421331112333333332122112
-112222121122221212222331122123242441213424442111531144421232221124154331442433155341112524322525212214112321333234222132131323112333212111122`,U2=`R 6 (#70c710)
+112222121122221212222331122123242441213424442111531144421232221124154331442433155341112524322525212214112321333234222132131323112333212111122`,h7=`R 6 (#70c710)
 D 5 (#0dc571)
 L 2 (#5713f0)
 D 2 (#d2c081)
@@ -6818,7 +6829,7 @@ U 2 (#caa171)
 R 2 (#7807d2)
 U 3 (#a77fa3)
 L 2 (#015232)
-U 2 (#7a21e3)`,$2=`L 4 (#6c82d0)
+U 2 (#7a21e3)`,b7=`L 4 (#6c82d0)
 U 2 (#801271)
 L 5 (#2fcea0)
 U 11 (#801273)
@@ -7439,6 +7450,3415 @@ U 10 (#4ecf73)
 L 3 (#6fc560)
 U 11 (#2a9863)
 L 5 (#51b2e2)
-U 4 (#786b73)`,E2="",I2="",Z2="",W2="",Y2="",n3="",e3="",r3="",t3="",J3="",L3="",F3="",s3="",d3="";var Gn=Object.assign({"./advent/day01/solution.js":x1,"./advent/day02/solution.js":K1,"./advent/day03/solution.js":_1,"./advent/day04/solution.js":A1,"./advent/day05/solution.js":H1,"./advent/day06/solution.js":P1,"./advent/day07/solution.js":$1,"./advent/day08/solution.js":W1,"./advent/day09/solution.js":r7,"./advent/day10/solution.js":F7,"./advent/day11/solution.js":l7,"./advent/day12/solution.js":h7,"./advent/day13/solution.js":i7,"./advent/day14/solution.js":A7,"./advent/day15/solution.js":H7,"./advent/day16/solution.js":N7,"./advent/day17/solution.js":Z7,"./advent/day18/solution.js":e2,"./advent/day19/solution.js":r2,"./advent/day20/solution.js":t2,"./advent/day21/solution.js":J2,"./advent/day22/solution.js":L2,"./advent/day23/solution.js":F2,"./advent/day24/solution.js":s2,"./advent/day25/solution.js":d2}),zn=Object.assign({"./advent/day01/input-test.txt":f2,"./advent/day01/input-test2.txt":l2,"./advent/day01/input.txt":v2,"./advent/day02/input-test.txt":g2,"./advent/day02/input.txt":O2,"./advent/day03/input-test.txt":h2,"./advent/day03/input.txt":b2,"./advent/day04/input-test.txt":c2,"./advent/day04/input.txt":o2,"./advent/day05/input-test.txt":i2,"./advent/day05/input.txt":p2,"./advent/day06/input-test.txt":a2,"./advent/day06/input.txt":m2,"./advent/day07/input-test.txt":u2,"./advent/day07/input.txt":z2,"./advent/day08/input-test.txt":k2,"./advent/day08/input-test2.txt":x2,"./advent/day08/input-test3.txt":j2,"./advent/day08/input.txt":q2,"./advent/day09/input-test.txt":T2,"./advent/day09/input.txt":K2,"./advent/day10/input-test.txt":Q2,"./advent/day10/input-test2.txt":R2,"./advent/day10/input.txt":C2,"./advent/day11/input-test.txt":_2,"./advent/day11/input.txt":D2,"./advent/day12/input-test.txt":G2,"./advent/day12/input.txt":B2,"./advent/day13/input-test.txt":A2,"./advent/day13/input.txt":M2,"./advent/day14/input-test.txt":S2,"./advent/day14/input.txt":w2,"./advent/day15/input-test.txt":H2,"./advent/day15/input.txt":V2,"./advent/day16/input-test.txt":X2,"./advent/day16/input.txt":P2,"./advent/day17/input-test.txt":N2,"./advent/day17/input.txt":y2,"./advent/day18/input-test.txt":U2,"./advent/day18/input.txt":$2,"./advent/day19/input-test.txt":E2,"./advent/day19/input.txt":I2,"./advent/day20/input-test.txt":Z2,"./advent/day20/input.txt":W2,"./advent/day21/input-test.txt":Y2,"./advent/day21/input.txt":n3,"./advent/day22/input-test.txt":e3,"./advent/day22/input.txt":r3,"./advent/day23/input-test.txt":t3,"./advent/day23/input.txt":J3,"./advent/day24/input-test.txt":L3,"./advent/day24/input.txt":F3,"./advent/day25/input-test.txt":s3,"./advent/day25/input.txt":d3});function t1(n,e,r,F){this.day=n||"01",this.input=r||"",this.testInputs=F||[""],this.part1=e.part1||null,this.part2=e.part2||null,this.knownAnswers=(e.knownAnswers||[]).map(t=>String(t))}function f3(){var n={},e={},r={};Object.keys(Gn).forEach(J=>{var L=/day(\d+)/.exec(J)[1];n[L]=Gn[J]||null}),Object.keys(zn).forEach(J=>{var L=/day(\d+)/.exec(J)[1];J.includes("test")?(r[L]=r[L]||[],r[L].push(zn[J]||"")):e[L]=zn[J]||""});var F={},t=Object.keys(n).sort();return t.forEach(J=>{var L=n[J]||{},s=e[J]||"",f=r[J]||[];F[J]=new t1(J,L,s,f)}),F}const l3=Object.freeze(Object.defineProperty({__proto__:null,DayData:t1,getDataByDay:f3},Symbol.toStringTag,{value:"Module"}));function Bn(n,e,r){const F=n.slice();return F[28]=e[r],F[30]=r,F}function An(n,e,r){const F=n.slice();return F[31]=e[r],F}function Mn(n){let e,r=n[31]+"",F,t,J;function L(){return n[12](n[31])}return{c(){e=z("button"),F=dn(r),m(e,"class","button svelte-gd9guy"),S(e,"current",n[31]===n[2])},m(s,f){pn(s,e,f),i(e,F),t||(J=[M(e,"keydown",null),M(e,"click",L)],t=!0)},p(s,f){n=s,f[0]&2&&r!==(r=n[31]+"")&&kn(F,r),f[0]&6&&S(e,"current",n[31]===n[2])},d(s){s&&ln(e),t=!1,P(J)}}}function Sn(n){let e,r,F;return{c(){e=z("button"),e.textContent="run all",m(e,"class","button run-all-button svelte-gd9guy")},m(t,J){pn(t,e,J),r||(F=[M(e,"keydown",null),M(e,"click",n[11])],r=!0)},p:rn,d(t){t&&ln(e),r=!1,P(F)}}}function wn(n){let e,r,F;function t(){return n[16](n[30])}return{c(){e=z("button"),e.textContent=`Test ${n[30]+1}`,m(e,"class","button input-toggle svelte-gd9guy"),S(e,"current",n[4]===n[30])},m(J,L){pn(J,e,L),r||(F=[M(e,"keydown",null),M(e,"click",t)],r=!0)},p(J,L){n=J,L[0]&16&&S(e,"current",n[4]===n[30])},d(J){J&&ln(e),r=!1,P(F)}}}function v3(n){let e,r,F,t,J,L,s,f,d,v,g,l,h,o=n[7][0]+"",u,O,c,q,tn,H,N,Jn,y,U=n[7][1]+"",Ln,vn,D,$,gn,G,p,k,x,Q,T,w,j,B,On,E,Fn,V,Kn,X,an,Qn,I=hn(n[1]),C=[];for(let b=0;b<I.length;b+=1)C[b]=Mn(An(n,I,b));let A=n[1].length>1&&Sn(n),Z=hn({length:n[3]}),_=[];for(let b=0;b<Z.length;b+=1)_[b]=wn(Bn(n,Z,b));return{c(){e=z("div"),r=z("h2"),r.textContent="Advent 2023",F=R(),t=z("div"),J=z("div"),J.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',L=R(),s=z("div");for(let b=0;b<C.length;b+=1)C[b].c();f=R(),A&&A.c(),d=R(),v=z("div"),g=z("h4"),g.textContent="Part 1:",l=R(),h=z("div"),u=dn(o),O=R(),c=z("textarea"),tn=R(),H=z("div"),N=z("h4"),N.textContent="Part 2:",Jn=R(),y=z("div"),Ln=dn(U),vn=R(),D=z("textarea"),gn=R(),G=z("div"),p=z("h4"),p.textContent="Input:",k=R(),x=z("br"),Q=R(),T=z("button"),T.textContent="Real",w=R();for(let b=0;b<_.length;b+=1)_[b].c();j=R(),B=z("textarea"),On=R(),E=z("div"),Fn=R(),V=z("div"),Kn=dn(`Catch errors
-      `),X=z("button"),X.textContent="x",m(J,"class","label svelte-gd9guy"),m(s,"class","day-list"),m(g,"class","svelte-gd9guy"),m(h,"class","time svelte-gd9guy"),m(v,"class","label svelte-gd9guy"),m(c,"name","output1"),m(c,"id","output1"),m(c,"rows",q=bn(n[6][0])),m(c,"class","svelte-gd9guy"),S(c,"known-good",n[8][0]),m(N,"class","svelte-gd9guy"),m(y,"class","time svelte-gd9guy"),m(H,"class","label svelte-gd9guy"),m(D,"name","output2"),m(D,"id","output2"),m(D,"rows",$=bn(n[6][1])),m(D,"class","svelte-gd9guy"),S(D,"known-good",n[8][1]),m(p,"class","svelte-gd9guy"),m(T,"class","button input-toggle svelte-gd9guy"),S(T,"current",n[4]===-1),m(G,"class","label svelte-gd9guy"),f1(G,"align-self","flex-start"),m(B,"name","input"),m(B,"id","input"),m(B,"rows","14"),m(B,"class","svelte-gd9guy"),m(X,"class","button input-toggle catch-button svelte-gd9guy"),S(X,"current",n[5]),m(V,"class","catch-area svelte-gd9guy"),m(t,"class","layout svelte-gd9guy"),m(e,"class","outer svelte-gd9guy")},m(b,K){pn(b,e,K),i(e,r),i(e,F),i(e,t),i(t,J),i(t,L),i(t,s);for(let a=0;a<C.length;a+=1)C[a]&&C[a].m(s,null);i(s,f),A&&A.m(s,null),i(t,d),i(t,v),i(v,g),i(v,l),i(v,h),i(h,u),i(t,O),i(t,c),W(c,n[6][0]),i(t,tn),i(t,H),i(H,N),i(H,Jn),i(H,y),i(y,Ln),i(t,vn),i(t,D),W(D,n[6][1]),i(t,gn),i(t,G),i(G,p),i(G,k),i(G,x),i(G,Q),i(G,T),i(G,w);for(let a=0;a<_.length;a+=1)_[a]&&_[a].m(G,null);i(t,j),i(t,B),W(B,n[0]),i(t,On),i(t,E),i(t,Fn),i(t,V),i(V,Kn),i(V,X),an||(Qn=[M(c,"input",n[13]),M(D,"input",n[14]),M(T,"keydown",null),M(T,"click",n[15]),M(B,"input",n[17]),M(X,"keydown",null),M(X,"click",n[18])],an=!0)},p(b,K){if(K[0]&518){I=hn(b[1]);let a;for(a=0;a<I.length;a+=1){const sn=An(b,I,a);C[a]?C[a].p(sn,K):(C[a]=Mn(sn),C[a].c(),C[a].m(s,f))}for(;a<C.length;a+=1)C[a].d(1);C.length=I.length}if(b[1].length>1?A?A.p(b,K):(A=Sn(b),A.c(),A.m(s,null)):A&&(A.d(1),A=null),K[0]&128&&o!==(o=b[7][0]+"")&&kn(u,o),K[0]&64&&q!==(q=bn(b[6][0]))&&m(c,"rows",q),K[0]&64&&W(c,b[6][0]),K[0]&256&&S(c,"known-good",b[8][0]),K[0]&128&&U!==(U=b[7][1]+"")&&kn(Ln,U),K[0]&64&&$!==($=bn(b[6][1]))&&m(D,"rows",$),K[0]&64&&W(D,b[6][1]),K[0]&256&&S(D,"known-good",b[8][1]),K[0]&16&&S(T,"current",b[4]===-1),K[0]&1048){Z=hn({length:b[3]});let a;for(a=0;a<Z.length;a+=1){const sn=Bn(b,Z,a);_[a]?_[a].p(sn,K):(_[a]=wn(sn),_[a].c(),_[a].m(G,null))}for(;a<_.length;a+=1)_[a].d(1);_.length=Z.length}K[0]&1&&W(B,b[0]),K[0]&32&&S(X,"current",b[5])},i:rn,o:rn,d(b){b&&ln(e),Cn(C,b),A&&A.d(),Cn(_,b),an=!1,P(Qn)}}}function bn(n){var e=String(n||"").split(`
-`).length;return Math.min(e,Math.max(e,1,10))}function g3(n,e,r){var F=p=>new Promise(k=>setTimeout(k,p)),t={},J=[],L="xx",s="",f=1,d=-1,v=!0,g=["",""],l=["",""],h=[!1,!1];function o(p=""){p&&r(2,L=p);var k=t[L];r(3,f=k.testInputs.length),d>f-1&&r(4,d=f-1),r(0,s=d<0?k?.input:k?.testInputs[d]),q()}function u(p=""){s&&q()}function O(p=-1){r(4,d=p),o()}var c=!1;async function q(){if(!c){c=!0,r(6,g=["",""]),r(7,l=["",""]),await F(10);for(var p=1;p<=2;p++){var[k,x]=tn(L,p,s),Q=Jn(L,p,k,d);H(p,k,x,Q),await F(1)}c=!1}}function tn(p="",k=1,x=""){var Q=(t[p]||{})["part"+k];if(!Q)return["",-999];var T=performance.now();if(v)try{return[Q(x),performance.now()-T]}catch(B){var w=String(B),j=/:(\d+:\d+)\)/.exec(B.stack||"");return j&&(w=`(${j[1]}) ${w}`),[w,performance.now()-T]}else return[Q(x),performance.now()-T]}function H(p=1,k="",x=0,Q=!1){r(6,g[p-1]=k,g),r(7,l[p-1]=x<0?"":`(${Math.round(x)}ms)`,l),r(6,g),r(7,l),r(8,h[p-1]=Q,h),r(8,h)}async function N(){var V;if(!c){c=!0;var p=["",""],k=[0,0],x=[!0,!0];r(4,d=-1),r(0,s=""),await F(10);for(var Q=0;Q<J.length;Q++)for(var T=J[Q],w=t[T],j=1;j<3;j++){var B=w?.input,[On,E]=tn(T,j,B||""),Fn=E>=0&&Jn(T,j,On);x[V=j-1]&&(x[V]=Fn),p[j-1]+=Fn?"★":"ー",E>=0&&(k[j-1]+=E),H(j,p[j-1],k[j-1],x[j-1]),await F(1)}r(8,h=x),c=!1}}function Jn(p="",k=1,x="",Q=-1){var T=t[p]?.knownAnswers||[],w=2+2*Q+(k===1?0:1),j=String(T[w]||"");return!!(j&&j===String(x))}var y=(p,k)=>{!p||!p.getDataByDay||(t=p.getDataByDay(),r(1,J=Object.keys(t).filter(x=>!!t[x].part1).sort()),o(k?J.at(-1):""))};y(l3,!0);const U=p=>o(p);function Ln(){g[0]=this.value,r(6,g)}function vn(){g[1]=this.value,r(6,g)}const D=()=>O(-1),$=p=>O(p);function gn(){s=this.value,r(0,s)}const G=()=>{r(5,v=!v)};return n.$$.update=()=>{n.$$.dirty[0]&1&&u(s)},[s,J,L,f,d,v,g,l,h,o,O,N,U,Ln,vn,D,$,gn,G]}class O3 extends a1{constructor(e){super(),p1(this,e,g3,v3,F1,{},null,[-1,-1])}}new O3({target:document.querySelector(".app")});
+U 4 (#786b73)`,c7="",p7="",m7=`broadcaster -> a, b, c
+%a -> b
+%b -> c
+%c -> inv
+&inv -> a`,a7=`broadcaster -> a
+%a -> inv, con
+&inv -> b
+%b -> con
+&con -> output`,O7=`%cd -> jx, gh
+%bk -> jp, cn
+%px -> xc, hg
+%tv -> gh, xl
+&xc -> bm, zq, jf, hg, bd, hn
+%bd -> px
+&bh -> mf
+%dx -> cn, rb
+%vv -> pp, gh
+broadcaster -> cx, zq, tv, rh
+%rb -> cn, qr
+&jf -> mf
+%jd -> mm
+%cx -> xd, cn
+%zs -> cz
+%hn -> bm
+%xr -> bd, xc
+&mf -> rx
+%zq -> kg, xc
+&cn -> sh, jd, cx, tc, xd
+%cs -> xj
+%fb -> tc, cn
+%mm -> cn, bk
+%sq -> th, hz
+%sz -> vx
+%xl -> gh, sz
+%vm -> gh, vv
+%jp -> cn
+%qr -> cn, jd
+%bq -> xc, zv
+&sh -> mf
+%gz -> gs, hz
+%qc -> qg, xc
+%hg -> bq
+%dt -> sq, hz
+%xj -> fz
+%qs -> gh
+%fz -> hz, zs
+%qg -> xc
+%pp -> qs, gh
+%zv -> xc, qc
+%rh -> hz, mr
+&gh -> tv, lk, sz, bh, vx
+%th -> hz
+&mz -> mf
+%bm -> xr
+%lk -> pg
+%jx -> lk, gh
+&hz -> xj, cs, zs, rh, mz
+%tc -> dx
+%mr -> hz, gz
+%xd -> jk
+%pg -> vm, gh
+%kg -> hn, xc
+%gs -> cs, hz
+%vx -> cd
+%cz -> hz, dt
+%jk -> cn, fb`,z7=`...........
+.....###.#.
+.###.##..#.
+..#.#...#..
+....#.#....
+.##..S####.
+.##..#...#.
+.......##..
+.##.#.####.
+.##..##.##.
+...........`,x7=`...................................................................................................................................
+.##.....#........#........#...........#......#....##.....##....................#...#.......#.....................#......#.#........
+...........................#.......#...#.#...#....#...........................#................##.......#....................#.#...
+..............#..............##...#.....#.#...#..#.......#...................................#..#......#.......#....#...........##.
+..........##...#..#......#...#.#..........................................#....................#.....................#.....#.......
+..#............##.....................##.........#..............................#.............##.........##..................#.....
+..............#.#..............................#...............................#....#...#..#.......................#...##..........
+.....................#...#....#.......#.............#.#...........##...................#.#...........##......#.#......#.....#.#....
+.....#.......#..........#...##.#.....#.......#.#.....#.......................#....#..#....................#.#.#....#.......#.......
+..#............#.#..........#.....#.....#.......#..............................................#.................#.................
+......#........##..........#........#............##......................................................#.........#...............
+......#...#.....#....##.................#.......................#..#..............................#.......#..............#.....#...
+.......#..#.......#..........#.............................#.##.........................................#...#.........#............
+....................#.............#.#..............................#......#...........##...##..............#..#.....#..............
+........#.........#...................#................##..#...#...#.......#.....................#...#........#.#.......#..........
+.......................#..#.....##...........................#.#.....................#............#.#.............#.#...#..........
+..#....#....#...............#........#.........................#......#...........................#.##..#.###..#....##.......#.....
+...........#..##..............#...##............................#..#.....................#............#............................
+...##.......#........#.#.....#.........#.#.........#..............##....................#.##.....#............#.................#..
+...#......#....#............#............#...............#.#......#.............#.............#........#.#.##.........#....#....#..
+.#...###.#....#..................#...#.................#......#........#...#.....#.......#...................#..........##.........
+...#..........#........#.......#.................#......#...............#...................#..................#...#....#..........
+...........#....#..................#...#.......#..........#....#......#......#...#...........#..........................#..#.......
+....###...............#......#........#...............#...##...#...............##..............#....#..........#..#....#...........
+.............##......#.#............#........#....................#.#.........#..............#................#.#..............#...
+.###....#...............#.........#.#...............................#...#......###....................#.##.........#...............
+......#..............#.........#.............#..#..#.......####.....................................#..#...........................
+....#...#........#..........................#........#....#.#..#.............#...#...................#.............................
+......#...#.................................#.....#...........#..................................................#....#.#..........
+..........#.....#.................................##..#........#..................##.......................#.......................
+..#..#.##.#.#..............#..#.................#..................#........#.........#..............#....................#.##.....
+.........#.......#.....#.#...............#...#....#..#.............#...#...............................#...#.##...#.....#......#...
+..#..#..........#.......................#............#...#............#............#..#...............#............................
+.#..................##.#..............#..................#.....#..............#....#...#..##............................#...#...#..
+.#.....#..#.........................#....#........#........#........#..##........#..........#.#.........##..#..........#........#..
+...................#...##................#..........#.......#...............##....................................#...#............
+................#...#.................#.....#..............#...............#......#...#....##...................#.....#.....#......
+....................##............................#..##..##..##...........#.......#.#.#..#....#...................#................
+..#........#.#..#....#..............#............................................##.................................#..............
+..........#.......#...............................#.......#..#....#...#.......###.......#..........#.........#........#........#...
+........................................#.............#.##........................#...............#..............#.................
+...#...........................#.................#.......#..#.....#...#.........................#...#..........#.............#.....
+..................................#...#..............#......#..##..#..#........#..#.#..........##....##..................#....#....
+..#..........#....................#......#....#.........##....#..........#......##...#.....#........##...................#.........
+..........#..............#.............................#...............................#.......................................#...
+.............#..........#.......#...#.#..#..#..#...#.......#..#..........#..#......................................................
+...#.....#.................##..##....#.#..#...................#......#......#...........#..#....#...................#.......###....
+........#....................#....#...........#.............#...............#...........#...#.........................##..#.#......
+.....................#...........#..#..#....#..............#..........#..#.........#..##..........#............................#...
+...#......#.........................#.......#.......#...#.........#........................#.#.........#......#............#.......
+....................#.#..#..................................................#......#............#.##........##..............#......
+.......#...........#...#.#..#....#.#.......................##.................................#................................#...
+.......#............#...#......#..#.#................#................................#...##....#..#...........#.............#.....
+.........................#....................#.#..##..#..............#...#....#...##..............................................
+.........................##..............#........#.#...........#........#.............#...........................#..........#....
+.#....#..........................#......#..#...#...........#.......#..........................................#....................
+....................#........#....#..#...........#.....................##.##.....#...#..................#..........#...............
+.....................#....................#.#..................##.....#............#.......##..#...........#.......................
+.....................#..#........#...#.#..................#....#.....................................#..........##....#............
+...........................#.#....#...............#...............#........#........#...#..........#..........#....................
+.................###......#.......#....................#.............#............#....................#.....#.......##............
+.........##......#.....................#.....#..........#.....................#......#..........#.....................#............
+..................#..#........##..###.....................#..........#......#...#......#.#......#......#.............#....#........
+.........#....#.#.............#....#........#.....#..........#...........................#.......#....#...#........................
+...........#.................................................#....................#.......#...........#...#.......#................
+.................................................................S.................................................................
+..................#...............#..........#..........####.............##......#.#...#.......###........#..................#.....
+.......................#...#..##...................##..........................#...##..........##........#...##....................
+............#................#.............................#................#......#..........##...................................
+.............#....#.....##...............#....#..##...#.....#............................##..............#.........................
+.............###.....#..........#.....................................#....#.#.........#................................#..........
+..............#..........................................#........##...#.#.#...............#..........#............##............#.
+............#....#............#.........#...........#.............#............................#..##..#............................
+...#...................#.........#...#............#..#........................#.#.#..#..#.............#.....#......................
+.................#........................#.........#..........#..#............#.#.....#...........#....#....#.................#...
+.....#.................#....#........#.#......#............##.........#.#.........##...........#..#............#..#..............#.
+.....................................................#..................................#..............#..#.......#..............#.
+.......................................#...........#.........................................#...........#.....#..............#....
+...#.#..#..........#...#.##.#..........................................#...............#.#.......#.......................#...#..#..
+....##.##.#.........#...#......#.#.#..........................................#.........#......##...#......#................#......
+.......................#...#......#....#...#...#.......#......................#...........................#.#......................
+.......#..#.................#...#...#...........#........#.........#......#.#.#...##.............#....................#..#.........
+........................................................#.............................#..........#...#.................#...........
+............###......................#.................................#..................................##...............#.......
+..........................................#.#........................#......#.#..#..................#..#......................#.#..
+.........##........................#...#....#.....#.#......#...................#.............#.........#............#.#.#..#.......
+......#......................##...........#....#.##.....#......#..#...#..#.........#..#...#....#.......................##....#.....
+..............................#......#........#...#............#.........#.##..........................#.........#..........#.#....
+...##...#....................#.....#................................##.....#.......................#...........#..#....#...........
+.......#....#...#...................#.#...........#......#..........#......#...........#.............#....................#......#.
+.................................#......#.#...............#.......#..........#.#..#.#.............#..........###....#..#...........
+..............#..#....#..............................................#......#.........#...........................#................
+.#..........#....#....#..........#..#.........................#...#.....#.....................##...#...............#.....#.........
+.......#.......#.#.......................#...............#.........#.......................##.....................#......#...#.....
+.....................................#....#.........#.....#...................##............#...............................#.#....
+........#...#...#.....................................##...............#.......#...#.......#...............#..#.........#.....#....
+....#............#........#............................#......#.....#.#..#..............................#...#..#...#...............
+.....#..................#..............#............#.............#.#.#.#......#......#................#.....#.....................
+.......#...........#.........................#...............##....#..##.......#........#.................#..............#...#.....
+..#..#.......#.#......#......#...........#.#..................#...#..##..#...........#........................###..........#.......
+........#......................#........#........##.#......................##..#...#............................#...........#......
+...............#.....#........#.#...................#.......#..............#............#........................#.....#..#..#.....
+........##...#....#....#.......................................#.........#..##......................##..#......#...................
+..#..........#.....#....#.#..#.....................................#...#.#..#..#.#.#..#............#.............##................
+..................#......#...................##........#.......##...#.............#............................##.........#........
+......................#........#.#.#...........#.......#.#.....................................#.............#....##.......#....#..
+.............#.....#...........#..#.............##...#..#.............................................#...........#.#...#.....#....
+..........................#..#..................#.......#..#.........#......#..#..................#....#..........#.#...#..........
+.....#.........##.....#.......#.......#.........#..#.##...#...................#..........................#......#.#................
+....#.#.................#...........#.......................................#.....#.........#.............#..................#.....
+....#.....#.................#.#....#...#...............#.....#.............#.............#..................#.......#.....#....#...
+.....#..........................#..#.........................#........#....#..#.................##...............................#.
+.......#..................................................#...............................#......#.............#....#..............
+..#...#......##......................#....................#.........#........................#.......#....#.......#...#....#.......
+........#..........#....................#....#.............##...........##...........#..........................................#..
+.###................#..........#......................#.......#.......#.............#..............................#......#....#...
+...#......#...#.#........#.....#.........##.........................#.#....................#......................#.#...........##.
+..........#.........................#....#.....##............#.....................#...............................................
+..#...........##...............................#.#.................#..............#.............#..#................#..#...........
+......#............#..#...........#.............#.........#....#..#.............#....#............#...........#.....#..............
+...##..#..........#...#..................#.....#...............#.....#.................................###..............#..........
+..............#.#.................#...........#................#....#...........#.........#.........#...#..............#...........
+................#.#...#.......#.........#.#..#...............................#.#....................#......#.......#.....#.........
+....................#...#....#...#............#....#............................#.#.#......##.#...##......#.#.#.....#..........#...
+.........#..............#..#......#............#.................................#..........#......#.........#...........#..#..##..
+...#.#....#.....##..................#.##..##....#.......#.......#.............................................................#....
+.....#..#.......#...................#.........................................#...#.................#......................#....#..
+............................................................................#......................................................
+......................#.....#......#...#..........#........#..............................#.#..#..........#........##..............
+..................##...#......#.#.#...#..##.........#......#.................##.....#...#.......#...#....#..#....#......##.........
+...................................................................................................................................`,i7=`1,0,1~1,2,1
+0,0,2~2,0,2
+0,2,3~2,2,3
+0,0,4~0,2,4
+2,0,5~2,2,5
+0,1,6~2,1,6
+1,1,8~1,1,9`,o7=`2,6,9~5,6,9
+9,3,147~9,3,150
+1,0,190~4,0,190
+4,8,37~6,8,37
+0,4,7~0,5,7
+6,2,184~6,4,184
+7,0,157~8,0,157
+4,5,216~6,5,216
+5,0,359~5,1,359
+8,2,64~8,5,64
+1,6,42~2,6,42
+3,4,48~5,4,48
+7,9,219~7,9,219
+0,2,224~0,5,224
+3,3,240~7,3,240
+4,6,232~4,8,232
+2,8,3~2,9,3
+6,2,91~6,3,91
+7,2,210~7,4,210
+3,4,195~5,4,195
+1,3,239~3,3,239
+8,3,152~8,5,152
+6,3,135~8,3,135
+1,1,263~1,2,263
+0,0,277~0,1,277
+3,0,262~3,1,262
+8,1,82~8,4,82
+0,6,244~2,6,244
+2,0,103~2,4,103
+6,1,82~6,3,82
+8,2,257~8,5,257
+4,6,136~6,6,136
+7,1,333~7,2,333
+5,8,137~5,9,137
+3,0,144~3,3,144
+3,6,12~3,7,12
+2,3,362~5,3,362
+8,0,353~8,3,353
+9,2,191~9,4,191
+9,4,102~9,7,102
+3,5,170~3,7,170
+4,8,316~5,8,316
+8,7,41~8,9,41
+1,9,331~3,9,331
+5,2,110~5,2,111
+4,2,229~6,2,229
+3,5,73~3,5,74
+1,9,128~1,9,130
+6,3,234~7,3,234
+0,1,238~0,3,238
+8,2,5~8,3,5
+4,5,308~4,7,308
+9,3,203~9,5,203
+1,4,228~1,7,228
+3,9,359~5,9,359
+5,2,200~5,3,200
+6,2,297~8,2,297
+4,2,267~6,2,267
+3,7,28~5,7,28
+9,5,73~9,8,73
+0,7,237~1,7,237
+3,7,362~6,7,362
+1,2,265~3,2,265
+3,2,334~3,4,334
+7,3,237~7,4,237
+4,3,61~7,3,61
+6,2,148~8,2,148
+0,7,9~2,7,9
+0,1,185~0,2,185
+6,3,173~6,5,173
+5,8,115~5,9,115
+5,5,70~9,5,70
+1,8,359~1,8,360
+1,9,132~2,9,132
+1,1,325~3,1,325
+7,3,251~9,3,251
+1,5,83~4,5,83
+1,0,213~3,0,213
+4,2,215~6,2,215
+2,1,213~3,1,213
+8,5,46~8,7,46
+7,6,226~7,8,226
+3,3,38~5,3,38
+8,2,130~8,4,130
+2,4,64~4,4,64
+8,0,125~8,4,125
+0,4,8~0,6,8
+9,3,207~9,3,209
+3,0,49~5,0,49
+4,4,145~4,4,145
+0,4,238~0,4,240
+6,6,207~6,6,210
+9,5,130~9,5,132
+0,8,165~0,8,169
+2,4,131~6,4,131
+7,5,127~7,6,127
+1,1,2~1,3,2
+2,1,24~5,1,24
+5,5,297~6,5,297
+1,2,253~3,2,253
+1,4,174~3,4,174
+4,5,235~6,5,235
+0,5,144~0,8,144
+5,3,318~5,5,318
+1,0,26~1,2,26
+1,4,32~1,6,32
+2,6,320~5,6,320
+7,3,298~7,5,298
+2,5,79~2,8,79
+6,5,151~6,8,151
+3,0,93~6,0,93
+2,1,180~4,1,180
+1,6,255~4,6,255
+6,7,365~6,9,365
+1,9,357~3,9,357
+2,1,357~4,1,357
+9,0,344~9,2,344
+6,5,218~8,5,218
+0,5,235~0,8,235
+7,5,285~7,9,285
+8,0,204~9,0,204
+4,7,269~7,7,269
+5,5,353~5,7,353
+2,6,199~2,8,199
+4,2,22~5,2,22
+7,8,228~8,8,228
+0,7,146~0,9,146
+1,5,215~4,5,215
+0,1,63~1,1,63
+2,5,81~3,5,81
+2,7,354~2,7,356
+1,0,270~3,0,270
+4,0,20~4,0,22
+4,3,349~4,6,349
+4,4,18~4,5,18
+8,1,246~9,1,246
+3,0,266~6,0,266
+9,1,29~9,3,29
+5,4,303~7,4,303
+5,3,231~7,3,231
+9,0,36~9,1,36
+8,8,231~8,9,231
+4,6,332~4,9,332
+3,6,234~3,8,234
+1,1,351~1,3,351
+2,0,143~2,3,143
+6,1,241~8,1,241
+7,7,49~7,9,49
+6,5,316~8,5,316
+8,3,276~8,6,276
+5,7,25~8,7,25
+5,8,210~7,8,210
+1,8,19~1,9,19
+2,8,106~4,8,106
+9,3,103~9,6,103
+7,6,64~7,8,64
+3,0,210~6,0,210
+7,3,293~7,6,293
+4,1,49~4,1,51
+5,2,324~7,2,324
+9,0,202~9,3,202
+8,2,343~9,2,343
+1,3,260~1,5,260
+2,6,303~2,6,306
+5,8,367~5,8,368
+0,2,235~0,4,235
+7,7,120~7,9,120
+4,6,296~4,8,296
+2,2,130~2,6,130
+3,4,309~3,6,309
+4,2,129~4,3,129
+7,6,227~7,8,227
+4,3,343~4,5,343
+5,7,191~5,9,191
+1,6,254~1,7,254
+3,4,364~6,4,364
+9,5,351~9,8,351
+1,0,104~4,0,104
+0,0,153~2,0,153
+1,1,209~1,3,209
+5,8,112~5,9,112
+2,4,239~2,4,239
+0,8,334~0,8,336
+0,5,54~1,5,54
+5,1,147~5,4,147
+5,5,272~5,7,272
+7,1,258~7,4,258
+7,1,135~7,1,138
+0,2,265~0,5,265
+1,0,30~1,1,30
+3,3,77~3,6,77
+1,3,29~1,5,29
+4,1,112~5,1,112
+8,4,66~8,6,66
+2,2,136~2,4,136
+4,7,116~6,7,116
+5,6,361~5,9,361
+6,7,59~7,7,59
+0,1,86~2,1,86
+9,2,218~9,5,218
+3,6,221~3,8,221
+1,9,1~3,9,1
+2,0,293~4,0,293
+3,5,190~3,7,190
+2,5,352~2,8,352
+1,7,76~1,7,76
+0,3,174~3,3,174
+5,9,318~6,9,318
+0,6,354~1,6,354
+2,5,340~4,5,340
+6,7,154~8,7,154
+5,4,354~8,4,354
+1,0,230~1,2,230
+5,7,22~7,7,22
+6,9,334~8,9,334
+2,2,176~5,2,176
+0,5,65~0,7,65
+2,5,187~2,8,187
+9,4,10~9,4,12
+1,5,157~1,8,157
+8,0,32~8,3,32
+4,3,16~4,5,16
+4,3,39~7,3,39
+6,2,362~8,2,362
+4,0,189~4,2,189
+3,5,53~3,6,53
+3,1,224~3,3,224
+7,9,305~7,9,308
+6,8,33~8,8,33
+3,5,125~3,9,125
+2,1,270~5,1,270
+8,3,114~8,5,114
+3,0,159~3,3,159
+6,6,204~8,6,204
+1,3,57~1,5,57
+4,4,144~4,6,144
+0,6,357~0,9,357
+6,1,362~9,1,362
+5,1,2~7,1,2
+2,2,61~5,2,61
+4,2,262~4,4,262
+3,7,328~3,9,328
+2,3,146~5,3,146
+8,0,198~8,2,198
+4,8,4~5,8,4
+4,9,23~6,9,23
+1,4,311~1,6,311
+4,3,52~6,3,52
+0,6,90~3,6,90
+2,7,84~5,7,84
+1,4,269~1,6,269
+6,4,51~9,4,51
+3,7,373~5,7,373
+7,7,360~8,7,360
+1,2,348~1,5,348
+6,2,204~6,3,204
+4,3,163~6,3,163
+6,3,126~6,3,126
+9,5,29~9,7,29
+3,7,2~5,7,2
+9,4,121~9,7,121
+8,5,67~8,7,67
+2,5,117~6,5,117
+4,3,120~4,7,120
+3,5,307~5,5,307
+1,1,60~1,4,60
+2,2,8~4,2,8
+0,7,62~3,7,62
+3,0,358~5,0,358
+0,6,141~4,6,141
+5,8,304~7,8,304
+5,7,298~6,7,298
+6,2,358~8,2,358
+1,1,347~1,5,347
+2,3,203~5,3,203
+4,9,267~6,9,267
+6,9,205~8,9,205
+2,7,99~6,7,99
+4,3,293~5,3,293
+0,5,183~2,5,183
+5,5,58~7,5,58
+5,5,237~8,5,237
+8,9,190~9,9,190
+2,2,4~2,4,4
+6,4,14~6,7,14
+6,6,213~8,6,213
+6,8,244~8,8,244
+2,6,192~2,6,193
+6,1,259~9,1,259
+5,6,290~5,7,290
+2,7,59~2,9,59
+1,4,61~1,5,61
+2,5,72~4,5,72
+0,6,191~1,6,191
+2,0,43~2,2,43
+8,5,197~8,7,197
+3,3,110~3,4,110
+4,0,153~7,0,153
+9,7,128~9,9,128
+4,2,30~5,2,30
+6,0,154~6,0,154
+4,4,239~5,4,239
+2,2,32~2,4,32
+4,5,139~4,7,139
+7,8,349~9,8,349
+0,2,182~1,2,182
+6,4,192~6,6,192
+4,5,352~4,5,355
+5,0,271~5,0,272
+5,6,110~5,7,110
+7,3,19~7,6,19
+7,8,47~9,8,47
+1,0,254~4,0,254
+4,3,227~7,3,227
+7,8,35~9,8,35
+7,6,287~9,6,287
+8,1,57~8,3,57
+4,0,88~5,0,88
+1,2,267~1,2,269
+5,9,76~7,9,76
+2,2,290~3,2,290
+1,2,243~4,2,243
+4,0,267~6,0,267
+1,7,78~1,7,80
+2,7,270~5,7,270
+5,3,193~6,3,193
+9,2,36~9,3,36
+8,2,144~8,5,144
+5,3,243~6,3,243
+7,6,125~9,6,125
+7,7,37~7,9,37
+1,2,18~4,2,18
+9,3,310~9,3,312
+7,0,154~7,3,154
+8,4,248~8,6,248
+1,5,230~1,6,230
+7,9,286~7,9,288
+4,6,266~4,8,266
+7,3,104~7,5,104
+9,8,195~9,8,198
+7,8,193~9,8,193
+5,5,314~8,5,314
+6,6,20~7,6,20
+0,3,32~0,4,32
+3,5,22~4,5,22
+8,3,191~8,3,193
+8,0,309~8,2,309
+6,6,64~6,8,64
+1,2,154~1,5,154
+5,0,58~5,1,58
+4,1,165~6,1,165
+2,3,285~2,3,288
+0,8,300~4,8,300
+6,2,7~6,3,7
+8,0,166~8,2,166
+1,4,184~3,4,184
+8,4,321~8,6,321
+1,3,356~1,3,358
+8,1,200~8,2,200
+5,0,254~6,0,254
+4,3,299~6,3,299
+3,2,3~4,2,3
+0,6,23~0,8,23
+3,5,226~3,5,229
+7,7,300~7,9,300
+5,5,368~7,5,368
+4,1,135~6,1,135
+7,6,184~7,8,184
+2,9,326~2,9,328
+0,8,98~2,8,98
+6,9,210~9,9,210
+9,0,361~9,0,363
+1,2,250~2,2,250
+8,7,192~8,9,192
+9,4,75~9,5,75
+7,1,164~9,1,164
+6,6,101~6,6,104
+3,9,102~5,9,102
+8,2,9~8,4,9
+7,1,244~9,1,244
+2,3,194~2,4,194
+8,0,206~8,1,206
+8,6,214~8,7,214
+2,7,154~2,8,154
+6,2,260~7,2,260
+4,6,56~4,8,56
+3,4,213~6,4,213
+3,7,228~3,9,228
+4,6,271~4,8,271
+6,4,128~9,4,128
+1,5,262~1,5,265
+1,2,181~1,4,181
+2,6,37~4,6,37
+6,3,88~6,5,88
+5,0,188~5,4,188
+2,4,214~2,6,214
+9,8,104~9,8,104
+8,0,240~8,2,240
+8,7,130~8,7,130
+0,9,109~2,9,109
+3,3,276~3,5,276
+8,3,139~8,4,139
+3,6,65~3,9,65
+2,7,368~4,7,368
+1,6,94~1,7,94
+7,9,7~8,9,7
+5,0,52~6,0,52
+3,1,271~3,1,273
+0,8,328~2,8,328
+5,1,266~5,2,266
+8,1,136~8,3,136
+5,5,347~6,5,347
+5,7,62~7,7,62
+0,2,32~0,2,33
+0,0,3~0,2,3
+6,5,219~8,5,219
+3,1,32~3,2,32
+2,6,20~2,7,20
+6,1,297~8,1,297
+2,1,21~4,1,21
+4,0,85~6,0,85
+6,1,244~6,2,244
+5,0,214~7,0,214
+5,5,217~8,5,217
+9,0,9~9,1,9
+6,2,348~8,2,348
+4,7,131~6,7,131
+3,9,73~5,9,73
+7,6,45~7,7,45
+3,3,135~5,3,135
+0,5,206~0,7,206
+0,2,158~3,2,158
+2,1,57~5,1,57
+2,1,191~2,3,191
+4,0,219~6,0,219
+8,4,19~9,4,19
+5,7,85~5,9,85
+3,7,369~3,9,369
+5,4,356~7,4,356
+4,2,327~5,2,327
+1,3,84~3,3,84
+6,0,112~6,2,112
+3,7,120~3,8,120
+2,1,91~3,1,91
+5,4,189~5,4,190
+4,4,121~4,6,121
+1,0,237~1,3,237
+0,6,189~3,6,189
+0,0,252~2,0,252
+7,2,317~7,5,317
+0,3,228~1,3,228
+1,1,31~3,1,31
+4,0,205~4,3,205
+1,6,65~1,8,65
+2,4,100~2,7,100
+3,5,355~3,6,355
+5,4,105~8,4,105
+4,2,286~7,2,286
+6,8,367~8,8,367
+5,3,138~5,3,139
+6,8,106~6,9,106
+7,5,133~7,5,135
+1,3,26~4,3,26
+3,3,123~6,3,123
+4,6,298~5,6,298
+7,1,239~9,1,239
+2,7,321~5,7,321
+1,2,227~4,2,227
+8,2,202~8,2,204
+6,0,295~6,3,295
+4,9,55~4,9,56
+6,2,10~6,2,14
+5,0,290~5,2,290
+0,1,150~0,3,150
+6,5,78~9,5,78
+0,4,179~3,4,179
+5,6,92~7,6,92
+8,4,37~9,4,37
+4,4,8~6,4,8
+0,7,101~0,8,101
+4,6,235~4,6,238
+5,5,351~5,7,351
+8,6,275~8,8,275
+2,9,321~2,9,323
+4,7,301~6,7,301
+0,6,194~0,6,196
+5,6,6~5,6,8
+2,3,42~5,3,42
+6,2,56~8,2,56
+5,2,19~5,4,19
+5,9,209~7,9,209
+4,2,151~6,2,151
+5,2,16~5,5,16
+2,1,198~5,1,198
+3,9,101~5,9,101
+2,0,265~2,0,266
+4,4,350~4,8,350
+1,5,51~2,5,51
+5,4,346~5,6,346
+0,1,89~4,1,89
+4,6,334~4,6,335
+6,2,141~8,2,141
+5,5,130~7,5,130
+0,7,274~3,7,274
+4,0,34~7,0,34
+2,8,326~3,8,326
+4,3,160~4,5,160
+4,2,296~4,5,296
+0,6,359~0,9,359
+7,8,80~7,9,80
+0,1,273~0,1,276
+9,5,71~9,5,72
+5,5,205~7,5,205
+2,3,353~2,5,353
+2,6,246~2,8,246
+0,4,106~2,4,106
+0,0,271~0,3,271
+2,4,90~4,4,90
+4,5,199~7,5,199
+4,5,21~4,7,21
+6,1,356~8,1,356
+0,5,198~0,6,198
+7,3,278~9,3,278
+2,4,93~2,5,93
+2,9,106~5,9,106
+2,5,82~2,8,82
+6,2,177~6,4,177
+1,2,175~1,4,175
+4,8,152~6,8,152
+0,5,66~0,6,66
+2,0,116~5,0,116
+1,4,265~2,4,265
+7,5,118~7,7,118
+4,2,44~4,3,44
+6,4,63~6,6,63
+0,6,26~0,6,26
+2,0,177~2,2,177
+7,4,95~7,6,95
+3,6,145~6,6,145
+9,2,8~9,4,8
+3,2,331~6,2,331
+9,2,54~9,5,54
+6,5,189~6,6,189
+0,2,36~0,3,36
+1,5,26~1,5,28
+7,2,242~8,2,242
+2,3,211~2,3,214
+7,9,112~9,9,112
+3,5,273~3,8,273
+6,9,304~7,9,304
+1,3,208~2,3,208
+3,3,18~3,5,18
+8,3,67~8,4,67
+7,2,197~9,2,197
+0,6,232~2,6,232
+6,3,201~6,5,201
+4,0,360~4,2,360
+4,6,40~7,6,40
+1,3,354~1,5,354
+5,0,269~9,0,269
+4,6,187~4,8,187
+4,2,65~6,2,65
+6,6,228~7,6,228
+6,8,290~8,8,290
+5,2,370~6,2,370
+1,1,200~1,3,200
+7,4,239~7,6,239
+8,2,157~9,2,157
+5,0,87~5,1,87
+1,5,315~3,5,315
+1,8,164~5,8,164
+7,9,48~9,9,48
+8,4,59~8,6,59
+6,4,300~8,4,300
+0,9,152~2,9,152
+0,5,190~0,6,190
+3,6,2~5,6,2
+5,3,338~8,3,338
+4,5,133~4,8,133
+6,7,27~6,8,27
+7,7,272~9,7,272
+0,5,21~0,9,21
+1,6,51~3,6,51
+1,3,25~1,5,25
+6,9,220~9,9,220
+6,2,235~6,4,235
+8,1,208~8,1,209
+2,1,321~2,3,321
+7,7,52~7,9,52
+5,8,153~5,9,153
+0,3,93~0,6,93
+1,3,151~2,3,151
+5,1,55~5,4,55
+1,0,248~1,3,248
+7,6,303~7,8,303
+2,3,29~4,3,29
+3,1,209~3,3,209
+8,7,50~8,8,50
+3,1,350~3,3,350
+6,9,218~7,9,218
+1,5,258~1,8,258
+1,5,40~3,5,40
+1,2,56~1,5,56
+4,3,322~6,3,322
+2,2,149~2,2,152
+8,1,35~9,1,35
+7,5,27~7,7,27
+8,4,133~8,6,133
+3,2,357~3,4,357
+2,0,62~2,2,62
+5,0,240~5,2,240
+4,1,162~6,1,162
+4,1,6~4,3,6
+9,5,106~9,5,109
+7,1,336~7,4,336
+6,2,49~6,4,49
+7,5,112~7,7,112
+9,8,188~9,9,188
+1,7,235~2,7,235
+9,5,127~9,7,127
+1,2,316~1,5,316
+6,8,55~7,8,55
+9,3,190~9,5,190
+3,3,132~6,3,132
+1,4,313~4,4,313
+9,2,26~9,5,26
+4,7,85~4,9,85
+9,5,192~9,6,192
+6,2,142~8,2,142
+8,6,218~8,8,218
+5,5,367~5,7,367
+6,0,247~6,1,247
+9,0,40~9,1,40
+5,1,236~8,1,236
+2,3,284~4,3,284
+4,2,82~4,3,82
+2,0,333~2,2,333
+1,5,249~1,8,249
+3,4,366~5,4,366
+6,3,339~6,5,339
+2,9,70~5,9,70
+6,7,16~8,7,16
+2,3,254~5,3,254
+7,7,280~7,9,280
+4,9,333~7,9,333
+0,8,163~3,8,163
+9,3,307~9,3,307
+8,5,61~8,6,61
+5,4,198~8,4,198
+5,1,61~8,1,61
+2,8,104~3,8,104
+0,6,17~0,8,17
+9,4,219~9,5,219
+0,0,263~4,0,263
+7,0,247~7,1,247
+9,3,252~9,3,254
+3,2,4~4,2,4
+4,7,209~4,9,209
+2,5,118~2,5,121
+2,6,258~3,6,258
+7,1,260~7,1,261
+8,3,92~8,3,93
+6,9,79~9,9,79
+1,5,334~2,5,334
+6,5,185~8,5,185
+2,2,138~2,5,138
+1,7,250~1,7,253
+4,6,123~6,6,123
+1,1,317~3,1,317
+1,1,83~4,1,83
+2,2,323~2,3,323
+2,1,160~4,1,160
+4,7,295~6,7,295
+9,3,14~9,5,14
+5,3,83~5,5,83
+7,2,55~7,4,55
+7,1,111~7,1,113
+3,2,85~3,4,85
+2,5,151~2,7,151
+2,6,261~4,6,261
+9,4,262~9,4,264
+9,3,146~9,5,146
+4,5,275~6,5,275
+7,6,297~7,8,297
+4,9,198~6,9,198
+0,6,208~0,7,208
+8,6,360~8,6,362
+3,4,25~5,4,25
+5,2,344~7,2,344
+3,1,58~4,1,58
+7,4,129~9,4,129
+8,6,337~8,7,337
+6,9,337~6,9,339
+1,1,246~2,1,246
+3,2,214~5,2,214
+1,3,313~4,3,313
+4,9,202~6,9,202
+8,4,33~8,7,33
+5,8,277~9,8,277
+2,1,245~2,2,245
+2,5,132~4,5,132
+8,5,221~8,5,222
+3,8,302~3,9,302
+4,0,38~5,0,38
+8,2,363~8,5,363
+8,1,129~9,1,129
+3,7,177~5,7,177
+7,9,213~7,9,215
+2,9,212~4,9,212
+7,5,201~7,6,201
+3,8,109~3,8,111
+0,2,326~2,2,326
+9,0,200~9,2,200
+1,4,247~1,6,247
+4,3,53~4,6,53
+3,5,339~3,8,339
+0,5,188~3,5,188
+2,1,247~2,2,247
+6,0,115~7,0,115
+6,3,63~8,3,63
+3,4,198~3,7,198
+3,6,70~3,8,70
+7,4,151~7,4,154
+8,2,2~8,4,2
+8,6,346~8,8,346
+4,5,145~6,5,145
+3,2,187~6,2,187
+7,1,128~8,1,128
+1,0,84~3,0,84
+4,0,211~6,0,211
+3,3,47~6,3,47
+3,0,82~3,3,82
+6,8,242~6,9,242
+1,3,318~2,3,318
+5,3,361~5,5,361
+9,5,327~9,7,327
+1,2,318~1,2,318
+2,4,49~2,7,49
+6,0,359~8,0,359
+5,8,193~5,8,193
+8,5,349~8,7,349
+9,0,148~9,2,148
+6,6,34~6,6,34
+5,5,325~5,8,325
+2,7,324~5,7,324
+5,2,49~5,2,52
+7,0,128~9,0,128
+4,9,305~4,9,306
+0,5,361~0,7,361
+8,7,111~8,9,111
+6,3,124~9,3,124
+0,2,28~0,5,28
+8,0,139~8,0,143
+1,5,312~1,5,314
+2,6,148~4,6,148
+4,7,140~4,7,142
+1,1,260~1,2,260
+0,8,10~2,8,10
+8,6,215~8,9,215
+4,5,370~5,5,370
+9,1,37~9,3,37
+2,1,300~2,2,300
+5,1,304~5,1,304
+8,4,205~9,4,205
+7,9,142~7,9,145
+0,4,319~2,4,319
+1,6,225~1,7,225
+2,0,39~2,2,39
+6,2,245~6,6,245
+3,4,107~6,4,107
+2,7,233~5,7,233
+3,0,16~3,3,16
+3,0,238~5,0,238
+8,8,370~9,8,370
+8,2,6~8,4,6
+5,0,119~7,0,119
+0,6,266~2,6,266
+6,0,158~7,0,158
+0,9,68~3,9,68
+8,7,132~8,8,132
+5,5,93~5,7,93
+0,2,21~3,2,21
+4,9,201~7,9,201
+2,4,236~5,4,236
+8,3,335~8,6,335
+1,4,331~1,7,331
+5,6,203~5,7,203
+5,6,119~5,7,119
+6,1,6~9,1,6
+8,5,99~8,8,99
+3,5,85~4,5,85
+2,4,36~2,4,38
+2,3,126~4,3,126
+8,5,45~8,7,45
+2,3,165~4,3,165
+0,2,141~3,2,141
+2,3,207~5,3,207
+2,0,365~4,0,365
+1,8,264~3,8,264
+6,4,294~6,5,294
+1,0,249~1,3,249
+5,0,95~8,0,95
+2,6,218~4,6,218
+1,7,70~1,9,70
+7,4,344~7,6,344
+3,1,208~5,1,208
+6,2,152~6,2,152
+0,2,273~0,5,273
+1,4,142~1,7,142
+7,5,97~7,5,99
+9,5,56~9,7,56
+1,4,229~3,4,229
+4,0,47~4,2,47
+6,2,243~8,2,243
+5,1,197~8,1,197
+7,1,22~7,3,22
+1,3,323~1,5,323
+8,5,7~8,6,7
+8,3,297~8,5,297
+2,5,45~2,6,45
+6,5,191~9,5,191
+6,0,242~8,0,242
+2,0,366~4,0,366
+6,7,56~7,7,56
+3,5,327~3,7,327
+1,3,222~1,6,222
+7,3,196~7,5,196
+0,6,351~3,6,351
+4,0,139~4,2,139
+2,6,321~3,6,321
+5,6,3~5,9,3
+2,7,367~2,9,367
+7,4,183~7,7,183
+4,3,292~6,3,292
+7,4,222~7,5,222
+1,3,243~1,5,243
+9,5,220~9,5,222
+6,1,148~6,1,150
+7,7,301~7,9,301
+2,8,239~5,8,239
+1,4,250~3,4,250
+4,1,130~4,4,130
+4,4,168~4,6,168
+8,7,340~8,9,340
+0,2,23~0,2,25
+2,4,84~2,5,84
+1,1,199~3,1,199
+7,3,111~7,5,111
+1,6,330~3,6,330
+9,7,105~9,8,105
+6,6,4~6,8,4
+6,3,320~7,3,320
+3,2,316~3,5,316
+5,2,255~8,2,255
+7,8,185~9,8,185
+8,5,72~8,7,72
+5,6,366~5,9,366
+3,1,210~5,1,210
+3,0,35~4,0,35
+0,7,240~0,8,240
+6,5,114~6,7,114
+6,8,322~9,8,322
+2,1,19~4,1,19
+9,3,291~9,6,291
+1,3,320~4,3,320
+9,2,152~9,5,152
+2,9,25~4,9,25
+3,8,160~6,8,160
+7,4,17~9,4,17
+1,9,23~1,9,24
+9,6,45~9,9,45
+4,0,3~7,0,3
+8,1,310~8,3,310
+5,1,230~5,3,230
+6,6,31~7,6,31
+4,3,211~7,3,211
+8,8,253~9,8,253
+3,1,235~3,1,237
+5,2,46~7,2,46
+2,2,34~2,4,34
+2,3,226~2,3,226
+5,1,163~7,1,163
+4,3,108~4,5,108
+4,3,164~4,6,164
+3,8,373~5,8,373
+3,0,188~3,2,188
+5,6,19~5,7,19
+0,5,5~0,7,5
+8,0,312~9,0,312
+5,1,8~8,1,8
+8,2,31~8,4,31
+3,3,304~3,4,304
+7,6,103~7,8,103
+2,0,361~2,2,361
+6,2,342~7,2,342
+4,7,124~6,7,124
+4,8,100~4,8,102
+2,4,172~3,4,172
+4,6,313~4,8,313
+2,4,225~2,6,225
+1,7,227~3,7,227
+3,0,361~3,2,361
+5,2,306~5,4,306
+7,2,246~7,5,246
+5,1,109~5,4,109
+2,6,93~4,6,93
+9,0,131~9,2,131
+4,7,171~6,7,171
+6,0,354~9,0,354
+2,4,59~2,5,59
+6,0,357~9,0,357
+2,3,134~2,5,134
+2,2,311~3,2,311
+8,4,341~8,5,341
+5,2,24~5,3,24
+1,7,358~1,9,358
+6,8,3~8,8,3
+1,3,344~3,3,344
+2,0,258~2,2,258
+4,9,207~5,9,207
+3,6,348~6,6,348
+9,4,297~9,6,297
+6,6,191~9,6,191
+0,2,176~0,4,176
+5,8,225~7,8,225
+1,6,83~4,6,83
+0,9,16~3,9,16
+1,2,297~5,2,297
+7,5,55~7,7,55
+5,4,292~5,7,292
+3,2,347~6,2,347
+8,6,196~8,8,196
+9,1,125~9,3,125
+1,0,125~3,0,125
+8,5,27~8,7,27
+2,0,95~4,0,95
+2,2,23~3,2,23
+0,6,77~2,6,77
+4,3,234~4,6,234
+1,6,303~1,8,303
+2,0,268~4,0,268
+9,7,323~9,9,323
+2,2,182~2,4,182
+3,4,302~6,4,302
+6,5,56~8,5,56
+6,4,214~9,4,214
+2,4,57~4,4,57
+9,2,217~9,4,217
+7,3,109~7,5,109
+5,5,101~8,5,101
+2,5,153~2,6,153
+5,9,108~8,9,108
+6,2,52~8,2,52
+7,4,57~8,4,57
+6,6,62~8,6,62
+8,8,343~8,9,343
+1,4,3~1,6,3
+0,2,147~3,2,147
+5,1,367~5,3,367
+2,9,18~2,9,19
+1,6,34~2,6,34
+3,1,232~5,1,232
+1,0,215~3,0,215
+6,6,148~7,6,148
+5,2,210~5,4,210
+3,4,133~3,8,133
+5,0,31~5,2,31
+2,2,128~2,4,128
+0,1,227~0,2,227
+6,2,181~6,5,181
+3,5,216~3,6,216
+7,4,358~7,7,358
+4,8,234~6,8,234
+6,2,190~6,3,190
+8,3,188~8,4,188
+7,0,55~7,1,55
+1,3,223~1,3,225
+1,1,240~1,3,240
+1,0,328~1,1,328
+9,0,359~9,1,359
+2,0,217~4,0,217
+3,4,279~3,6,279
+6,0,129~8,0,129
+3,3,158~6,3,158
+9,5,353~9,8,353
+7,3,21~9,3,21
+7,5,348~7,7,348
+3,6,13~3,8,13
+2,2,218~2,4,218
+7,2,306~9,2,306
+6,7,136~6,7,138
+6,4,342~6,7,342
+8,5,336~8,5,338
+7,8,135~9,8,135
+3,8,275~3,8,275
+3,2,55~3,3,55
+7,4,207~7,6,207
+4,3,171~7,3,171
+4,3,80~6,3,80
+5,2,330~8,2,330
+5,1,212~7,1,212
+5,6,172~8,6,172
+3,0,354~3,1,354
+0,2,29~0,3,29
+7,2,15~7,4,15
+4,7,208~7,7,208
+3,0,150~3,3,150
+1,6,165~1,8,165
+5,6,125~6,6,125
+4,9,316~6,9,316
+7,1,144~8,1,144
+4,1,110~7,1,110
+3,2,355~5,2,355
+1,2,23~1,5,23
+3,8,224~6,8,224
+4,8,376~5,8,376
+8,0,287~8,3,287
+2,7,273~2,9,273
+0,0,233~0,2,233
+7,1,338~9,1,338
+4,1,8~4,1,10
+4,0,291~5,0,291
+4,2,137~4,4,137
+2,4,85~2,4,87
+3,3,310~3,7,310
+2,6,53~2,7,53
+3,8,246~3,9,246
+5,8,7~6,8,7
+4,2,263~5,2,263
+0,2,350~1,2,350
+6,5,289~6,8,289
+4,0,197~7,0,197
+0,2,328~2,2,328
+5,0,307~5,1,307
+5,6,244~5,8,244
+6,6,359~9,6,359
+3,6,84~3,6,87
+4,3,168~5,3,168
+9,3,22~9,6,22
+8,7,294~8,9,294
+8,5,8~8,5,10
+4,3,60~4,5,60
+0,1,151~0,1,153
+4,9,75~6,9,75
+1,1,275~3,1,275
+2,6,133~2,7,133
+8,5,127~8,8,127
+6,5,290~9,5,290
+1,8,135~3,8,135
+2,3,225~4,3,225
+2,5,280~2,7,280
+0,5,11~0,7,11
+3,3,302~5,3,302
+5,9,139~8,9,139
+6,7,345~7,7,345
+0,1,34~2,1,34
+2,8,73~4,8,73
+4,1,307~4,1,310
+1,2,96~4,2,96
+5,7,17~7,7,17
+6,2,188~6,3,188
+3,1,268~3,3,268
+6,7,34~6,9,34
+6,3,203~6,6,203
+4,7,129~5,7,129
+1,1,259~3,1,259
+7,2,25~8,2,25
+7,2,319~7,2,321
+5,0,235~5,1,235
+1,9,56~3,9,56
+4,6,113~6,6,113
+5,5,321~5,6,321
+2,0,271~4,0,271
+2,6,48~2,8,48
+7,6,354~9,6,354
+4,0,122~5,0,122
+2,6,95~2,8,95
+5,4,194~6,4,194
+1,3,339~3,3,339
+2,0,255~4,0,255
+7,5,319~8,5,319
+5,5,102~7,5,102
+5,1,303~5,3,303
+2,1,314~2,3,314
+6,9,129~9,9,129
+1,7,230~1,7,233
+0,9,361~2,9,361
+2,4,299~4,4,299
+2,5,184~4,5,184
+0,4,325~0,5,325
+5,5,21~8,5,21
+1,9,21~4,9,21
+9,6,23~9,6,25
+0,6,12~2,6,12
+3,8,235~3,8,237
+5,6,107~7,6,107
+0,4,2~0,6,2
+1,0,27~1,1,27
+3,4,6~6,4,6
+4,1,238~6,1,238
+2,7,325~2,8,325
+4,8,5~4,9,5
+6,7,61~6,8,61
+3,5,223~3,8,223
+1,5,271~1,5,273
+9,0,314~9,1,314
+9,3,6~9,6,6
+4,7,98~4,9,98
+0,7,14~1,7,14
+3,7,95~6,7,95
+3,8,90~5,8,90
+0,0,273~0,0,275
+5,6,169~5,7,169
+3,3,257~6,3,257
+8,3,204~9,3,204
+5,3,201~5,6,201
+1,0,41~2,0,41
+1,1,243~2,1,243
+8,0,137~8,2,137
+8,2,346~8,4,346
+2,0,164~2,2,164
+6,0,88~6,1,88
+4,6,226~4,8,226
+3,5,57~3,5,60
+1,1,323~3,1,323
+7,4,338~7,4,341
+2,7,15~2,7,17
+5,5,167~5,5,170
+1,4,170~4,4,170
+3,0,17~5,0,17
+4,9,54~7,9,54
+4,1,304~4,3,304
+2,7,204~2,7,205
+8,1,281~8,3,281
+8,4,28~8,6,28
+8,2,246~8,5,246
+5,7,48~7,7,48
+2,3,149~2,6,149
+9,5,99~9,8,99
+5,8,104~7,8,104
+9,0,145~9,3,145
+1,9,244~4,9,244
+5,4,108~8,4,108
+2,9,309~4,9,309
+9,3,24~9,4,24
+7,2,131~8,2,131
+9,2,215~9,4,215
+9,1,144~9,3,144
+1,3,359~1,3,359
+4,6,267~4,6,267
+4,2,58~4,4,58
+4,6,264~4,9,264
+2,3,222~2,5,222
+5,5,315~5,9,315
+1,7,260~3,7,260
+7,3,306~9,3,306
+8,4,295~8,6,295
+6,8,293~6,9,293
+2,0,52~4,0,52
+6,2,338~8,2,338
+0,2,268~0,4,268
+0,1,37~2,1,37
+4,4,174~5,4,174
+0,7,277~2,7,277
+7,1,3~7,3,3
+5,7,141~6,7,141
+3,2,203~6,2,203
+4,2,173~4,4,173
+8,1,60~8,1,60
+3,0,53~4,0,53
+5,4,149~7,4,149
+8,9,49~8,9,51
+2,9,330~5,9,330
+7,0,33~9,0,33
+0,1,358~2,1,358
+1,1,185~1,4,185
+5,3,165~5,5,165
+1,7,309~1,9,309
+4,9,204~7,9,204
+4,6,229~5,6,229
+1,4,108~1,4,109
+0,3,157~1,3,157
+0,8,102~1,8,102
+5,6,90~7,6,90
+8,1,332~8,3,332
+5,9,35~6,9,35
+2,0,25~6,0,25
+7,6,187~7,8,187
+8,2,356~8,4,356
+1,4,357~1,6,357
+7,1,141~9,1,141
+5,9,211~5,9,212
+3,4,78~5,4,78
+7,2,340~9,2,340
+7,5,320~7,8,320
+4,9,4~8,9,4
+4,4,310~4,6,310
+6,9,268~6,9,268
+2,0,121~2,0,123
+1,0,363~2,0,363
+3,2,93~3,5,93
+4,3,46~4,5,46
+9,5,46~9,9,46
+5,6,174~6,6,174
+0,0,119~2,0,119
+1,4,91~1,7,91
+5,7,205~5,8,205
+7,4,110~8,4,110
+5,4,134~6,4,134
+2,1,252~2,3,252
+4,3,259~6,3,259
+1,3,86~2,3,86
+1,4,249~3,4,249
+3,6,167~5,6,167
+0,4,264~3,4,264
+3,2,13~3,4,13
+6,6,117~8,6,117
+2,6,269~2,6,269
+5,6,205~6,6,205
+2,2,363~2,2,363
+5,4,13~7,4,13
+2,0,218~2,1,218
+8,6,293~8,8,293
+7,8,337~7,9,337
+3,7,178~3,8,178
+2,2,216~2,4,216
+5,7,287~7,7,287
+4,5,151~4,7,151
+8,1,303~8,4,303
+2,6,230~2,9,230
+2,8,157~5,8,157
+5,3,186~6,3,186
+3,0,272~3,0,275
+4,0,298~7,0,298
+0,2,183~0,4,183
+3,1,153~3,4,153
+0,6,18~0,7,18
+9,5,205~9,7,205
+3,6,66~5,6,66
+6,0,58~8,0,58
+9,2,32~9,2,35
+9,7,274~9,7,275
+6,6,186~8,6,186
+0,0,22~0,2,22
+8,6,119~9,6,119
+9,9,213~9,9,214
+6,9,25~6,9,28
+7,8,101~9,8,101
+7,7,44~9,7,44
+7,2,256~9,2,256
+2,7,13~2,9,13
+8,2,151~8,5,151
+1,2,310~1,4,310
+5,1,214~6,1,214
+1,6,239~1,9,239
+5,4,111~6,4,111
+4,0,355~6,0,355
+2,1,335~2,1,336
+6,4,23~9,4,23
+9,0,38~9,1,38
+9,8,280~9,8,282
+0,6,304~0,9,304
+3,0,208~6,0,208
+3,2,156~3,4,156
+4,7,126~5,7,126
+6,8,283~7,8,283
+6,4,278~9,4,278
+8,2,112~8,4,112
+8,3,65~8,6,65
+4,3,14~4,6,14
+2,7,153~4,7,153
+7,3,295~7,6,295
+9,4,260~9,5,260
+6,2,2~6,2,4
+1,3,43~2,3,43
+7,2,194~7,5,194
+2,8,208~5,8,208
+4,3,352~7,3,352
+9,1,258~9,4,258
+4,8,241~6,8,241
+4,6,304~4,9,304
+3,3,282~3,5,282
+2,7,234~2,9,234
+3,2,287~6,2,287
+5,8,328~7,8,328
+2,6,68~4,6,68
+4,1,44~6,1,44
+0,4,135~2,4,135
+5,2,198~7,2,198
+0,4,242~0,6,242
+4,7,210~4,8,210
+8,2,254~8,4,254
+3,5,220~5,5,220
+6,9,55~7,9,55
+1,6,15~1,8,15
+4,5,174~4,7,174
+0,1,230~0,3,230
+2,8,108~5,8,108
+0,8,149~0,9,149
+5,1,46~5,1,47
+9,0,206~9,2,206
+8,4,190~8,4,191
+2,4,186~2,4,188
+6,0,143~6,3,143
+9,5,326~9,8,326
+0,7,13~0,9,13
+6,3,291~6,5,291
+1,4,63~4,4,63
+4,5,55~4,7,55
+3,1,307~3,3,307
+2,3,37~5,3,37
+8,4,304~8,4,306
+4,4,304~4,5,304
+6,5,134~6,7,134
+6,4,180~8,4,180
+0,3,322~0,5,322
+9,0,132~9,3,132
+0,1,355~3,1,355
+5,2,270~5,4,270
+8,8,38~8,8,40
+1,9,126~4,9,126
+7,9,227~7,9,229
+2,2,190~4,2,190
+5,8,134~8,8,134
+3,7,241~3,9,241
+0,0,331~0,2,331
+2,8,364~2,9,364
+4,0,296~7,0,296
+2,7,55~2,9,55
+6,8,305~7,8,305
+0,7,331~0,9,331
+7,0,250~7,3,250
+7,1,26~7,4,26
+2,1,1~2,3,1
+2,8,298~4,8,298
+7,5,360~9,5,360
+2,8,101~2,8,103
+7,1,53~7,3,53
+4,3,340~6,3,340
+5,1,43~5,3,43
+2,9,319~4,9,319
+0,7,73~1,7,73
+2,6,354~4,6,354
+2,1,331~2,2,331
+2,2,232~4,2,232
+3,2,314~6,2,314
+0,6,74~2,6,74
+3,3,172~5,3,172
+1,8,306~2,8,306
+0,7,8~0,8,8
+2,4,263~2,6,263
+6,4,187~9,4,187
+2,8,123~4,8,123
+7,3,173~7,4,173
+0,0,2~2,0,2
+1,2,308~3,2,308
+6,9,195~8,9,195
+4,6,343~6,6,343
+3,2,212~6,2,212
+9,5,123~9,7,123
+6,2,233~6,3,233
+5,1,134~9,1,134
+6,0,251~9,0,251
+4,5,2~8,5,2
+0,3,13~0,5,13
+8,2,155~8,4,155
+2,5,71~2,7,71
+6,6,247~6,9,247
+5,7,374~7,7,374
+2,5,39~2,7,39
+3,8,181~3,8,184
+8,5,104~8,5,105
+6,7,31~6,8,31
+0,9,3~0,9,6
+1,0,152~4,0,152
+3,6,300~5,6,300
+5,0,194~5,3,194
+0,3,181~0,5,181
+1,5,212~4,5,212
+1,3,58~1,5,58
+0,3,221~3,3,221
+3,5,284~3,7,284
+3,8,137~3,9,137
+3,0,352~3,2,352
+2,3,131~2,3,131
+3,3,54~3,5,54
+6,2,284~9,2,284
+7,5,323~7,7,323
+5,6,87~5,8,87
+8,3,35~8,6,35
+6,1,145~6,2,145
+4,8,109~6,8,109
+2,3,177~4,3,177
+6,5,200~6,7,200
+4,7,371~4,9,371
+2,8,354~2,8,357
+8,1,203~8,1,204
+3,5,75~3,7,75
+0,3,341~2,3,341
+4,0,113~6,0,113
+4,7,228~4,9,228
+2,4,15~3,4,15
+1,6,355~1,9,355
+0,1,240~0,2,240
+0,2,161~1,2,161
+2,4,94~2,4,96
+5,7,188~7,7,188
+4,0,236~4,3,236
+6,1,199~6,3,199
+7,6,130~7,6,132
+4,1,245~4,5,245
+0,6,24~0,6,25
+6,6,290~6,6,292
+0,7,110~0,9,110
+4,1,181~6,1,181
+8,7,371~8,9,371
+3,3,244~6,3,244
+6,6,98~9,6,98
+3,9,265~5,9,265
+5,7,302~5,9,302
+6,4,5~9,4,5
+5,3,90~8,3,90
+3,0,83~5,0,83
+2,5,201~2,8,201
+1,0,191~3,0,191
+6,6,28~6,8,28
+2,6,152~3,6,152
+1,4,227~1,6,227
+6,8,250~8,8,250
+4,5,358~6,5,358
+4,9,37~5,9,37
+3,3,335~3,3,336
+3,4,252~3,5,252
+2,7,261~2,9,261
+7,5,188~8,5,188
+3,9,103~5,9,103
+0,6,204~2,6,204
+4,3,209~4,5,209
+0,7,75~0,9,75
+3,8,76~3,8,78
+1,0,233~1,0,235
+5,5,328~5,5,330
+4,4,185~4,7,185
+4,7,306~4,7,307
+2,4,42~2,5,42
+1,9,249~1,9,250
+0,2,30~0,4,30
+5,2,234~5,3,234
+2,4,301~2,6,301
+5,3,62~5,3,63
+5,3,86~7,3,86
+6,0,138~6,2,138
+2,0,179~2,0,181
+9,4,294~9,5,294
+9,1,55~9,2,55
+2,4,318~2,7,318
+1,2,104~3,2,104
+6,4,176~6,5,176
+8,2,360~9,2,360
+5,0,28~5,2,28
+0,4,15~0,5,15
+8,6,6~8,8,6
+2,1,234~3,1,234
+1,6,196~3,6,196
+3,4,11~5,4,11
+0,6,147~0,6,148
+6,3,345~6,5,345
+7,9,222~7,9,226
+3,3,51~6,3,51
+6,8,329~8,8,329
+0,6,303~0,8,303
+0,0,355~3,0,355
+4,5,227~4,8,227
+3,7,117~4,7,117
+3,4,337~3,7,337
+6,8,136~8,8,136
+5,7,121~6,7,121
+5,0,90~8,0,90
+1,1,162~3,1,162
+5,2,23~5,4,23
+2,3,79~4,3,79
+3,4,239~3,5,239
+5,9,364~6,9,364
+0,1,94~0,3,94
+4,8,206~6,8,206
+5,5,308~5,5,311
+4,3,140~5,3,140
+3,2,63~4,2,63
+5,6,322~5,6,324
+8,2,351~8,4,351
+4,5,124~6,5,124
+0,9,246~1,9,246
+7,3,126~9,3,126
+0,6,305~0,8,305
+8,4,79~8,7,79
+4,1,166~4,1,166
+7,2,211~7,2,211
+3,1,365~6,1,365
+1,8,310~1,9,310`,k7=`#.#####################
+#.......#########...###
+#######.#########.#.###
+###.....#.>.>.###.#.###
+###v#####.#v#.###.#.###
+###.>...#.#.#.....#...#
+###v###.#.#.#########.#
+###...#.#.#.......#...#
+#####.#.#.#######.#.###
+#.....#.#.#.......#...#
+#.#####.#.#.#########v#
+#.#...#...#...###...>.#
+#.#.#v#######v###.###v#
+#...#.>.#...>.>.#.###.#
+#####v#.#.###v#.#.###.#
+#.....#...#...#.#.#...#
+#.#########.###.#.#.###
+#...###...#...#...#.###
+###.###.#.###v#####v###
+#...#...#.#.>.>.#.>.###
+#.###.###.#.###.#.#v###
+#.....###...###...#...#
+#####################.#`,j7=`#.###########################################################################################################################################
+#.#.......#...#...###...###...#.......#.........#...#.........#...#...###.....#.........#...#####...#...###...###...#...#...#...###...###...#
+#.#.#####.#.#.#.#.###.#.###.#.#.#####.#.#######.#.#.#.#######.#.#.#.#.###.###.#.#######.#.#.#####.#.#.#.###.#.###.#.#.#.#.#.#.#.###.#.###.#.#
+#.#.#.....#.#.#.#.#...#...#.#.#.....#.#...#.....#.#.#.....#...#.#.#.#...#.#...#.#.......#.#...#...#...#.#...#.#...#.#.#.#.#.#.#.#...#...#.#.#
+#.#.#.#####.#.#.#.#.#####.#.#.#####.#.###.#.#####.#.#####.#.###.#.#.###.#.#.###.#.#######.###.#.#######.#.###.#.###.#.#.#.#.#.#.#.#####.#.#.#
+#.#.#.....#.#.#.#.#.....#...#.#.>.>.#.#...#.#...#.#.>.>.#.#...#.#.#.#...#.#.###.#.#...#...#...#...#.....#...#...#...#.#.#.#.#.#.#.#.....#.#.#
+#.#.#####.#.#.#.#.#####.#####.#.#v###.#.###.#.#.#.###v#.#.###.#.#.#.#.###.#.###.#.#.#.#.###.#####.#.#######.#####.###.#.#.#.#.#.#.#.#####.#.#
+#...#...#.#.#.#.#.#...#...#...#.#.#...#...#...#...###.#.#.###...#.#.#.###.#...#.#.#.#.#...#...#...#.#...#...#...#.....#.#.#.#.#.#.#.......#.#
+#####.#.#.#.#.#.#.#.#.###.#.###.#.#.#####.###########.#.#.#######.#.#.###.###.#.#.#.#.###.###.#.###.#.#.#.###.#.#######.#.#.#.#.#.#########.#
+#...#.#...#.#.#.#.#.#.#...#...#.#.#.......###...#.....#.#.#...#...#.#.....#...#.#.#.#...#...#.#...#.#.#.#.....#.......#...#.#.#.#.###...#...#
+#.#.#.#####.#.#.#.#.#.#.#####.#.#.###########.#.#.#####.#.#.#.#.###.#######.###.#.#.###.###.#.###.#.#.#.#############.#####.#.#.#.###.#.#.###
+#.#...#...#.#.#.#.#.#.#.....#...#.#...#...#...#.#.#...#...#.#.#...#...###...#...#...#...###.#...#.#.#.#.#.....>.>.....#.....#.#...#...#.#...#
+#.#####.#.#.#.#.#.#.#.#####.#####.#.#.#.#.#.###.#.#.#.#####.#.###.###.###.###.#######.#####.###.#.#.#.#.#.#####v#######.#####.#####.###.###.#
+#.#...#.#.#.#.#.#.#.#...#...#...#...#...#...#...#.#.#...#...#...#...#.#...#...#.......#...#...#...#.#.#.#.#...#.......#.#.....###...###...#.#
+#.#.#v#.#.#.#.#.#.#.###.#.###.#.#############.###.#.###.#.#####.###.#.#.###.###.#######.#.###.#####.#.#.#.#.#.#######.#.#.#######.#######.#.#
+#...#.>.#...#.#.#.#...#.#.#...#.............#...#...###...#...#...#...#...#...#.....#...#.###.....#.#.#.#.#.#.........#...#...#...###...#...#
+#####v#######.#.#.###.#.#.#.###############.###.###########.#.###.#######.###.#####.#.###.#######.#.#.#.#.#.###############.#.#.#####.#.#####
+#...#.......#.#.#.#...#.#.#.#.............#.....###.........#...#.#...###.#...#.....#...#.#.....#.#...#...#...#...#...#.....#...#.....#.....#
+#.#.#######.#.#.#.#.###.#.#.#.###########.#########.###########.#.#.#.###.#.###.#######.#.#.###.#.###########.#.#.#.#.#.#########.#########.#
+#.#.###.....#...#.#...#...#...#...........#...#...#.....#.....#...#.#.#...#...#.....>.>.#.#...#.#.....###...#...#...#.#...........#.........#
+#.#.###.#########.###.#########.###########.#.#.#.#####.#.###.#####.#.#.#####.#######v###.###.#.#####.###.#.#########.#############.#########
+#.#.....#####...#.....#.......#.#...........#.#.#.....#...###.....#.#.#...#...#######...#.#...#...#...#...#.....#.....#...#.........#.......#
+#.###########.#.#######.#####.#.#.###########.#.#####.###########.#.#.###.#.###########.#.#.#####.#.###.#######.#.#####.#.#.#########.#####.#
+#...#.........#...#.....#.....#...###...#.....#.#.....#...........#.#.###...#...#.......#...#####...###.......#...#...#.#.#.....###...#...#.#
+###.#.###########.#.#####.###########.#.#.#####.#.#####.###########.#.#######.#.#.###########################.#####.#.#.#.#####.###.###.#.#.#
+#...#.#...........#.....#.###.........#...#...#.#.#.....#...........#.....#...#.#.................###...#.....#...#.#.#.#.#...#.....#...#...#
+#.###.#.###############.#.###.#############.#.#.#.#.#####.###############.#.###.#################.###.#.#.#####.#.#.#.#.#.#.#.#######.#######
+#.#...#.......#...###...#...#.....#.........#.#.#.#.......#...#...........#...#.###...#...........#...#.#.......#.#.#.#.#.#.#.#.....#.#...###
+#.#.#########.#.#.###.#####.#####.#.#########.#.#.#########.#.#v#############.#.###.#.#.###########.###.#########.#.#.#.#.#.#.#v###.#.#.#.###
+#.#.#.........#.#...#...#...#...#...#.........#.#.###.......#.>.>.....#.....#.#.#...#...#...###...#...#.#...#.....#.#...#.#.#.>.###.#...#...#
+#.#.#.#########.###.###.#.###.#.#####.#########.#.###.#########v#####.#.###.#.#.#.#######.#.###.#.###.#.#.#.#.#####.#####.#.###v###.#######.#
+#...#.....#...#.#...#...#...#.#.#...#.......###.#.....#...#...#...#...#...#.#.#.#...###...#...#.#.#...#...#.#.....#.....#.#.###...#.......#.#
+#########.#.#.#.#.###.#####.#.#.#.#.#######.###.#######.#.#.#.###.#.#####.#.#.#.###v###.#####.#.#.#.#######.#####.#####.#.#.#####.#######.#.#
+###...#...#.#.#.#.###...#...#.#.#.#.#...#...#...#.......#.#.#.#...#...#...#.#.#...>.>.#.#.....#.#.#.....#...#...#.#...#.#...#.....#...###...#
+###.#.#.###.#.#.#.#####.#.###.#.#.#.#.#.#v###.###.#######.#.#.#.#####.#.###.#.#####v#.#.#.#####.#.#####.#.###.#.#v#.#.#.#####.#####.#.#######
+#...#...#...#...#...#...#...#.#.#.#...#.>.>.#...#.......#.#.#.#.#.....#.###.#.#.....#.#.#.#...#.#...#...#.#...#.>.>.#.#.#.....#...#.#.#...###
+#.#######.#########.#.#####.#.#.#.#######v#.###.#######.#.#.#.#.#.#####.###.#.#.#####.#.#.#.#.#.###.#.###.#.#####v###.#.#.#####.#.#.#.#.#.###
+#...#...#.........#.#.#...#.#.#...#...#...#...#.#.......#.#.#.#.#.#...#...#...#.....#.#.#.#.#.#...#.#.#...#.#.....###...#.....#.#...#...#...#
+###.#.#v#########.#.#.#.#.#.#.#####.#.#.#####.#.#.#######.#.#.#.#.#.#.###.#########.#.#.#.#.#.###.#.#.#.###.#.###############.#.###########.#
+###...#.>.#.......#...#.#...#.#.....#.#.#.....#.#.......#...#.#.#.#.#.#...###.....#.#...#.#.#.#...#.#.#...#.#.#.........#.....#.#...........#
+#######v#.#.###########.#####.#.#####.#.#.#####.#######.#####.#.#.#.#.#.#####.###.#.#####.#.#.#.###.#.###.#.#.#.#######.#.#####.#.###########
+###.....#...#.........#.#.....#.....#.#.#.#...#.#.......#...#.#.#.#.#.#.#...#...#.#...#...#.#.#...#.#.#...#.#.#.#.......#.......#...........#
+###.#########.#######.#.#.#########.#.#.#.#.#.#.#.#######.#.#.#.#.#.#.#.#.#.###.#.###.#.###.#.###.#.#.#.###.#.#.#.#########################.#
+#...#...#...#.#.......#...#...###...#.#.#...#...#.........#.#.#.#.#.#.#.#.#.....#...#.#...#.#.#...#...#.....#...#.....#.....###.............#
+#.###.#.#.#.#.#.###########.#.###.###.#.###################.#.#.#.#.#.#.#.#########.#.###.#.#.#.#####################.#.###.###.#############
+#...#.#.#.#.#.#...........#.#.....#...#...#...###...........#...#...#...#.........#.#.###...#.#.#####...#.............#...#.....#...........#
+###.#.#.#.#.#.###########.#.#######.#####.#.#.###.###############################.#.#.#######.#.#####.#.#.###############.#######.#########.#
+#...#.#...#...#...#...#...#...#...#.......#.#...#.................#...............#...#.....#.#...#...#.#.............###...#.....#.........#
+#.###.#########.#.#.#.#.#####.#.#.#########.###.#################.#.###################.###.#.###.#.###.#############.#####.#.#####.#########
+#.#...#.........#...#...#...#...#...#.....#...#.#.................#.........#...#.....#...#.#.....#...#.........#...#...#...#.#...#.........#
+#.#.###.#################.#.#######.#.###.###.#.#.#########################.#.#.#.###.###.#.#########.#########.#.#.###.#.###.#.#.#########.#
+#.#.#...#...........#.....#...###...#.#...###.#.#.....#####...#...###.......#.#.#.#...#...#.....#.....#.......#...#.#...#...#.#.#.#.........#
+#.#.#.###.#########.#.#######.###v###.#.#####.#.#####.#####.#.#.#.###.#######.#.#.#.###.#######.#.#####.#####.#####.#.#####.#.#.#.#.#########
+#.#.#...#.#.........#.......#.#.>.>.#.#...#...#.....#.......#.#.#...#.........#...#.....#...#...#.......#.....#...#...###...#.#.#.#.........#
+#.#.###.#.#.###############.#.#.#v#.#.###.#.#######.#########.#.###.#####################.#.#.###########.#####.#.#######.###.#.#.#########.#
+#.#.#...#.#.....#...###...#.#...#.#.#.#...#...#.....#.........#.#...#...#...........#.....#.#.#...#...###.......#...#...#.....#.#.....#...#.#
+#.#.#.###.#####.#.#.###.#.#.#####.#.#.#.#####.#.#####v#########.#.###.#.#.#########.#.#####.#.#.#.#.#.#############.#.#.#######.#####.#.#.#.#
+#...#...#.###...#.#.#...#...#.....#...#.#...#.#.....>.>.###...#.#.#...#.#.........#.#.#...#...#.#.#.#.#...###...#...#.#.#...#...#...#...#...#
+#######.#.###v###.#.#.#######.#########.#.#.#.#######v#.###.#.#.#.#.###.#########.#.#.#.#.#####.#.#.#.#.#.###.#.#.###.#.#.#.#.###.#.#########
+#...###...###.>.#.#.#...#...#.......###...#...#...###.#...#.#.#.#.#...#.#...#.....#.#.#.#.#...#.#.#.#.#.#.#...#...###.#.#.#.#.....#.........#
+#.#.#########v#.#.#.###.#.#.#######.###########.#.###.###.#.#.#.#.###.#.#.#.#.#####.#.#.#.#.#.#.#.#.#.#.#.#.#########.#.#.#.###############.#
+#.#.#...#.....#...#.#...#.#.........#.....#...#.#...#.#...#.#.#.#.###.#.#.#.#...###...#.#.#.#.#.#.#.#.#.#.#...###...#.#.#.#.#...#...........#
+#.#.#.#.#.#########.#.###.###########.###.#.#.#.###.#.#.###.#.#.#.###.#.#.#.###v#######.#.#.#.#.#.#.#.#.#.###v###.#.#.#.#.#.#.#.#.###########
+#.#.#.#.#.........#.#...#.......#...#.#...#.#.#...#...#.....#...#...#.#.#.#.#.>.>.#...#.#.#.#.#.#.#.#.#.#...>.>.#.#.#.#.#.#.#.#.#...#...#...#
+#.#.#.#.#########.#.###.#######.#.#.#.#.###.#.###.#################.#.#.#.#.#.#v#.#.#.#.#.#.#.#.#.#.#.#.#####v#.#.#.#.#.#.#.#.#.###v#.#.#.#.#
+#.#...#...........#.....###...#...#...#.....#...#...#.............#...#.#.#...#.#...#.#.#.#.#.#.#.#.#.#.#.....#.#.#.#.#.#.#.#.#.#.>.#.#.#.#.#
+#.#########################.#.#################.###.#.###########.#####.#.#####.#####.#.#.#.#.#.#.#.#.#.#.#####.#.#.#.#.#.#.#.#.#.#v#.#.#.#.#
+#.........................#.#.#...#.............#...#.#...........#.....#.....#.....#.#.#.#.#.#.#...#...#.....#...#...#...#.#.#...#...#...#.#
+#########################.#.#.#.#.#.#############.###.#.###########.#########.#####.#.#.#.#.#.#.#############.#############.#.#############.#
+#...#.................#...#.#...#.#.........#...#.#...#...#####...#.#...#...#.#.....#...#.#.#...###...#...#...###...........#...###.........#
+#.#.#.###############.#.###.#####.#########.#.#.#.#.#####.#####.#.#.#.#.#.#.#.#.#########.#.#######.#.#.#.#.#####.#############.###.#########
+#.#...#...........###...###.....#.#...#...#...#.#.#.#...#.......#.#.#.#.#.#...#.........#.#.#.....#.#.#.#.#...#...#.......#...#.#...###.....#
+#.#####.#########.#############.#.#.#.#.#.#####.#.#.#.#.#########.#.#.#.#.#############.#.#.#.###.#.#.#.#.###.#.###.#####.#.#.#.#.#####.###.#
+#.....#.#...#...#.#...#...#...#.#.#.#.#.#.#.....#.#.#.#...#.......#...#...###...........#...#...#.#.#.#.#.#...#.....#...#...#...#.......#...#
+#####.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#v#####.#.#.###.#.#################.#################.#.#.#.#.#.#v#########.#.#################.###
+#.....#.#.#...#...#.#.#.#...#...#...#...#.>.>.###...#...#.#.....#...#...#...#.........#...#...#.#.#.#.#.#.>.>.#.......#.....###...........###
+#.#####.#.#########.#.#.###################v#.#########.#.#####.#.#.#.#.#.#.#########.#.#.#.#.#.#.#.#.#.###v#.#.###########.###.#############
+#...#...#.....#.....#.#...........#...#...#.#...###...#.#.#.....#.#...#.#.#.#.........#.#.#.#.#.#.#.#.#.#...#.#.#...#.......#...#...........#
+###.#.#######.#.#####.###########.#.#.#.#.#.###.###.#.#.#.#.#####.#####.#.#.#.#########.#.#.#.#.#.#.#.#.#.###.#.#.#.#.#######.###.#########.#
+#...#.#.......#.....#.....#.......#.#.#.#...###...#.#...#.#...#...#.....#.#.#.......###.#.#.#...#.#.#.#.#...#...#.#.#.......#.....#...#.....#
+#.###.#.###########.#####.#.#######.#.#.#########.#.#####.###.#.###.#####.#.#######.###.#.#.#####.#.#.#.###.#####.#.#######.#######.#.#.#####
+#...#.#.......#...#.....#.#...###...#.#.#.........#.....#.#...#...#.#...#.#.###...#.#...#.#...#...#.#.#.###.....#.#.....#...#.......#...#...#
+###.#.#######.#.#.#####.#.###.###.###.#.#.#############.#.#v#####.#.#.#.#.#.###.#.#v#.###.###.#.###.#.#.#######.#.#####.#.###.###########.#.#
+###...#...###.#.#...#...#...#...#...#...#...#.....#...#.#.>.>.....#...#.#.#.....#.>.>.#...#...#.#...#...#.......#.#...#...###.......#.....#.#
+#######.#.###v#.###.#.#####.###.###.#######.#.###.#.#.#.###v###########.#.#########v###.###.###.#.#######.#######.#.#.#############.#.#####.#
+#.......#.###.>.###.#.....#.#...###.......#...###...#.#...#...#.......#.#.###.....#...#...#...#.#.....###...#...#...#...#####.....#...#.....#
+#.#######.###v#####.#####.#.#.###########.###########.###.###.#.#####.#.#.###.###.###.###.###.#.#####.#####.#.#.#######.#####.###.#####.#####
+#.......#...#.....#...#...#.#.#.........#.#...#...#...#...#...#.#.....#...#...###.#...###.#...#...#...#.....#.#...#####...###.#...#.....#...#
+#######.###.#####.###.#.###.#.#.#######.#.#.#.#.#.#.###.###.###.#.#########.#####.#.#####.#.#####.#.###.#####.###.#######.###.#.###v#####.#.#
+###...#.#...#...#...#.#...#...#.......#...#.#...#.#.....###.....#.....#.....#...#...#...#.#...#...#...#.....#...#...#.....#...#...>.#...#.#.#
+###.#.#.#.###.#.###.#.###.###########.#####.#####.###################.#.#####.#.#####.#.#.###.#.#####.#####.###.###.#.#####.#######v#.#.#.#.#
+#...#...#.....#...#.#.#...#...........#...#.#.....###.................#.....#.#.....#.#.#.....#.......#...#.....#...#.#...#.###...#...#...#.#
+#.###############.#.#.#.###.###########.#.#.#.#######.#####################.#.#####.#.#.###############.#.#######.###.#.#.#.###.#.#########.#
+#.......#.......#.#.#.#...#.............#...#.#.....#...................#...#.#.....#.#.#...#...###.....#...###...###.#.#.#.#...#...#.....#.#
+#######.#.#####.#.#.#.###.###################.#.###.###################.#.###.#.#####.#.#.#.#.#.###.#######.###.#####.#.#.#.#.#####.#.###.#.#
+###...#...#.....#...#.....#.................#.#.#...#...#...............#.....#.......#.#.#.#.#...#.......#...#.....#...#...#.....#.#...#...#
+###.#.#####.###############.###############.#.#.#.###.#.#.#############################.#.#.#.###.#######.###.#####.#############.#.###.#####
+#...#...###.###...........#.........###...#...#.#.###.#.#.........#...#.......#...#.....#.#...#...#...###...#.#.....#...#.........#...#...###
+#.#####.###v###.#########.#########.###.#.#####.#.###.#.#########.#.#.#.#####.#.#.#.#####.#####.###.#.#####.#.#.#####.#.#.###########.###.###
+#.....#...#.>...#.........#.......#...#.#.#...#.#.###.#.###...###.#.#.#.....#...#...#.....#.....#...#.#...#.#.#...#...#.#...........#...#...#
+#####.###.#v#####.#########.#####.###.#.#.#.#.#.#.###.#.###.#.###v#.#.#####v#########.#####.#####.###.#.#.#.#.###.#.###.###########.###.###.#
+#...#...#...#.....#...#...#.....#.....#.#.#.#...#...#.#...#.#...>.>.#.#...>.>.###...#.#.....#...#.#...#.#.#.#.###.#.#...###.......#...#.....#
+#.#.###.#####.#####.#.#.#.#####.#######.#.#.#######.#.###.#.#####v###.#.###v#.###.#.#.#.#####.#.#.#.###.#.#.#.###v#.#.#####.#####.###.#######
+#.#.....#...#...#...#...#...#...#...###.#.#.......#.#...#...###...###...###.#...#.#...#.#...#.#.#.#...#.#.#.#...>.>.#.#...#.....#.#...#.....#
+#.#######.#.###.#.#########.#.###.#.###.#.#######.#.###.#######.###########.###.#.#####.#.#.#.#.#.###.#.#.#.#####v###.#.#.#####v#.#.###.###.#
+#.....#...#...#.#.#.......#.#...#.#.#...#.#.......#...#.#...#...#...........###.#...###.#.#.#.#.#.#...#.#.#.#.....#...#.#.....>.#...###.#...#
+#####.#.#####.#.#.#.#####.#.###.#.#.#.###.#.#########.#.#.#.#.###.#############.###.###.#.#.#.#.#.#.###.#.#.#.#####.###.#######v#######.#.###
+#...#...#.....#...#.....#...###...#.#.###...#.......#...#.#...###.#...#.......#...#...#.#.#.#.#.#.#.....#.#.#.....#...#.......#.....#...#.###
+#.#.#####.#############.###########.#.#######.#####.#####.#######.#.#.#.#####.###.###.#.#.#.#.#.#.#######.#.#####.###.#######.#####.#.###.###
+#.#.......#.......#.....#...###...#.#...#...#.#.....#...#.......#...#.#.#.....###.....#.#.#...#...#...###...###...###.#...#...#.....#...#...#
+#.#########.#####.#.#####.#.###.#.#v###.#.#.#.#.#####.#.#######.#####.#.#.#############.#.#########.#.#########.#####.#.#.#.###.#######.###.#
+#.#.....#...#.....#...#...#.....#.>.>...#.#.#.#.###...#.......#.....#...#.....#.......#.#.#.........#...#...#...#...#...#...#...#.....#.#...#
+#.#.###.#.###.#######.#.###########v#####.#.#.#.###.#########.#####.#########.#.#####.#.#.#.###########.#.#.#.###.#.#########.###.###.#.#.###
+#.#.#...#.###...#####.#.....#.......#...#.#...#...#...#.....#.#...#.###...#...#.#.....#...#.........#...#.#.#.....#.#.....#...#...#...#.#.###
+#.#.#.###.#####.#####.#####.#.#######.#.#.#######.###.#.###.#.#.#.#.###.#.#.###.#.#################.#.###.#.#######.#.###.#.###.###.###.#.###
+#...#.#...#...#...#...#...#.#.......#.#...#.......###...#...#...#.#.#...#.#.....#...........#.......#.###.#.#...#...#...#...#...###...#.#...#
+#####.#.###.#.###.#.###.#.#.#######.#.#####.#############.#######.#.#.###.#################.#.#######.###.#.#.#.#.#####.#####.#######.#.###.#
+#.....#.#...#.....#.....#...#.......#...#...#####...#.....#...###...#...#...................#.......#.#...#...#.#.#...#.#...#.#.......#.#...#
+#.#####.#.###################.#########.#.#######.#.#.#####.#.#########.###########################.#.#.#######.#.#.#.#.#.#.#.#.#######.#.###
+#.......#...................#...........#.......#.#.#.......#.....#...#...#.................#.......#.#.......#.#...#.#.#.#.#.#.....#...#...#
+###########################.###################.#.#.#############.#.#.###.#.###############.#.#######.#######.#.#####.#.#.#.#.#####.#.#####.#
+###.........................#...#...#.....#.....#.#.#.............#.#.....#.#...............#.......#.#.......#.......#...#.#.#.....#.#.....#
+###.#########################.#.#.#.#.###.#.#####.#.#.#############.#######.#.#####################.#.#v###################.#.#.#####.#.#####
+#...#.....#.........###...###.#.#.#.#...#.#.###...#.#.........#...#.......#.#.........#...###...#...#.>.>.#####.......#...#...#.......#.....#
+#.###.###.#.#######.###.#.###.#.#.#.###.#.#v###.###.#########.#.#.#######.#.#########.#.#.###.#.#.#######.#####.#####.#.#.#################.#
+#...#.#...#.#.......#...#...#.#...#.#...#.>.>.#.#...#...#.....#.#...#...#...#...#...#...#.#...#.#.....###...#...#.....#.#.#...#.....#...#...#
+###.#.#.###.#.#######.#####.#.#####.#.#######.#.#.###.#.#.#####.###.#.#.#####.#.#.#.#####.#.###.#####.#####.#.###.#####.#.#.#.#.###.#.#.#.###
+#...#.#.....#...###...###...#.....#.#.......#.#.#...#.#.#...###.#...#.#.#...#.#.#.#.#.....#...#...#...#.....#.###.#...#.#.#.#.#...#...#...###
+#.###.#########.###.#####.#######.#.#######.#.#.###.#.#.###.###.#.###.#.#.#.#.#.#.#.#.#######.###.#.###.#####.###.#.#.#.#.#.#.###.###########
+#.....###.......#...#...#.......#.#.#...#...#.#.###...#.#...#...#.#...#.#.#.#.#.#.#.#.....#...#...#...#...#...#...#.#...#.#.#...#...........#
+#########.#######.###.#.#######.#.#.#.#.#.###.#.#######.#.###.###.#.###.#.#.#.#.#.#.#####.#.###.#####.###.#.###.###.#####.#.###.###########.#
+#...#.....#.....#...#.#.....###.#.#...#...#...#...###...#.###.#...#...#.#.#.#.#.#.#.###...#.###.#...#...#...###...#...#...#.#...#...#...#...#
+#.#.#.#####.###.###.#.#####.###.#.#########.#####.###.###v###.#.#####.#.#.#.#.#.#.#.###v###.###.#.#.###.#########.###.#.###.#.###.#.#.#.#v###
+#.#...#...#.###...#...#.....#...#.......#...#...#.#...#.>.>.#.#.....#.#.#.#.#.#.#.#.#.>.>.#...#...#...#...#...###...#.#.#...#.#...#.#.#.>.###
+#.#####.#.#.#####.#####.#####.#########.#.###.#.#.#.###.###.#.#####.#.#.#.#.#.#.#.#.#.###.###.#######.###.#.#.#####.#.#.#.###.#.###.#.###v###
+#...#...#.#.#.....#...#.....#...#.......#.....#.#.#...#...#.#.#.....#.#.#.#.#.#.#.#.#.###...#...#####.....#.#.......#.#.#.###.#.#...#.###...#
+###.#.###.#.#.#####.#.#####.###.#.#############.#.###.###.#.#.#.#####.#.#.#.#.#.#.#.#.#####.###.###########.#########.#.#.###.#.#.###.#####.#
+#...#.#...#.#.....#.#.#...#...#.#.............#.#...#...#.#.#.#.#...#.#.#.#.#.#.#.#.#.....#...#.....#.......#...#...#.#.#...#.#.#.#...#.....#
+#.###.#.###.#####.#.#.#.#.###.#.#############.#.###.###.#.#.#.#.#.#.#.#.#.#.#.#.#.#.#####.###.#####.#.#######.#.#.#.#.#.###.#.#.#.#.###.#####
+#.....#.....#####...#...#.....#...............#.....###...#...#...#...#...#...#...#.......###.......#.........#...#...#.....#...#...###.....#
+###########################################################################################################################################.#`,q7=`19, 13, 30 @ -2,  1, -2
+18, 19, 22 @ -1, -1, -2
+20, 25, 34 @ -2, -2, -4
+12, 31, 28 @ -1, -2, -1
+20, 19, 15 @  1, -5, -3`,u7=`171178400007298, 165283791547432, 246565404194007 @ 190, 186, 60
+250314870325177, 283762496814661, 272019235409859 @ 45, 15, 8
+192727134181171, 456146317292988, 246796112051543 @ 22, -541, -70
+242038752891431, 261287367655768, 330425420730235 @ 78, 27, -72
+249342048426189, 348510396766234, 427773639329931 @ 16, -87, -346
+353441545792997, 364847375466922, 274271275093711 @ -21, -148, 41
+216330477538611, 390430996586104, 203558565797057 @ 88, -177, 135
+217302962030132, 371849389666656, 389893932942344 @ -40, -94, -643
+338035472989565, 290563655386666, 254888162205547 @ 15, -70, 68
+135127435297741, 227334267994754, 56493469425395 @ 253, 118, 398
+510490096303092, 286748658546796, 278346699011239 @ -252, -42, 28
+245658192691337, 126219744558382, 289693949229921 @ 59, 282, -19
+357218912023661, 210523813846414, 384706067363023 @ -7, 18, -74
+196873545687587, 438027207999086, 268959231970119 @ -130, -598, -382
+262527946671126, 48899071218248, 286155563522113 @ 28, 422, -14
+168154171358017, 420211601846074, 298149145394039 @ 124, -456, -703
+154460841373625, 50680906240460, 207768347612603 @ 215, 233, 120
+237198500307821, 225124739533042, 372652743078019 @ -49, 373, -413
+204999882972437, 411538300719986, 184551075701619 @ 128, -215, 165
+330789988838027, 246547730418451, 293357309177197 @ -21, 15, 6
+223467886869107, 301561070815154, 197296607248067 @ 104, -32, 140
+384954918106030, 330771529215945, 508240983285145 @ -164, -79, -374
+271097685713361, 295712012768378, 249718729161719 @ 51, -44, 62
+178684585963757, 362144185513786, 225314309910739 @ -57, 230, -39
+418637268959555, 377487863133928, 293747117350375 @ -98, -163, 18
+280092460748739, 462754349746048, 353091167835528 @ 15, -294, -111
+216390225172040, 367465542440328, 218345068257461 @ 8, -94, 98
+417595578878351, 402066957298642, 400128913186903 @ -94, -192, -106
+299195153691003, 292811179530154, 254092309725861 @ -62, 12, 35
+179839211875757, 377887013577494, 220248131077276 @ -31, -16, 43
+394589858277039, 299603683514093, 252398726668981 @ -125, -49, 58
+350409639365638, 244977830805217, 355725007865484 @ -68, 33, -93
+193677818367485, 363877188377834, 228578856674603 @ -25, 11, 15
+306774715344789, 244484532681234, 474507959356871 @ 13, 16, -234
+195634259420576, 335226862228994, 278068905197560 @ 122, -44, -41
+194087659508123, 326990809559746, 168482058057403 @ 70, 80, 296
+278475577441770, 215123100400185, 511755848090466 @ -14, 151, -445
+222746690923202, 80409876651304, 288137052658270 @ 124, 238, 13
+181340521167407, 356533948860748, 223376905651213 @ 114, -27, 73
+366866994160937, 255403921740721, 313314400988479 @ -51, -9, -12
+206303435821492, 345365299173321, 223794996589989 @ -20, 47, 66
+387296718335393, 139326903697078, 401196960092255 @ -13, 66, -70
+287017680190845, 246796186661923, 264719181979212 @ -47, 111, 11
+264241831695917, 326931419123518, 243001990230367 @ -51, -19, 41
+232710090210763, 434974624723869, 554896964146369 @ -17, -313, -938
+170435042678291, 184601280160256, 348165154390189 @ 188, 215, -143
+181632715199687, 355145293694416, 234453059649799 @ 74, 43, -10
+477058810408049, 181906508412616, 277357464823330 @ -139, 50, 43
+229951888005285, 316805144481786, 278158183109639 @ 21, 20, -58
+450488216899277, 255126885144146, 352856048197715 @ -121, -25, -45
+225598205443917, 243024191967018, 242995619031659 @ 24, 236, 32
+255110587440941, 80838489106798, 383612363189927 @ 101, 171, -79
+340215164932672, 440964542080834, 294200813226322 @ -56, -252, -5
+309967849200329, 273421115262799, 370435419002329 @ 45, -51, -58
+262529576604374, 364808856986216, 170351277757765 @ -58, -110, 226
+221603381404287, 179413998943388, 317854638947211 @ 84, 247, -96
+180889179692325, 316580512810900, 136376463248283 @ 13, 507, 824
+424085370870509, 188251152457546, 281006551182763 @ -77, 40, 40
+209562508983989, 301428518622118, 221974573745539 @ 77, 58, 92
+338895833346416, 160224363933955, 308628157271113 @ 30, 51, 18
+171903931717117, 355552441835566, 256714695985809 @ 145, 6, -105
+176962845790328, 473059752967050, 220556402610563 @ 50, -916, 56
+443007005776517, 457883536897906, 282749138372395 @ -156, -265, 24
+452050976493113, 252737975726971, 230863207496443 @ -75, -45, 96
+242308105688579, 296547755331841, 327822409163944 @ -65, 135, -263
+382022547520677, 341519047742211, 331599836695789 @ -167, -95, -86
+301456143949541, 292282047195586, 256192005940687 @ -5, -30, 49
+234459985070789, 47655348757585, 143663381853745 @ 105, 297, 210
+234234261207416, 405322625682766, 159106518545521 @ 98, -200, 194
+191260521251342, 377145142428076, 383881362481381 @ 144, -150, -234
+199215371791316, 415021238004643, 203005883766025 @ 118, -233, 138
+276777919084051, 353026260788316, 232186402947397 @ -48, -95, 73
+191703596963979, 375127419551047, 268806555888646 @ -17, -63, -269
+436058213093331, 287292113684808, 180143624728097 @ -90, -67, 149
+174822345871389, 387840727799466, 237984716063787 @ 132, -160, -6
+330333551322585, 245768192841163, 357469574061115 @ 37, -33, -32
+171014922240599, 168263331913763, 334220154545293 @ 191, 167, -74
+438641441331191, 403546081173220, 320548896476656 @ -125, -194, -15
+248081810807522, 443445824736136, 262227550578049 @ 20, -290, 10
+175013712193887, 393720484845811, 215970602732519 @ -65, -213, 84
+198122424277694, 87864281467192, 203048431512895 @ 168, 142, 124
+178284087415295, 373664362784984, 217047454733061 @ -10, 31, 81
+238660765948958, 316720980877558, 283543165071646 @ 36, -16, -39
+162761644889659, 336124673178028, 176876070644717 @ 162, 603, 639
+182113485479617, 262911785028666, 138658862601279 @ 90, 496, 509
+202842404984285, 284636040754405, 351437669308258 @ 113, 57, -191
+444550376319237, 236037143849191, 483216669107779 @ -71, -27, -152
+289261508457377, 285916432040656, 284993888368039 @ -19, 6, -12
+319111420060321, 395543592300380, 243460184781629 @ -93, -187, 57
+165298073303873, 386089020274516, 218084317326433 @ 117, -90, 54
+214300480112602, 399712128562184, 226388990755437 @ -56, -218, 54
+175391069836670, 418704739624528, 230516507196943 @ -80, -666, -180
+309873063168477, 357049146661503, 367653729430136 @ 49, -143, -51
+298491513556625, 100592193274472, 38014414128269 @ 71, 109, 287
+406390334957789, 226495634470330, 242283367727339 @ -145, 57, 72
+307833328600365, 323674186958190, 225594296070431 @ 37, -101, 99
+524916260724415, 319237286182938, 414039952164951 @ -234, -92, -130
+236731834943487, 235848379733231, 434950964946044 @ 39, 163, -373
+181752133878297, 318917093366366, 247341038572269 @ 43, 362, -133
+182008526553797, 405352582564166, 87466572960079 @ 107, -241, 685
+148088205857987, 39133407377496, 234768945974509 @ 239, 754, 58
+312863713960203, 214834845457389, 381113977229023 @ -45, 113, -164
+232500754901037, 242352935345986, 195109307824419 @ -11, 270, 170
+325273577776517, 247924347482506, 353029236420379 @ 20, -16, -46
+223611816102865, 319793832567945, 300083467532100 @ 21, 31, -139
+286007424026045, 458493752752994, 377889197560371 @ -55, -319, -229
+164539594166653, 340252020538282, 187484110881835 @ 153, 384, 406
+304946489424548, 459601749573298, 513905379297130 @ 20, -268, -277
+288196558389398, 368158505902138, 346116622330786 @ -52, -132, -155
+327033103511703, 155795789560727, 142102039390541 @ -9, 127, 206
+410968800615689, 393096691690690, 344230127737183 @ -192, -182, -95
+335506469094485, 404639256991411, 500010007032505 @ -135, -205, -446
+235110393001529, 138189274827316, 349658287136443 @ 115, 135, -56
+428198570885917, 299339382932826, 444760847442859 @ -99, -74, -152
+290379058283357, 88517456844490, 374065798845835 @ 54, 179, -77
+163165394977794, 345482543054781, 306898575876926 @ 190, 55, -357
+437405365488725, 204502204578718, 241571292920245 @ -67, 6, 85
+279089400341912, 304994228698111, 304643844096319 @ 34, -53, -20
+181304131795926, 337513539889693, 215932214351537 @ 12, 309, 98
+288855349860909, 429514373912098, 441376575501699 @ 75, -219, -123
+336413765319738, 245167607245178, 305343169924498 @ -42, 28, -17
+375794628223373, 151752022506394, 77041336967003 @ -10, 63, 251
+293029819388562, 331387825783096, 228833246043184 @ -96, -42, 79
+345252713916029, 338607932208306, 371175529825531 @ 17, -125, -50
+484764407052185, 497004810868650, 296535187509119 @ -187, -308, 12
+196461515969227, 294399354761921, 357722278420989 @ 163, -59, -66
+222247979450601, 244702590977905, 293235863566333 @ 13, 279, -134
+227773543759811, 121922061331622, 270464070863531 @ 131, 128, 48
+184119231985301, 308815721660932, 267897913503391 @ 137, 62, -44
+176723602862752, 369545449006936, 229453559163129 @ 46, 30, -30
+240049679693828, 268705613895623, 33734989952388 @ 80, 17, 401
+334238137498957, 489242319053170, 320518093210199 @ -71, -336, -58
+307024893070199, 354838483131152, 273745188637223 @ -154, -89, -34
+196971236783537, 343476994289736, 156793906012119 @ -121, 245, 618
+195198618527037, 395317981506666, 264675278567659 @ 34, -197, -134
+198314743343218, 298285472194283, 172298017328560 @ -60, 467, 403
+183692437623575, 328619690398420, 222646390281277 @ 27, 294, 50
+331362586289507, 258331517730574, 257531722336235 @ -46, 18, 48
+220700609712437, 352243544956666, 183577943394459 @ 14, -54, 210
+287784347408819, 291667690183315, 296555778660100 @ -5, -13, -25
+288888393633671, 247331268725743, 327500636321878 @ 11, 41, -61
+309823475589790, 191577331211453, 327389263083987 @ 28, 61, -24
+258495965171221, 291555004961190, 364203255115707 @ -119, 152, -384
+195821341249365, 353602402741986, 226919407211411 @ -29, 70, 30
+280565905255171, 348703057421146, 298497871092007 @ -128, -60, -122
+258018537639353, 202109150622984, 313725136050198 @ 77, 74, -21
+315339686666717, 464234663489266, 396750444960409 @ -15, -284, -150
+170764748644631, 362692347104506, 234885708580021 @ 100, 100, -85
+164959872274023, 366369261921178, 223103591713031 @ 162, 36, 38
+95984771278188, 118354808815719, 38637833713598 @ 270, 83, 281
+333731608363559, 353470969084456, 304274804473975 @ -109, -110, -52
+468356529890034, 260749110679103, 182291106931484 @ -128, -37, 147
+357930265131350, 426813287571580, 239062361560003 @ 16, -214, 88
+285421514784519, 230213470455996, 282326779028325 @ 18, 65, 9
+177384263747373, 370711764938450, 222727695365947 @ 67, -13, 46
+310979080083217, 297460340131983, 355604932437714 @ -11, -43, -93
+140830285452061, 186805412869407, 88334431928888 @ 241, 173, 329
+435750958392734, 245603574609868, 184939177079542 @ -82, -26, 143
+420408563596970, 271610083459309, 233926712839799 @ -58, -57, 92
+418680733251721, 215861500433572, 263622387828083 @ -149, 63, 44
+382242280677659, 182065284177977, 254525463475859 @ -13, 29, 72
+318560594604693, 258899093977188, 397779880198825 @ 45, -43, -77
+169826348189399, 388372346699532, 300516451932177 @ 140, -157, -459
+201648167828337, 322069130241186, 155253410401199 @ 94, 10, 273
+232088396704843, 374484294937561, 239140555583772 @ -105, -105, 5
+319906977439818, 314507607137905, 224355436694023 @ 16, -87, 100
+183968406152307, 353126671725291, 163299940318044 @ -77, 271, 707
+183318092589672, 405627921951441, 235096360582349 @ -84, -349, -142
+341897037770567, 307677889861864, 457931548060057 @ -36, -67, -215
+315798562537085, 387753667918122, 116255143199083 @ 56, -176, 208
+205738466963717, 262314021068566, 231532829296219 @ 155, -29, 92
+194146339818536, 375189601322242, 221607473553721 @ -108, -28, 46
+207906252055043, 317334468372928, 312143384858075 @ -37, 198, -384
+306914081356287, 298560244698736, 317225988451069 @ 24, -63, -17
+256301258125178, 225862366790977, 238410056519947 @ 80, 41, 80
+331320973805117, 182334318865576, 251980751663149 @ 17, 54, 70
+246911206527833, 312875001915793, 162844296392740 @ -27, 33, 251
+431762900599962, 196350071915396, 479260992363294 @ -156, 82, -243
+213659088701637, 382966121089906, 199830102046049 @ -11, -144, 171
+324703646357908, 214526667305588, 230860891545356 @ -162, 218, 75
+402831992361791, 397346425231993, 377672664304360 @ -189, -189, -155
+235022182464121, 286997561032422, 317132769368563 @ -153, 322, -380
+180025544566371, 315749639344522, 269860860422949 @ 183, -84, 42
+144602209707578, 137184779124934, 255618464505340 @ 246, 456, 9
+162547275352097, 356963841323746, 199620622581679 @ 174, 210, 277
+171152835558464, 340604035365174, 253112136961614 @ 56, 488, -393
+213247503453605, 340772274088242, 310305196982703 @ 131, -106, -27
+185718416372413, 391413245590594, 191577624910311 @ -159, -174, 431
+182213481990910, 353058747578267, 327174093197788 @ 132, -49, -269
+171649662990662, 386264056927381, 308322281842219 @ 84, -123, -848
+189972403591917, 454721508275618, 223704180994235 @ 19, -571, 54
+403217515347277, 330685375312458, 289583002098171 @ -86, -106, 21
+251911038445621, 66387926477252, 137758747642783 @ -59, 763, 334
+394072933949337, 139439240089386, 385931844851719 @ -29, 76, -62
+344994422742905, 341955713989086, 470792666877185 @ 23, -130, -145
+271175050019191, 500906981481064, 400864329912582 @ 43, -342, -165
+221645897619425, 361686416034854, 212459384775695 @ -148, -7, 123
+287253157566953, 269951949978694, 141540017192425 @ 37, -16, 210
+301218629848145, 466864931338735, 13216597025503 @ 37, -271, 356
+190670167122337, 398038783512261, 236200004302744 @ 93, -203, 31
+335903626290165, 226766383485543, 270669887606265 @ -23, 37, 38
+400339015238096, 59002262717282, 181479838598325 @ -40, 164, 146
+279843879606283, 388512299576758, 263490911982682 @ -225, -168, -65
+275635414223777, 293077854642826, 230127985846879 @ -64, 52, 75
+383331160220947, 191748724222726, 302036738324771 @ -26, 30, 20
+155515410076851, 153834233221640, 277641174502692 @ 223, 674, -115
+278140098669537, 255471147619736, 439789909399944 @ 61, -10, -169
+224563831414301, 253405431402550, 252379010860723 @ 65, 126, 28
+193398362626367, 256117220527615, 275143150180315 @ 39, 499, -192
+448289256874427, 418475666065256, 391592646178154 @ -73, -206, -61
+219524577966849, 329899329598966, 308896830008531 @ -53, 90, -300
+343052166004172, 268774411433285, 281387458635363 @ -76, 11, 8
+217254233295475, 344601116483300, 227401171378910 @ -53, 34, 53
+204884862079284, 357648389382070, 201244440657873 @ -158, 96, 218
+204882265701483, 287036185901841, 227662049238274 @ 55, 175, 67
+431285529538982, 533386227812278, 134973976145143 @ -106, -344, 204
+206617522118630, 412476100392666, 233463274299873 @ 26, -260, 38
+311584989842865, 214622240362479, 210665386260311 @ 45, 11, 116
+281927283689421, 273508445215956, 314612337412315 @ 33, -10, -32
+209904504791927, 250004763798586, 220624391943889 @ -90, 660, 75
+422513255881049, 211517791960798, 202552253476987 @ -147, 64, 128
+306096173819267, 222938983915206, 265047722172553 @ 44, 10, 55
+204491269272153, 343417877367733, 239654834039580 @ 61, -21, 29
+233740971265241, 342870707735458, 354790260167563 @ -134, 46, -536
+243798330015577, 283680775140112, 268457443803256 @ -11, 102, -29
+240348917718136, 325887022374795, 264203098761186 @ -72, 49, -61
+188864259049973, 350414068702228, 219428991604009 @ 5, 107, 77
+309464262449789, 170790561635146, 261266510231179 @ -15, 150, 42
+281562811131328, 271398815058267, 333543267757859 @ -78, 103, -168
+534479628625989, 561320191286426, 479646898985899 @ -300, -410, -248
+152360535815477, 251003255293101, 242309337872744 @ 233, 299, 17
+203563063411517, 321331280764386, 292551801909919 @ 65, 50, -143
+423871753618232, 123052173494296, 305418535491214 @ -96, 130, 7
+202708691743565, 317065818938074, 426898773382411 @ 121, -28, -320
+222456658454697, 249143609591392, 213230623934007 @ 99, 69, 114
+218948907583925, 282776305815466, 122125337324275 @ -53, 300, 518
+173792456439202, 381375277458276, 201127691658819 @ -8, -22, 312
+256378905602112, 286569337191876, 286405508318789 @ 34, 10, -18
+211513501222682, 349601807973436, 136936315685644 @ 98, -90, 277
+159656770958813, 322360081635946, 174005365061563 @ 207, 400, 449
+170015293188607, 372765462602560, 259191683834915 @ 139, -54, -184
+438301796488997, 346545523798846, 360924446205919 @ -105, -129, -53
+252378384998783, 235231748253504, 222751679830679 @ -13, 194, 92
+285107337755803, 372400786411515, 226584113992138 @ -69, -137, 85
+200306997624977, 500216714293266, 292832060179899 @ -37, -832, -360
+293277241093997, 244134414187306, 222685351954651 @ -81, 140, 94
+382776439638987, 316771114939036, 209742786728069 @ -32, -99, 117
+214888697620757, 65946891742381, 119282762492299 @ 153, 149, 208
+283953427333463, 316724967295110, 51293612519404 @ 83, -104, 277
+232092686201087, 331066645056336, 218626826033319 @ 38, -37, 102
+291216152875812, 215550447545236, 377236676220369 @ 52, 30, -82
+296910331207913, 424659365983442, 131201925785215 @ -34, -238, 259
+233529972873231, 45086350621612, 83047387589983 @ 16, 723, 454
+322494683285353, 193719255559370, 255963896536295 @ -140, 244, 23
+401889087754581, 181835018495314, 315829478257419 @ -30, 27, 12
+310298522334737, 465096056199536, 428672039135219 @ -67, -314, -280
+167070967448702, 393949635370401, 211270910691839 @ 140, -199, 140
+348266477614717, 223342910467306, 297405367736299 @ -23, 27, 10
+340245071866533, 359464102629333, 377488443910486 @ -87, -127, -155
+194064346632584, 364273355221540, 163337418705196 @ 116, -106, 249
+174996756645409, 411948148112885, 165427444152934 @ 61, -371, 577
+191798464394247, 363118920600306, 222099529908049 @ -30, 32, 55
+236360038014389, 143465118166762, 250823414259091 @ 95, 188, 58
+400318739318181, 252104608519978, 185992624418083 @ -122, 12, 151
+199511778210190, 330703342578598, 246275262856891 @ 28, 96, -32
+410188600915153, 156486923116205, 476453488398514 @ -35, 49, -143
+403443885022303, 340839703689596, 237131698258593 @ -102, -115, 83
+205966597250419, 370766545619691, 164162068341777 @ -45, -65, 386
+199592608139162, 251301110513356, 238043777033449 @ -66, 782, -50
+543223300791101, 307692064576234, 388834124896939 @ -165, -98, -58
+415984655409581, 290029579053786, 309062413009615 @ -43, -80, 19
+303893795206514, 161095242482440, 168643190827927 @ 70, 42, 156
+162619300043013, 230134901658198, 88693501999761 @ 201, 224, 426
+205308296113457, 353149558691926, 182582949698979 @ 56, -51, 218
+451084794924787, 196821710815236, 562134339689444 @ -129, 46, -291
+226742902772880, 336586694334828, 253806603307990 @ -42, 26, -35
+315792139646271, 267010555599958, 242564557653535 @ -24, 6, 70
+178712631543352, 382282854562096, 173838641395304 @ 100, -126, 341
+243735837601637, 346701777560786, 246741534377019 @ 11, -74, 36
+210007641909725, 298444290411562, 264318664630011 @ 131, -36, 35
+263172945206213, 268525789310326, 427841530693927 @ 87, -35, -139
+220677187402635, 468970636318263, 43143998648027 @ 43, -389, 576
+178580899449581, 347009510530906, 277318193707147 @ 100, 75, -246
+177758811297412, 322584062403618, 169769943873243 @ 84, 292, 416
+215590896798347, 334281345822656, 389832980042849 @ 128, -97, -141
+376469200316606, 405928042087548, 366121130567146 @ -130, -202, -125
+299345098043601, 313387338203029, 264642165681575 @ -203, 51, -36
+218632913002013, 355096591649425, 249271783067287 @ -15, -41, -20
+190649668742205, 134392939970218, 168841576007275 @ 102, 702, 268
+273284435187787, 402773326831090, 299094035733625 @ 84, -192, 19
+239419225455197, 328507115812526, 246498830555459 @ -55, 29, 6
+232486478937895, 223967663304673, 169055331104021 @ 51, 183, 210
+215124544210211, 351197210587726, 248088120987817 @ -24, -10, -29
+163074260457836, 338333177896348, 232020615689744 @ 152, 654, -163
+320688147068293, 310268963630560, 430029836481359 @ 37, -93, -118
+261363761393453, 205939476692698, 335813167827991 @ -63, 316, -212
+204019999799117, 354673051877586, 311692044098539 @ 143, -125, -32
+170936382236750, 370764377080192, 251385303873748 @ 68, 78, -341
+190760346748012, 288678268649194, 195033583529983 @ 34, 396, 220
+252999337365221, 320136259627858, 244456776137521 @ -99, 56, 13`,T7=`jqt: rhn xhk nvd
+rsh: frs pzl lsr
+xhk: hfx
+cmg: qnr nvd lhk bvb
+rhn: xhk bvb hfx
+bvb: xhk hfx
+pzl: lsr hfx nvd
+qnr: nvd
+ntq: jqt hfx bvb xhk
+nvd: lhk
+lsr: lhk
+rzs: qnr cmg lsr rsh
+frs: qnr lhk lsr`,K7=`btz: vxx
+cjk: jcc ftb zpq
+jkg: hnl kzf jtb
+pjn: sjh tmb zvg
+qpn: lgx
+zmm: bmj
+vdl: csd sjh ghg nsv
+thh: qmj bxt zgr krh
+qzd: kvn
+tcg: ljt pbc vnc
+dqt: bdx
+mhh: knx
+lzz: mnj jqm htz
+gxr: rdg
+gdp: blx
+bqg: zgx mtk ccm
+shg: mfh dxt vkn djm
+sft: gbd
+drg: xfr zsv rrh
+lcj: dxs jcc
+mmc: csd qbn
+kkq: kln mbd qnq
+hnh: vpf htf sft ctm lth hcq ljt
+gft: fhm zbv gkz bgs rmx
+qvx: mpd qqv qch
+sph: kkx tqh ddz
+nlx: jll
+mzf: qlk fjd
+zfj: tmm
+qfk: rpn
+gqc: hvj mpj kkq gkg jts kcr
+gjz: mnm
+fkm: mnj ccx kxl cnz
+nhj: kvn dmc rhb
+tbd: vnz tmr
+sbh: gmg
+scm: zzc nrz
+gmz: gtj rjq bpg zcm
+nlt: vvp
+zfc: cmh bsg kcz zcl
+pdc: qfk
+bsl: dng jbb slk zlg
+kbr: vtx vdh hsj
+bnp: zbh khg vgd
+cnk: hfm zcl tzj crp jpx
+qrl: vqf bbx ptq xcp
+dtd: rvh mfv rms cnp
+nsb: kkr
+jrk: znq xzb gpv
+qtj: vcb
+jms: vgg zcm vtx
+vxv: htf
+sdx: djg nnh bsp mfv
+dgz: xnt vtt
+kcq: rdd qzv jhs
+vfb: mdj svq ptl vvn
+dbz: ttc zlq gsk
+qrj: qzj
+lkl: lqt xkz
+qqd: dcn tmc
+fkt: kgs zfd xnt
+lhv: ktr vgb
+lmp: vkj thx slg
+lmg: kph jqm hcx
+krt: zxb xzk fnk zxx sft
+qzv: pqt lfv
+htx: ngq lmj
+gcn: xlb bzj xvl jmb
+dhn: rtn vsf bkr hzc
+knp: sqx jgc
+fzb: gzf tmc bln
+scs: rmn ppz tpb rpn
+vzx: flf mbx tbd kkr gjv
+xcc: sfh jjh zfc
+nrc: ksr mcd lrb xtf pxz qzj
+jkj: vmf bpm dmp jsj
+ctp: bxb
+jsl: gqh
+xfx: kjx
+fhs: gtc ppj rvx tkd slt
+vgd: tmr xrv fsz
+bxt: lgx
+txb: xkn
+hnq: kfb jqm
+ths: hhh fzf pdt dst
+phk: vgf jzh zxg lzp
+cxh: phh mxr flg
+tzh: zzv hbj bdx znr
+vzf: qgl vlh dpr
+xcm: ldt gth ljh
+jvr: mlk rff jcc
+bjt: hlz bgk tml mgp
+scx: bvg nzv rcs flr zbq bnm
+bjz: nmx cgs
+bsb: hrn
+gcg: prv lrd
+qxm: bpz
+hhv: ktr
+mnc: lrn rff
+hmt: bpm nqn rjv mgp
+thx: bpg
+nbd: lgz bqz psh djp mgh
+cll: chf kbq rzn rsf
+zzx: ccn qxl mqc
+znq: hkq xdk
+bdj: cjc
+sdt: qtf sph lpv
+hdv: xfl pfm bmn
+kck: vjj xjf
+lgg: jgk hhh znr djd
+tlt: xgq tjd vvv bsp kjg
+pgb: lmj
+gvb: kfb
+qpx: bxm knx xrv bdj
+rsp: xsg
+gnb: tvj rmn nfv xjt nvc
+glt: skp hfh qvb
+klv: ndh cvp mlk dqv
+lmj: xph
+qmj: jtb
+jgt: tpr
+vlq: qtj shb xsd
+rgk: qvz fgj pfm
+mbh: sbl
+pqt: fcv zmm
+hfs: rcg ljd rrv mbm
+xsg: mkx
+ckv: bsn sfh rms tzt
+zbh: tqm
+crr: kcz ldf
+rhs: rvx jgc pxd bjz
+hzm: rft fnd lqt
+mqc: xgk ctc
+zzq: rmb bfh jrk ndr rpn
+tpb: bzk glv gxr
+vrr: rrb spv
+szl: kbq ggd kcn nrv dtt
+xlr: bzk gpq
+gzl: pzk
+mbr: htv jkg
+zpm: rlv
+mbg: lph zvg ttd
+mvs: zlg ghg kcn
+ckc: drf hcq
+jxd: ssf rmx nkt
+ltd: mbh nlz
+cfq: gjz bsh hlr
+qjq: cmh lsq
+jxf: chf tnf qqv
+cgv: vpj zhd
+hzk: rhr brs rsj lrn
+btx: qxr
+lcq: mdd xrg
+kjx: cbj qmq lzd
+qfq: tfg mjk
+njv: trl xxl sst
+vmg: ffb vzb hhd
+zkn: zbq dkm psh vdh
+gcp: dhn qmz rsj ptf
+fnk: hqv qtz qqv
+vvk: nrv tqh gjz
+jzk: zsv jsj mnp
+vjj: lzb tpl
+stn: jxs dst lsv
+clk: cxr
+fpl: zgx lph zpq pvv
+srs: fsc knb cpb zsg
+xvs: ctp thj krh
+qvz: zsv
+lsl: lnm dxt gjv ztv
+bcm: mlq
+hhd: qsr
+jnx: xvp
+cvg: nhz qgp kst lqt
+qbn: rft tlm jrc
+dgh: xvs
+rmn: vxv
+gkg: pdc kgs vtm vjz
+tfj: jvn tjc
+fbg: mbm lfq sdz tvd vtm
+fmv: tqg fkg
+mrr: bmn gzf hpn pql cpc dlf
+lzf: jgk slg lzt sgr
+psp: rfm ccq
+plz: cmd lnm ccb
+cms: fxj gbp
+vtt: hsp
+zjf: vtx
+kzs: jmv lqt slx ccb
+mgh: gkg jgk
+rlf: mjk flf mpm
+kvr: njs klr fnj xjg
+ccf: cxh jxs sbc
+qgl: bkj
+xpr: txs
+mcd: zbk mrb tpl
+qxh: jxr
+mms: rqn xzf kbs vqg
+qzj: ssm
+dvr: rkm qmj zxg
+ljq: bvg qvf
+ctm: hgn fqt lzd
+mbc: rdd ffs bxs
+lsf: bpp mhj
+mnj: qkc vgb
+qbh: cpb
+mtz: tjc ssb bxs
+cks: hzc
+dfv: ptl hnr zlq qkc
+jts: qdv mkj
+bbj: bnv
+fgj: xkn psp dqv
+bcg: xfr bfd mnr fll
+xbn: gzg npf
+kkh: hvm ndh stl hdv
+tvt: mnr mvs hnr pvs
+crq: bpz
+dcm: sgl qhg pmv gqs
+kvn: hzl
+ggb: cpc rrh
+ksg: qlv xrv pjp gzg
+zmk: sgl
+hkb: cfd pgz hpn xvp
+lmx: clb jbb dgg cxm
+qxr: zvm hdd
+mfb: lcq hbj fjn jpx
+lgl: tfx fmz jsv mrb
+vqg: tjb xpx
+fzf: kgt
+vpd: bxm sgl
+jkn: vjj tvd xjj sxb
+zkk: stn hvj qtf
+bzc: btj bsb mrv fnp
+qbd: xsf drq
+glv: smp
+hrk: kln
+vnc: bfl gzl
+zjs: hvb rhb mln zlv gdp
+bvh: ccb glp gzb
+gvs: tqz nzp tld
+crd: mrx
+lnk: pbp mlq vln kgz vcb lrn
+tzt: xzb
+lss: dqt vxk
+llz: lhr sjl jsh ngl
+hkf: bsg xdk
+qhg: jrc
+tvd: pzk sfh
+lvp: gfm pcp clk
+ccn: mnj dph rvx
+gth: jvn
+qqg: ctd zhd
+bcr: pbp bbj drq fcv
+tmm: xpr
+pdt: tdh zxb qbh gqj
+tzq: gdx knx ntn slt
+qvs: xvs qqv lgx kcz
+fmh: gjf cfm zvt nvc
+kzk: qfk qbh sdz
+fcs: qpt vzb bzb rdl jjh prp
+thj: hcq
+gdq: hsp hvg
+lpv: mnm jpc
+dxt: tfg lff pds
+zkh: sql pjq txr
+pvs: mkx
+nrv: ftj
+prn: gjf kfh tst gks
+mgc: nlb lss ppz
+clq: ffb pdc tpr rbh lqh
+qtq: pct fvt qvf qzp
+mlq: ptl
+hvm: xrj mmz ldz
+lxl: mkf szp xzg mnc
+bgk: jsl tqm ztl hsb ggb sjt
+dxs: bvh hzl ksv
+xfn: bcf qrj
+bzj: mln xrj
+ptf: jfq xkz nmp
+hcf: vzb brc hhx ljt vjz
+rnq: xsp fnj
+mxc: slg txf hsj lfj dbq
+knb: zzv
+vkq: jck msq fvt lhr jml
+hzc: lnf
+qch: tpr
+tff: rqj kjg
+tnx: flg hhx sgh
+vbx: ppz pnb qmj bcz
+tqc: ssf lkl
+hzb: bsx pnc tnx mcg
+xln: sst gzf mkf ccm
+hxf: jhs cvc prv lfp tqg pxt
+lml: sjh vnd jsl
+fsx: bjz
+rxs: rtv qjg mkx lsf
+kql: xvz gbd lgx
+crp: dkm nlx gfp vtt rmj
+rhd: hqz thm mkj
+pjb: qpt cbj
+znr: cbk mqz
+bcz: dtt hxx
+vdx: qzm
+mtc: ljq hkq ptq
+xdp: nkr hhl mjk pcp ntc
+lcx: txp bcf hnf jxs
+xsp: djm mhd tkd jmb mrx ktr
+tvj: qfb trd
+gpd: rzx fxn dcn tzl
+lvq: qxp
+ssb: pbh
+ptq: mqk fxn rjp
+knq: qkc
+qkz: qpn glt ggl czz
+fdm: vsb cgd ftq txb
+fqb: lth hhd jvb qrj
+xxl: pbh
+dzh: nbv kcr qvf vdr
+qkh: nxf mnp fzb dpc
+brh: lkb glg qsr tdr
+kkr: nmp
+gbd: nzv
+gpt: njs kpf zsd
+qpt: bdx
+qtg: qjf kvn xkp qjg kfx
+cbv: skn xzb zfd pjb
+lnm: ftq nmx
+gzg: prd
+lkk: vgd kcq
+xnq: lff mqc
+qjg: nsc
+pjz: nlx bfl xgq
+rks: dbz gzb qbd
+kbz: dkb tbd rrr bht
+vjx: gvb xhj prd
+ghh: bbx jdz
+frv: sxg psh djp
+cjg: gfq xfm mlk lll mrt
+nzn: mkx lrd
+nbg: czp mfh hdh sqx
+brs: vkn
+gql: hpn gcg fmv vjx
+qvf: xvz jgn
+sgj: qrj fdr
+nbv: jgn zjv
+lgz: pdc csc
+vkn: ssf
+shl: rqj lfm hpl qrg lsq
+trd: bfl
+vbr: nlx qbh rrv mvb
+tfh: pzb mrb
+cdk: ngq lzp kfc tfh
+pjr: kvg ttc
+vnz: nkt lfv vcb
+mhm: qbf kvg ssb sjn
+sbq: ghg vxq mmq sxq
+hth: pjb xpn cgv
+zxg: jxr
+nnz: ntc hhv
+ggd: cjz
+gks: bnm
+xhm: xsg pbp zbh dcj
+dgl: ftj
+rpb: vvp
+fmb: glr
+nzj: bsp bsx kcr
+xvh: crd fbd dgk
+rkm: ffb jvb
+ghg: dng
+sgq: lkx vxx
+vdr: qtf
+xng: mdq txs lzn jzs
+lxt: rcg tzh rst
+fbf: sdt zjf lzb vjh
+gjv: tgb
+rrv: fqj qxp vlj nrz bnm
+fhf: zbk bcp bbf
+tnf: tzt qhx
+jxk: mqz kkx gqj
+qlg: csk gpv hfm sjk
+zzl: xtf nvt dqj svz
+bfh: tst vjh vbl
+nhl: kjg bpg dgh mvf
+ldz: hcg fsx mgp
+tss: tqm qfq pjn fcv
+flr: htx hcs
+gzz: lnf
+ttl: mms lnk pvs knx zfj gxq
+kvl: rvh ngx czt dtt
+qvd: xpx tfj frn
+rtq: kpf mhj qqd
+xpn: kck lkb
+gfc: dgh jzr
+nms: gcf fmv lcp
+czt: qrg jtb
+xzg: mdq
+htl: qxj kgj
+khj: dph bkt xsf fsz xpz jsl pvv
+fmz: xfx gcj jgn
+lrq: lfm vcl qqg trd cgr
+crb: phh nzq qvb
+tml: fkg bzd dmp
+slx: gzz
+lrs: gbr nnz qxm zsd cpc rzz
+bmq: ljq xvz qdv sbc
+pqd: vxx htd
+qpc: rrr lrd tqg gbp
+qls: gtc
+kdg: qrn lfr kjg
+nfv: glv mrb hrk
+hhl: csd ldn
+blg: vlk qxm xfm slx
+sxp: hsb mnp cks sjn fdt
+ngv: bcm ntn hsb pqp
+xmc: tzj htv hqz
+kps: xkp tqm lmg gqh ldz
+xtm: ddz sfh
+tdb: nfq jlt bsp zsg
+lkd: nbj njs pgz
+zxx: xzb zxg
+mld: xkz tzl mkx fdn
+dtg: jnx vfn hhl
+dqn: zds hrq zrq gth pmv nkb
+rqb: hhv drg knx nqn
+vvj: xgv vkg ztv frn
+mqr: ljh cxr
+bjr: rcv fsd xjf znh
+bpm: kfx
+gpr: lhv ggb fsz
+vkg: gjv plz cxr lzn
+qlc: xjc drf gpq mvb
+pxt: cjc lfp ffs
+ntx: hbt thx
+lsp: jvn bkr qhg
+vjz: cbj sxg
+qhd: qcd gfq jxd
+qgn: fsc ffb msq
+bvr: klb bqz hvh zxg
+klt: ccl pbh xbn trl
+xlb: tmr dft
+jpx: tmf chf
+jvn: bpz
+ntc: pds glp
+tjb: hhv
+hvj: tzt
+bgs: hcg jvf
+gmg: nzv
+vgr: jjh zts rcs
+klk: flt gdp gbv vkn
+nrt: vdx cgv
+bzb: nbn qxh
+cbj: ktt
+ppr: tqh
+prp: dzv
+qrn: btz shz
+rpf: jqq zzl kjj bxt
+xjt: rms lnt
+hld: bkt tmb zfj cmj jlk
+xgq: fqt vxk
+xgt: mgp rzx dpc zlv
+vxq: hnq kgz
+cjz: tld
+tlq: xkn xkv
+sbb: bcx shz nbn cqv kmm znh
+glr: gcj
+pxd: npf tzl dlf bzr
+djs: xvh qjf jvf cgd
+spv: knp qgp djm
+dmc: gsk
+gqk: llc rxf knh srk
+fhp: fcv djm
+cmb: mqk qrj
+gqh: xvp
+qgp: nkt lph
+dpj: lck vjj
+fkr: hgn qxh glr kck
+bmz: lst pbp ttd trl
+qhx: qzm
+gmj: tpb tdr djp srs
+cnp: klb mlz dgz
+cpf: tpq vjr
+zlg: bzr qjf rfc
+qbs: rqb ttl zmz lcj
+svv: dpj mtm qrn klc
+xfr: vjk
+lqt: ntc xjg
+xhq: njv xjg vmx frn dph
+lhg: xth nlp stl mbx
+kfh: zjv mnm
+zxt: gbr pxt kvn jpp
+qcb: btx mrx xfr tjc
+qht: mlz lrq qtn
+fhm: gvb dsf qhd
+thm: ctp gvq kjg
+hqv: gbd jpc
+csd: bfd
+bkj: jld
+kgp: nnh dzv dlg vkp
+ftb: dcj gzf
+jmv: vrr rjv kph
+bst: vbl cmb qhx rdl lcq lcf
+nsv: fzp lsf cmj ttd knq
+cxm: kfx pkq
+ghl: ctd pzb tst lfq zgr
+mcb: chf dzv nzp lnt
+hbx: ctc nbj dkl
+dpn: dnf knq bzd bzr
+gdx: vzn slk kfb
+qrt: pzm knq cjk zlg hmq
+hqs: hvb hzl dft tlq
+rrb: xkn
+dkl: jvf pqq jtp
+crj: rvh dtt ljd tqz gdg
+zds: tlq ztv
+tkh: ppr bsx
+lsc: ttd fdt tmm xnq kvr
+szh: gxq prv jzs
+xkz: bbj
+ljr: vjr ngx hrk pjb
+kqq: zcl jck
+nvc: qrg dgl
+hrl: nln qzd vkf
+fvt: dgl
+fcl: srd zkh fpv zfq
+clb: mcj bqg xlb ttg
+cnz: jqm zbh
+sgf: nkt sqx kfb
+ldq: bmd lfq
+vdv: zfj rtn tfg mmc
+msq: nrv
+jlk: bnr
+flt: nkt qmz
+ppc: tfj jzs jcc jcb lkd
+gxl: xzg
+xvg: xjs pxz xzp jjh sbg zcd
+hsj: pvm
+zxj: vdr hbj zgh vjh
+gnm: qxm
+pcc: ggd crr dbq znq
+jmm: rlv
+khs: knp qxr pbh
+bsx: pbj
+lzt: gfp
+kbq: hkq
+bmk: zxs
+lpj: vch zbs bhn vjt
+slz: gnm mcx gbv gzb
+fhh: nsc fhp bcm
+czp: mfh plz
+mfv: czt fmb
+mnr: ztl hpn bpp
+qlv: jgc
+bml: dmc bln szh gxl
+dtf: czp jgc jks
+ggh: sxb xzb zzv
+vqx: sql jxf ddz rcv
+klr: xjg mtk rhr
+zbv: rrb
+kgt: llk
+ktg: lnf dkl nbs rlf
+xgk: fdn
+xrv: tmb
+vdh: sgh
+mtk: trl
+gpv: scm
+prc: dft mhd dpc tmc
+rqn: qvz mcx
+bdn: bcz trr fss ngl
+csk: rcg
+jsv: zgr
+gcq: ljh
+sqp: czp bnv qrq pjp
+nxr: hpx ldz tnv cms
+csp: qxj bqd gjj lsq
+qlk: nln rrb
+zjv: nzv
+hmq: pkd jvf xfl
+dqj: kgt sjl xlr
+lff: prv
+cgr: tjd
+fpv: kbr rst qlg pgb
+kph: crd qbf zsd dqc
+xhj: hnr vmf lcj rsj
+kgv: qch pgb skn
+rdl: zzz mlr
+tbm: vvv cbk nlx
+jbb: mln qhg
+cjr: lrj qtz xgq cfq
+nkr: kbv
+cfm: mqz
+sjl: smp tcg vnc bsh sbv xjc
+xkq: mjk pjr vvq kxl
+mjd: bgs lst kvn lml
+qxl: tkd rff
+pnc: hkt jxs
+ldn: tjb fdt vcb
+lfk: vkl ngx trr gjj rsf
+gfp: ctp tmf
+hpv: xjf ldq nlt shl
+qcz: pfm gfm rqn
+nht: hkj nlb
+hrn: drf
+trr: rzn
+srk: zpq zmk fdn
+pcd: gcq cxg
+zhp: nrv tld lmj
+kbv: xsf crq
+lkb: xjj rpb
+hsb: zct
+mmt: lcf lnt nfr ngq
+lrb: gbd llk
+sqt: bnv pgp lcp lll
+qxn: mbd mrn vgk sxg
+vdn: gdg txr nrt prp
+mvb: xfx mcb
+hhh: lsq
+zzz: hhx kfh hfh slg
+rtv: mhh brs hhv kvr nzn
+npz: txb bxm hdd xlb
+dst: lks lzb
+vmx: nln jcb
+vfm: htf gvq
+hlr: czt cfm klb
+hkj: jck fsc hgn
+nlh: tqc nqn fhl fsz
+lll: zjb ffm nkr
+gkz: cbq tmc hdd zbv
+hzr: gxl clk vln qrq
+kqc: tmc pcd gsl stl
+gvq: xrg bkj nvc
+tqh: lrb
+hcx: zck gfq krx
+mpk: qtf lbh bql glt
+tks: ljq scm
+ngs: lxt glt pqd zkf
+rtz: drq vjs zds rfm tjq
+gxq: rrh
+njt: rlh lkk xkp gzz qmz
+qbf: bpp
+mlb: gfc kfh gks pct
+ffp: ldt
+kbl: bkj nnc srd
+krv: fcv nsb tqm
+srq: nlb rbg tck qqg pxz
+lth: jgk
+lld: phr kcn jfq lhv
+pdq: trd txp
+hqz: qmj hnf
+szp: prd rsp
+jzh: lzp xrg lth
+pql: nsb mmq
+bjs: shz djp
+zgx: ksv gbr
+mrs: thd kcq tfj xts pqq
+mkq: mpx lss lfk flg
+xpz: bpm gvb
+gnf: vgb ccx mvs xsd
+vch: dph xpr xsf xcm
+qrg: ksr
+hkt: fsc hvj
+vsf: vpd jks rfm gqh
+kvg: zpq
+brc: pmc htl fsc
+cjp: fbp pbj htf
+kgj: rcg thj
+txr: lsv nlz jjr
+ppj: jrc
+pds: pgp pkq xfm
+lnp: dgk qlv slz gsl
+msv: ctp nnh
+cpc: jks
+sbg: lks zpm
+vjl: mnc tqc rxf ktf
+qtn: hvg ksr
+czd: nzv htx
+qfx: vlh tpl knb fbt
+ztl: rsj
+mfh: gbp
+rxf: rzz
+vmf: zmm dng
+ktf: btx lhv
+dgp: cks szf vnd tvv rlf mvs
+jxs: hbt xfn msv
+dqs: mtk rsp
+bpp: hhv
+hsx: gxr nrv nlb znh
+fnt: vjj tqh
+gll: xcp lvq sbv tks
+tzr: znh nnc
+kkj: hcg kpf qpm gqs
+zxq: hnr khs lkk zct vln bmj
+ljd: hrn
+rmj: zcl cjp pdq
+zzg: gph mmc rnq xdp
+tvp: htv pgc tjd kjj
+ttg: dtg pvs bln
+mxr: tdr kgs
+qnb: fnk cbk bmd
+lks: ngl
+hjh: dlg hns gtq ssm
+cxr: cxg
+zts: jxr pnb
+fhl: qjg mrp xjd pjr rsj
+zfg: zvt bsx tzr fss htv
+hzf: vzc xcp zvt phh
+vhr: fsc kbq mqz vgr
+dqc: ndz svq fsx
+fqt: dzv
+kcb: pnc nnh gkg bjs lzt
+zfd: fdr
+mdd: xhx
+fmj: fzf htx ljd mfv
+rtn: lfd dxr
+hcg: hdh
+nxp: bbj flx hpx vjs
+rlh: fhh lvp tlm
+gdn: sjk jml
+hph: jld
+hqp: vxv hkf sbh fnt
+xtf: qbh
+bgn: pvv fnd vvn lml mkf
+bxg: mbr scs sdg jxf
+vlk: xzg jtp
+fhq: jck sft jjr zhd
+lqz: vcx ccf ltd bjs
+frn: mrd
+qvq: gxv flj cbk pvm vkp
+xtx: vdx fqj lgz mdh
+rjr: hlz ctc mpm jkr
+tql: rst gks frv ntx mrv
+bsn: thj vlj
+krn: prd xkr hrq ssf rzz
+dkb: mcx qgp nqn
+gbn: bkr xpz vjl prc nsc
+fbd: hzl lzd ffm rbd
+fqx: vjt kkr lrs
+ljh: hzl
+kmp: xsd pns tqc fqx ntn
+ndh: ssb zvm
+tdr: bfl
+mpj: cgr zkf ngq
+cvp: mrr lff zqx
+bht: slt bmj ppj
+bxm: pqq
+zct: bpz
+hls: qpn mtm skp qnq
+rvh: kmm
+qqh: dnf glp vmf cmd
+tnd: fgx hxx znr
+dmp: hzl zjr fhp
+vvq: zbh
+mhj: pqt
+lfj: bsp xfx bvg
+cqv: xht nlz ldf
+hfh: cln
+jqq: tff bql krq sgj kdg
+rdg: jll qfk
+sql: lsv jvb
+nsl: zpq lkl zmm
+pzk: fbp hbt
+pbj: kbq lks
+npt: hbj vtx sdc gqj
+zrq: zlv jks qjg mhd
+xnr: lkx nlz tmf
+kns: kgj smm ljt btj
+bbx: mqk gdn
+lfp: gtc gsk
+mvf: cpb xvz jpc
+jmb: fnd
+svp: rdd tjc csd
+mdj: gxl ldt sjh
+btj: tff dtt
+vgg: zcd tqz fnk
+zll: fgx sgh kfc hvg xpn
+xcp: xvs rjq
+bln: ctc
+blb: mrd fhh
+lck: rcg fdr
+svq: fdt cnz
+rzx: mbg
+lbh: dgz jvb pqd llk
+nlz: hsp
+hvh: nrz rlv mrn
+vzt: rtq rks dpc dgp tmb bnp cfd
+vlj: sxg vvp
+vzb: djd
+fbr: ftj mxr rvf ncs
+jcc: gjd fxj
+zzc: jck jld
+jmg: lfv cvc kvg qlv
+zfq: bsn vkp zjv
+ccb: pqq
+zjr: gbv xth
+bnb: mlq slk cxr shb
+nbj: drq gtc
+jcb: jkr
+vsb: kbv fnd xvl
+bhn: nbs hnq mqr zlg cmd
+slk: gnm dcn
+sgr: fdr hhh
+vss: csc hrk hsj pjz
+mpd: lzb knb rqj
+xjj: ctp
+lsz: rqn crd zsv
+grc: kln qdz fss dpx dgz mbh sbl
+nlp: mlk dtg
+rvf: ckc
+xcq: rcs qfb cbj vtt
+mqz: hcs
+lcp: ztl vjk
+hhx: bcf
+fpd: rbc nfr fvc zkk bfh
+smp: vkp
+knh: xbn rxf dmc
+gjd: bmj clk fcv
+flj: htf mdd
+cxg: hvb blx
+ssm: lkx
+hvl: zvg hzl
+pqp: lst mdq rzx
+htd: sjk gjz
+nth: sbh vbh zxs
+mdh: fmb qrj qzm
+vjb: qht pjx bql
+vnd: jkr fjd
+vbv: jml nrv dkm kqq
+xzp: bzb bcf bqz dbq
+nmx: mmq xzf
+fgx: hkt bmk
+sdc: dbx zkk qsr vrx
+sxb: hxx
+gzb: dgk
+pns: lph cjc lvp
+mrm: pnb xcc sxb ghh
+dhf: zlq lrd jlk
+ltf: qtj slz ppj dxr
+cgm: ktt jkn kzf gdq
+htz: jrc gqs vpd
+mlz: hns fhf mdh djd
+fjn: vfm hvh ftj hgn
+nvt: xzp sgj tpb
+kpv: trr jpc vxk ssm
+fss: vbl
+cmj: xzf lzz
+cnn: zvh bnv gzb jqm
+mkf: kvg
+lfr: brh gnb zhp
+tgb: flt gph ttc
+mcg: tjd mdd nrv
+lfd: ffp bdj hxc crq
+tjq: nsc bgk fhm
+fll: hnq svq khg
+rjv: xsg
+hnf: hrn
+rsk: nrv jgt
+pkd: vlk cks mrd qbd
+vfn: gcq pgp
+ggl: pdq sph dgh
+cln: zfd
+fxn: ptl ftq ccm
+znj: rhs qcz qpm ghg xpr jkr
+xdm: rmx hrq
+kjj: prp nlz glg
+pgp: nbs
+pcp: gdp
+phr: jkr vjs rjv
+dbq: cln
+cmh: ndr vvk tdm vkj
+zxb: crt flg
+kfc: gzl
+fjd: pcp ktr xts
+mrt: xbn gbr kxl
+gsl: hvb rrr
+zmz: tgb mbc xfm
+hgn: hcq
+vjh: vpj
+flg: tfx
+ptm: jmm vjb czd fqj
+jkb: vpf hhh vdh jgt fqj prn mbd
+fln: rfc lnf lfv mtz
+bnr: jvf xth mcx
+hxc: fkg kvg hpn
+rst: tpq
+rqd: hqv cpf nnc kkx
+cmx: qpm dtf gph sgf
+dsf: blb rnq qjf
+xth: kfx xkv
+ztx: tld lfm qmq
+fvc: hkq
+tpq: rsf glr lzp
+qdz: zvt zxs lnt
+jfq: cmd xpd
+fdc: mzf rrr mcj bzj
+pxc: gmg jxk tzj vzc znq
+vgk: ktt tqh
+ksv: cvc
+tnc: sjk dgz gdg ppr
+hns: txp
+lkx: bxb
+jtp: vkf cgs
+zck: qls xdm
+mkj: clh
+nfx: mqr xkv khg xxl
+hnl: vjz cpb sbg
+rmc: mpd ppz ndr lmp
+qcd: kfx
+rqg: dxr nnz xvp vjk kst
+cgz: gpv vjr zzc snv mgh xrg
+znd: nlt vpj crb sbv krh
+gtq: zkn qrj qxj tfx
+pzb: vkj
+kst: nbs djm
+xph: dqt
+svz: vqf
+vjs: nln
+nhg: nrt qnb mrn
+czq: nnc xxd jgt pzk
+jbg: xkv xzf ksv xxl hrl dbg
+gfm: rfc drq
+gpq: rlv lfm sgq
+xgv: rzz qlk xgk
+ndz: llc fdn vlq jhs mrd
+mmb: vvv xjf djh tdh
+ktc: mjv zbk nht pbc
+pct: qpt mpn
+gtj: lfq xtf bsh
+hpx: kkr vjk jzs
+rch: htv qnq gvs cgr
+vpj: qrj
+qfs: mkf gcg qls qcd hvl
+pjq: kbl kgs qvb
+kxn: rdg rvf dpj hhh
+rpj: gzx rvg qfq svp
+fzp: sgl hdh xkp
+dpr: ztx hfh gzl vlh qzm frv vgf fnt
+crs: htx glr jll
+ftf: tvv mmq qzd xpx
+czz: vzb vxv lkx
+kdl: fnk xjc cpb glg
+vbl: hkf
+tmk: nsb bpm
+lbc: xjf vzc rbh
+mmz: fdt ffp btx
+jpp: qvd vkf zck
+vvn: ssf lfv ccq
+ldf: jgn qdv
+znh: jll
+jjh: gjf
+fql: lsf rrr sxp vsb
+mpx: bsg
+dpc: rfc vvq
+zlx: xfm rzx hvl mnp tqc
+nnc: thm
+xjd: tqm xjg gzg
+xrm: kst bcm bqg svp
+pgc: crb drf qzj
+cpk: rvg pgp nhj hpn
+qvb: tst
+thd: bmn
+mcj: fsx cxm jsj rhb
+szf: djm
+vrx: zcd
+vcx: glt zts
+dxr: qzd
+pqs: vsf jnx fgj jcc
+bcp: nzp vjr qmj
+rvg: llc
+rdd: gcq
+tnv: qcz vln qls nkr
+ntn: bqg fnj
+cts: fvt glg qtf msq
+phx: cfm hxx zxg
+xfl: jzk sqx
+mxb: hlz vzx zlv fnj
+tdh: vzc
+stl: bdj
+rft: tkd pkq
+dlf: gvb xkp
+lrj: mpx msq vtm
+qcf: dqs slk mtk jcb
+ndr: xph
+tzl: ffp
+kmm: llk
+shz: rkm sbl
+mjv: gqj mbd sgr
+flq: znq rqj dgl mbh jsv
+rhg: jpx vdr vnc vkl zxs
+tdd: qbf npf zjb gzg
+sdg: rbh zcm vcx htv
+vjt: fkg jhs
+mpm: bln cjc
+tvv: rvx vzx
+rmb: klb msr dkm
+pkb: vmx ffm gpr ccq
+sjt: mhh ftb zct svp
+mpn: fbp bsg
+hsv: jqm nqn szf txs
+lhr: jsv hph
+pgz: zjb jmb
+nxf: xvh bzr zmk
+vfq: tmf tfh qgn mbm
+bkt: zbh ffs
+vcl: thx bxb
+hvc: zmk mzf fdm vcb
+kln: tnf
+kzb: mlz tnf dlg krh
+spj: nqn xsp dcj jnx
+mgg: jsh qjq mlr mqk
+vlb: xmc pxc pjb cxh
+lst: vjk
+vlh: rhd
+dqv: pvv kxl
+klc: txp lpv nfr
+skn: kql bbf rmn tvd qfk
+bhd: glg bmk pct mkj vdx
+jjj: tks pmc cjz tbm
+hkm: kfc hvg xzb
+srt: bnv rft xdm xpx
+jdz: zhd mrn rpb vgk
+tgl: xth zsd slz nkb
+mrv: gzl
+sdq: tnd ctd rbg kzk frr qfb
+xpd: nzn
+cgd: qbf dcj
+qxp: pzb bzk
+krq: zjf pdq ctp
+gxn: nht zgh xtm nnh qtn
+jsh: vrx
+jxj: rsk zpm nth rqd
+pjx: vqf tpr rms
+lfq: flr
+sdv: vpj glg fsd
+sxk: flt vmx qtj ffs
+pmh: scm cjz crt
+pzm: trl tmk
+hst: xhx jxf dqt hph
+zkt: qhx szb qfb mrv
+ngt: cgs npf hzc
+xrj: ldt bfd qxl
+jjr: qgl xph fvc rbg
+rbc: xcp qpn lbc
+xvl: ffs ffm
+sst: nmp kcq
+jxp: kkx ncs bxt mbr xjs
+bcx: crs zgh lcf
+jhx: rnq qzv pgz nms
+zlv: zmk
+qtz: xdk bpg
+kzf: jtb lvq
+sdz: jxf kqq hvg
+pmv: zlg rff
+hrq: sqx
+mrp: dft hdh hbx
+xts: hlz vvq
+sbc: fsd qzp
+nfr: sbh
+xkr: dhf svq crq
+tck: xzb sgq
+cfd: mcx xpd trl
+ctd: rms
+hpl: fsd cgr mpx
+ncs: vqf hsp zzq rbh
+jlt: lzm pbj
+srd: xjj zzv
+flc: jvb flj mgg tkh
+gzx: jlk gfq jvr gth
+txf: qch ftj mpx
+xhv: bsh tzr jzr qxh
+cbq: ldt mhh
+zvh: mdq qvz gbp
+bxs: pcd khg pqq
+hcs: fbp djd
+zvm: ftq xvp
+nkb: rsp
+mks: qdv hvj cmb fvc
+bbt: dqs hvm lsp gtc
+ccx: vfn mnr
+vgf: krh hvg
+kgz: tlm
+djg: rzn hkm phx
+kfv: fzf psh czd bmk xlr
+fmk: rhb nmp qcb gph
+rsj: xkn
+mbx: kvg
+vvv: ktt
+dlg: gdq
+flf: tmm nnz jtt ktf
+jhp: ngl ghh xdk gdn
+xjc: ffb
+fpr: tbm hhd lck rlp mmt
+xfj: tdh jms qjq xtm
+tlm: gzg stl rvg
+zbs: rqn slx drq
+nxz: kgz njs gkz kvg
+xbv: smp fqt hfm rjq svz kbq
+kpf: xgk
+hzz: vxk rzn dbx xrg
+vzn: qfq kbs dxs
+djh: xgq ggh kgl ngl
+rbd: szp tfg
+lqm: jnp fmz hqp nzj
+lzm: xhx bfl nlz
+crf: vgd gsk mqc qkc
+lzn: dng blx
+tzx: srd tpl jml xnt
+phh: smp
+cxn: znq tdm btz ckc
+bqd: nnc mbd csk
+gjj: vxx zgr
+ztv: mln
+tdm: rjq mnm
+vgb: pkq
+phq: ntx sbv lbc sdv
+sxq: txb brs mnr vxq
+xqx: zpm ldq cpf hrk
+lph: rhr
+mtm: pbc lzd
+bgz: zvg jtt pbh xsg
+fnp: bbf ksr
+krx: xpd gbv gnm drg
+dpx: zpm lvq rpb
+snv: tkh vkj xfn
+pfh: vfn xjg nlp hzm
+frr: bvg ssm fkt
+zsg: gcj crr jld
+ngx: bnm
+lrn: jtt
+gxm: sgf zzx mtk rrb
+njs: tmk mbx
+ddz: pnb
+qmq: thx pvm
+pbh: jsj
+mrx: jtt
+fsz: zds
+bmn: rfm
+pmc: jvb hkf
+lqh: lkb pjb mpx
+pbc: ngq htd csk
+bkc: nkb mnc jjz vqg
+nfq: gvq zvt vfm
+kcn: mhj
+mlr: htl zgh gxr clh
+jmq: gzz xnq cxg btx
+qjv: fcl pxz tck jtb
+dbg: gqk hvb cmd
+qxs: pzm tjb rrh fll pbh
+nbn: dbx vrx
+qnq: hbt
+gcf: vsf qzd
+rcv: tvd jmm
+xzk: qzp sbl tpl
+bkr: bfd
+kbs: zbv fxj krv
+fdr: zcd
+dnf: xxl xsd
+vkl: rsf qxj
+mrc: nkt vlk ldz dft
+ccl: zjb ksv lsz
+kxq: hph brh fqj zkf
+ctq: pvm rbg jlt zjf
+csc: nzq tzj
+kdv: fnk xgq czq qvx
+sjn: zlq cgs
+zhd: kmm hph
+clh: fmb bdx
+ccm: sqx
+bzd: thd gqs mhd gnm kpf
+nrb: qpm gcf qmz nsl qxl
+rjp: ksr zcd gcj
+xxd: fnp qzp bqz vvv
+xjs: vmg qgl
+nts: rsk xnr mlr snv
+zcm: nbv dst
+gdg: ppr
+lsv: skp
+zbq: nrz bsb
+bnq: jsh pgb nnc nbn
+dgg: xfm zjr dcn
+sns: gxq rrh tmr ccq
+pmp: tfx bbf msr gpv zxb
+htq: mdd btz bxt hth
+zqx: hdd kbv pql
+kgl: vcl vxk jts
+xht: bsb dvr ltd
+nhz: vrr rhr cms mbg szf gzx
+qrq: glp ngt lph qcd
+rcs: qdv
+vbh: lcf pbj mpd
+hgd: zkf tpl hnf mgc kcz
+zbk: klb kcr
+vgz: xfm zgx psp ggb
+nmf: qqd thd sjt xsg
+szb: zzz tqz xnt
+vpf: rpn znq
+fxj: vcb
+rlp: rzn bxb sxb
+txs: slt bpz
+smm: bql fvc jxr bzk
+vtm: xhx gdg
+tqg: rbd dgk
+ljp: bzk hbt xjt glv
+nzq: jmm mpn mbm
+ttc: mmq blx
+shb: knx rzz
+nxq: pjb msv pmh jzr
+gxv: qhx ggd ckc
+dvj: mks gfc frr tvj
+crt: nzp psh
+drz: hvh gmg zxx gjf kgt qsr
+jnp: nhg vzf vjr jzr
+ttj: mrb mtc rvf cln rpb kgv
+hfm: sgh
+pjp: rgk gbr
+hdf: sbl frr hns pct
+bmd: xjf rms
+zlq: vkf
+kdb: msr cll hzz vvp
+msr: nlt djd
+fbt: qlc dbx lzt
+rmx: ksv
+flx: tmm qcd cbq
+jjz: gpt llc nzn
+jhv: ltf cvc pfm blb
+rxp: skp svz llk kgs`;var Mn=Object.assign({"./advent/day01/solution.js":u1,"./advent/day02/solution.js":R1,"./advent/day03/solution.js":G1,"./advent/day04/solution.js":A1,"./advent/day05/solution.js":X1,"./advent/day06/solution.js":y1,"./advent/day07/solution.js":I1,"./advent/day08/solution.js":n2,"./advent/day09/solution.js":J2,"./advent/day10/solution.js":f2,"./advent/day11/solution.js":g2,"./advent/day12/solution.js":p2,"./advent/day13/solution.js":z2,"./advent/day14/solution.js":A2,"./advent/day15/solution.js":X2,"./advent/day16/solution.js":U2,"./advent/day17/solution.js":Y2,"./advent/day18/solution.js":t3,"./advent/day19/solution.js":J3,"./advent/day20/solution.js":f3,"./advent/day21/solution.js":g3,"./advent/day22/solution.js":p3,"./advent/day23/solution.js":z3,"./advent/day24/solution.js":k3,"./advent/day25/solution.js":T3}),jn=Object.assign({"./advent/day01/input-test.txt":K3,"./advent/day01/input-test2.txt":Q3,"./advent/day01/input.txt":R3,"./advent/day02/input-test.txt":C3,"./advent/day02/input.txt":_3,"./advent/day03/input-test.txt":D3,"./advent/day03/input.txt":G3,"./advent/day04/input-test.txt":B3,"./advent/day04/input.txt":M3,"./advent/day05/input-test.txt":w3,"./advent/day05/input.txt":A3,"./advent/day06/input-test.txt":S3,"./advent/day06/input.txt":H3,"./advent/day07/input-test.txt":V3,"./advent/day07/input.txt":X3,"./advent/day08/input-test.txt":P3,"./advent/day08/input-test2.txt":N3,"./advent/day08/input-test3.txt":y3,"./advent/day08/input.txt":U3,"./advent/day09/input-test.txt":E3,"./advent/day09/input.txt":$3,"./advent/day10/input-test.txt":I3,"./advent/day10/input-test2.txt":Z3,"./advent/day10/input.txt":W3,"./advent/day11/input-test.txt":Y3,"./advent/day11/input.txt":n7,"./advent/day12/input-test.txt":e7,"./advent/day12/input.txt":r7,"./advent/day13/input-test.txt":t7,"./advent/day13/input.txt":J7,"./advent/day14/input-test.txt":L7,"./advent/day14/input.txt":s7,"./advent/day15/input-test.txt":F7,"./advent/day15/input.txt":f7,"./advent/day16/input-test.txt":v7,"./advent/day16/input.txt":l7,"./advent/day17/input-test.txt":d7,"./advent/day17/input.txt":g7,"./advent/day18/input-test.txt":h7,"./advent/day18/input.txt":b7,"./advent/day19/input-test.txt":c7,"./advent/day19/input.txt":p7,"./advent/day20/input-test.txt":m7,"./advent/day20/input-test2.txt":a7,"./advent/day20/input.txt":O7,"./advent/day21/input-test.txt":z7,"./advent/day21/input.txt":x7,"./advent/day22/input-test.txt":i7,"./advent/day22/input.txt":o7,"./advent/day23/input-test.txt":k7,"./advent/day23/input.txt":j7,"./advent/day24/input-test.txt":q7,"./advent/day24/input.txt":u7,"./advent/day25/input-test.txt":T7,"./advent/day25/input.txt":K7});function L1(t,n,r,s){this.day=t||"01",this.input=r||"",this.testInputs=s||[""],this.part1=n.part1||null,this.part2=n.part2||null,this.knownAnswers=(n.knownAnswers||[]).map(e=>String(e))}function Q7(){var t={},n={},r={};Object.keys(Mn).forEach(J=>{var L=/day(\d+)/.exec(J)[1];t[L]=Mn[J]||null}),Object.keys(jn).forEach(J=>{var L=/day(\d+)/.exec(J)[1];J.includes("test")?(r[L]=r[L]||[],r[L].push(jn[J]||"")):n[L]=jn[J]||""});var s={},e=Object.keys(t).sort();return e.forEach(J=>{var L=t[J]||{},F=n[J]||"",f=r[J]||[];s[J]=new L1(J,L,F,f)}),s}const R7=Object.freeze(Object.defineProperty({__proto__:null,DayData:L1,getDataByDay:Q7},Symbol.toStringTag,{value:"Module"}));function wn(t,n,r){const s=t.slice();return s[28]=n[r],s[30]=r,s}function An(t,n,r){const s=t.slice();return s[31]=n[r],s}function Sn(t){let n,r=t[31]+"",s,e,J;function L(){return t[12](t[31])}return{c(){n=R("button"),s=gn(r),K(n,"class","button svelte-gd9guy"),U(n,"current",t[31]===t[2])},m(F,f){zn(F,n,f),q(n,s),e||(J=[y(n,"keydown",null),y(n,"click",L)],e=!0)},p(F,f){t=F,f[0]&2&&r!==(r=t[31]+"")&&qn(s,r),f[0]&6&&U(n,"current",t[31]===t[2])},d(F){F&&bn(n),e=!1,nn(J)}}}function Hn(t){let n,r,s;return{c(){n=R("button"),n.textContent="run all",K(n,"class","button run-all-button svelte-gd9guy")},m(e,J){zn(e,n,J),r||(s=[y(n,"keydown",null),y(n,"click",t[11])],r=!0)},p:vn,d(e){e&&bn(n),r=!1,nn(s)}}}function Vn(t){let n,r,s;function e(){return t[16](t[30])}return{c(){n=R("button"),n.textContent=`Test ${t[30]+1}`,K(n,"class","button input-toggle svelte-gd9guy"),U(n,"current",t[4]===t[30])},m(J,L){zn(J,n,L),r||(s=[y(n,"keydown",null),y(n,"click",e)],r=!0)},p(J,L){t=J,L[0]&16&&U(n,"current",t[4]===t[30])},d(J){J&&bn(n),r=!1,nn(s)}}}function C7(t){let n,r,s,e,J,L,F,f,v,d,g,l,h,c=t[7][0]+"",m,b,a,p,O,i,o,z,k,u=t[7][1]+"",V,X,C,E,en,M,j,Q,_,w,G,I,D,P,cn,rn,ln,W,Rn,Y,xn,Cn,tn=pn(t[1]),S=[];for(let x=0;x<tn.length;x+=1)S[x]=Sn(An(t,tn,x));let N=t[1].length>1&&Hn(t),Jn=pn({length:t[3]}),H=[];for(let x=0;x<Jn.length;x+=1)H[x]=Vn(wn(t,Jn,x));return{c(){n=R("div"),r=R("h2"),r.textContent="Advent 2023",s=A(),e=R("div"),J=R("div"),J.innerHTML='<h4 class="svelte-gd9guy">Days:</h4>',L=A(),F=R("div");for(let x=0;x<S.length;x+=1)S[x].c();f=A(),N&&N.c(),v=A(),d=R("div"),g=R("h4"),g.textContent="Part 1:",l=A(),h=R("div"),m=gn(c),b=A(),a=R("textarea"),O=A(),i=R("div"),o=R("h4"),o.textContent="Part 2:",z=A(),k=R("div"),V=gn(u),X=A(),C=R("textarea"),en=A(),M=R("div"),j=R("h4"),j.textContent="Input:",Q=A(),_=R("br"),w=A(),G=R("button"),G.textContent="Real",I=A();for(let x=0;x<H.length;x+=1)H[x].c();D=A(),P=R("textarea"),cn=A(),rn=R("div"),ln=A(),W=R("div"),Rn=gn(`Catch errors
+      `),Y=R("button"),Y.textContent="x",K(J,"class","label svelte-gd9guy"),K(F,"class","day-list"),K(g,"class","svelte-gd9guy"),K(h,"class","time svelte-gd9guy"),K(d,"class","label svelte-gd9guy"),K(a,"name","output1"),K(a,"id","output1"),K(a,"rows",p=mn(t[6][0])),K(a,"class","svelte-gd9guy"),U(a,"known-good",t[8][0]),K(o,"class","svelte-gd9guy"),K(k,"class","time svelte-gd9guy"),K(i,"class","label svelte-gd9guy"),K(C,"name","output2"),K(C,"id","output2"),K(C,"rows",E=mn(t[6][1])),K(C,"class","svelte-gd9guy"),U(C,"known-good",t[8][1]),K(j,"class","svelte-gd9guy"),K(G,"class","button input-toggle svelte-gd9guy"),U(G,"current",t[4]===-1),K(M,"class","label svelte-gd9guy"),d1(M,"align-self","flex-start"),K(P,"name","input"),K(P,"id","input"),K(P,"rows","14"),K(P,"class","svelte-gd9guy"),K(Y,"class","button input-toggle catch-button svelte-gd9guy"),U(Y,"current",t[5]),K(W,"class","catch-area svelte-gd9guy"),K(e,"class","layout svelte-gd9guy"),K(n,"class","outer svelte-gd9guy")},m(x,B){zn(x,n,B),q(n,r),q(n,s),q(n,e),q(e,J),q(e,L),q(e,F);for(let T=0;T<S.length;T+=1)S[T]&&S[T].m(F,null);q(F,f),N&&N.m(F,null),q(e,v),q(e,d),q(d,g),q(d,l),q(d,h),q(h,m),q(e,b),q(e,a),Ln(a,t[6][0]),q(e,O),q(e,i),q(i,o),q(i,z),q(i,k),q(k,V),q(e,X),q(e,C),Ln(C,t[6][1]),q(e,en),q(e,M),q(M,j),q(M,Q),q(M,_),q(M,w),q(M,G),q(M,I);for(let T=0;T<H.length;T+=1)H[T]&&H[T].m(M,null);q(e,D),q(e,P),Ln(P,t[0]),q(e,cn),q(e,rn),q(e,ln),q(e,W),q(W,Rn),q(W,Y),xn||(Cn=[y(a,"input",t[13]),y(C,"input",t[14]),y(G,"keydown",null),y(G,"click",t[15]),y(P,"input",t[17]),y(Y,"keydown",null),y(Y,"click",t[18])],xn=!0)},p(x,B){if(B[0]&518){tn=pn(x[1]);let T;for(T=0;T<tn.length;T+=1){const dn=An(x,tn,T);S[T]?S[T].p(dn,B):(S[T]=Sn(dn),S[T].c(),S[T].m(F,f))}for(;T<S.length;T+=1)S[T].d(1);S.length=tn.length}if(x[1].length>1?N?N.p(x,B):(N=Hn(x),N.c(),N.m(F,null)):N&&(N.d(1),N=null),B[0]&128&&c!==(c=x[7][0]+"")&&qn(m,c),B[0]&64&&p!==(p=mn(x[6][0]))&&K(a,"rows",p),B[0]&64&&Ln(a,x[6][0]),B[0]&256&&U(a,"known-good",x[8][0]),B[0]&128&&u!==(u=x[7][1]+"")&&qn(V,u),B[0]&64&&E!==(E=mn(x[6][1]))&&K(C,"rows",E),B[0]&64&&Ln(C,x[6][1]),B[0]&256&&U(C,"known-good",x[8][1]),B[0]&16&&U(G,"current",x[4]===-1),B[0]&1048){Jn=pn({length:x[3]});let T;for(T=0;T<Jn.length;T+=1){const dn=wn(x,Jn,T);H[T]?H[T].p(dn,B):(H[T]=Vn(dn),H[T].c(),H[T].m(M,null))}for(;T<H.length;T+=1)H[T].d(1);H.length=Jn.length}B[0]&1&&Ln(P,x[0]),B[0]&32&&U(Y,"current",x[5])},i:vn,o:vn,d(x){x&&bn(n),Dn(S,x),N&&N.d(),Dn(H,x),xn=!1,nn(Cn)}}}function mn(t){var n=String(t||"").split(`
+`).length;return Math.min(n,Math.max(n,1,10))}function _7(t,n,r){var s=j=>new Promise(Q=>setTimeout(Q,j)),e={},J=[],L="xx",F="",f=1,v=-1,d=!0,g=["",""],l=["",""],h=[!1,!1];function c(j=""){j&&r(2,L=j);var Q=e[L];r(3,f=Q.testInputs.length),v>f-1&&r(4,v=f-1),r(0,F=v<0?Q?.input:Q?.testInputs[v]),p()}function m(j=""){F&&p()}function b(j=-1){r(4,v=j),c()}var a=!1;async function p(){if(!a){a=!0,r(6,g=["",""]),r(7,l=["",""]),await s(10);for(var j=1;j<=2;j++){var[Q,_]=O(L,j,F),w=z(L,j,Q,v);i(j,Q,_,w),await s(1)}a=!1}}function O(j="",Q=1,_=""){var w=(e[j]||{})["part"+Q];if(!w)return["",-999];var G=performance.now();if(d)try{return[w(_),performance.now()-G]}catch(P){var I=String(P),D=/:(\d+:\d+)\)/.exec(P.stack||"");return D&&(I=`(${D[1]}) ${I}`),[I,performance.now()-G]}else return[w(_),performance.now()-G]}function i(j=1,Q="",_=0,w=!1){r(6,g[j-1]=Q,g),r(7,l[j-1]=_<0?"":`(${Math.round(_)}ms)`,l),r(6,g),r(7,l),r(8,h[j-1]=w,h),r(8,h)}async function o(){var W;if(!a){a=!0;var j=["",""],Q=[0,0],_=[!0,!0];r(4,v=-1),r(0,F=""),await s(10);for(var w=0;w<J.length;w++)for(var G=J[w],I=e[G],D=1;D<3;D++){var P=I?.input,[cn,rn]=O(G,D,P||""),ln=rn>=0&&z(G,D,cn);_[W=D-1]&&(_[W]=ln),j[D-1]+=ln?"★":"ー",rn>=0&&(Q[D-1]+=rn),i(D,j[D-1],Q[D-1],_[D-1]),await s(1)}r(8,h=_),a=!1}}function z(j="",Q=1,_="",w=-1){var G=e[j]?.knownAnswers||[],I=2+2*w+(Q===1?0:1),D=String(G[I]||"");return!!(D&&D===String(_))}var k=(j,Q)=>{!j||!j.getDataByDay||(e=j.getDataByDay(),r(1,J=Object.keys(e).filter(_=>!!e[_].part1).sort()),c(Q?J.at(-1):""))};k(R7,!0);const u=j=>c(j);function V(){g[0]=this.value,r(6,g)}function X(){g[1]=this.value,r(6,g)}const C=()=>b(-1),E=j=>b(j);function en(){F=this.value,r(0,F)}const M=()=>{r(5,d=!d)};return t.$$.update=()=>{t.$$.dirty[0]&1&&m(F)},[F,J,L,f,v,d,g,l,h,c,b,o,u,V,X,C,E,en,M]}class D7 extends i1{constructor(n){super(),x1(this,n,_7,C7,f1,{},null,[-1,-1])}}new D7({target:document.querySelector(".app")});
