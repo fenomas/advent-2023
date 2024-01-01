@@ -1,5 +1,5 @@
 
-// order: test1, real1, test2, real2
+// order: [real1, real2, test1, test2, ...]
 export var knownAnswers = [1, 2, 3, 4]
 
 
